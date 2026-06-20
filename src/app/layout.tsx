@@ -9,20 +9,19 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "Hao Yu HAN | 硬核结构工程师 · 控制算法与系统边界",
+  title: "Hao Yu HAN | Structural Engineer · Control & Systems",
   description:
-    "Hao Yu (Howie) Han 的个人作品集 — 懂控制算法与系统边界的硬核结构工程师。探索 Projects、Tech Stack 与 Resume。",
+    "Hao Yu (Howie) Han's portfolio — A structural engineer who understands control algorithms and system boundaries.",
   keywords: [
     "Hao Yu Han",
     "Howie Han",
-    "结构工程师",
-    "控制算法",
+    "Structural Engineer",
+    "Control Algorithms",
     "portfolio",
-    "作品集",
   ],
   openGraph: {
     title: "Hao Yu HAN · Portfolio",
-    description: "控制算法与系统边界的硬核结构工程师",
+    description: "Structural Engineer · Control & Systems",
     type: "website",
   },
 };
@@ -34,7 +33,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={`${inter.variable} h-full antialiased`}>
-      <body className="min-h-full bg-zinc-950 font-sans text-zinc-200">
+      <body className="min-h-full bg-slate-50 font-sans text-zinc-900">
         {children}
       </body>
     </html>

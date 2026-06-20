@@ -1,109 +1,102 @@
 "use client";
 
-import { useState } from "react";
-import ImageSlider from "@/components/ImageSlider";
-import dynamic from "next/dynamic";
+import Link from "next/link";
+import { useState, useEffect, Suspense } from "react";
+import { useSearchParams } from "next/navigation";
 
-const ModelViewer = dynamic(() => import("@/components/ModelViewer"), {
-  ssr: false,
-  loading: () => <div className="w-full h-full min-h-[300px] bg-zinc-900 rounded-xl flex items-center justify-center text-zinc-600 font-mono text-sm">Loading 3D Engine...</div>
-});
+const NAV_ZH = ["个人介绍", "核心技能", "工作经历", "项目经历", "社群与领导力", "联系方式"] as const;
+const NAV_EN = ["About", "Skills", "Experience", "Projects", "Leadership", "Contact"] as const;
+const SECTION_IDS = ["about", "skills", "experience", "projects", "leadership", "contact"] as const;
 
-export default function Home() {
-  const [lang, setLang] = useState<"en" | "zh">("en");
+function HomeContent() {
+  const [lang, setLang] = useState<"zh" | "en">("zh");
+  const searchParams = useSearchParams();
 
-  const toggleLang = () => {
-    setLang((prev) => (prev === "en" ? "zh" : "en"));
+  useEffect(() => {
+    const urlLang = searchParams.get("lang");
+    if (urlLang === "zh" || urlLang === "en") {
+      setLang(urlLang);
+    }
+  }, [searchParams]);
+
+  const t = (zh: string, en: string) => (lang === "zh" ? zh : en);
+
+  const scrollTo = (id: string) => {
+    const el = document.getElementById(id);
+    if (el) el.scrollIntoView({ behavior: "smooth" });
   };
 
+  const navItems = (lang === "zh" ? NAV_ZH : NAV_EN).map((label, i) => ({
+    label,
+    id: SECTION_IDS[i],
+  }));
+
   return (
-    <div className="relative min-h-screen bg-zinc-950 text-zinc-200 overflow-x-hidden">
+    <div className="relative min-h-screen bg-slate-50 text-zinc-900 overflow-x-hidden">
       {/* ========== NAVBAR ========== */}
-      <nav className="fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-6 py-4 backdrop-blur-xl bg-zinc-950/60 border-b border-zinc-800/50 md:px-12 lg:px-24">
-        <span className="text-lg font-bold tracking-[0.2em] text-white select-none">
-          HOWIE.H
-        </span>
-        <div className="hidden md:flex items-center gap-8 text-sm font-medium text-zinc-400">
-          <a
-            href="#projects"
-            className="hover:text-white transition-colors duration-300"
-          >
-            Projects
-          </a>
-          <a
-            href="#skills"
-            className="hover:text-white transition-colors duration-300"
-          >
-            Tech Stack
-          </a>
-          <a
-            href="#resume"
-            className="hover:text-white transition-colors duration-300"
-          >
-            Resume
-          </a>
+      <nav className="fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-6 py-4 bg-white/70 backdrop-blur-md border-b border-zinc-200 md:px-12 lg:px-24">
+        <button
+          onClick={() => scrollTo("hero")}
+          className="text-lg font-bold tracking-tight text-zinc-900 select-none hover:text-zinc-600 transition-colors"
+        >
+          Howie Han
+        </button>
+        <div className="hidden md:flex items-center gap-8 text-sm font-medium text-zinc-500">
+          {navItems.map((item) => (
+            <button
+              key={item.id}
+              onClick={() => scrollTo(item.id)}
+              className="hover:text-zinc-900 transition-colors duration-200"
+            >
+              {item.label}
+            </button>
+          ))}
           <button
-            onClick={toggleLang}
-            className="ml-4 px-3 py-1 rounded-md border border-zinc-700 text-xs tracking-wider text-zinc-300 hover:border-zinc-500 hover:text-white transition-all duration-300"
+            onClick={() => setLang((prev) => (prev === "en" ? "zh" : "en"))}
+            className="ml-4 px-3 py-1 rounded-md border border-zinc-300 text-xs tracking-wider text-zinc-600 hover:border-zinc-400 hover:text-zinc-900 transition-all duration-200"
           >
             {lang === "en" ? "EN / 中" : "中 / EN"}
           </button>
         </div>
+        {/* Mobile: lang toggle only */}
         <div className="md:hidden flex items-center gap-3">
           <button
-            onClick={toggleLang}
-            className="px-2.5 py-1 rounded-md border border-zinc-700 text-xs tracking-wider text-zinc-300 hover:border-zinc-500 transition-all"
+            onClick={() => setLang((prev) => (prev === "en" ? "zh" : "en"))}
+            className="px-2.5 py-1 rounded-md border border-zinc-300 text-xs tracking-wider text-zinc-600 hover:border-zinc-400 transition-all"
           >
             {lang === "en" ? "EN / 中" : "中 / EN"}
-          </button>
-          <button className="text-zinc-400 hover:text-white transition-colors">
-            <svg
-              width="22"
-              height="22"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              strokeWidth="1.5"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-            >
-              <line x1="3" y1="6" x2="21" y2="6" />
-              <line x1="3" y1="12" x2="21" y2="12" />
-              <line x1="3" y1="18" x2="21" y2="18" />
-            </svg>
           </button>
         </div>
       </nav>
 
-      {/* ========== HERO SECTION ========== */}
-      <section className="relative flex flex-col items-center justify-center min-h-screen px-6 pt-20 pb-16 md:px-12 lg:px-24">
-        <div className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] rounded-full bg-zinc-800/10 blur-3xl pointer-events-none" />
-        <div className="relative z-10 flex flex-col items-center text-center max-w-4xl mx-auto">
-          <span className="inline-block mb-6 text-xs font-medium tracking-[0.3em] uppercase text-zinc-500">
-            {lang === "en" ? "Portfolio · 2026" : "作品集 · 2026"}
+      {/* ========== #hero ========== */}
+      <section
+        id="hero"
+        className="flex flex-col items-center justify-center min-h-screen px-6 pt-24 pb-16 md:px-12 lg:px-24"
+      >
+        <div className="max-w-4xl mx-auto text-center">
+          <span className="inline-block mb-6 text-xs tracking-widest uppercase text-zinc-500">
+            {t("我的主页 · 2026", "My Portfolio · 2026")}
           </span>
-          <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold leading-[1.05] tracking-tight text-white">
-            Hao Yu
-            <br />
-            <span className="text-zinc-400">HAN</span>
+          <h1 className="text-5xl md:text-7xl font-extrabold tracking-widest bg-gradient-to-br from-zinc-900 via-zinc-700 to-zinc-500 bg-clip-text text-transparent drop-shadow-sm">
+            {lang === "zh" ? "韩浩宇" : "Howie Han"}
           </h1>
-          <p className="mt-6 max-w-2xl text-base sm:text-lg md:text-xl leading-relaxed text-zinc-400 font-light">
-            {lang === "en"
-              ? "A hardcore structural engineer who understands control algorithms and system boundaries."
-              : "懂控制算法与系统边界的硬核结构工程师"}
+          <p className="max-w-2xl mx-auto text-xl md:text-2xl font-light text-zinc-500 tracking-wide mt-6 mb-8 text-balance">
+            {t(
+              "将创意落地，让想法成形。",
+              "Bringing Ideas to Life, Shaping Concepts into Reality."
+            )}
           </p>
-          <div className="mt-10 flex flex-col sm:flex-row items-center gap-4">
-            <a
-              href="#projects"
-              className="group relative inline-flex items-center justify-center overflow-hidden rounded-md bg-white px-8 py-3.5 text-sm font-semibold text-zinc-950 transition-all duration-300 hover:bg-zinc-200"
+          <div className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4">
+            <button
+              onClick={() => scrollTo("projects")}
+              className="inline-flex items-center justify-center rounded-full bg-zinc-900 px-8 py-3.5 text-sm font-semibold text-white transition-all duration-300 hover:bg-zinc-700 hover:scale-[1.02]"
             >
-              <span className="relative z-10">
-                {lang === "en" ? "Explore Projects" : "探索硬核交付物"}
-              </span>
-            </a>
+              {t("更多项目", "View Projects")}
+            </button>
             <a
               href="/resume.pdf"
-              className="group inline-flex items-center gap-2 rounded-md border border-zinc-700 px-8 py-3.5 text-sm font-medium text-zinc-300 transition-all duration-300 hover:border-zinc-500 hover:text-white"
+              className="inline-flex items-center gap-2 rounded-md border border-zinc-300 px-8 py-3.5 text-sm font-medium text-zinc-600 transition-all duration-300 hover:border-zinc-400 hover:text-zinc-900"
             >
               <svg
                 width="16"
@@ -114,336 +107,436 @@ export default function Home() {
                 strokeWidth="1.5"
                 strokeLinecap="round"
                 strokeLinejoin="round"
-                className="transition-transform duration-300 group-hover:-translate-y-0.5"
               >
                 <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
                 <polyline points="7 10 12 15 17 10" />
                 <line x1="12" y1="15" x2="12" y2="3" />
               </svg>
-              {lang === "en" ? "Download CV" : "下载简历 (CV)"}
+              {t("下载简历 (CV)", "Download CV")}
             </a>
           </div>
         </div>
-        <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-zinc-600">
+        <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-zinc-400">
           <span className="text-[10px] tracking-[0.2em] uppercase">Scroll</span>
-          <div className="w-px h-8 bg-gradient-to-b from-zinc-600 to-transparent" />
+          <div className="w-px h-8 bg-gradient-to-b from-zinc-400 to-transparent" />
         </div>
       </section>
 
-      {/* ========== FEATURED ENGINEERING ========== */}
+      {/* ========== #about ========== */}
       <section
-        id="projects"
-        className="px-6 py-24 md:px-12 lg:px-24 md:py-32"
+        id="about"
+        className="min-h-screen flex items-center px-6 py-24 md:px-12 lg:px-24"
       >
-        {/* Section Title */}
-        <div className="max-w-6xl mx-auto mb-16 md:mb-20">
-          <span className="text-xs font-medium tracking-[0.3em] uppercase text-zinc-500">
-            {lang === "en" ? "Portfolio" : "交付物"}
-          </span>
-          <h2 className="mt-3 text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight text-white">
-            {lang === "en" ? "Featured Engineering" : "硬核交付物"}
+        <div className="max-w-5xl mx-auto w-full">
+          <h2 className="text-3xl font-bold text-zinc-900 mb-12">
+            {lang === "zh" ? "关于我" : "About"}
           </h2>
-          <div className="mt-4 w-12 h-px bg-zinc-700" />
-        </div>
-
-        {/* Project Cards Grid */}
-        <div className="max-w-6xl mx-auto flex flex-col gap-12 md:gap-16">
-          {/* ---------- Card 1 ---------- */}
-          <div className="flex flex-col md:flex-row rounded-xl border border-zinc-800 bg-zinc-950 overflow-hidden transition-all duration-500 hover:border-zinc-700 hover:shadow-[0_0_32px_-8px_rgba(255,255,255,0.04)]">
-            {/* Video Media */}
-            <div className="md:w-1/2 min-h-[280px] overflow-hidden">
-              <video
-                autoPlay
-                loop
-                muted
-                playsInline
-                className="w-full h-full object-cover"
-              >
-                <source src="/media/wbc-demo.mp4" type="video/mp4" />
-              </video>
-            </div>
-            {/* Content */}
-            <div className="md:w-1/2 p-8 md:p-10 flex flex-col justify-center">
-              <h3 className="text-xl md:text-2xl font-bold text-white">
-                {lang === "en"
-                  ? "Learning-based WBC for Quadruped Manipulator"
-                  : "基于强化学习的四足机械臂全身控制 (WBC)"}
-              </h3>
-              <div className="mt-4 flex flex-wrap gap-2">
-                <span className="px-3 py-1 rounded-full bg-zinc-800 text-xs font-medium text-zinc-300 border border-zinc-700/50">
-                  Isaac Gym
-                </span>
-                <span className="px-3 py-1 rounded-full bg-zinc-800 text-xs font-medium text-zinc-300 border border-zinc-700/50">
-                  C++ / Python
-                </span>
-                <span className="px-3 py-1 rounded-full bg-zinc-800 text-xs font-medium text-zinc-300 border border-zinc-700/50">
-                  {lang === "en" ? "Soft-Hardware Synergy" : "软硬协同设计"}
-                </span>
-                <span className="px-3 py-1 rounded-full bg-zinc-800 text-xs font-medium text-zinc-300 border border-zinc-700/50">
-                  {lang === "en" ? "Dynamics Constraint" : "动力学约束"}
-                </span>
-              </div>
-              <p className="mt-5 text-sm leading-relaxed text-zinc-400">
-                {lang === "en"
-                  ? "Implemented Whole-Body Control (WBC) for a quadruped manipulator with a high center of mass (~0.52m). Achieved continuous stair climbing at 1.5 m/s."
-                  : "面向动力学约束的结构架构设计：通过 Isaac Gym 仿真反推结构刚度边界，实现系统高质心动态作业下的软硬协同。"}
-              </p>
-            </div>
-          </div>
-
-          {/* ---------- Card 2 ---------- */}
-          <div className="flex flex-col md:flex-row-reverse rounded-xl border border-zinc-800 bg-zinc-950 overflow-hidden transition-all duration-500 hover:border-zinc-700 hover:shadow-[0_0_32px_-8px_rgba(255,255,255,0.04)]">
-            {/* 3D Model Viewer */}
-            <div className="md:w-1/2 min-h-[300px] bg-zinc-950">
-              <ModelViewer />
-            </div>
-            {/* Content */}
-            <div className="md:w-1/2 p-8 md:p-10 flex flex-col justify-center">
-              <h3 className="text-xl md:text-2xl font-bold text-white">
-                {lang === "en"
-                  ? "High-Precision Omnidirectional Wheel System"
-                  : "高精度全向舵轮底盘架构设计"}
-              </h3>
-              <div className="mt-4 flex flex-wrap gap-2">
-                <span className="px-3 py-1 rounded-full bg-zinc-800 text-xs font-medium text-zinc-300 border border-zinc-700/50">
-                  SolidWorks
-                </span>
-                <span className="px-3 py-1 rounded-full bg-zinc-800 text-xs font-medium text-zinc-300 border border-zinc-700/50">
-                  AutoCAD
-                </span>
-                <span className="px-3 py-1 rounded-full bg-zinc-800 text-xs font-medium text-zinc-300 border border-zinc-700/50">
-                  GB/T1804-2000
-                </span>
-                <span className="px-3 py-1 rounded-full bg-zinc-800 text-xs font-medium text-zinc-300 border border-zinc-700/50">
-                  DFAM
-                </span>
-              </div>
-              <p className="mt-5 text-sm leading-relaxed text-zinc-400">
-                {lang === "en"
-                  ? "Designed and manufactured a highly integrated omnidirectional mobile chassis. Achieved robust steering transmission and dynamic maneuverability."
-                  : "基于 GB/T1804-2000 标准进行公差分析与架构设计，实现高响应机动性。该底层核心技术支撑团队最终斩获第 23 届 ROBOCON 全国一等奖。"}
-              </p>
-            </div>
-          </div>
-
-          {/* ---------- Card 3 ---------- */}
-          <div className="flex flex-col md:flex-row rounded-xl border border-zinc-800 bg-zinc-950 overflow-hidden transition-all duration-500 hover:border-zinc-700 hover:shadow-[0_0_32px_-8px_rgba(255,255,255,0.04)]">
-            {/* Image Slider */}
-            <div className="md:w-1/2 min-h-[280px]">
-              <ImageSlider
-                images={["/media/tpu-sop.jpeg", "/media/tpu-prototype.jpg", "/media/tpu-cad.png"]}
-              />
-            </div>
-            {/* Content */}
-            <div className="md:w-1/2 p-8 md:p-10 flex flex-col justify-center">
-              <h3 className="text-xl md:text-2xl font-bold text-white">
-                {lang === "en"
-                  ? "Bionic Thoracic Motion Simulator"
-                  : "仿生胸腔运动模拟器机构设计"}
-              </h3>
-              <div className="mt-4 flex flex-wrap gap-2">
-                <span className="px-3 py-1 rounded-full bg-zinc-800 text-xs font-medium text-zinc-300 border border-zinc-700/50">
-                  DFAM
-                </span>
-                <span className="px-3 py-1 rounded-full bg-zinc-800 text-xs font-medium text-zinc-300 border border-zinc-700/50">
-                  TPU / PLA
-                </span>
-                <span className="px-3 py-1 rounded-full bg-zinc-800 text-xs font-medium text-zinc-300 border border-zinc-700/50">
-                  SOP Formulation
-                </span>
-                <span className="px-3 py-1 rounded-full bg-zinc-800 text-xs font-medium text-zinc-300 border border-zinc-700/50">
-                  Biomechanics
-                </span>
-              </div>
-              <p className="mt-5 text-sm leading-relaxed text-zinc-400">
-                {lang === "en"
-                  ? "Engineered a biomechanical simulator utilizing multi-material 3D printing. Developed standardized TPU printing SOPs, significantly improving manufacturing and assembly efficiency."
-                  : "面向生物力学的多材料增材制造（DFAM）架构设计。独立制定 TPU/PLA 标准化打印流程（SOP），通过零件一体化设计大幅降低装配复杂度与制造成本。"}
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* ========== CORE CAPABILITIES (Bento Box) ========== */}
-      <section id="skills" className="px-6 py-24 md:px-12 lg:px-24 md:py-32">
-        {/* Section Title */}
-        <div className="max-w-6xl mx-auto mb-16 md:mb-20">
-          <span className="text-xs font-medium tracking-[0.3em] uppercase text-zinc-500">
-            {lang === "en" ? "Expertise" : "专长"}
-          </span>
-          <h2 className="mt-3 text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight text-white">
-            {lang === "en" ? "Core Capabilities" : "核心技能栈"}
-          </h2>
-          <div className="mt-4 w-12 h-px bg-zinc-700" />
-        </div>
-
-        {/* Bento Grid */}
-        <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-4 md:gap-5 auto-rows-[240px]">
-          {/* ---- Card 1: CAD & DFAM (spans 2 cols) ---- */}
-          <div className="md:col-span-2 md:row-span-2 rounded-xl border border-zinc-800 bg-zinc-950 p-8 md:p-10 flex flex-col justify-between transition-all duration-500 hover:border-zinc-700 hover:shadow-[0_0_32px_-8px_rgba(255,255,255,0.04)]">
-            <div>
-              <div className="w-10 h-10 rounded-lg bg-zinc-800 flex items-center justify-center mb-5">
-                <svg
-                  width="20"
-                  height="20"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth="1.5"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  className="text-zinc-400"
-                >
-                  <polygon points="12 2 22 8.5 22 15.5 12 22 2 15.5 2 8.5" />
-                  <line x1="12" y1="22" x2="12" y2="15.5" />
-                  <polyline points="22 8.5 12 15.5 2 8.5" />
+          <div className="mt-10 grid grid-cols-1 md:grid-cols-12 gap-12 md:gap-24 items-center">
+            {/* Left: Photo placeholder */}
+            <div className="md:col-span-5">
+              <div className="aspect-[3/4] w-full object-cover rounded-2xl bg-zinc-100 border border-zinc-200/50 shadow-md flex items-center justify-center">
+                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1" strokeLinecap="round" strokeLinejoin="round" className="text-zinc-400">
+                  <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" />
+                  <circle cx="12" cy="7" r="4" />
                 </svg>
               </div>
-              <h3 className="text-lg md:text-xl font-bold text-white">
-                CAD & DFAM
+            </div>
+            {/* Right: Bio text */}
+            <div className="md:col-span-7 space-y-6 text-zinc-600 leading-relaxed antialiased">
+              <h3 className="text-3xl font-bold mb-8 text-zinc-900">
               </h3>
-              <p className="mt-1 text-xs tracking-wider uppercase text-zinc-500">
-                结构设计与增材制造
-              </p>
-            </div>
-            <div className="flex flex-wrap gap-2 mt-6">
-              {[
-                "SolidWorks",
-                "Onshape",
-                "Fusion 360",
-                "GD&T",
-                "DFAM",
-                "FDM/SLA",
-              ].map((tag) => (
-                <span
-                  key={tag}
-                  className="px-2.5 py-1 rounded-md bg-zinc-800/60 text-xs text-zinc-400 border border-zinc-700/40"
-                >
-                  {tag}
-                </span>
-              ))}
-            </div>
-          </div>
-
-          {/* ---- Card 2: CAE Simulation (spans 2 cols) ---- */}
-          <div className="md:col-span-2 rounded-xl border border-zinc-800 bg-zinc-950 p-8 md:p-10 flex flex-col justify-between transition-all duration-500 hover:border-zinc-700 hover:shadow-[0_0_32px_-8px_rgba(255,255,255,0.04)]">
-            <div>
-              <div className="w-10 h-10 rounded-lg bg-zinc-800 flex items-center justify-center mb-5">
-                <svg
-                  width="20"
-                  height="20"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth="1.5"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  className="text-zinc-400"
-                >
-                  <path d="M21 12a9 9 0 0 0-9-9 9.75 9.75 0 0 0-6.74 2.74L3 8" />
-                  <path d="M3 3v5h5" />
-                  <path d="M3 12a9 9 0 0 0 9 9 9.75 9.75 0 0 0 6.74-2.74L21 16" />
-                  <path d="M16 16h5v5" />
-                </svg>
-              </div>
-              <h3 className="text-lg md:text-xl font-bold text-white">
-                CAE Simulation
-              </h3>
-              <p className="mt-1 text-xs tracking-wider uppercase text-zinc-500">
-                仿真与动力学
-              </p>
-            </div>
-            <div className="flex flex-wrap gap-2 mt-6">
-              {["Abaqus", "COMSOL", "ANSYS", "FEA", "CFD", "Multibody"].map(
-                (tag) => (
-                  <span
-                    key={tag}
-                    className="px-2.5 py-1 rounded-md bg-zinc-800/60 text-xs text-zinc-400 border border-zinc-700/40"
-                  >
-                    {tag}
-                  </span>
-                )
+              {lang === "zh" ? (
+                <>
+                  <p className="text-justify hyphens-auto leading-relaxed">我是韩浩宇，一名专注于机器人本体、精密机械设计和机电系统研发的工程师。我的兴趣始终围绕一个问题：如何将抽象的想法转化为真实可运行的机器。</p>
+                  <p className="text-justify hyphens-auto leading-relaxed">在机器人工程的学习与实践中，我积累了从方案设计、仿真分析、工程制图到制造装配和机电联调的完整工程经验，参与并主导过竞赛机器人、仿生机电系统及工业机器人产品的开发工作。相比于停留在概念验证，我更关注设计的可制造性、可靠性与实际落地价值，致力于让创意走出图纸，成为能够解决现实问题的产品。</p>
+                  <p className="text-justify hyphens-auto leading-relaxed">我相信，优秀的工程设计不仅源于对机械、控制与制造技术的综合理解，更来自对物理本质的持续探索，以及对每一个细节的认真打磨。</p>
+                </>
+              ) : (
+                <>
+                  <p className="text-justify hyphens-auto leading-relaxed">I am Howie Han, an engineer dedicated to robotics hardware, precision mechanical design, and mechatronic system R&D. My passion is driven by a single core question: how to transform abstract concepts into real, fully functioning machines.</p>
+                  <p className="text-justify hyphens-auto leading-relaxed">Throughout my academic and professional journey in robotics engineering, I have built a comprehensive, end-to-end engineering skill set—spanning conceptual design, simulation analysis, engineering drafting, to manufacturing assembly and mechatronic integration. I have contributed to and led the development of competition robots, biomimetic mechatronic systems, and industrial robotics products. Rather than stopping at proof-of-concept, I focus heavily on design for manufacturability (DfAM), reliability, and real-world application value, committing myself to taking ideas off the drawing board and turning them into robust products that solve practical problems.</p>
+                  <p className="text-justify hyphens-auto leading-relaxed">I firmly believe that exceptional engineering design stems not only from a profound understanding of mechanics, control, and manufacturing technologies, but also from a continuous exploration of physical principles and a rigorous refinement of every detail.</p>
+                </>
               )}
             </div>
           </div>
+        </div>
+      </section>
 
-          {/* ---- Card 3: Control & System (spans 2 cols, 2 rows) ---- */}
-          <div className="md:col-span-2 md:row-span-2 rounded-xl border border-zinc-800 bg-zinc-950 p-8 md:p-10 flex flex-col justify-between transition-all duration-500 hover:border-zinc-700 hover:shadow-[0_0_32px_-8px_rgba(255,255,255,0.04)]">
-            <div>
-              <div className="w-10 h-10 rounded-lg bg-zinc-800 flex items-center justify-center mb-5">
-                <svg
-                  width="20"
-                  height="20"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth="1.5"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  className="text-zinc-400"
-                >
-                  <polyline points="22 12 18 12 15 21 9 3 6 12 2 12" />
-                </svg>
-              </div>
-              <h3 className="text-lg md:text-xl font-bold text-white">
-                Control & System
+      {/* ========== #skills ========== */}
+      <section
+        id="skills"
+        className="min-h-screen flex items-center px-6 py-24 md:px-12 lg:px-24"
+      >
+        <div className="max-w-5xl mx-auto w-full">
+          <h2 className="text-3xl font-bold text-zinc-900 mb-12">
+            {lang === "zh" ? "核心技能" : "Skills"}
+          </h2>
+          <div className="grid grid-cols-1 md:grid-cols-5 gap-6 mt-12">
+            {/* Card 1: Mechanical Design & Manufacturing (spans 3 cols) */}
+            <div className="md:col-span-3 flex flex-col justify-center bg-white border border-zinc-200/60 rounded-2xl p-8 shadow-sm hover:shadow-md transition-all duration-300">
+              <h3 className="text-center text-lg font-bold text-zinc-900 mb-4 tracking-wide">
+                {lang === "zh" ? "机械设计与制造" : "Mechanical Design & Manufacturing"}
               </h3>
-              <p className="mt-1 text-xs tracking-wider uppercase text-zinc-500">
-                系统与算法
-              </p>
+              {lang === "zh" ? (
+                <ul className="flex flex-col space-y-3 justify-center h-full w-full text-left">
+                  <li className="text-sm md:text-base"><span className="font-semibold text-zinc-800 mr-2 whitespace-nowrap flex-shrink-0">设计建模：</span><span className="text-zinc-600">SolidWorks, OnShape, AutoCAD (GB&T标准与BOM出图)</span></li>
+                  <li className="text-sm md:text-base"><span className="font-semibold text-zinc-800 mr-2 whitespace-nowrap flex-shrink-0">逆向工程：</span><span className="text-zinc-600">3D扫描, QuickSurface重建</span></li>
+                  <li className="text-sm md:text-base"><span className="font-semibold text-zinc-800 mr-2 whitespace-nowrap flex-shrink-0">加工制造：</span><span className="text-zinc-600">CNC机加工与增材制造 (FDM/SLA)</span></li>
+                  <li className="text-sm md:text-base"><span className="font-semibold text-zinc-800 mr-2 whitespace-nowrap flex-shrink-0">工程理念：</span><span className="text-zinc-600">精通 DfM/DfAM 设计，具备快速原型与产品迭代经验</span></li>
+                </ul>
+              ) : (
+                <ul className="flex flex-col space-y-3 justify-center h-full w-full text-left">
+                  <li className="text-sm md:text-base"><span className="font-semibold text-zinc-800 mr-2 whitespace-nowrap flex-shrink-0">CAD Modeling:</span><span className="text-zinc-600">SolidWorks, OnShape, AutoCAD (GB&T Standards & BOM)</span></li>
+                  <li className="text-sm md:text-base"><span className="font-semibold text-zinc-800 mr-2 whitespace-nowrap flex-shrink-0">Reverse Eng.:</span><span className="text-zinc-600">3D Scanning, QuickSurface</span></li>
+                  <li className="text-sm md:text-base"><span className="font-semibold text-zinc-800 mr-2 whitespace-nowrap flex-shrink-0">Manufacturing:</span><span className="text-zinc-600">CNC Machining & Additive Manufacturing (FDM/SLA)</span></li>
+                  <li className="text-sm md:text-base"><span className="font-semibold text-zinc-800 mr-2 whitespace-nowrap flex-shrink-0">Methodology:</span><span className="text-zinc-600">Proficient in DfM/DfAM, Rapid Prototyping & Product Iteration</span></li>
+                </ul>
+              )}
             </div>
-            <div className="flex flex-wrap gap-2 mt-6">
-              {[
-                "MATLAB",
-                "Simulink",
-                "ROS2",
-                "PID",
-                "MPC",
-                "State Estimation",
-                "C++",
-                "Python",
-              ].map((tag) => (
-                <span
-                  key={tag}
-                  className="px-2.5 py-1 rounded-md bg-zinc-800/60 text-xs text-zinc-400 border border-zinc-700/40"
-                >
-                  {tag}
-                </span>
-              ))}
+            {/* Card 2: Simulation & Analysis (spans 2 cols) */}
+            <div className="md:col-span-2 flex flex-col justify-center bg-white border border-zinc-200/60 rounded-2xl p-8 shadow-sm hover:shadow-md transition-all duration-300">
+              <h3 className="text-center text-lg font-bold text-zinc-900 mb-4 tracking-wide">
+                {lang === "zh" ? "仿真辅助设计" : "Simulation & Analysis"}
+              </h3>
+              {lang === "zh" ? (
+                <ul className="flex flex-col space-y-3 justify-center h-full w-full text-left">
+                  <li className="text-sm md:text-base"><span className="font-semibold text-zinc-800 mr-2 whitespace-nowrap flex-shrink-0">静力学：</span><span className="text-zinc-600">SolidWorks Simulation</span></li>
+                  <li className="text-sm md:text-base"><span className="font-semibold text-zinc-800 mr-2 whitespace-nowrap flex-shrink-0">运动学：</span><span className="text-zinc-600">MATLAB Robotics</span></li>
+                  <li className="text-sm md:text-base"><span className="font-semibold text-zinc-800 mr-2 whitespace-nowrap flex-shrink-0">多体动力学：</span><span className="text-zinc-600">Adams</span></li>
+                  <li className="text-sm md:text-base"><span className="font-semibold text-zinc-800 mr-2 whitespace-nowrap flex-shrink-0">多物理场：</span><span className="text-zinc-600">COMSOL Multiphysics</span></li>
+                </ul>
+              ) : (
+                <ul className="flex flex-col space-y-3 justify-center h-full w-full text-left">
+                  <li className="text-sm md:text-base"><span className="font-semibold text-zinc-800 mr-2 whitespace-nowrap flex-shrink-0">Statics:</span><span className="text-zinc-600">SolidWorks Simulation</span></li>
+                  <li className="text-sm md:text-base"><span className="font-semibold text-zinc-800 mr-2 whitespace-nowrap flex-shrink-0">Kinematics:</span><span className="text-zinc-600">MATLAB Robotics</span></li>
+                  <li className="text-sm md:text-base"><span className="font-semibold text-zinc-800 mr-2 whitespace-nowrap flex-shrink-0">Dynamics:</span><span className="text-zinc-600">Adams</span></li>
+                  <li className="text-sm md:text-base"><span className="font-semibold text-zinc-800 mr-2 whitespace-nowrap flex-shrink-0">Multiphysics:</span><span className="text-zinc-600">COMSOL Multiphysics</span></li>
+                </ul>
+              )}
+            </div>
+            {/* Card 3: Mechatronics & Integration (spans 3 cols) */}
+            <div className="md:col-span-3 flex flex-col justify-center bg-white border border-zinc-200/60 rounded-2xl p-8 shadow-sm hover:shadow-md transition-all duration-300">
+              <h3 className="text-center text-lg font-bold text-zinc-900 mb-4 tracking-wide">
+                {lang === "zh" ? "机电系统集成" : "Mechatronics & Integration"}
+              </h3>
+              {lang === "zh" ? (
+                <ul className="flex flex-col space-y-3 justify-center h-full w-full text-left">
+                  <li className="text-sm md:text-base"><span className="font-semibold text-zinc-800 mr-2 whitespace-nowrap flex-shrink-0">编程语言：</span><span className="text-zinc-600">C/C++, Python</span></li>
+                  <li className="text-sm md:text-base"><span className="font-semibold text-zinc-800 mr-2 whitespace-nowrap flex-shrink-0">底层硬件：</span><span className="text-zinc-600">Arduino, ESP32, STM32 硬件布局与伺服控制</span></li>
+                  <li className="text-sm md:text-base"><span className="font-semibold text-zinc-800 mr-2 whitespace-nowrap flex-shrink-0">系统集成：</span><span className="text-zinc-600">具备丰富的系统级软硬联调经验</span></li>
+                </ul>
+              ) : (
+                <ul className="flex flex-col space-y-3 justify-center h-full w-full text-left">
+                  <li className="text-sm md:text-base"><span className="font-semibold text-zinc-800 mr-2 whitespace-nowrap flex-shrink-0">Programming:</span><span className="text-zinc-600">C/C++, Python</span></li>
+                  <li className="text-sm md:text-base"><span className="font-semibold text-zinc-800 mr-2 whitespace-nowrap flex-shrink-0">Hardware:</span><span className="text-zinc-600">Arduino, ESP32, STM32 Layout & Servo Control</span></li>
+                  <li className="text-sm md:text-base"><span className="font-semibold text-zinc-800 mr-2 whitespace-nowrap flex-shrink-0">Integration:</span><span className="text-zinc-600">Extensive Experience in System-level Hardware and Software Integration.</span></li>
+                </ul>
+              )}
+            </div>
+            {/* Card 4: Professional Skills (spans 2 cols) */}
+            <div className="md:col-span-2 flex flex-col justify-center bg-white border border-zinc-200/60 rounded-2xl p-8 shadow-sm hover:shadow-md transition-all duration-300">
+              <h3 className="text-center text-lg font-bold text-zinc-900 mb-4 tracking-wide">
+                {lang === "zh" ? "语言与综合素养" : "Professional Skills"}
+              </h3>
+              {lang === "zh" ? (
+                <ul className="flex flex-col space-y-3 justify-center h-full w-full text-left">
+                  <li className="text-sm md:text-base"><span className="font-semibold text-zinc-800 mr-2 whitespace-nowrap flex-shrink-0">外语能力：</span><span className="text-zinc-600">英语 (IELTS 7.0), 德语 (A1)</span></li>
+                  <li className="text-sm md:text-base"><span className="font-semibold text-zinc-800 mr-2 whitespace-nowrap flex-shrink-0">综合素养：</span><span className="text-zinc-600">跨文化团队协作，全生命周期敏捷交付</span></li>
+                </ul>
+              ) : (
+                <ul className="flex flex-col space-y-3 justify-center h-full w-full text-left">
+                  <li className="text-sm md:text-base"><span className="font-semibold text-zinc-800 mr-2 whitespace-nowrap flex-shrink-0">Languages:</span><span className="text-zinc-600">English (IELTS 7.0), German (A1)</span></li>
+                  <li className="text-sm md:text-base"><span className="font-semibold text-zinc-800 mr-2 whitespace-nowrap flex-shrink-0">Soft Skills:</span><span className="text-zinc-600">Cross-cultural Collaboration, Full-lifecycle Agile Delivery</span></li>
+                </ul>
+              )}
             </div>
           </div>
         </div>
       </section>
 
-      {/* ========== FOOTER ========== */}
-      <footer className="border-t border-zinc-800/60 px-6 py-12 md:px-12 lg:px-24">
-        <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6">
-          {/* Copyright */}
-          <p className="text-xs text-zinc-500 tracking-wide">
-            &copy; 2026 Hao Yu HAN. All rights reserved.
+      {/* ========== #experience ========== */}
+      <section
+        id="experience"
+        className="min-h-screen flex items-center px-6 py-24 md:px-12 lg:px-24"
+      >
+        <div className="max-w-5xl mx-auto w-full">
+          <h2 className="text-3xl font-bold text-zinc-900 mb-12">
+            {lang === "zh" ? "工作经历" : "Experience"}
+          </h2>
+          <p className="text-center text-sm text-zinc-400 mb-16 tracking-wide">
+            {lang === "zh"
+              ? "💡 点击各经历卡片，查看详细工程交付物与技术细节"
+              : "💡 Click on each experience to view engineering deliverables and technical details"}
           </p>
+          <div className="max-w-4xl mx-auto relative pl-4 md:pl-0">
+            {/* Left vertical axis */}
+            <div className="absolute left-[23px] md:left-[39px] top-0 bottom-0 w-px bg-zinc-200 z-0"></div>
 
-          {/* Links */}
-          <div className="flex items-center gap-6">
-            <a
-              href="mailto:hello@howiehan.com"
-              className="text-xs text-zinc-500 hover:text-zinc-300 transition-colors duration-300 tracking-wide"
-            >
-              Email
-            </a>
-            <span className="text-zinc-700 text-xs">/</span>
-            <a
-              href="https://linkedin.com/in/howie-han"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-xs text-zinc-500 hover:text-zinc-300 transition-colors duration-300 tracking-wide"
-            >
-              LinkedIn
-            </a>
+            {/* Card 1: Alstom */}
+            <div className="relative pl-12 md:pl-24 py-8 group">
+              {/* Timeline node */}
+              <div className="absolute left-[17px] md:left-[33px] top-[52px] w-3 h-3 bg-white border-2 border-zinc-300 rounded-full group-hover:border-zinc-900 group-hover:scale-125 group-hover:bg-zinc-900 transition-all duration-300 z-10"></div>
+              {/* Card */}
+              <Link href={`/experience/alstom?lang=${lang}`} className="block bg-white border border-zinc-200/60 rounded-2xl p-6 md:p-8 group-hover:shadow-xl group-hover:border-zinc-300 group-hover:-translate-y-1 transition-all duration-300">
+                <h3 className="text-xl font-bold text-zinc-900 mb-2">
+                  {lang === "zh" ? "Alstom 工程实习" : "Alstom Engineering Internship"}
+                </h3>
+                <p className="text-sm text-zinc-500 mb-4">2025 &middot; {lang === "zh" ? "工程项目实习" : "Engineering Internship"}</p>
+                <p className="text-zinc-600 text-sm md:text-base leading-relaxed text-justify">
+                  {lang === "zh" ? "Alstom 实习经历产出总结占位符。将鼠标悬浮在这一行任意位置可查看交互效果！" : "Alstom internship outcome summary placeholder. Hover anywhere on this row to see the interaction!"}
+                </p>
+              </Link>
+            </div>
+
+            {/* Card 2: Duke-NUS */}
+            <div className="relative pl-12 md:pl-24 py-8 group">
+              {/* Timeline node */}
+              <div className="absolute left-[17px] md:left-[33px] top-[52px] w-3 h-3 bg-white border-2 border-zinc-300 rounded-full group-hover:border-zinc-900 group-hover:scale-125 group-hover:bg-zinc-900 transition-all duration-300 z-10"></div>
+              {/* Card */}
+              <Link href={`/experience/duke-nus?lang=${lang}`} className="block bg-white border border-zinc-200/60 rounded-2xl p-6 md:p-8 group-hover:shadow-xl group-hover:border-zinc-300 group-hover:-translate-y-1 transition-all duration-300">
+                <h3 className="text-xl font-bold text-zinc-900 mb-2">
+                  {lang === "zh" ? "Duke-NUS 研究实习" : "Duke-NUS Research Internship"}
+                </h3>
+                <p className="text-sm text-zinc-500 mb-4">2024 &middot; {lang === "zh" ? "生物医学研究" : "Biomedical Research"}</p>
+                <p className="text-zinc-600 text-sm md:text-base leading-relaxed text-justify">
+                  {lang === "zh" ? "Duke-NUS 实习经历产出总结占位符。将鼠标悬浮在这一行任意位置可查看交互效果！" : "Duke-NUS internship outcome summary placeholder. Hover anywhere on this row to see the interaction!"}
+                </p>
+              </Link>
+            </div>
+
+            {/* Card 3: Aubo */}
+            <div className="relative pl-12 md:pl-24 py-8 group">
+              {/* Timeline node */}
+              <div className="absolute left-[17px] md:left-[33px] top-[52px] w-3 h-3 bg-white border-2 border-zinc-300 rounded-full group-hover:border-zinc-900 group-hover:scale-125 group-hover:bg-zinc-900 transition-all duration-300 z-10"></div>
+              {/* Card */}
+              <Link href={`/experience/aubo?lang=${lang}`} className="block bg-white border border-zinc-200/60 rounded-2xl p-6 md:p-8 group-hover:shadow-xl group-hover:border-zinc-300 group-hover:-translate-y-1 transition-all duration-300">
+                <h3 className="text-xl font-bold text-zinc-900 mb-2">
+                  {lang === "zh" ? "Aubo 机器人实习" : "Aubo Robotics Internship"}
+                </h3>
+                <p className="text-sm text-zinc-500 mb-4">2023 &middot; {lang === "zh" ? "机器人研发实习" : "Robotics R&D Internship"}</p>
+                <p className="text-zinc-600 text-sm md:text-base leading-relaxed text-justify">
+                  {lang === "zh" ? "Aubo 实习经历产出总结占位符。将鼠标悬浮在这一行任意位置可查看交互效果！" : "Aubo internship outcome summary placeholder. Hover anywhere on this row to see the interaction!"}
+                </p>
+              </Link>
+            </div>
           </div>
         </div>
-      </footer>
+      </section>
+
+      {/* ========== #projects ========== */}
+      <section
+        id="projects"
+        className="min-h-screen flex items-center px-6 py-24 md:px-12 lg:px-24"
+      >
+        <div className="max-w-5xl mx-auto w-full">
+          <h2 className="text-3xl font-bold text-zinc-900 mb-12">
+            {lang === "zh" ? "项目经历" : "Projects"}
+          </h2>
+          <div className="mt-10 flex flex-col gap-12 md:gap-16">
+            {/* Project Card 1 */}
+            <div className="flex flex-col md:flex-row rounded-xl border border-zinc-200 bg-white overflow-hidden transition-all duration-300 hover:border-zinc-300 hover:shadow-sm">
+              <div className="md:w-1/2 min-h-[240px] bg-zinc-100 flex items-center justify-center text-zinc-400 text-sm">
+                {t("视频占位", "Video Placeholder")}
+              </div>
+              <div className="md:w-1/2 p-8 md:p-10 flex flex-col justify-center">
+                <h3 className="text-xl md:text-2xl font-bold text-zinc-900">
+                  {t(
+                    "基于强化学习的四足机械臂全身控制 (WBC)",
+                    "Learning-based WBC for Quadruped Manipulator"
+                  )}
+                </h3>
+                <div className="mt-4 flex flex-wrap gap-2">
+                  {["Isaac Gym", "C++ / Python", t("软硬协同设计", "Soft-Hardware Synergy"), t("动力学约束", "Dynamics Constraint")].map((tag) => (
+                    <span key={tag} className="px-3 py-1 rounded-full bg-zinc-100 text-xs font-medium text-zinc-600 border border-zinc-200">
+                      {tag}
+                    </span>
+                  ))}
+                </div>
+                <p className="mt-5 text-sm leading-relaxed text-zinc-500">
+                  {t(
+                    "面向动力学约束的结构架构设计：通过 Isaac Gym 仿真反推结构刚度边界，实现系统高质心动态作业下的软硬协同。",
+                    "Implemented Whole-Body Control (WBC) for a quadruped manipulator with a high center of mass (~0.52m). Achieved continuous stair climbing at 1.5 m/s."
+                  )}
+                </p>
+              </div>
+            </div>
+            {/* Project Card 2 */}
+            <div className="flex flex-col md:flex-row-reverse rounded-xl border border-zinc-200 bg-white overflow-hidden transition-all duration-300 hover:border-zinc-300 hover:shadow-sm">
+              <div className="md:w-1/2 min-h-[240px] bg-zinc-100 flex items-center justify-center text-zinc-400 text-sm">
+                {t("3D 模型占位", "3D Model Placeholder")}
+              </div>
+              <div className="md:w-1/2 p-8 md:p-10 flex flex-col justify-center">
+                <h3 className="text-xl md:text-2xl font-bold text-zinc-900">
+                  {t(
+                    "高精度全向舵轮底盘架构设计",
+                    "High-Precision Omnidirectional Wheel System"
+                  )}
+                </h3>
+                <div className="mt-4 flex flex-wrap gap-2">
+                  {["SolidWorks", "AutoCAD", "GB/T1804-2000", "DFAM"].map((tag) => (
+                    <span key={tag} className="px-3 py-1 rounded-full bg-zinc-100 text-xs font-medium text-zinc-600 border border-zinc-200">
+                      {tag}
+                    </span>
+                  ))}
+                </div>
+                <p className="mt-5 text-sm leading-relaxed text-zinc-500">
+                  {t(
+                    "基于 GB/T1804-2000 标准进行公差分析与架构设计，实现高响应机动性。该底层核心技术支撑团队最终斩获第 23 届 ROBOCON 全国一等奖。",
+                    "Designed and manufactured a highly integrated omnidirectional mobile chassis. Achieved robust steering transmission and dynamic maneuverability."
+                  )}
+                </p>
+              </div>
+            </div>
+            {/* Project Card 3 */}
+            <div className="flex flex-col md:flex-row rounded-xl border border-zinc-200 bg-white overflow-hidden transition-all duration-300 hover:border-zinc-300 hover:shadow-sm">
+              <div className="md:w-1/2 min-h-[240px] bg-zinc-100 flex items-center justify-center text-zinc-400 text-sm">
+                {t("图片轮播占位", "Image Slider Placeholder")}
+              </div>
+              <div className="md:w-1/2 p-8 md:p-10 flex flex-col justify-center">
+                <h3 className="text-xl md:text-2xl font-bold text-zinc-900">
+                  {t(
+                    "仿生胸腔运动模拟器机构设计",
+                    "Bionic Thoracic Motion Simulator"
+                  )}
+                </h3>
+                <div className="mt-4 flex flex-wrap gap-2">
+                  {["DFAM", "TPU / PLA", "SOP Formulation", "Biomechanics"].map((tag) => (
+                    <span key={tag} className="px-3 py-1 rounded-full bg-zinc-100 text-xs font-medium text-zinc-600 border border-zinc-200">
+                      {tag}
+                    </span>
+                  ))}
+                </div>
+                <p className="mt-5 text-sm leading-relaxed text-zinc-500">
+                  {t(
+                    "面向生物力学的多材料增材制造（DFAM）架构设计。独立制定 TPU/PLA 标准化打印流程（SOP），通过零件一体化设计大幅降低装配复杂度与制造成本。",
+                    "Engineered a biomechanical simulator utilizing multi-material 3D printing. Developed standardized TPU printing SOPs, significantly improving manufacturing and assembly efficiency."
+                  )}
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ========== #leadership ========== */}
+      <section
+        id="leadership"
+        className="min-h-screen flex items-center px-6 py-24 md:px-12 lg:px-24"
+      >
+        <div className="max-w-5xl mx-auto w-full">
+          <h2 className="text-3xl font-bold text-zinc-900 mb-12">
+            {lang === "zh" ? "社群与领导力" : "Leadership"}
+          </h2>
+          <div className="mt-10 grid grid-cols-1 md:grid-cols-3 gap-6">
+            {/* Card 1 */}
+            <div className="rounded-xl border border-zinc-200 bg-white p-8 transition-all duration-300 hover:border-zinc-300 hover:shadow-sm">
+              <div className="w-10 h-10 rounded-lg bg-zinc-100 flex items-center justify-center mb-4">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="text-zinc-500">
+                  <path d="M6 9H4.5a2.5 2.5 0 0 1 0-5C7 4 6 9 6 9z" />
+                  <path d="M18 9h1.5a2.5 2.5 0 0 0 0-5C17 4 18 9 18 9z" />
+                  <path d="M4 22h16" />
+                  <path d="M10 14.66V17c0 .55-.47.98-.97 1.21C7.85 18.75 7 20.24 7 22" />
+                  <path d="M14 14.66V17c0 .55.47.98.97 1.21C16.15 18.75 17 20.24 17 22" />
+                  <path d="M18 2H6v7a6 6 0 0 0 12 0V2Z" />
+                </svg>
+              </div>
+              <h3 className="text-lg font-bold text-zinc-900">
+                {t("ROBOCON 全国一等奖", "ROBOCON National 1st Prize")}
+              </h3>
+              <p className="mt-2 text-sm text-zinc-500 leading-relaxed">
+                {t(
+                  "第 23 届全国大学生机器人大赛，作为核心结构负责人主导底盘架构设计。",
+                  "23rd National College Robotics Competition, led chassis architecture design as core structural lead."
+                )}
+              </p>
+            </div>
+            {/* Card 2 */}
+            <div className="rounded-xl border border-zinc-200 bg-white p-8 transition-all duration-300 hover:border-zinc-300 hover:shadow-sm">
+              <div className="w-10 h-10 rounded-lg bg-zinc-100 flex items-center justify-center mb-4">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="text-zinc-500">
+                  <circle cx="12" cy="8" r="5" />
+                  <path d="M3 21v-2a7 7 0 0 1 7-7h4a7 7 0 0 1 7 7v2" />
+                </svg>
+              </div>
+              <h3 className="text-lg font-bold text-zinc-900">
+                {t("技术团队负责人", "Technical Team Lead")}
+              </h3>
+              <p className="mt-2 text-sm text-zinc-500 leading-relaxed">
+                {t(
+                  "带领 10+ 人跨学科团队完成机器人系统集成与竞赛交付。",
+                  "Led a cross-disciplinary team of 10+ members in robot system integration and competition delivery."
+                )}
+              </p>
+            </div>
+            {/* Card 3 */}
+            <div className="rounded-xl border border-zinc-200 bg-white p-8 transition-all duration-300 hover:border-zinc-300 hover:shadow-sm">
+              <div className="w-10 h-10 rounded-lg bg-zinc-100 flex items-center justify-center mb-4">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="text-zinc-500">
+                  <path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H19a1 1 0 0 1 1 1v18a1 1 0 0 1-1 1H6.5a1 1 0 0 1 0-5H20" />
+                </svg>
+              </div>
+              <h3 className="text-lg font-bold text-zinc-900">
+                {t("学术发表", "Academic Publication")}
+              </h3>
+              <p className="mt-2 text-sm text-zinc-500 leading-relaxed">
+                {t(
+                  "在机器人学与机构设计领域发表多篇学术论文。",
+                  "Published multiple academic papers in robotics and mechanism design."
+                )}
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ========== #contact ========== */}
+      <section
+        id="contact"
+        className="px-6 py-24 md:px-12 lg:px-24"
+      >
+        <div className="max-w-5xl mx-auto w-full">
+          <div className="border-t border-zinc-200 pt-12 flex flex-col md:flex-row items-center justify-between gap-6">
+            <p className="text-sm text-zinc-400 tracking-wide">
+              &copy; 2026 Howiesme {t("保留所有权利。", "All rights reserved.")}
+            </p>
+            <div className="flex items-center gap-6">
+              <a
+                href="mailto:hello@howiehan.com"
+                className="text-sm text-zinc-400 hover:text-zinc-900 transition-colors duration-200"
+              >
+                {t("邮箱", "Email")}
+              </a>
+              <span className="text-zinc-300 text-sm">/</span>
+              <a
+                href="https://linkedin.com/in/howie-han"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-sm text-zinc-400 hover:text-zinc-900 transition-colors duration-200"
+              >
+                LinkedIn
+              </a>
+              <span className="text-zinc-300 text-sm">/</span>
+              <a
+                href="https://github.com/Howie-Han"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-sm text-zinc-400 hover:text-zinc-900 transition-colors duration-200"
+              >
+                GitHub
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
     </div>
+  );
+}
+
+export default function Home() {
+  return (
+    <Suspense fallback={<div className="min-h-screen bg-slate-50"></div>}>
+      <HomeContent />
+    </Suspense>
   );
 }

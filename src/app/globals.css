@@ -1,10 +1,12 @@
 @import "tailwindcss";
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
-  background-color: #09090b;
-  /* zinc-950 */
-  color: #e4e4e7;
-  /* zinc-200 */
+  background-color: #fafafa;
+  color: #18181b;
   font-family: system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
