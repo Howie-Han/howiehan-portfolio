@@ -160,6 +160,88 @@ function HomeContent() {
               )}
             </div>
           </div>
+
+          <div className="mt-16 pt-12 border-t border-zinc-200/60 w-full">
+            {/* 板块小标题 */}
+            <h3 className="text-sm font-medium uppercase text-zinc-400 tracking-[0.2em] mb-8 text-left">
+              {lang === 'zh' ? '教育背景' : 'Education'}
+            </h3>
+
+            {/* 双列响应式容器 */}
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 w-full text-left">
+
+              {/* 卡片 1：新加坡国立大学 */}
+              <div className="bg-white border border-zinc-200/60 rounded-2xl p-6 shadow-sm flex flex-col justify-between hover:shadow-md hover:border-zinc-300 transition-all duration-300 min-h-[180px]">
+                <div className="flex items-start gap-4">
+                  {/* 学校 Logo 标准替换占位符 */}
+                  <div id="nus-logo-placeholder" className="w-12 h-12 rounded-xl bg-zinc-100 border border-zinc-200/40 flex items-center justify-center flex-shrink-0 font-serif font-bold text-zinc-400 text-lg">
+                    NUS
+                  </div>
+                  <div>
+                    <h4 className="text-lg font-bold text-zinc-900 leading-snug">
+                      {lang === 'zh' ? '新加坡国立大学' : 'National University of Singapore'}
+                    </h4>
+                    <p className="text-zinc-600 text-sm md:text-base mt-1 font-medium">
+                      {lang === 'zh' ? '机器人学理学硕士' : 'MSc. in Robotics'}
+                    </p>
+                    <p className="text-zinc-400 text-xs mt-1 font-mono">2025 - 2027</p>
+                  </div>
+                </div>
+
+                {/* 新国立荣誉展示 */}
+                <div className="mt-4 pt-4 border-t border-zinc-100 flex flex-wrap gap-2">
+                  <span className="bg-zinc-50 border border-zinc-200/40 text-zinc-600 px-3 py-1 rounded-full text-xs font-medium tracking-wide">
+                    {lang === 'zh' ? 'NUS CDE Global Fellowship 候选入围' : 'Shortlisted for NUS CDE Global Fellowship'}
+                  </span>
+                </div>
+              </div>
+
+              {/* 卡片 2：北京航空航天大学 */}
+              <div className="bg-white border border-zinc-200/60 rounded-2xl p-6 shadow-sm flex flex-col justify-between hover:shadow-md hover:border-zinc-300 transition-all duration-300 min-h-[180px]">
+                <div className="flex items-start gap-4">
+                  {/* 学校 Logo 标准替换占位符 */}
+                  <div id="buaa-logo-placeholder" className="w-12 h-12 rounded-xl bg-zinc-100 border border-zinc-200/40 flex items-center justify-center flex-shrink-0 font-serif font-bold text-zinc-400 text-lg">
+                    BUAA
+                  </div>
+                  <div className="flex-grow">
+                    <h4 className="text-lg font-bold text-zinc-900 leading-snug">
+                      {lang === 'zh' ? '北京航空航天大学' : 'Beihang University'}
+                    </h4>
+                    <p className="text-zinc-600 text-sm md:text-base mt-1 font-medium">
+                      {lang === 'zh' ? '机器人工程工学学士' : 'BEng. in Robot Engineering'}
+                    </p>
+                    <p className="text-zinc-400 text-xs mt-1 font-mono">2021 - 2025</p>
+                  </div>
+                </div>
+
+                {/* 北航多荣誉单行横向优雅滑动/流转容器 */}
+                <div className="mt-4 pt-4 border-t border-zinc-100 w-full overflow-hidden relative">
+                  <div className="flex gap-2 overflow-x-auto no-scrollbar scroll-smooth whitespace-nowrap pb-1 mask-gradient">
+                    {lang === 'zh' ? (
+                      <>
+                        <span className="bg-zinc-50 border border-zinc-200/40 text-zinc-600 px-3 py-1 rounded-full text-xs font-medium flex-shrink-0">国家推荐免试研究生资格</span>
+                        <span className="bg-zinc-50 border border-zinc-200/40 text-zinc-600 px-3 py-1 rounded-full text-xs font-medium flex-shrink-0">校级优秀生</span>
+                        <span className="bg-zinc-50 border border-zinc-200/40 text-zinc-600 px-3 py-1 rounded-full text-xs font-medium flex-shrink-0">航空工业奖学金</span>
+                        <span className="bg-zinc-50 border border-zinc-200/40 text-zinc-600 px-3 py-1 rounded-full text-xs font-medium flex-shrink-0">学习优秀奖学金</span>
+                        <span className="bg-zinc-50 border border-zinc-200/40 text-zinc-600 px-3 py-1 rounded-full text-xs font-medium flex-shrink-0">创新创业奖学金</span>
+                        <span className="bg-zinc-50 border border-zinc-200/40 text-zinc-600 px-3 py-1 rounded-full text-xs font-medium flex-shrink-0">社会工作奖学金</span>
+                      </>
+                    ) : (
+                      <>
+                        <span className="bg-zinc-50 border border-zinc-200/40 text-zinc-600 px-3 py-1 rounded-full text-xs font-medium flex-shrink-0">National Recommendation for Graduate Studies</span>
+                        <span className="bg-zinc-50 border border-zinc-200/40 text-zinc-600 px-3 py-1 rounded-full text-xs font-medium flex-shrink-0">University-Level Outstanding Student</span>
+                        <span className="bg-zinc-50 border border-zinc-200/40 text-zinc-600 px-3 py-1 rounded-full text-xs font-medium flex-shrink-0">AVIC Scholarship</span>
+                        <span className="bg-zinc-50 border border-zinc-200/40 text-zinc-600 px-3 py-1 rounded-full text-xs font-medium flex-shrink-0">Academic Excellence Scholarship</span>
+                        <span className="bg-zinc-50 border border-zinc-200/40 text-zinc-600 px-3 py-1 rounded-full text-xs font-medium flex-shrink-0">Innovation & Entrepreneurship Scholarship</span>
+                        <span className="bg-zinc-50 border border-zinc-200/40 text-zinc-600 px-3 py-1 rounded-full text-xs font-medium flex-shrink-0">Social Work & Leadership Scholarship</span>
+                      </>
+                    )}
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </div>
         </div>
       </section>
 
@@ -423,64 +505,39 @@ function HomeContent() {
           <h2 className="text-3xl font-bold text-zinc-900 mb-12">
             {lang === "zh" ? "社群与领导力" : "Leadership"}
           </h2>
-          <div className="mt-10 grid grid-cols-1 md:grid-cols-3 gap-6">
-            {/* Card 1 */}
-            <div className="rounded-xl border border-zinc-200 bg-white p-8 transition-all duration-300 hover:border-zinc-300 hover:shadow-sm">
-              <div className="w-10 h-10 rounded-lg bg-zinc-100 flex items-center justify-center mb-4">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="text-zinc-500">
-                  <path d="M6 9H4.5a2.5 2.5 0 0 1 0-5C7 4 6 9 6 9z" />
-                  <path d="M18 9h1.5a2.5 2.5 0 0 0 0-5C17 4 18 9 18 9z" />
-                  <path d="M4 22h16" />
-                  <path d="M10 14.66V17c0 .55-.47.98-.97 1.21C7.85 18.75 7 20.24 7 22" />
-                  <path d="M14 14.66V17c0 .55.47.98.97 1.21C16.15 18.75 17 20.24 17 22" />
-                  <path d="M18 2H6v7a6 6 0 0 0 12 0V2Z" />
-                </svg>
-              </div>
-              <h3 className="text-lg font-bold text-zinc-900">
-                {t("ROBOCON 全国一等奖", "ROBOCON National 1st Prize")}
+          <p className="text-center text-sm text-zinc-400 mb-12 tracking-wide">
+            {lang === 'zh' ? '💡 点击卡片查看跨学科团队管理、科创建队全闭环及社群运营细节' : '💡 Click on each card to explore interdisciplinary team management and organization operations'}
+          </p>
+          <div className="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-6 px-4">
+            {/* 卡片 1 */}
+            <Link href={`/leadership/international-team?lang=${lang}`} className="block p-8 bg-white border border-zinc-200/60 rounded-2xl shadow-sm hover:shadow-xl hover:border-zinc-300 hover:-translate-y-1 transition-all duration-300 text-left flex flex-col justify-between min-h-[160px] group">
+              <h3 className="text-lg font-bold text-zinc-900 mb-3 tracking-wide group-hover:text-zinc-700 transition-colors">
+                {lang === 'zh' ? '北航国际学生机器人队创始人兼队长' : 'Founder & Captain of BUAA Int. Robotics Team'}
               </h3>
-              <p className="mt-2 text-sm text-zinc-500 leading-relaxed">
-                {t(
-                  "第 23 届全国大学生机器人大赛，作为核心结构负责人主导底盘架构设计。",
-                  "23rd National College Robotics Competition, led chassis architecture design as core structural lead."
-                )}
+              <p className="text-zinc-500 text-sm leading-relaxed text-justify">
+                {lang === 'zh' ? '社群运营与建队细节概括占位符。' : 'Organization operations and team building placeholder.'}
               </p>
-            </div>
-            {/* Card 2 */}
-            <div className="rounded-xl border border-zinc-200 bg-white p-8 transition-all duration-300 hover:border-zinc-300 hover:shadow-sm">
-              <div className="w-10 h-10 rounded-lg bg-zinc-100 flex items-center justify-center mb-4">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="text-zinc-500">
-                  <circle cx="12" cy="8" r="5" />
-                  <path d="M3 21v-2a7 7 0 0 1 7-7h4a7 7 0 0 1 7 7v2" />
-                </svg>
-              </div>
-              <h3 className="text-lg font-bold text-zinc-900">
-                {t("技术团队负责人", "Technical Team Lead")}
+            </Link>
+
+            {/* 卡片 2 */}
+            <Link href={`/leadership/robot-association?lang=${lang}`} className="block p-8 bg-white border border-zinc-200/60 rounded-2xl shadow-sm hover:shadow-xl hover:border-zinc-300 hover:-translate-y-1 transition-all duration-300 text-left flex flex-col justify-between min-h-[160px] group">
+              <h3 className="text-lg font-bold text-zinc-900 mb-3 tracking-wide group-hover:text-zinc-700 transition-colors">
+                {lang === 'zh' ? '北航机器人协会会长' : 'President of BUAA Robotics Association'}
               </h3>
-              <p className="mt-2 text-sm text-zinc-500 leading-relaxed">
-                {t(
-                  "带领 10+ 人跨学科团队完成机器人系统集成与竞赛交付。",
-                  "Led a cross-disciplinary team of 10+ members in robot system integration and competition delivery."
-                )}
+              <p className="text-zinc-500 text-sm leading-relaxed text-justify">
+                {lang === 'zh' ? '协会管理与大型赛事组织概括占位符。' : 'Association management and event organization placeholder.'}
               </p>
-            </div>
-            {/* Card 3 */}
-            <div className="rounded-xl border border-zinc-200 bg-white p-8 transition-all duration-300 hover:border-zinc-300 hover:shadow-sm">
-              <div className="w-10 h-10 rounded-lg bg-zinc-100 flex items-center justify-center mb-4">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="text-zinc-500">
-                  <path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H19a1 1 0 0 1 1 1v18a1 1 0 0 1-1 1H6.5a1 1 0 0 1 0-5H20" />
-                </svg>
-              </div>
-              <h3 className="text-lg font-bold text-zinc-900">
-                {t("学术发表", "Academic Publication")}
+            </Link>
+
+            {/* 卡片 3 */}
+            <Link href={`/leadership/social-practice?lang=${lang}`} className="block p-8 bg-white border border-zinc-200/60 rounded-2xl shadow-sm hover:shadow-xl hover:border-zinc-300 hover:-translate-y-1 transition-all duration-300 text-left flex flex-col justify-between min-h-[160px] group">
+              <h3 className="text-lg font-bold text-zinc-900 mb-3 tracking-wide group-hover:text-zinc-700 transition-colors">
+                {lang === 'zh' ? '暑期社会实践副队长' : 'Vice Captain of Summer Social Practice'}
               </h3>
-              <p className="mt-2 text-sm text-zinc-500 leading-relaxed">
-                {t(
-                  "在机器人学与机构设计领域发表多篇学术论文。",
-                  "Published multiple academic papers in robotics and mechanism design."
-                )}
+              <p className="text-zinc-500 text-sm leading-relaxed text-justify">
+                {lang === 'zh' ? '跨学科项目推进与社会实践概括占位符。' : 'Interdisciplinary project and social practice placeholder.'}
               </p>
-            </div>
+            </Link>
           </div>
         </div>
       </section>
