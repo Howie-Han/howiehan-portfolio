@@ -333,88 +333,83 @@ function HomeContent() {
           <h2 className="text-3xl font-bold text-zinc-900 mb-12">
             {lang === "zh" ? "项目经历" : "Projects"}
           </h2>
-          <div className="mt-10 flex flex-col gap-12 md:gap-16">
-            {/* Project Card 1 */}
-            <div className="flex flex-col md:flex-row rounded-xl border border-zinc-200 bg-white overflow-hidden transition-all duration-300 hover:border-zinc-300 hover:shadow-sm">
-              <div className="md:w-1/2 min-h-[240px] bg-zinc-100 flex items-center justify-center text-zinc-400 text-sm">
-                {t("视频占位", "Video Placeholder")}
+          <p className="text-center text-sm text-zinc-400 mb-16 tracking-wide">
+            {lang === "zh"
+              ? "💡 点击项目卡片，深入查阅 SolidWorks 爆炸图、仿真图谱与设计 SOP"
+              : "💡 Click on each project to inspect SolidWorks exploded views, simulations, and SOPs"}
+          </p>
+          <div className="max-w-5xl mx-auto space-y-8 px-4">
+            {/* Project 1: Omni Wheel (左图右文) */}
+            <Link href={`/projects/omni-wheel?lang=${lang}`} className="flex flex-col md:flex-row items-center gap-12 group p-6 md:p-8 bg-white border border-transparent hover:border-zinc-200 hover:bg-zinc-50/50 rounded-3xl hover:shadow-xl hover:-translate-y-1 transition-all duration-300 block w-full text-justify">
+              <div className="w-full md:w-1/2 aspect-video rounded-2xl bg-zinc-100 border border-zinc-200/60 shadow-inner flex items-center justify-center group-hover:border-zinc-300 transition-all duration-300 flex-shrink-0">
+                <span className="text-sm text-zinc-400">
+                  {lang === "zh" ? "全向舵轮多媒体占位" : "Omni Wheel Media Placeholder"}
+                </span>
               </div>
-              <div className="md:w-1/2 p-8 md:p-10 flex flex-col justify-center">
+              <div className="w-full md:w-1/2 flex flex-col justify-center text-left">
                 <h3 className="text-xl md:text-2xl font-bold text-zinc-900">
-                  {t(
-                    "基于强化学习的四足机械臂全身控制 (WBC)",
-                    "Learning-based WBC for Quadruped Manipulator"
-                  )}
+                  {lang === "zh" ? "高精度全向舵轮底盘" : "High-Precision Omni-Directional Wheel"}
                 </h3>
-                <div className="mt-4 flex flex-wrap gap-2">
-                  {["Isaac Gym", "C++ / Python", t("软硬协同设计", "Soft-Hardware Synergy"), t("动力学约束", "Dynamics Constraint")].map((tag) => (
-                    <span key={tag} className="px-3 py-1 rounded-full bg-zinc-100 text-xs font-medium text-zinc-600 border border-zinc-200">
-                      {tag}
-                    </span>
-                  ))}
-                </div>
-                <p className="mt-5 text-sm leading-relaxed text-zinc-500">
-                  {t(
-                    "面向动力学约束的结构架构设计：通过 Isaac Gym 仿真反推结构刚度边界，实现系统高质心动态作业下的软硬协同。",
-                    "Implemented Whole-Body Control (WBC) for a quadruped manipulator with a high center of mass (~0.52m). Achieved continuous stair climbing at 1.5 m/s."
-                  )}
-                </p>
-              </div>
-            </div>
-            {/* Project Card 2 */}
-            <div className="flex flex-col md:flex-row-reverse rounded-xl border border-zinc-200 bg-white overflow-hidden transition-all duration-300 hover:border-zinc-300 hover:shadow-sm">
-              <div className="md:w-1/2 min-h-[240px] bg-zinc-100 flex items-center justify-center text-zinc-400 text-sm">
-                {t("3D 模型占位", "3D Model Placeholder")}
-              </div>
-              <div className="md:w-1/2 p-8 md:p-10 flex flex-col justify-center">
-                <h3 className="text-xl md:text-2xl font-bold text-zinc-900">
-                  {t(
-                    "高精度全向舵轮底盘架构设计",
-                    "High-Precision Omnidirectional Wheel System"
-                  )}
-                </h3>
-                <div className="mt-4 flex flex-wrap gap-2">
+                <div className="flex flex-wrap gap-2 my-4">
                   {["SolidWorks", "AutoCAD", "GB/T1804-2000", "DFAM"].map((tag) => (
-                    <span key={tag} className="px-3 py-1 rounded-full bg-zinc-100 text-xs font-medium text-zinc-600 border border-zinc-200">
+                    <span key={tag} className="bg-zinc-100 text-zinc-600 px-3 py-1 rounded-full text-xs font-medium">
                       {tag}
                     </span>
                   ))}
                 </div>
-                <p className="mt-5 text-sm leading-relaxed text-zinc-500">
-                  {t(
-                    "基于 GB/T1804-2000 标准进行公差分析与架构设计，实现高响应机动性。该底层核心技术支撑团队最终斩获第 23 届 ROBOCON 全国一等奖。",
-                    "Designed and manufactured a highly integrated omnidirectional mobile chassis. Achieved robust steering transmission and dynamic maneuverability."
-                  )}
+                <p className="text-zinc-500 text-sm md:text-base leading-relaxed text-justify">
+                  {lang === "zh" ? "全向舵轮底盘项目占位符描述。通过 SolidWorks 爆炸图与 GD&T 公差分析展示精密机械设计细节。" : "Omni-wheel chassis project placeholder. Detailed SolidWorks exploded views and GD&T tolerance analysis for precision mechanical design."}
                 </p>
               </div>
-            </div>
-            {/* Project Card 3 */}
-            <div className="flex flex-col md:flex-row rounded-xl border border-zinc-200 bg-white overflow-hidden transition-all duration-300 hover:border-zinc-300 hover:shadow-sm">
-              <div className="md:w-1/2 min-h-[240px] bg-zinc-100 flex items-center justify-center text-zinc-400 text-sm">
-                {t("图片轮播占位", "Image Slider Placeholder")}
+            </Link>
+
+            {/* Project 2: Wrist Gripper (右图左文 - md:flex-row-reverse) */}
+            <Link href={`/projects/wrist-gripper?lang=${lang}`} className="flex flex-col md:flex-row-reverse items-center gap-12 group p-6 md:p-8 bg-white border border-transparent hover:border-zinc-200 hover:bg-zinc-50/50 rounded-3xl hover:shadow-xl hover:-translate-y-1 transition-all duration-300 block w-full text-justify">
+              <div className="w-full md:w-1/2 aspect-video rounded-2xl bg-zinc-100 border border-zinc-200/60 shadow-inner flex items-center justify-center group-hover:border-zinc-300 transition-all duration-300 flex-shrink-0">
+                <span className="text-sm text-zinc-400">
+                  {lang === "zh" ? "腕关节多媒体占位" : "Wrist Gripper Media Placeholder"}
+                </span>
               </div>
-              <div className="md:w-1/2 p-8 md:p-10 flex flex-col justify-center">
+              <div className="w-full md:w-1/2 flex flex-col justify-center text-left">
                 <h3 className="text-xl md:text-2xl font-bold text-zinc-900">
-                  {t(
-                    "仿生胸腔运动模拟器机构设计",
-                    "Bionic Thoracic Motion Simulator"
-                  )}
+                  {lang === "zh" ? "绳驱动空间腕关节" : "Cable-Driven Spatial Wrist Gripper"}
                 </h3>
-                <div className="mt-4 flex flex-wrap gap-2">
-                  {["DFAM", "TPU / PLA", "SOP Formulation", "Biomechanics"].map((tag) => (
-                    <span key={tag} className="px-3 py-1 rounded-full bg-zinc-100 text-xs font-medium text-zinc-600 border border-zinc-200">
+                <div className="flex flex-wrap gap-2 my-4">
+                  {["Cable-Driven", "Kinematics", "Biomimetic", "Lightweight"].map((tag) => (
+                    <span key={tag} className="bg-zinc-100 text-zinc-600 px-3 py-1 rounded-full text-xs font-medium">
                       {tag}
                     </span>
                   ))}
                 </div>
-                <p className="mt-5 text-sm leading-relaxed text-zinc-500">
-                  {t(
-                    "面向生物力学的多材料增材制造（DFAM）架构设计。独立制定 TPU/PLA 标准化打印流程（SOP），通过零件一体化设计大幅降低装配复杂度与制造成本。",
-                    "Engineered a biomechanical simulator utilizing multi-material 3D printing. Developed standardized TPU printing SOPs, significantly improving manufacturing and assembly efficiency."
-                  )}
+                <p className="text-zinc-500 text-sm md:text-base leading-relaxed text-justify">
+                  {lang === "zh" ? "绳驱动腕夹爪项目占位符描述。展示运动学仿真与轻量化仿生机构设计流程。" : "Cable-driven wrist gripper project placeholder. Kinematics simulation and lightweight biomimetic mechanism design documentation."}
                 </p>
               </div>
-            </div>
+            </Link>
+
+            {/* Project 3: LVAD Simulation (左图右文) */}
+            <Link href={`/projects/lvad-simulation?lang=${lang}`} className="flex flex-col md:flex-row items-center gap-12 group p-6 md:p-8 bg-white border border-transparent hover:border-zinc-200 hover:bg-zinc-50/50 rounded-3xl hover:shadow-xl hover:-translate-y-1 transition-all duration-300 block w-full text-justify">
+              <div className="w-full md:w-1/2 aspect-video rounded-2xl bg-zinc-100 border border-zinc-200/60 shadow-inner flex items-center justify-center group-hover:border-zinc-300 transition-all duration-300 flex-shrink-0">
+                <span className="text-sm text-zinc-400">
+                  {lang === "zh" ? "LVAD 仿真占位" : "LVAD Simulation Placeholder"}
+                </span>
+              </div>
+              <div className="w-full md:w-1/2 flex flex-col justify-center text-left">
+                <h3 className="text-xl md:text-2xl font-bold text-zinc-900">
+                  {lang === "zh" ? "LVAD 血流动力学仿真" : "LVAD Hemodynamic Simulation"}
+                </h3>
+                <div className="flex flex-wrap gap-2 my-4">
+                  {["COMSOL", "CFD", "Multiphysics", "Biomedical"].map((tag) => (
+                    <span key={tag} className="bg-zinc-100 text-zinc-600 px-3 py-1 rounded-full text-xs font-medium">
+                      {tag}
+                    </span>
+                  ))}
+                </div>
+                <p className="text-zinc-500 text-sm md:text-base leading-relaxed text-justify">
+                  {lang === "zh" ? "LVAD 血流动力学仿真项目占位符。基于 COMSOL Multiphysics 的多物理场耦合仿真分析。" : "LVAD hemodynamic simulation project placeholder. Multiphysics coupled simulation analysis using COMSOL Multiphysics."}
+                </p>
+              </div>
+            </Link>
           </div>
         </div>
       </section>
