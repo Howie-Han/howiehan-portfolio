@@ -129,21 +129,25 @@ function HomeContent() {
       >
         <div className="max-w-5xl mx-auto w-full">
           <h2 className="text-3xl font-bold text-zinc-900 mb-12">
-            {lang === "zh" ? "关于我" : "About"}
+            {lang === "zh" ? "个人介绍" : "About"}
           </h2>
           <div className="mt-10 grid grid-cols-1 md:grid-cols-12 gap-12 md:gap-24 items-center">
             {/* Left: Photo placeholder */}
-            <div className="md:col-span-5">
-              <div className="aspect-[3/4] w-full object-cover rounded-2xl bg-zinc-100 border border-zinc-200/50 shadow-md flex items-center justify-center">
-                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1" strokeLinecap="round" strokeLinejoin="round" className="text-zinc-400">
-                  <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" />
-                  <circle cx="12" cy="7" r="4" />
-                </svg>
+            <div className="w-full md:col-span-5 flex justify-center items-start">
+              <div className="w-full max-w-md relative group rounded-2xl overflow-hidden shadow-lg border border-zinc-200/80 transition-transform duration-500 hover:scale-[1.02]">
+                <img
+                  src="/media/profile.png"
+                  alt="Howie Han Profile"
+                  className="w-full aspect-[3/4] object-cover bg-zinc-50"
+                />
+                {/* 极简的内阴影遮罩，增加边缘高级质感 */}
+                <div className="absolute inset-0 border border-black/5 rounded-2xl pointer-events-none"></div>
               </div>
             </div>
             {/* Right: Bio text */}
             <div className="md:col-span-7 space-y-6 text-zinc-600 leading-relaxed antialiased">
               <h3 className="text-3xl font-bold mb-8 text-zinc-900">
+                {lang === "zh" ? "关于我" : "About Me"}
               </h3>
               {lang === "zh" ? (
                 <>
@@ -161,9 +165,10 @@ function HomeContent() {
             </div>
           </div>
 
-          <div className="mt-16 pt-12 border-t border-zinc-200/60 w-full">
+          <div className="mt-16 w-full">
             {/* 板块小标题 */}
-            <h3 className="text-sm font-medium uppercase text-zinc-400 tracking-[0.2em] mb-8 text-left">
+            <div className="border-t border-zinc-200/60 w-full mb-8" />
+            <h3 className="text-base font-medium uppercase tracking-[0.25em] text-zinc-500 mb-8 text-left">
               {lang === 'zh' ? '教育背景' : 'Education'}
             </h3>
 
@@ -172,25 +177,27 @@ function HomeContent() {
 
               {/* 卡片 1：新加坡国立大学 */}
               <div className="bg-white border border-zinc-200/60 rounded-2xl p-6 shadow-sm flex flex-col justify-between hover:shadow-md hover:border-zinc-300 transition-all duration-300 min-h-[180px]">
-                <div className="flex items-start gap-4">
+                <div className="flex items-start gap-6 w-full">
                   {/* 学校 Logo 标准替换占位符 */}
-                  <div id="nus-logo-placeholder" className="w-12 h-12 rounded-xl bg-zinc-100 border border-zinc-200/40 flex items-center justify-center flex-shrink-0 font-serif font-bold text-zinc-400 text-lg">
-                    NUS
+                  <div id="nus-logo-placeholder" className="w-14 h-14 md:w-16 md:h-16 flex items-center justify-center flex-shrink-0 pt-1">
+                    <img src="/logos/nus-logo.png" alt="NUS Logo" className="w-full h-full object-contain drop-shadow-sm" />
                   </div>
-                  <div>
-                    <h4 className="text-lg font-bold text-zinc-900 leading-snug">
-                      {lang === 'zh' ? '新加坡国立大学' : 'National University of Singapore'}
-                    </h4>
+                  <div className="flex-grow">
+                    <div className="flex justify-between items-start w-full">
+                      <h4 className="text-lg font-bold text-zinc-900 leading-snug">
+                        {lang === 'zh' ? '新加坡国立大学' : 'National University of Singapore'}
+                      </h4>
+                      <p className="font-mono text-sm text-zinc-400 flex-shrink-0 ml-4">2025 - 2027</p>
+                    </div>
                     <p className="text-zinc-600 text-sm md:text-base mt-1 font-medium">
-                      {lang === 'zh' ? '机器人学理学硕士' : 'MSc. in Robotics'}
+                      {lang === 'zh' ? '机器人学 | 理学硕士' : 'MSc. in Robotics'}
                     </p>
-                    <p className="text-zinc-400 text-xs mt-1 font-mono">2025 - 2027</p>
                   </div>
                 </div>
 
                 {/* 新国立荣誉展示 */}
-                <div className="mt-4 pt-4 border-t border-zinc-100 flex flex-wrap gap-2">
-                  <span className="bg-zinc-50 border border-zinc-200/40 text-zinc-600 px-3 py-1 rounded-full text-xs font-medium tracking-wide">
+                <div className="mt-4 pt-1 border-t border-zinc-100 flex items-center h-12 w-full">
+                  <span className="bg-zinc-100/90 text-zinc-700 px-3.5 py-1.5 rounded-full border border-zinc-200/30 shadow-sm hover:bg-zinc-200/80 transition-colors text-sm font-medium tracking-wide">
                     {lang === 'zh' ? 'NUS CDE Global Fellowship 候选入围' : 'Shortlisted for NUS CDE Global Fellowship'}
                   </span>
                 </div>
@@ -198,42 +205,44 @@ function HomeContent() {
 
               {/* 卡片 2：北京航空航天大学 */}
               <div className="bg-white border border-zinc-200/60 rounded-2xl p-6 shadow-sm flex flex-col justify-between hover:shadow-md hover:border-zinc-300 transition-all duration-300 min-h-[180px]">
-                <div className="flex items-start gap-4">
+                <div className="flex items-start gap-6 w-full">
                   {/* 学校 Logo 标准替换占位符 */}
-                  <div id="buaa-logo-placeholder" className="w-12 h-12 rounded-xl bg-zinc-100 border border-zinc-200/40 flex items-center justify-center flex-shrink-0 font-serif font-bold text-zinc-400 text-lg">
-                    BUAA
+                  <div id="buaa-logo-placeholder" className="w-14 h-14 md:w-16 md:h-16 flex items-center justify-center flex-shrink-0 pt-1">
+                    <img src="/logos/buaa-logo.png" alt="BUAA Logo" className="w-full h-full object-contain drop-shadow-sm" />
                   </div>
                   <div className="flex-grow">
-                    <h4 className="text-lg font-bold text-zinc-900 leading-snug">
-                      {lang === 'zh' ? '北京航空航天大学' : 'Beihang University'}
-                    </h4>
+                    <div className="flex justify-between items-start w-full">
+                      <h4 className="text-lg font-bold text-zinc-900 leading-snug">
+                        {lang === 'zh' ? '北京航空航天大学' : 'Beihang University'}
+                      </h4>
+                      <p className="font-mono text-sm text-zinc-400 flex-shrink-0 ml-4">2021 - 2025</p>
+                    </div>
                     <p className="text-zinc-600 text-sm md:text-base mt-1 font-medium">
-                      {lang === 'zh' ? '机器人工程工学学士' : 'BEng. in Robot Engineering'}
+                      {lang === 'zh' ? '机器人工程 | 工学学士' : 'BEng. in Robot Engineering'}
                     </p>
-                    <p className="text-zinc-400 text-xs mt-1 font-mono">2021 - 2025</p>
                   </div>
                 </div>
 
                 {/* 北航多荣誉单行横向优雅滑动/流转容器 */}
-                <div className="mt-4 pt-4 border-t border-zinc-100 w-full overflow-hidden relative">
-                  <div className="flex gap-2 overflow-x-auto no-scrollbar scroll-smooth whitespace-nowrap pb-1 mask-gradient">
+                <div className="mt-4 pt-4 border-t border-zinc-100 flex items-center h-12 w-full">
+                  <div className="flex gap-2 overflow-x-auto no-scrollbar whitespace-nowrap scroll-smooth w-full">
                     {lang === 'zh' ? (
                       <>
-                        <span className="bg-zinc-50 border border-zinc-200/40 text-zinc-600 px-3 py-1 rounded-full text-xs font-medium flex-shrink-0">国家推荐免试研究生资格</span>
-                        <span className="bg-zinc-50 border border-zinc-200/40 text-zinc-600 px-3 py-1 rounded-full text-xs font-medium flex-shrink-0">校级优秀生</span>
-                        <span className="bg-zinc-50 border border-zinc-200/40 text-zinc-600 px-3 py-1 rounded-full text-xs font-medium flex-shrink-0">航空工业奖学金</span>
-                        <span className="bg-zinc-50 border border-zinc-200/40 text-zinc-600 px-3 py-1 rounded-full text-xs font-medium flex-shrink-0">学习优秀奖学金</span>
-                        <span className="bg-zinc-50 border border-zinc-200/40 text-zinc-600 px-3 py-1 rounded-full text-xs font-medium flex-shrink-0">创新创业奖学金</span>
-                        <span className="bg-zinc-50 border border-zinc-200/40 text-zinc-600 px-3 py-1 rounded-full text-xs font-medium flex-shrink-0">社会工作奖学金</span>
+                        <span className="bg-zinc-100/90 text-zinc-700 px-3.5 py-1.5 rounded-full border border-zinc-200/30 shadow-sm hover:bg-zinc-200/80 transition-colors text-sm font-medium flex-shrink-0">国家推荐免试研究生资格</span>
+                        <span className="bg-zinc-100/90 text-zinc-700 px-3.5 py-1.5 rounded-full border border-zinc-200/30 shadow-sm hover:bg-zinc-200/80 transition-colors text-sm font-medium flex-shrink-0">校级优秀生</span>
+                        <span className="bg-zinc-100/90 text-zinc-700 px-3.5 py-1.5 rounded-full border border-zinc-200/30 shadow-sm hover:bg-zinc-200/80 transition-colors text-sm font-medium flex-shrink-0">航空工业奖学金</span>
+                        <span className="bg-zinc-100/90 text-zinc-700 px-3.5 py-1.5 rounded-full border border-zinc-200/30 shadow-sm hover:bg-zinc-200/80 transition-colors text-sm font-medium flex-shrink-0">学习优秀奖学金</span>
+                        <span className="bg-zinc-100/90 text-zinc-700 px-3.5 py-1.5 rounded-full border border-zinc-200/30 shadow-sm hover:bg-zinc-200/80 transition-colors text-sm font-medium flex-shrink-0">创新创业奖学金</span>
+                        <span className="bg-zinc-100/90 text-zinc-700 px-3.5 py-1.5 rounded-full border border-zinc-200/30 shadow-sm hover:bg-zinc-200/80 transition-colors text-sm font-medium flex-shrink-0">社会工作奖学金</span>
                       </>
                     ) : (
                       <>
-                        <span className="bg-zinc-50 border border-zinc-200/40 text-zinc-600 px-3 py-1 rounded-full text-xs font-medium flex-shrink-0">National Recommendation for Graduate Studies</span>
-                        <span className="bg-zinc-50 border border-zinc-200/40 text-zinc-600 px-3 py-1 rounded-full text-xs font-medium flex-shrink-0">University-Level Outstanding Student</span>
-                        <span className="bg-zinc-50 border border-zinc-200/40 text-zinc-600 px-3 py-1 rounded-full text-xs font-medium flex-shrink-0">AVIC Scholarship</span>
-                        <span className="bg-zinc-50 border border-zinc-200/40 text-zinc-600 px-3 py-1 rounded-full text-xs font-medium flex-shrink-0">Academic Excellence Scholarship</span>
-                        <span className="bg-zinc-50 border border-zinc-200/40 text-zinc-600 px-3 py-1 rounded-full text-xs font-medium flex-shrink-0">Innovation & Entrepreneurship Scholarship</span>
-                        <span className="bg-zinc-50 border border-zinc-200/40 text-zinc-600 px-3 py-1 rounded-full text-xs font-medium flex-shrink-0">Social Work & Leadership Scholarship</span>
+                        <span className="bg-zinc-100/90 text-zinc-700 px-3.5 py-1.5 rounded-full border border-zinc-200/30 shadow-sm hover:bg-zinc-200/80 transition-colors text-sm font-medium flex-shrink-0">National Recommendation for Graduate Studies</span>
+                        <span className="bg-zinc-100/90 text-zinc-700 px-3.5 py-1.5 rounded-full border border-zinc-200/30 shadow-sm hover:bg-zinc-200/80 transition-colors text-sm font-medium flex-shrink-0">University-Level Outstanding Student</span>
+                        <span className="bg-zinc-100/90 text-zinc-700 px-3.5 py-1.5 rounded-full border border-zinc-200/30 shadow-sm hover:bg-zinc-200/80 transition-colors text-sm font-medium flex-shrink-0">AVIC Scholarship</span>
+                        <span className="bg-zinc-100/90 text-zinc-700 px-3.5 py-1.5 rounded-full border border-zinc-200/30 shadow-sm hover:bg-zinc-200/80 transition-colors text-sm font-medium flex-shrink-0">Academic Excellence Scholarship</span>
+                        <span className="bg-zinc-100/90 text-zinc-700 px-3.5 py-1.5 rounded-full border border-zinc-200/30 shadow-sm hover:bg-zinc-200/80 transition-colors text-sm font-medium flex-shrink-0">Innovation & Entrepreneurship Scholarship</span>
+                        <span className="bg-zinc-100/90 text-zinc-700 px-3.5 py-1.5 rounded-full border border-zinc-200/30 shadow-sm hover:bg-zinc-200/80 transition-colors text-sm font-medium flex-shrink-0">Social Work & Leadership Scholarship</span>
                       </>
                     )}
                   </div>
@@ -352,54 +361,45 @@ function HomeContent() {
               : "💡 Click on each experience to view engineering deliverables and technical details"}
           </p>
           <div className="max-w-4xl mx-auto relative pl-4 md:pl-0">
-            {/* Left vertical axis */}
             <div className="absolute left-[23px] md:left-[39px] top-0 bottom-0 w-px bg-zinc-200 z-0"></div>
 
-            {/* Card 1: Alstom */}
+            {/* 经历 1: Alstom */}
             <div className="relative pl-12 md:pl-24 py-8 group">
-              {/* Timeline node */}
               <div className="absolute left-[17px] md:left-[33px] top-[52px] w-3 h-3 bg-white border-2 border-zinc-300 rounded-full group-hover:border-zinc-900 group-hover:scale-125 group-hover:bg-zinc-900 transition-all duration-300 z-10"></div>
-              {/* Card */}
               <Link href={`/experience/alstom?lang=${lang}`} className="block bg-white border border-zinc-200/60 rounded-2xl p-6 md:p-8 group-hover:shadow-xl group-hover:border-zinc-300 group-hover:-translate-y-1 transition-all duration-300">
-                <h3 className="text-xl font-bold text-zinc-900 mb-2">
-                  {lang === "zh" ? "Alstom 工程实习" : "Alstom Engineering Internship"}
-                </h3>
-                <p className="text-sm text-zinc-500 mb-4">2025 &middot; {lang === "zh" ? "工程项目实习" : "Engineering Internship"}</p>
-                <p className="text-zinc-600 text-sm md:text-base leading-relaxed text-justify">
-                  {lang === "zh" ? "Alstom 实习经历产出总结占位符。将鼠标悬浮在这一行任意位置可查看交互效果！" : "Alstom internship outcome summary placeholder. Hover anywhere on this row to see the interaction!"}
-                </p>
+                <h3 className="text-xl font-bold text-zinc-900 mb-2">{lang === 'zh' ? '机器人与增材制造研发实习生' : 'Robotics & Additive Manufacturing R&D Intern'}</h3>
+                <p className="text-sm font-medium text-zinc-500 mb-4">{lang === 'zh' ? '阿尔斯通（亚太）创新中心 | 2026.01 - 2026.07' : 'Alstom (APAC) Innovation Station | Jan 2026 - July 2026'}</p>
+                <p className="text-zinc-600 text-sm md:text-base leading-relaxed text-justify">{lang === 'zh' ? '交付巡检机器人产品整机，打通企业增材制造备件企业内生产链路，助力轨交供应链降本增效。' : 'Delivered the track inspection robot product and established the localized spare-parts additive manufacturing workflow, significantly optimizing supply chain cost-efficiency.'}</p>
               </Link>
             </div>
 
-            {/* Card 2: Duke-NUS */}
+            {/* 经历 2: Duke-NUS */}
             <div className="relative pl-12 md:pl-24 py-8 group">
-              {/* Timeline node */}
               <div className="absolute left-[17px] md:left-[33px] top-[52px] w-3 h-3 bg-white border-2 border-zinc-300 rounded-full group-hover:border-zinc-900 group-hover:scale-125 group-hover:bg-zinc-900 transition-all duration-300 z-10"></div>
-              {/* Card */}
               <Link href={`/experience/duke-nus?lang=${lang}`} className="block bg-white border border-zinc-200/60 rounded-2xl p-6 md:p-8 group-hover:shadow-xl group-hover:border-zinc-300 group-hover:-translate-y-1 transition-all duration-300">
-                <h3 className="text-xl font-bold text-zinc-900 mb-2">
-                  {lang === "zh" ? "Duke-NUS 研究实习" : "Duke-NUS Research Internship"}
-                </h3>
-                <p className="text-sm text-zinc-500 mb-4">2024 &middot; {lang === "zh" ? "生物医学研究" : "Biomedical Research"}</p>
-                <p className="text-zinc-600 text-sm md:text-base leading-relaxed text-justify">
-                  {lang === "zh" ? "Duke-NUS 实习经历产出总结占位符。将鼠标悬浮在这一行任意位置可查看交互效果！" : "Duke-NUS internship outcome summary placeholder. Hover anywhere on this row to see the interaction!"}
-                </p>
+                <h3 className="text-xl font-bold text-zinc-900 mb-2">{lang === 'zh' ? '仿生机电系统研发实习生' : 'Bionic Mechatronic Systems R&D Intern'}</h3>
+                <p className="text-sm font-medium text-zinc-500 mb-4">{lang === 'zh' ? 'Duke-NUS医学院 | 2025.08 - 2026.01' : 'Duke-NUS Medical School | Aug 2025 - Jan 2026'}</p>
+                <p className="text-zinc-600 text-sm md:text-base leading-relaxed text-justify">{lang === 'zh' ? '成功开发满足医学指标的胸腔模拟器机电一体化原型，并引入一体化打印创新大幅降低了制造成本。' : 'Successfully developed a biomimetic ribcage prototype meeting stringent medical indicators, leveraging integrated DfAM guidelines to dramatically reduce manufacturing costs.'}</p>
               </Link>
             </div>
 
-            {/* Card 3: Aubo */}
+            {/* 经历 3: BMW China (新增) */}
             <div className="relative pl-12 md:pl-24 py-8 group">
-              {/* Timeline node */}
               <div className="absolute left-[17px] md:left-[33px] top-[52px] w-3 h-3 bg-white border-2 border-zinc-300 rounded-full group-hover:border-zinc-900 group-hover:scale-125 group-hover:bg-zinc-900 transition-all duration-300 z-10"></div>
-              {/* Card */}
+              <Link href={`/experience/bmw?lang=${lang}`} className="block bg-white border border-zinc-200/60 rounded-2xl p-6 md:p-8 group-hover:shadow-xl group-hover:border-zinc-300 group-hover:-translate-y-1 transition-all duration-300">
+                <h3 className="text-xl font-bold text-zinc-900 mb-2">{lang === 'zh' ? '数字化创新实习生' : 'Digitalistaion Innovation Intern'}</h3>
+                <p className="text-sm font-medium text-zinc-500 mb-4">{lang === 'zh' ? '宝马（中国）服务有限公司 | 2025.02 - 2025.05' : 'BMW China Service | Feb 2025 - May 2025'}</p>
+                <p className="text-zinc-600 text-sm md:text-base leading-relaxed text-justify">{lang === 'zh' ? '运用 Power Automate 与 Python 开发自动化项目管理工作流，将人工耗时缩减超90%，并开展核心智驾供应商调研与内部 AI 赋能。' : 'Developed automated project management workflows via Power Automate and Python, reducing manual effort by over 90%, alongside intelligent driving market research and corporate AI enablement.'}</p>
+              </Link>
+            </div>
+
+            {/* 经历 4: AUBO */}
+            <div className="relative pl-12 md:pl-24 py-8 group">
+              <div className="absolute left-[17px] md:left-[33px] top-[52px] w-3 h-3 bg-white border-2 border-zinc-300 rounded-full group-hover:border-zinc-900 group-hover:scale-125 group-hover:bg-zinc-900 transition-all duration-300 z-10"></div>
               <Link href={`/experience/aubo?lang=${lang}`} className="block bg-white border border-zinc-200/60 rounded-2xl p-6 md:p-8 group-hover:shadow-xl group-hover:border-zinc-300 group-hover:-translate-y-1 transition-all duration-300">
-                <h3 className="text-xl font-bold text-zinc-900 mb-2">
-                  {lang === "zh" ? "Aubo 机器人实习" : "Aubo Robotics Internship"}
-                </h3>
-                <p className="text-sm text-zinc-500 mb-4">2023 &middot; {lang === "zh" ? "机器人研发实习" : "Robotics R&D Internship"}</p>
-                <p className="text-zinc-600 text-sm md:text-base leading-relaxed text-justify">
-                  {lang === "zh" ? "Aubo 实习经历产出总结占位符。将鼠标悬浮在这一行任意位置可查看交互效果！" : "Aubo internship outcome summary placeholder. Hover anywhere on this row to see the interaction!"}
-                </p>
+                <h3 className="text-xl font-bold text-zinc-900 mb-2">{lang === 'zh' ? '机械臂系统测试实习生' : 'Robotic Arm System Testing Intern'}</h3>
+                <p className="text-sm font-medium text-zinc-500 mb-4">{lang === 'zh' ? '遨博（江苏）机器人有限公司 | 2024.06 - 2024.09' : 'AUBO Robotics | Jun 2024 - Sep 2024'}</p>
+                <p className="text-zinc-600 text-sm md:text-base leading-relaxed text-justify">{lang === 'zh' ? '完成协作机械臂系统控制系统上线前联调测试并准确定位多项漏洞，协助研发团队高效进行排障工作。' : 'Executed joint debugging and testing of the control system for a 6-axis collaborative robot arm, precisely locating multiple bugs to accelerate the R&D troubleshooting efficiently.'}</p>
               </Link>
             </div>
           </div>
@@ -420,76 +420,52 @@ function HomeContent() {
               ? "💡 点击项目卡片，深入查阅 SolidWorks 爆炸图、仿真图谱与设计 SOP"
               : "💡 Click on each project to inspect SolidWorks exploded views, simulations, and SOPs"}
           </p>
-          <div className="max-w-5xl mx-auto space-y-8 px-4">
-            {/* Project 1: Omni Wheel (左图右文) */}
-            <Link href={`/projects/omni-wheel?lang=${lang}`} className="flex flex-col md:flex-row items-center gap-12 group p-6 md:p-8 bg-white border border-transparent hover:border-zinc-200 hover:bg-zinc-50/50 rounded-3xl hover:shadow-xl hover:-translate-y-1 transition-all duration-300 block w-full text-justify">
-              <div className="w-full md:w-1/2 aspect-video rounded-2xl bg-zinc-100 border border-zinc-200/60 shadow-inner flex items-center justify-center group-hover:border-zinc-300 transition-all duration-300 flex-shrink-0">
-                <span className="text-sm text-zinc-400">
-                  {lang === "zh" ? "全向舵轮多媒体占位" : "Omni Wheel Media Placeholder"}
-                </span>
+          <div className="max-w-5xl mx-auto space-y-24 px-4">
+            {/* 项目 1: 全向舵轮 (左图右文) */}
+            <Link href={`/projects/omni-wheel?lang=${lang}`} className="flex flex-col md:flex-row items-center gap-12 group p-6 md:p-8 bg-white border border-transparent hover:border-zinc-200 hover:bg-zinc-50/50 rounded-3xl hover:shadow-xl hover:-translate-y-1 transition-all duration-300 w-full text-justify">
+              <div className="w-full md:w-1/2 aspect-[4/3] flex items-center justify-center flex-shrink-0 transition-transform duration-500 group-hover:scale-[1.02] bg-zinc-50/50 rounded-2xl border border-zinc-200/60 shadow-inner p-4 md:p-6">
+                <img src="/media/omni-wheel.png" alt="Omni-wheel Steering Chassis" className="w-full h-full object-contain drop-shadow-sm" />
               </div>
               <div className="w-full md:w-1/2 flex flex-col justify-center text-left">
-                <h3 className="text-xl md:text-2xl font-bold text-zinc-900">
-                  {lang === "zh" ? "高精度全向舵轮底盘" : "High-Precision Omni-Directional Wheel"}
-                </h3>
+                <h3 className="text-2xl font-bold text-zinc-900 mb-2">{lang === 'zh' ? '高精度舵轮与移动机器人底盘研发' : 'High-Precision Omnidirectional Steering-Wheel Chassis R&D'}</h3>
                 <div className="flex flex-wrap gap-2 my-4">
-                  {["SolidWorks", "AutoCAD", "GB/T1804-2000", "DFAM"].map((tag) => (
-                    <span key={tag} className="bg-zinc-100 text-zinc-600 px-3 py-1 rounded-full text-xs font-medium">
-                      {tag}
-                    </span>
+                  {(lang === 'zh' ? ['SolidWorks', 'AutoCAD', 'Adams', '公差分析', 'GB工程图', 'CNC外协加工'] : ['SolidWorks', 'AutoCAD', 'Adams', 'GB/T', 'CNC']).map(tag => (
+                    <span key={tag} className="bg-zinc-100 text-zinc-600 px-3 py-1 rounded-full text-xs font-medium">{tag}</span>
                   ))}
                 </div>
-                <p className="text-zinc-500 text-sm md:text-base leading-relaxed text-justify">
-                  {lang === "zh" ? "全向舵轮底盘项目占位符描述。通过 SolidWorks 爆炸图与 GD&T 公差分析展示精密机械设计细节。" : "Omni-wheel chassis project placeholder. Detailed SolidWorks exploded views and GD&T tolerance analysis for precision mechanical design."}
-                </p>
+                <p className="text-zinc-600 text-sm md:text-base leading-relaxed text-justify">{lang === 'zh' ? '独立研发包含双电机驱动与锥/直齿轮传动的高集成度舵轮，完成10台舵轮和配套的2套移动机器人底盘的设计、加工制造、测试与部署全流程工作。' : 'Engineered a highly integrated steering-wheel drive module featuring dual-motor spur/bevel gear transmission, delivering 10 production-ready omnidirectional wheels and 2 corresponding chassis.'}</p>
               </div>
             </Link>
 
-            {/* Project 2: Wrist Gripper (右图左文 - md:flex-row-reverse) */}
-            <Link href={`/projects/wrist-gripper?lang=${lang}`} className="flex flex-col md:flex-row-reverse items-center gap-12 group p-6 md:p-8 bg-white border border-transparent hover:border-zinc-200 hover:bg-zinc-50/50 rounded-3xl hover:shadow-xl hover:-translate-y-1 transition-all duration-300 block w-full text-justify">
-              <div className="w-full md:w-1/2 aspect-video rounded-2xl bg-zinc-100 border border-zinc-200/60 shadow-inner flex items-center justify-center group-hover:border-zinc-300 transition-all duration-300 flex-shrink-0">
-                <span className="text-sm text-zinc-400">
-                  {lang === "zh" ? "腕关节多媒体占位" : "Wrist Gripper Media Placeholder"}
-                </span>
+            {/* 项目 2: 绳驱动腕关节 (右图左文 md:flex-row-reverse) */}
+            <Link href={`/projects/wrist-gripper?lang=${lang}`} className="flex flex-col md:flex-row-reverse items-center gap-12 group p-6 md:p-8 bg-white border border-transparent hover:border-zinc-200 hover:bg-zinc-50/50 rounded-3xl hover:shadow-xl hover:-translate-y-1 transition-all duration-300 w-full text-justify">
+              <div className="w-full md:w-1/2 aspect-[4/3] flex items-center justify-center flex-shrink-0 transition-transform duration-500 group-hover:scale-[1.02] bg-zinc-50/50 rounded-2xl border border-zinc-200/60 shadow-inner p-4 md:p-6">
+                <img src="/media/wrist-gripper.png" alt="Tendon-Driven Spatial Wrist" className="w-full h-full object-contain drop-shadow-sm" />
               </div>
               <div className="w-full md:w-1/2 flex flex-col justify-center text-left">
-                <h3 className="text-xl md:text-2xl font-bold text-zinc-900">
-                  {lang === "zh" ? "绳驱动空间腕关节" : "Cable-Driven Spatial Wrist Gripper"}
-                </h3>
+                <h3 className="text-2xl font-bold text-zinc-900 mb-2">{lang === 'zh' ? '绳驱动刚柔耦合机械臂腕关节开发' : 'Rigid-Flexible Coupling Tendon-Driven Robotic Spatial Wrist R&D'}</h3>
                 <div className="flex flex-wrap gap-2 my-4">
-                  {["Cable-Driven", "Kinematics", "Biomimetic", "Lightweight"].map((tag) => (
-                    <span key={tag} className="bg-zinc-100 text-zinc-600 px-3 py-1 rounded-full text-xs font-medium">
-                      {tag}
-                    </span>
+                  {(lang === 'zh' ? ['运动学建模', 'MATLAB', '刚柔耦合', '绳驱动', '灵巧手'] : ['Kinematic Modelling', 'MATLAB', 'Rigid-Flexible Coupling', 'Tendon-Driven', 'Adaptive Gripper']).map(tag => (
+                    <span key={tag} className="bg-zinc-100 text-zinc-600 px-3 py-1 rounded-full text-xs font-medium">{tag}</span>
                   ))}
                 </div>
-                <p className="text-zinc-500 text-sm md:text-base leading-relaxed text-justify">
-                  {lang === "zh" ? "绳驱动腕夹爪项目占位符描述。展示运动学仿真与轻量化仿生机构设计流程。" : "Cable-driven wrist gripper project placeholder. Kinematics simulation and lightweight biomimetic mechanism design documentation."}
-                </p>
+                <p className="text-zinc-600 text-sm md:text-base leading-relaxed text-justify">{lang === 'zh' ? '针对移动机器人平台，完成3自由度空间球关节运动学模型建立与结构设计，引入通过绳索拉力触发铝制薄片变形实现对日常异形物品的自适应稳定抓取的灵巧手设计。' : 'Modeled a 3 DoF spatial spherical joint workspace via MATLAB, developing a tendon-driven manipulator where line tension triggers elastic deformation of flexible sheet metals for adaptive organic object manipulation.'}</p>
               </div>
             </Link>
 
-            {/* Project 3: LVAD Simulation (左图右文) */}
-            <Link href={`/projects/lvad-simulation?lang=${lang}`} className="flex flex-col md:flex-row items-center gap-12 group p-6 md:p-8 bg-white border border-transparent hover:border-zinc-200 hover:bg-zinc-50/50 rounded-3xl hover:shadow-xl hover:-translate-y-1 transition-all duration-300 block w-full text-justify">
-              <div className="w-full md:w-1/2 aspect-video rounded-2xl bg-zinc-100 border border-zinc-200/60 shadow-inner flex items-center justify-center group-hover:border-zinc-300 transition-all duration-300 flex-shrink-0">
-                <span className="text-sm text-zinc-400">
-                  {lang === "zh" ? "LVAD 仿真占位" : "LVAD Simulation Placeholder"}
-                </span>
+            {/* 项目 3: LVAD 仿真 (左图右文) */}
+            <Link href={`/projects/lvad-simulation?lang=${lang}`} className="flex flex-col md:flex-row items-center gap-12 group p-6 md:p-8 bg-white border border-transparent hover:border-zinc-200 hover:bg-zinc-50/50 rounded-3xl hover:shadow-xl hover:-translate-y-1 transition-all duration-300 w-full text-justify">
+              <div className="w-full md:w-1/2 aspect-[4/3] flex items-center justify-center flex-shrink-0 transition-transform duration-500 group-hover:scale-[1.02] bg-zinc-50/50 rounded-2xl border border-zinc-200/60 shadow-inner p-4 md:p-6">
+                <img src="/media/lvad-simulation.gif" alt="LVAD Simulation" className="w-full h-full object-contain drop-shadow-sm" />
               </div>
               <div className="w-full md:w-1/2 flex flex-col justify-center text-left">
-                <h3 className="text-xl md:text-2xl font-bold text-zinc-900">
-                  {lang === "zh" ? "LVAD 血流动力学仿真" : "LVAD Hemodynamic Simulation"}
-                </h3>
+                <h3 className="text-2xl font-bold text-zinc-900 mb-2">{lang === 'zh' ? '磁驱动左心室辅助装置设计与仿真' : 'Design & Multiphysics Coupling Simulation of Magnetically Driven Left Ventricular Assist Device (LVAD)'}</h3>
                 <div className="flex flex-wrap gap-2 my-4">
-                  {["COMSOL", "CFD", "Multiphysics", "Biomedical"].map((tag) => (
-                    <span key={tag} className="bg-zinc-100 text-zinc-600 px-3 py-1 rounded-full text-xs font-medium">
-                      {tag}
-                    </span>
+                  {(lang === 'zh' ? ['COMSOL', '多物理场仿真', '仿生分析', '磁场-固体-流体'] : ['COMSOL FSI', 'Simulation Validation', 'Bionic Analysis', 'Magnetic-Solid-Fluid']).map(tag => (
+                    <span key={tag} className="bg-zinc-100 text-zinc-600 px-3 py-1 rounded-full text-xs font-medium">{tag}</span>
                   ))}
                 </div>
-                <p className="text-zinc-500 text-sm md:text-base leading-relaxed text-justify">
-                  {lang === "zh" ? "LVAD 血流动力学仿真项目占位符。基于 COMSOL Multiphysics 的多物理场耦合仿真分析。" : "LVAD hemodynamic simulation project placeholder. Multiphysics coupled simulation analysis using COMSOL Multiphysics."}
-                </p>
+                <p className="text-zinc-600 text-sm md:text-base leading-relaxed text-justify">{lang === 'zh' ? '运用 COMSOL 开展磁-固-流三场耦合动态仿真，应用 Neo-Hookean 超弹性构型与 ALE 动网格技术，全面验证左心室辅助装置（LVAD）的设计可行性与关键医学动力学指标。' : 'Conducted dynamic magnetic-solid-fluid three-field couplled simulations. Applied Neo-Hookean hyperelastic configuration and ALE dynamic mesh to fully verify the design feasibility and key medical indicators of the left ventricular assist device (LVAD).'}</p>
               </div>
             </Link>
           </div>
@@ -509,33 +485,33 @@ function HomeContent() {
             {lang === 'zh' ? '💡 点击卡片查看跨学科团队管理、科创建队全闭环及社群运营细节' : '💡 Click on each card to explore interdisciplinary team management and organization operations'}
           </p>
           <div className="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-6 px-4">
-            {/* 卡片 1 */}
-            <Link href={`/leadership/international-team?lang=${lang}`} className="block p-8 bg-white border border-zinc-200/60 rounded-2xl shadow-sm hover:shadow-xl hover:border-zinc-300 hover:-translate-y-1 transition-all duration-300 text-left flex flex-col justify-between min-h-[160px] group">
-              <h3 className="text-lg font-bold text-zinc-900 mb-3 tracking-wide group-hover:text-zinc-700 transition-colors">
-                {lang === 'zh' ? '北航国际学生机器人队创始人兼队长' : 'Founder & Captain of BUAA Int. Robotics Team'}
+            {/* 卡片 1：国际学生机器人队 */}
+            <Link href={`/leadership/international-team?lang=${lang}`} className="block p-8 bg-white border border-zinc-200/60 rounded-2xl shadow-sm hover:shadow-xl hover:border-zinc-300 hover:-translate-y-1 transition-all duration-300 flex flex-col min-h-[160px] group">
+              <h3 className="text-lg font-bold text-zinc-900 mb-1.5 tracking-wide text-center group-hover:text-zinc-700 transition-colors">
+                {lang === 'zh' ? '北航国际学生机器人队创始人' : 'Founder of BUAA International Robot Team'}
               </h3>
-              <p className="text-zinc-500 text-sm leading-relaxed text-justify">
-                {lang === 'zh' ? '社群运营与建队细节概括占位符。' : 'Organization operations and team building placeholder.'}
+              <p className="text-zinc-500 text-sm leading-relaxed text-justify mt-1">
+                {lang === 'zh' ? '从0到1统筹建队，带领40余名多国留学生斩获4项国家级赛事冠军，并主导多场科技讲座与跨文化交流活动。' : 'Founded the team from scratch and led over 40 international students to win 4 national championships, alongside directing multiple tech-lectures.'}
               </p>
             </Link>
 
-            {/* 卡片 2 */}
-            <Link href={`/leadership/robot-association?lang=${lang}`} className="block p-8 bg-white border border-zinc-200/60 rounded-2xl shadow-sm hover:shadow-xl hover:border-zinc-300 hover:-translate-y-1 transition-all duration-300 text-left flex flex-col justify-between min-h-[160px] group">
-              <h3 className="text-lg font-bold text-zinc-900 mb-3 tracking-wide group-hover:text-zinc-700 transition-colors">
+            {/* 卡片 2：机器人协会 */}
+            <Link href={`/leadership/robot-association?lang=${lang}`} className="block p-8 bg-white border border-zinc-200/60 rounded-2xl shadow-sm hover:shadow-xl hover:border-zinc-300 hover:-translate-y-1 transition-all duration-300 flex flex-col min-h-[160px] group">
+              <h3 className="text-lg font-bold text-zinc-900 mb-1.5 tracking-wide text-center group-hover:text-zinc-700 transition-colors">
                 {lang === 'zh' ? '北航机器人协会会长' : 'President of BUAA Robotics Association'}
               </h3>
-              <p className="text-zinc-500 text-sm leading-relaxed text-justify">
-                {lang === 'zh' ? '协会管理与大型赛事组织概括占位符。' : 'Association management and event organization placeholder.'}
+              <p className="text-zinc-500 text-sm leading-relaxed text-justify mt-1">
+                {lang === 'zh' ? '主导四足机器人原型全栈开发与微型创业试销，并组织超400人规模的大型校级机器人竞赛与12场技术工作坊。' : 'Directed the development and market-testing of a robot dog prototype, whilst organizing a 400+ participant robotics competition and 12 technical workshops.'}
               </p>
             </Link>
 
-            {/* 卡片 3 */}
-            <Link href={`/leadership/social-practice?lang=${lang}`} className="block p-8 bg-white border border-zinc-200/60 rounded-2xl shadow-sm hover:shadow-xl hover:border-zinc-300 hover:-translate-y-1 transition-all duration-300 text-left flex flex-col justify-between min-h-[160px] group">
-              <h3 className="text-lg font-bold text-zinc-900 mb-3 tracking-wide group-hover:text-zinc-700 transition-colors">
-                {lang === 'zh' ? '暑期社会实践副队长' : 'Vice Captain of Summer Social Practice'}
+            {/* 卡片 3：社会实践 */}
+            <Link href={`/leadership/social-practice?lang=${lang}`} className="block p-8 bg-white border border-zinc-200/60 rounded-2xl shadow-sm hover:shadow-xl hover:border-zinc-300 hover:-translate-y-1 transition-all duration-300 flex flex-col min-h-[160px] group">
+              <h3 className="text-lg font-bold text-zinc-900 mb-1.5 tracking-wide text-center group-hover:text-zinc-700 transition-colors">
+                {lang === 'zh' ? '暑期社会实践队副队长' : 'Vice Captain of Summer Social Practice'}
               </h3>
-              <p className="text-zinc-500 text-sm leading-relaxed text-justify">
-                {lang === 'zh' ? '跨学科项目推进与社会实践概括占位符。' : 'Interdisciplinary project and social practice placeholder.'}
+              <p className="text-zinc-500 text-sm leading-relaxed text-justify mt-1">
+                {lang === 'zh' ? '统筹山东威海农业机器人实地调研项目，全权负责团队协调、志愿者培训及运营规划，并撰写详尽的洞察报告。' : 'Coordinated a field research project on agricultural robotics in Weihai. Managed team operations, volunteer training, and authored a comprehensive insight report.'}
               </p>
             </Link>
           </div>
