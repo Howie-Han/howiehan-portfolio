@@ -21,7 +21,7 @@ export default function RobotScene() {
                     </Center>
                 </Bounds>
             </Suspense>
-            <OrbitControls autoRotate autoRotateSpeed={12} enableZoom={false} enablePan={false} enableRotate={false} />
+            <OrbitControls autoRotate autoRotateSpeed={8} enableZoom={false} enablePan={false} enableRotate={false} />
         </Canvas>
     );
 }

@@ -16,6 +16,15 @@ const RobotScene = dynamic(() => import("@/components/alstom/RobotScene"), {
     ),
 });
 
+const InteractivePartScene = dynamic(() => import("@/components/alstom/InteractivePartScene"), {
+    ssr: false,
+    loading: () => (
+        <div className="absolute inset-0 flex flex-col items-center justify-center bg-zinc-50 rounded-2xl">
+            <div className="w-6 h-6 border-4 border-zinc-200 border-t-zinc-900 rounded-full animate-spin"></div>
+        </div>
+    ),
+});
+
 function AlstomContent() {
     const searchParams = useSearchParams();
     const lang = searchParams.get("lang") || "zh";
@@ -23,11 +32,36 @@ function AlstomContent() {
 
     const [activeGalleryIndex, setActiveGalleryIndex] = useState(3);
     const galleryMedia = [
-        { type: "image", src: "/media/experience/alstom/gallery-1-tpu.gif" },
-        { type: "image", src: "/media/experience/alstom/gallery-2-indoor-img.png" },
-        { type: "image", src: "/media/experience/alstom/gallery-3-outdoor-img.png" },
-        { type: "video", src: "/media/experience/alstom/gallery-4-rail-test.mp4" },
-        { type: "video", src: "/media/experience/alstom/gallery-5-outdoor-test.mp4" },
+        {
+            type: "image",
+            src: "/media/experience/alstom/gallery-1-tpu.gif",
+            title: isZh ? "FDM 打印工艺与构型多材料测试" : "PETG/TPU Multi-material Prototyping Optimization",
+            desc: isZh ? "测试柔性高分子构件在复杂应力条件下的回弹极限与层间黏结表现。" : "Evaluating interlayer adhesion and elasticity threshold under continuous stress profiling.",
+        },
+        {
+            type: "image",
+            src: "/media/experience/alstom/gallery-2-indoor-img.png",
+            title: isZh ? "车厂实机室内轨道标定与干涉校验" : "Depot Indoor Track Calibration & Interference Analysis",
+            desc: isZh ? "在 Kim Chuan Depot 进行实装匹配，通过多维尺寸校验确保运行动载间隙符合毫米级公差约束。" : "On-site precision fit verification to ensure dynamic clearances comply with millimeter-level tolerances.",
+        },
+        {
+            type: "image",
+            src: "/media/experience/alstom/gallery-3-outdoor-img.png",
+            title: isZh ? "实地部署与复杂坡度地形通过性常规测试" : "Field Deployment & Complex Terrain Navigation Trials",
+            desc: isZh ? "评估小直径履带结构在砂石、坡道等多变地质环境下的越障通过能力。" : "Assessing high-angle climbing independence across highly irregular outdoor aggregate surfaces.",
+        },
+        {
+            type: "video",
+            src: "/media/experience/alstom/gallery-4-rail-test.mp4",
+            title: isZh ? "沿轨自主导向巡检实机闭环运行验证" : "Autonomous Rail-Guided Inspection Operations",
+            desc: isZh ? "针对列车底盘关键探测点执行全自动化视觉循迹与机械臂多姿态拟合巡检测试。" : "Validating closed-loop autonomous navigation and posture optimization for under-train imaging.",
+        },
+        {
+            type: "video",
+            src: "/media/experience/alstom/gallery-5-outdoor-test.mp4",
+            title: isZh ? "全天候户外严苛环境长距离续航极限验证" : "All-Weather Endurance & Locomotion Performance Verification",
+            desc: isZh ? "实测极端高湿度及高温条件下，整体机电架构与电池管理系统的热耗散及防尘防水可靠性。" : "Verifying thermal dissipation efficiency and electromechanical enclosure integrity under high heat and moisture.",
+        },
     ];
 
     const [activeStep, setActiveStep] = useState(0);
@@ -58,7 +92,7 @@ function AlstomContent() {
                     href={`/?lang=${lang}`}
                     className="text-zinc-500 hover:text-zinc-900 transition-colors tracking-widest text-sm font-semibold uppercase"
                 >
-                    {"<"} {isZh ? "返回" : "BACK"}
+                    {"<"} {isZh ? "返回主页" : "BACK TO HOME"}
                 </Link>
             </nav>
 
@@ -73,31 +107,93 @@ function AlstomContent() {
 
             {/* Module 1: Tracked Train Inspection Robot */}
             <section className="max-w-7xl mx-auto px-8 mb-32">
-                <div className="flex items-center gap-4 mb-12">
+                <div className="flex items-center gap-4 mb-8">
                     <span className="text-sm font-bold text-zinc-400 tracking-widest">01 /</span>
                     <h2 className="text-3xl font-semibold tracking-tight">
                         {isZh ? "履带式列车巡检机器人" : "Tracked Train Inspection Robot"}
                     </h2>
                 </div>
 
-                <div className="w-full h-[600px] bg-white rounded-3xl overflow-hidden shadow-2xl shadow-zinc-200/50 mb-16 relative border border-zinc-100">
+                {/* 新增：总述与核心数据 */}
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
+                    <div className="md:col-span-2 text-zinc-500 font-light leading-relaxed">
+                        {isZh
+                            ? "基于 DfAM（面向增材制造设计）理念彻底重构。采用 PA6 工程塑料与 FDM 打印工艺，将传统高度集成的商用底盘转化为极具韧性、零供应商依赖的全新机电架构。"
+                            : "Redesigned from the ground up using Design for Additive Manufacturing (DfAM) principles. By utilizing PA6 engineering plastic and FDM printing, the traditional highly integrated commercial chassis was transformed into a resilient, supplier-independent architecture."}
+                    </div>
+                    <div className="flex flex-col justify-between border-l-2 border-zinc-200 pl-6">
+                        <div>
+                            <p className="text-2xl font-semibold text-zinc-800">5 kg</p>
+                            <p className="text-xs text-zinc-400 uppercase tracking-widest">{isZh ? "实机自重" : "Total Weight"}</p>
+                        </div>
+                        <div>
+                            <p className="text-2xl font-semibold text-zinc-800">85° / 15 cm</p>
+                            <p className="text-xs text-zinc-400 uppercase tracking-widest">{isZh ? "极限越障" : "Obstacle Clearance"}</p>
+                        </div>
+                    </div>
+                </div>
+
+                {/* 主展台 */}
+                <div className="w-full h-[420px] bg-white rounded-3xl overflow-hidden shadow-2xl shadow-zinc-200/50 mb-16 relative border border-zinc-100">
                     <RobotScene />
                 </div>
 
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
-                    <div className="h-64 border-2 border-dashed border-zinc-300 rounded-3xl flex items-center justify-center bg-zinc-50">
-                        <p className="text-zinc-400 text-sm font-mono">
-                            {isZh ? "交互式结构件 (待接入)" : "Interactive Structure (Pending)"}
-                        </p>
+                {/* 交互式 Bento Box 图文混排 - 升级为双模复合布局 */}
+                <div className="grid grid-cols-1 gap-12 mb-16">
+
+                    {/* 局部组件 1：一体化集成设计 */}
+                    <div className="bg-white rounded-3xl p-8 shadow-xl shadow-zinc-200/30 border border-zinc-100 flex flex-col xl:flex-row gap-8 min-h-[450px] xl:h-[450px]">
+                        {/* 左侧：文字描述 + 静态高精CAD渲染图 */}
+                        <div className="flex-1 flex flex-col">
+                            <div>
+                                <h3 className="text-xl font-bold text-zinc-800 mb-2">{isZh ? "一体化集成设计" : "Integrated Architecture"}</h3>
+                                <p className="text-sm text-zinc-500 leading-relaxed mb-6">
+                                    {isZh ? "通过 DfAM 优化，将理线卡扣、控制板减震与快拆结构高度整合，整机精简至 10 余个核心部件。左图展示最终总装效果，右侧模型支持交互细节拆解。" : "Highly integrated cable routing, shock absorption, and quick-release mechanisms, reducing the assembly to ~10 core parts. Left image displays full CAD assembly, right viewport enables detail inspection."}
+                                </p>
+                            </div>
+                            <div className="relative w-full h-48 xl:h-52 bg-zinc-50 rounded-2xl overflow-hidden border border-zinc-200 mt-2">
+                                <Image src="/media/experience/alstom/robot-part-chassis-render.png" alt="Chassis CAD Render" fill unoptimized className={MEDIA_FILTER} />
+                            </div>
+                        </div>
+                        {/* 右侧：丝滑低面互动 3D 视窗 */}
+                        <div className="flex-1 relative bg-zinc-50 rounded-2xl overflow-hidden border border-zinc-200 h-64 xl:h-full">
+                            <InteractivePartScene modelPath="/media/experience/alstom/robot-part-chassis.glb" />
+                        </div>
                     </div>
-                    <div className="h-64 border-2 border-dashed border-zinc-300 rounded-3xl flex items-center justify-center bg-zinc-50">
-                        <p className="text-zinc-400 text-sm font-mono">
-                            {isZh ? "受力优化节点 (待接入)" : "Interactive Joint (Pending)"}
-                        </p>
+
+                    {/* 局部组件 2：刚性复用与受力优化 */}
+                    <div className="bg-white rounded-3xl p-8 shadow-xl shadow-zinc-200/30 border border-zinc-100 flex flex-col xl:flex-row gap-8 min-h-[450px] xl:h-[450px]">
+                        {/* 左侧：文字描述 + 静态高精CAD渲染图 */}
+                        <div className="flex-1 flex flex-col">
+                            <div>
+                                <h3 className="text-xl font-bold text-zinc-800 mb-2">{isZh ? "刚性复用与受力优化" : "Rigidity & Stress Optimization"}</h3>
+                                <p className="text-sm text-zinc-500 leading-relaxed mb-6">
+                                    {isZh ? "巧妙利用电机金属外壳的物理刚性来分散薄弱环节应力，极大提升了 3D 打印主体结构的整体刚度。配合高分辨率 CAD 数据与流式 3D 交互共同佐证。" : "Innovatively utilizes the motor's metal casing to disperse stress at weak points, significantly enhancing overall structural rigidity. Documented via high-res CAD renders combined with lightweight fluid 3D viewports."}
+                                </p>
+                            </div>
+                            <div className="relative w-full h-48 xl:h-52 bg-zinc-50 rounded-2xl overflow-hidden border border-zinc-200 mt-2">
+                                <Image src="/media/experience/alstom/robot-part-joint-render.png" alt="Joint CAD Render" fill unoptimized className={MEDIA_FILTER} />
+                            </div>
+                        </div>
+                        {/* 右侧：丝滑低面互动 3D 视窗 */}
+                        <div className="flex-1 relative bg-zinc-50 rounded-2xl overflow-hidden border border-zinc-200 h-64 xl:h-full">
+                            <InteractivePartScene modelPath="/media/experience/alstom/robot-part-joint.glb" />
+                        </div>
                     </div>
+
                 </div>
 
+                {/* 画廊保持原样 */}
                 <div className="bg-white p-6 md:p-12 rounded-3xl shadow-xl shadow-zinc-200/30 border border-zinc-100">
+                    {/* 画廊联动高灵敏度文本描述控制台 */}
+                    <div className="mb-3 pb-6 border-b border-zinc-100 transition-all duration-300">
+                        <h4 className="text-xl font-bold text-zinc-900 tracking-tight mb-2">
+                            {galleryMedia[activeGalleryIndex].title}
+                        </h4>
+                        <p className="text-sm text-zinc-500 font-light leading-relaxed">
+                            {galleryMedia[activeGalleryIndex].desc}
+                        </p>
+                    </div>
                     <div className="w-full h-[400px] md:h-[600px] bg-zinc-50 rounded-2xl overflow-hidden flex items-center justify-center mb-8 relative border border-zinc-200">
                         {galleryMedia[activeGalleryIndex].type === "video" ? (
                             <video
@@ -194,7 +290,7 @@ function AlstomContent() {
 
             {/* Module 3: Digital Workflow Dashboard */}
             <section className="max-w-7xl mx-auto px-8">
-                <div className="flex items-center gap-4 mb-16">
+                <div className="flex items-center gap-4 mb-10">
                     <span className="text-sm font-bold text-zinc-400 tracking-widest">03 /</span>
                     <h2 className="text-3xl font-semibold tracking-tight">
                         {isZh ? "数字化工作流看板" : "Digital Workflow Dashboard"}
@@ -211,8 +307,8 @@ function AlstomContent() {
                                 key={idx}
                                 onClick={() => setActiveWorkflowStep(idx)}
                                 className={`flex items-center gap-3 px-4 py-3 rounded-2xl whitespace-nowrap transition-all ${activeWorkflowStep === idx
-                                        ? 'bg-zinc-900 text-white shadow-md'
-                                        : 'hover:bg-zinc-100 text-zinc-500'
+                                    ? 'bg-zinc-900 text-white shadow-md'
+                                    : 'hover:bg-zinc-100 text-zinc-500'
                                     }`}
                             >
                                 <span className={`font-mono text-sm ${activeWorkflowStep === idx ? 'opacity-70' : 'opacity-50'}`}>0{idx + 1}</span>
