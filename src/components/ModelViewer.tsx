@@ -11,7 +11,7 @@ import {
 } from "@react-three/drei";
 
 // ─── Step 1: Cut off Draco CDN completely ───────────────────────────────
-useGLTF.preload("/media/omni-wheel.glb");
+useGLTF.preload("/media/project/omni-wheel/omni-wheel.glb");
 (useGLTF as any).setDecoderPath?.("");
 
 // ─── Step 2: Error Boundary class (catches unexpected crashes only) ────
@@ -86,7 +86,7 @@ class ThreeErrorBoundary extends Component<
 // ─── 3D Scene internals ─────────────────────────────────────────────────
 
 function Model() {
-    const { scene } = useGLTF("/media/omni-wheel.glb");
+    const { scene } = useGLTF("/media/project/omni-wheel/omni-wheel.glb");
 
     return (
         <Center>
