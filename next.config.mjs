@@ -1,6 +1,9 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  // 我们后续如果需要优化 3D 模型编译，会加在这里，现在保持为空
+  experimental: {
+    // 官方防 OOM 核心机制：按需解析 3D 库，拒绝全量加载
+    optimizePackageImports: ['@react-three/drei'],
+  }
 };
 
 export default nextConfig;
