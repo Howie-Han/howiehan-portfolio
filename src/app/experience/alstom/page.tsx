@@ -96,13 +96,29 @@ function AlstomContent() {
                 </Link>
             </nav>
 
-            <section className="max-w-7xl mx-auto px-8 pt-12 pb-24 text-center md:text-left">
+            <section className="max-w-7xl mx-auto px-8 pt-12 pb-24 flex flex-col items-center text-center">
                 <h1 className="text-5xl md:text-7xl font-bold tracking-tighter mb-6 text-zinc-900">
                     {isZh ? "重塑工业级增材制造。" : "Redefining Industrial Additive Manufacturing."}
                 </h1>
                 <p className="text-xl text-zinc-500 font-light">
                     {isZh ? "机器人与增材制造研发实习生 @ 阿尔斯通（亚太）创新中心" : "Robotics & AM R&D Intern @ Alstom Innovation Station"}
                 </p>
+                <div className="flex flex-wrap justify-center gap-3 mt-6">
+                    {[
+                        "DfAM",
+                        isZh ? "逆向工程" : "Reverse Engineering",
+                        "EHS Compliance",
+                        isZh ? "巡检机器人" : "Inspection Robot",
+                        "FDM / PA6",
+                    ].map((tag) => (
+                        <span
+                            key={tag}
+                            className="bg-zinc-100 text-zinc-600 px-4 py-1.5 rounded-full text-xs font-semibold tracking-wide border border-zinc-200"
+                        >
+                            {tag}
+                        </span>
+                    ))}
+                </div>
             </section>
 
             {/* Module 1: Tracked Train Inspection Robot */}

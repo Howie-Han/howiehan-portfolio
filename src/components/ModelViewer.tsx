@@ -8,6 +8,7 @@ import {
     Environment,
     ContactShadows,
     Center,
+    Bounds,
 } from "@react-three/drei";
 
 // ─── Step 1: Cut off Draco CDN completely ───────────────────────────────
@@ -145,7 +146,9 @@ function ThreeCanvas() {
                 blur={2.5}
                 far={2}
             />
-            <Model />
+            <Bounds fit clip observe margin={1}>
+                <Model />
+            </Bounds>
             <OrbitControls
                 autoRotate
                 autoRotateSpeed={3}
@@ -195,7 +198,7 @@ function DegradedFallback() {
 export default function ModelViewer() {
     return (
         <ThreeErrorBoundary>
-            <div className="w-full h-full min-h-[300px] rounded-xl overflow-hidden">
+            <div className="relative w-full h-full min-h-[300px] rounded-xl overflow-hidden">
                 <Suspense fallback={<LoadingFallback />}>
                     <ThreeCanvas />
                 </Suspense>
