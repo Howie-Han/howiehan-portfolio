@@ -12,7 +12,6 @@ import {
 } from "@react-three/drei";
 
 // ─── Step 1: Cut off Draco CDN completely ───────────────────────────────
-useGLTF.preload("/media/project/omni-wheel/omni-wheel.glb");
 (useGLTF as any).setDecoderPath?.("");
 
 // ─── Step 2: Error Boundary class (catches unexpected crashes only) ────
@@ -86,16 +85,18 @@ class ThreeErrorBoundary extends Component<
 
 // ─── 3D Scene internals ─────────────────────────────────────────────────
 
-function Model() {
-    const { scene } = useGLTF("/media/project/omni-wheel/omni-wheel.glb");
+interface ModelProps {
+    modelPath: string;
+}
+
+function Model({ modelPath }: ModelProps) {
+    const { scene } = useGLTF(modelPath, "https://www.gstatic.com/draco/versioned/decoders/1.5.5/");
 
     return (
         <Center>
             <primitive
                 object={scene}
                 scale={1}
-                // CAD model coordinate fix: rotate 90° around X axis
-                // so the wheel stands upright in the viewport center
                 rotation={[-Math.PI / 2, 0, 0]}
             />
         </Center>
@@ -117,7 +118,11 @@ function LoadingFallback() {
 
 // ─── Canvas with context-lost graceful handling (no throw!) ────────────
 
-function ThreeCanvas() {
+interface ThreeCanvasProps {
+    modelPath: string;
+}
+
+function ThreeCanvas({ modelPath }: ThreeCanvasProps) {
     const [isContextLost, setContextLost] = useState(false);
 
     if (isContextLost) {
@@ -147,7 +152,7 @@ function ThreeCanvas() {
                 far={2}
             />
             <Bounds fit clip observe margin={1}>
-                <Model />
+                <Model modelPath={modelPath} />
             </Bounds>
             <OrbitControls
                 autoRotate
@@ -195,12 +200,16 @@ function DegradedFallback() {
 
 // ─── Exported component with full defense chain ────────────────────────
 
-export default function ModelViewer() {
+interface ModelViewerProps {
+    modelPath?: string;
+}
+
+export default function ModelViewer({ modelPath = "/media/project/omni-wheel/omni-wheel.glb" }: ModelViewerProps) {
     return (
         <ThreeErrorBoundary>
             <div className="relative w-full h-full min-h-[300px] rounded-xl overflow-hidden">
                 <Suspense fallback={<LoadingFallback />}>
-                    <ThreeCanvas />
+                    <ThreeCanvas modelPath={modelPath} />
                 </Suspense>
             </div>
         </ThreeErrorBoundary>
