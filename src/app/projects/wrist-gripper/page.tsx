@@ -8,7 +8,7 @@ const CONTAINER_CLASSES = "bg-zinc-100 rounded-xl overflow-hidden";
 
 function DetailContent() {
     const searchParams = useSearchParams();
-    const lang = searchParams.get("lang") || "zh";
+    const lang = (searchParams.get("lang") as "zh" | "en") || "zh";
 
     return (
         <div className="min-h-screen bg-zinc-50 text-zinc-900 selection:bg-zinc-300">
@@ -59,26 +59,32 @@ function DetailContent() {
                                     : "Established a rigorous mathematical model based on D-H parameters. Validated the 200mm hemispherical workspace envelope and optimized singularity avoidance trajectories via MATLAB Robotics Toolbox."}
                             </p>
                         </div>
-                        {/* 2-column media grid */}
-                        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 w-full md:w-2/3 mx-auto mt-8">
+                        {/* MATLAB Academic Dual-Column Media Grid */}
+                        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 w-full md:w-11/12 lg:w-5/6 mx-auto mt-8">
+                            {/* Left: Kinematics Simulation GIF */}
                             <div>
-                                <div className="aspect-[4/3] bg-zinc-100 rounded-xl flex items-center justify-center">
-                                    <span className="text-zinc-400 text-sm font-mono text-center px-4">
-                                        {lang === "zh" ? "MATLAB 运动学仿真处理中..." : "MATLAB Kinematics Simulation Processing..."}
-                                    </span>
+                                <div className="w-full aspect-[4/3] bg-zinc-100 rounded-xl overflow-hidden shadow-inner border border-zinc-200">
+                                    <img
+                                        src="/media/project/wrist/wrist-sim-kinematics.gif"
+                                        alt="Kinematics Simulation"
+                                        className="object-contain w-full h-full filter grayscale opacity-90 hover:grayscale-0 hover:opacity-100 transition-all duration-700"
+                                    />
                                 </div>
-                                <p className="text-sm text-zinc-500 text-center mt-3">
-                                    {lang === "zh" ? "运动学理论仿真" : "Kinematics Simulation"}
+                                <p className="text-sm text-zinc-500 text-center w-full mt-3">
+                                    {lang === 'zh' ? '6-DoF 关节空间多项式轨迹与末端位姿轴向补偿仿真' : '6-DoF Joint-Space Polynomial Trajectory & Axial End-Effector Pose Compensation Simulation'}
                                 </p>
                             </div>
+                            {/* Right: Monte Carlo Workspace Cloud Map */}
                             <div>
-                                <div className="aspect-[4/3] bg-zinc-100 rounded-xl flex items-center justify-center">
-                                    <span className="text-zinc-400 text-sm font-mono text-center px-4">
-                                        {lang === "zh" ? "蒙特卡洛工作空间云图待生成..." : "Monte Carlo Workspace Cloud Map Pending..."}
-                                    </span>
+                                <div className="w-full aspect-[4/3] bg-zinc-100 rounded-xl overflow-hidden shadow-inner border border-zinc-200">
+                                    <img
+                                        src="/media/project/wrist/wrist-sim-workspace.png"
+                                        alt="Workspace Cloud Map"
+                                        className="object-contain w-full h-full filter grayscale opacity-90 hover:grayscale-0 hover:opacity-100 transition-all duration-700"
+                                    />
                                 </div>
-                                <p className="text-sm text-zinc-500 text-center mt-3">
-                                    {lang === "zh" ? "工作空间蒙特卡洛云图" : "Workspace Cloud Map"}
+                                <p className="text-sm text-zinc-500 text-center w-full mt-3">
+                                    {lang === 'zh' ? '末端 TCP 空间可达包络点云 (蒙特卡洛法求解)' : 'End-Effector TCP Spatial Reachable Envelope Point Cloud (Solved via Monte Carlo Method)'}
                                 </p>
                             </div>
                         </div>
