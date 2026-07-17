@@ -183,63 +183,63 @@ function RobotAssociationContent() {
                                 "Built a cross-academic tech communication bridge. Organized over 12 frontier hard-tech workshops covering software and hardware architectures within the year, and planned a 1000+ attendee outdoor interactive exhibition, achieving tech open-sourcing and community growth."
                             )}
                         </p>
-                        {/* 3-column responsive grid (6 items: 3x2 perfect fill) */}
-                        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 w-full mt-6">
-                            <div>
+                        {/* 3-column physical-alignment grid (6 items: 3x2 perfect fill) */}
+                        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 w-full mt-6 items-stretch">
+                            <div className="w-full flex flex-col min-w-0">
                                 <img
                                     src="/media/leadership/robot-association/ra-comm-team.png"
                                     alt="Community Team"
-                                    className={IMG_CLASSES}
+                                    className="w-full h-full aspect-[4/3] object-cover bg-zinc-100 rounded-xl filter grayscale opacity-90 hover:grayscale-0 hover:opacity-100 transition-all duration-700"
                                 />
                                 <p className={CAPTION_CLASSES}>
                                     {t("机器人协会核心管理与技术指导架构", "Core Management & Tech Guidance Board")}
                                 </p>
                             </div>
-                            <div>
+                            <div className="w-full flex flex-col min-w-0">
                                 <img
                                     src="/media/leadership/robot-association/ra-comm-lec1.png"
                                     alt="Lecture 1"
-                                    className={IMG_CLASSES}
+                                    className="w-full h-full aspect-[4/3] object-cover bg-zinc-100 rounded-xl filter grayscale opacity-90 hover:grayscale-0 hover:opacity-100 transition-all duration-700"
                                 />
                                 <p className={CAPTION_CLASSES}>
                                     {t("软硬件底层架构前沿硬科技讲座 (一)", "Frontier Hard-Tech Architecture Workshop (I)")}
                                 </p>
                             </div>
-                            <div>
+                            <div className="w-full flex flex-col min-w-0">
                                 <img
                                     src="/media/leadership/robot-association/ra-comm-lec2.png"
                                     alt="Lecture 2"
-                                    className={IMG_CLASSES}
+                                    className="w-full h-full aspect-[4/3] object-cover bg-zinc-100 rounded-xl filter grayscale opacity-90 hover:grayscale-0 hover:opacity-100 transition-all duration-700"
                                 />
                                 <p className={CAPTION_CLASSES}>
                                     {t("软硬件底层架构前沿硬科技讲座 (二)", "Frontier Hard-Tech Architecture Workshop (II)")}
                                 </p>
                             </div>
-                            <div>
+                            <div className="w-full flex flex-col min-w-0">
                                 <img
                                     src="/media/leadership/robot-association/ra-comm-out1.png"
                                     alt="Outdoor Exhibition 1"
-                                    className={IMG_CLASSES}
+                                    className="w-full h-full aspect-[4/3] object-cover bg-zinc-100 rounded-xl filter grayscale opacity-90 hover:grayscale-0 hover:opacity-100 transition-all duration-700"
                                 />
                                 <p className={CAPTION_CLASSES}>
                                     {t("千人级校园科技节外场交互展区 (一)", "1000+ Attendee Campus Tech Festival Exhibition (I)")}
                                 </p>
                             </div>
-                            <div>
+                            <div className="w-full flex flex-col min-w-0">
                                 <img
                                     src="/media/leadership/robot-association/ra-comm-out2.png"
                                     alt="Outdoor Exhibition 2"
-                                    className={IMG_CLASSES}
+                                    className="w-full h-full aspect-[4/3] object-cover bg-zinc-100 rounded-xl filter grayscale opacity-90 hover:grayscale-0 hover:opacity-100 transition-all duration-700"
                                 />
                                 <p className={CAPTION_CLASSES}>
                                     {t("千人级校园科技节外场交互展区 (二)", "1000+ Attendee Campus Tech Festival Exhibition (II)")}
                                 </p>
                             </div>
-                            <div>
+                            <div className="w-full flex flex-col min-w-0">
                                 <img
                                     src="/media/leadership/robot-association/ra-comm-out3.png"
                                     alt="Outdoor Exhibition 3"
-                                    className={IMG_CLASSES}
+                                    className="w-full h-full aspect-[4/3] object-cover bg-zinc-100 rounded-xl filter grayscale opacity-90 hover:grayscale-0 hover:opacity-100 transition-all duration-700"
                                 />
                                 <p className={CAPTION_CLASSES}>
                                     {t("千人级校园科技节外场交互展区 (三)", "1000+ Attendee Campus Tech Festival Exhibition (III)")}
