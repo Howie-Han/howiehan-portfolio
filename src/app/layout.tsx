@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
-import "./globals.css";
+import "@/app/globals.css";
 
 const inter = Inter({
   variable: "--font-inter",
@@ -8,20 +8,23 @@ const inter = Inter({
   display: "swap",
 });
 
+// 【PM 重构】：面向大厂 HR 和 ATS 筛选系统的高阶 SEO 元数据
 export const metadata: Metadata = {
-  title: "Hao Yu HAN | Structural Engineer · Control & Systems",
+  title: "Haoyu (Howie) HAN | Robotics Structural Engineer",
   description:
-    "Hao Yu (Howie) Han's portfolio — A structural engineer who understands control algorithms and system boundaries.",
+    "Portfolio of Haoyu (Howie) HAN. A structural engineer specializing in robotics, precision mechanical design, DfAM, and mechatronic systems integration.",
   keywords: [
-    "Hao Yu Han",
+    "Haoyu HAN",
     "Howie Han",
-    "Structural Engineer",
-    "Control Algorithms",
-    "portfolio",
+    "Robotics Structural Engineer",
+    "Mechanical Design",
+    "Mechatronics",
+    "DfAM",
+    "Portfolio",
   ],
   openGraph: {
-    title: "Hao Yu HAN · Portfolio",
-    description: "Structural Engineer · Control & Systems",
+    title: "Haoyu (Howie) HAN · Engineering Portfolio",
+    description: "Robotics Structural Engineer · Precision Design & Systems",
     type: "website",
   },
 };
@@ -33,7 +36,8 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={`${inter.variable} h-full antialiased`}>
-      <body className="min-h-full bg-slate-50 font-sans text-zinc-900">
+      {/* 【视觉红线修复】：将 slate-50 修正为与全站设计系统统一的 zinc-50，并加入优雅的选中文本高亮 */}
+      <body className="min-h-full bg-zinc-50 font-sans text-zinc-900 selection:bg-zinc-200">
         {children}
       </body>
     </html>

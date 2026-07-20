@@ -271,16 +271,16 @@ function HomeContent() {
               </h3>
               {lang === "zh" ? (
                 <ul className="flex flex-col space-y-3 justify-center h-full w-full text-left">
-                  <li className="text-sm md:text-base"><span className="font-semibold text-zinc-800 mr-2 whitespace-nowrap flex-shrink-0">设计建模：</span><span className="text-zinc-600">SolidWorks, OnShape, AutoCAD (GB&T标准与BOM出图)</span></li>
+                  <li className="text-sm md:text-base"><span className="font-semibold text-zinc-800 mr-2 whitespace-nowrap flex-shrink-0">设计建模：</span><span className="text-zinc-600">SolidWorks, OnShape, AutoCAD (GB&T，BOM出图)</span></li>
                   <li className="text-sm md:text-base"><span className="font-semibold text-zinc-800 mr-2 whitespace-nowrap flex-shrink-0">逆向工程：</span><span className="text-zinc-600">3D扫描, QuickSurface重建</span></li>
-                  <li className="text-sm md:text-base"><span className="font-semibold text-zinc-800 mr-2 whitespace-nowrap flex-shrink-0">加工制造：</span><span className="text-zinc-600">CNC机加工与增材制造 (FDM/SLA)</span></li>
-                  <li className="text-sm md:text-base"><span className="font-semibold text-zinc-800 mr-2 whitespace-nowrap flex-shrink-0">工程理念：</span><span className="text-zinc-600">精通 DfM/DfAM 设计，具备快速原型与产品迭代经验</span></li>
+                  <li className="text-sm md:text-base"><span className="font-semibold text-zinc-800 mr-2 whitespace-nowrap flex-shrink-0">加工制造：</span><span className="text-zinc-600">CNC机加工，3D打印/增材制造</span></li>
+                  <li className="text-sm md:text-base"><span className="font-semibold text-zinc-800 mr-2 whitespace-nowrap flex-shrink-0">工程理念：</span><span className="text-zinc-600">精通 DfM/DfAM 设计理念，具备快速原型与产品迭代经验</span></li>
                 </ul>
               ) : (
                 <ul className="flex flex-col space-y-3 justify-center h-full w-full text-left">
                   <li className="text-sm md:text-base"><span className="font-semibold text-zinc-800 mr-2 whitespace-nowrap flex-shrink-0">CAD Modeling:</span><span className="text-zinc-600">SolidWorks, OnShape, AutoCAD (GB&T Standards & BOM)</span></li>
                   <li className="text-sm md:text-base"><span className="font-semibold text-zinc-800 mr-2 whitespace-nowrap flex-shrink-0">Reverse Eng.:</span><span className="text-zinc-600">3D Scanning, QuickSurface</span></li>
-                  <li className="text-sm md:text-base"><span className="font-semibold text-zinc-800 mr-2 whitespace-nowrap flex-shrink-0">Manufacturing:</span><span className="text-zinc-600">CNC Machining & Additive Manufacturing (FDM/SLA)</span></li>
+                  <li className="text-sm md:text-base"><span className="font-semibold text-zinc-800 mr-2 whitespace-nowrap flex-shrink-0">Manufacturing:</span><span className="text-zinc-600">CNC Machining, 3D Printing/Additive Manufacturing</span></li>
                   <li className="text-sm md:text-base"><span className="font-semibold text-zinc-800 mr-2 whitespace-nowrap flex-shrink-0">Methodology:</span><span className="text-zinc-600">Proficient in DfM/DfAM, Rapid Prototyping & Product Iteration</span></li>
                 </ul>
               )}
@@ -293,14 +293,14 @@ function HomeContent() {
               {lang === "zh" ? (
                 <ul className="flex flex-col space-y-3 justify-center h-full w-full text-left">
                   <li className="text-sm md:text-base"><span className="font-semibold text-zinc-800 mr-2 whitespace-nowrap flex-shrink-0">静力学：</span><span className="text-zinc-600">SolidWorks Simulation</span></li>
-                  <li className="text-sm md:text-base"><span className="font-semibold text-zinc-800 mr-2 whitespace-nowrap flex-shrink-0">运动学：</span><span className="text-zinc-600">MATLAB Robotics</span></li>
-                  <li className="text-sm md:text-base"><span className="font-semibold text-zinc-800 mr-2 whitespace-nowrap flex-shrink-0">多体动力学：</span><span className="text-zinc-600">Adams</span></li>
+                  <li className="text-sm md:text-base"><span className="font-semibold text-zinc-800 mr-2 whitespace-nowrap flex-shrink-0">运动学：</span><span className="text-zinc-600">MATLAB Robotics Toolbox</span></li>
+                  <li className="text-sm md:text-base"><span className="font-semibold text-zinc-800 mr-2 whitespace-nowrap flex-shrink-0">动力学：</span><span className="text-zinc-600">Adams</span></li>
                   <li className="text-sm md:text-base"><span className="font-semibold text-zinc-800 mr-2 whitespace-nowrap flex-shrink-0">多物理场：</span><span className="text-zinc-600">COMSOL Multiphysics</span></li>
                 </ul>
               ) : (
                 <ul className="flex flex-col space-y-3 justify-center h-full w-full text-left">
                   <li className="text-sm md:text-base"><span className="font-semibold text-zinc-800 mr-2 whitespace-nowrap flex-shrink-0">Statics:</span><span className="text-zinc-600">SolidWorks Simulation</span></li>
-                  <li className="text-sm md:text-base"><span className="font-semibold text-zinc-800 mr-2 whitespace-nowrap flex-shrink-0">Kinematics:</span><span className="text-zinc-600">MATLAB Robotics</span></li>
+                  <li className="text-sm md:text-base"><span className="font-semibold text-zinc-800 mr-2 whitespace-nowrap flex-shrink-0">Kinematics:</span><span className="text-zinc-600">MATLAB Robotics Toolbox</span></li>
                   <li className="text-sm md:text-base"><span className="font-semibold text-zinc-800 mr-2 whitespace-nowrap flex-shrink-0">Dynamics:</span><span className="text-zinc-600">Adams</span></li>
                   <li className="text-sm md:text-base"><span className="font-semibold text-zinc-800 mr-2 whitespace-nowrap flex-shrink-0">Multiphysics:</span><span className="text-zinc-600">COMSOL Multiphysics</span></li>
                 </ul>
@@ -337,7 +337,7 @@ function HomeContent() {
                 </ul>
               ) : (
                 <ul className="flex flex-col space-y-3 justify-center h-full w-full text-left">
-                  <li className="text-sm md:text-base"><span className="font-semibold text-zinc-800 mr-2 whitespace-nowrap flex-shrink-0">Languages:</span><span className="text-zinc-600">English (IELTS 7.0), German (A1)</span></li>
+                  <li className="text-sm md:text-base"><span className="font-semibold text-zinc-800 mr-2 whitespace-nowrap flex-shrink-0">Languages:</span><span className="text-zinc-600">English (IELTS 7.0), Chinese (Native), German (A1)</span></li>
                   <li className="text-sm md:text-base"><span className="font-semibold text-zinc-800 mr-2 whitespace-nowrap flex-shrink-0">Soft Skills:</span><span className="text-zinc-600">Cross-cultural Collaboration, Full-lifecycle Agile Delivery</span></li>
                 </ul>
               )}
