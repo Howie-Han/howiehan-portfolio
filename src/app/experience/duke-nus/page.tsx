@@ -26,10 +26,10 @@ function DukeNusContent() {
             {/* 固定导航 */}
             <nav className="p-8 max-w-7xl mx-auto">
                 <Link
-                    href={`/?lang=${lang}`}
+                    href={`/?lang=${lang}#experience`}
                     className="text-zinc-500 hover:text-zinc-900 transition-colors tracking-widest text-sm font-semibold uppercase"
                 >
-                    {"<"} {isZh ? "返回主页" : "BACK TO HOME"}
+                    {"<"} {isZh ? "返回工作经历" : "Back to Work Experience"}
                 </Link>
             </nav>
 
@@ -38,20 +38,21 @@ function DukeNusContent() {
             {/* ============================================ */}
             <section className="max-w-7xl mx-auto px-8 pt-12 pb-24 flex flex-col items-center text-center">
                 <h1 className="text-5xl md:text-7xl font-bold tracking-tighter mb-6 text-zinc-900">
-                    {isZh ? "手术机器人核心驱动研发。" : "Core Surgical Robotics R&D."}
+                    {isZh ? "仿生胸腔模拟器研发" : "Bionic Thoracic Simulator R&D"}
                 </h1>
                 <p className="text-xl text-zinc-500 font-light w-full">
                     {isZh
-                        ? "机器人软件算法研究实习生 @ 杜克-新加坡国立大学医学院 · 先进机器人实训中心"
-                        : "Robotics Software & Algorithm Research Intern @ Duke-NUS Medical School · Advanced Robotics Lab"}
+                        ? "仿生机电系统研发实习生 @ 杜克-新加坡国立大学医学院"
+                        : "Medical Mechatronics Research Intern @ Duke-NUS Medical School"}
                 </p>
                 <div className="flex flex-wrap justify-center gap-3 mt-6">
                     {[
-                        "Kinematics",
-                        "Mechatronics",
-                        "FEA",
                         "DfAM",
-                        "Surgical Robotics",
+                        isZh ? "机电一体化系统" : "Mechatronics",
+                        isZh ? "运动学建模" : "Kinematic Modeling",
+                        isZh ? "FEA仿真" : "FEA Simulation",
+                        isZh ? "仿生结构设计" : "Bionic Structure Design",
+                        isZh ? "TPU-PLA多材料打印" : "TPU-PLA Multi-Material Printing",
                     ].map((tag) => (
                         <span
                             key={tag}
@@ -70,7 +71,7 @@ function DukeNusContent() {
                             <ModelViewer modelPath="/media/experience/duke-nus/simulator.glb" />
                         </div>
                         <p className="text-sm text-zinc-500 mt-3 text-center font-medium">
-                            {isZh ? "交互式 3D 数字孪生" : "Interactive 3D Digital Twin"}
+                            {isZh ? "交互式 3D 模型" : "Interactive 3D Model"}
                         </p>
                     </div>
                     {/* 中列：HD Render */}
@@ -81,7 +82,7 @@ function DukeNusContent() {
                             alt="HD Render"
                         />
                         <p className="text-sm text-zinc-500 mt-3 text-center font-medium">
-                            {isZh ? "高精度系统静帧渲染" : "High-Fidelity System Render"}
+                            {isZh ? "CAD模型渲染" : "CAD Model Rendering"}
                         </p>
                     </div>
                     {/* 右列：Video */}
@@ -116,7 +117,7 @@ function DukeNusContent() {
                 <div className="w-full mb-10 space-y-3">
                     <p className="text-zinc-500 font-light leading-relaxed w-full">
                         {isZh
-                            ? "通过齿轮齿条机构将复杂呼吸运动降维为可控直线运动，采用 Dynamixel 伺服电机驱动，并基于 Arduino 搭建高可靠性底层电控链路。"
+                            ? "通过齿轮齿条机构将复杂呼吸运动降维为可控直线运动，采用 Dynamixel 伺服电机驱动，并基于 Arduino 搭建底层电控链路。"
                             : "Decoupled complex respiratory motions into controlled linear actuations via rack and pinion, driven by Dynamixel servos and orchestrated by an Arduino-based lower-level framework."}
                     </p>
                 </div>
@@ -143,7 +144,7 @@ function DukeNusContent() {
                             playsInline
                         />
                         <p className="text-sm text-zinc-500 mt-3 text-center font-medium">
-                            {isZh ? "运动学干涉仿真" : "Kinematic Interference Simulation"}
+                            {isZh ? "运动学仿真" : "Kinematic Simulation"}
                         </p>
                     </div>
                     <div className="flex flex-col items-center">
@@ -170,7 +171,7 @@ function DukeNusContent() {
                             alt="Control Architecture"
                         />
                         <p className="text-sm text-zinc-500 mt-3 text-center font-medium">
-                            {isZh ? "自研底层控制系统拓扑" : "In-house Control System Topology"}
+                            {isZh ? "底层控制系统搭建" : "Embedded Control System Architecture"}
                         </p>
                     </div>
                 </div>
@@ -191,7 +192,7 @@ function DukeNusContent() {
                 <div className="w-full mb-10 space-y-3">
                     <p className="text-zinc-500 font-light leading-relaxed w-full">
                         {isZh
-                            ? "运用 SolidWorks Simulation 对伺服电机基座进行严苛的静力学分析，确保动态交变负载下的结构刚度与极限承载力。"
+                            ? "运用 SolidWorks Simulation 对伺服电机基座进行静力学分析，指导结构设计，确保动态交变负载下的结构刚度与强度。"
                             : "Conducted rigorous static stress analysis on the servo mounting structures using SolidWorks Simulation to ensure sufficient stiffness and load-bearing capacity under dynamic conditions."}
                     </p>
                 </div>
@@ -226,7 +227,7 @@ function DukeNusContent() {
                 <div className="w-full mb-10 space-y-3">
                     <p className="text-zinc-500 font-light leading-relaxed w-full">
                         {isZh
-                            ? "突破传统 FDM 边界，通过刚性 PLA 与柔性 TPU 的多材料互锁连接设计，将系统零件总数从 62 个极限压缩至 5 个，实现革命性降本。"
+                            ? "突破传统 FDM 边界，通过刚性 PLA 与柔性 TPU 的多材料互锁连接设计，将系统零件总数从 62 个极限压缩至 5 个，实现系统结构优化与降本。"
                             : "Explored the limits of FDM by integrating rigid PLA and flexible TPU through multi-segment interlocking designs, drastically reducing the BOM from 62 to just 5 consolidated parts."}
                     </p>
                 </div>

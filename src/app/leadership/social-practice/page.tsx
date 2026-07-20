@@ -319,8 +319,8 @@ function SocialPracticeContent() {
                         </h2>
                         <p className="w-full text-zinc-600">
                             {t(
-                                "统筹撰写1.5万字硬核报告，确立4项校企合作意向。作为技术骨干，将调研需求直接闭环转化为农用机器人机构设计。",
-                                "Coordinated a 15k-word technical report and secured 4 strategic partnerships. As technical lead, translated field requirements directly into a custom robot mechanism design."
+                                "统筹撰写1.5万字报告，作为技术骨干，将调研需求直接闭环转化为农用机器人机构设计。",
+                                "Coordinated a 15k-word technical report. As technical lead, translated field requirements directly into a custom robot mechanism design."
                             )}
                         </p>
                         {/* Hero 2-col (both img with object-contain) */}
@@ -342,7 +342,7 @@ function SocialPracticeContent() {
                                     className={HERO_CONTAIN_CLASSES}
                                 />
                                 <p className={HERO_CAPTION}>
-                                    {t("产出万字硬核调研分析报告", "Comprehensive Technical & Market Report")}
+                                    {t("产出万字调研分析报告", "Comprehensive Technical & Market Report")}
                                 </p>
                             </div>
                         </div>

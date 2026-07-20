@@ -40,7 +40,7 @@ function DetailContent() {
                         className="text-sm font-semibold text-zinc-500 hover:text-zinc-900 transition-colors flex items-center gap-2"
                     >
                         <span>←</span>
-                        {lang === "zh" ? "返回主页" : "Back to Home"}
+                        {lang === "zh" ? "返回项目经历" : "Back to Projects Experience"}
                     </Link>
                 </div>
             </nav>
@@ -53,22 +53,23 @@ function DetailContent() {
                 <section className="min-h-[80vh] flex flex-col items-center justify-center text-center mb-24">
                     <h1 className="text-5xl md:text-7xl font-extrabold tracking-tight mb-6">
                         {lang === "zh"
-                            ? "高精度全向舵轮研发"
-                            : "High-Precision Omnidirectional Steering Wheel"}
+                            ? "高精度舵轮与移动机器人底盘研发"
+                            : "High-Precision Omnidirectional Steering Wheel & Mobile Robot Chassis R&D"}
                     </h1>
                     <p className="text-zinc-400 text-lg md:text-xl w-full leading-relaxed mb-8">
                         {lang === "zh"
-                            ? "全国大学生机器人大赛 ROBOCON — 舵轮 / 全向轮底盘系统"
-                            : "National University Robot Competition ROBOCON — Steering & Omni-Wheel Chassis System"}
+                            ? "全国大学生机器人大赛 ROBOCON: 舵轮底盘系统"
+                            : "National University Robot Competition ROBOCON: Omni-Wheel Chassis System"}
                     </p>
 
                     {/* Tags */}
                     <div className="flex flex-wrap justify-center gap-3 mb-16">
                         {[
                             lang === "zh" ? "ROBOCON 全国一等奖" : "ROBOCON National 1st Prize",
-                            "Dual-Motor",
-                            "4:1 Ratio",
-                            "GB Standard",
+                            lang === "zh" ? "双电机驱动" : "Dual-Motor",
+                            lang === "zh" ? "锥齿轮传动" : "Bevel Gear Transmission",
+                            lang === "zh" ? "直齿轮减速" : "Spur Gear Reduction",
+                            lang === "zh" ? "GB公差与工程图出图" : "GB Standard Tolerance & Engineering Drawings",
                         ].map((tag) => (
                             <span
                                 key={tag}
@@ -113,8 +114,8 @@ function DetailContent() {
                         </h2>
                         <p className="text-zinc-500 leading-relaxed w-full">
                             {lang === "zh"
-                                ? "采用双电机独立驱动，通过 4:1 锥齿轮与直齿轮减速系统，实现 1.7° 的极高系统级转向分辨率。"
-                                : "Achieved 1.7° extreme steering resolution through a 4:1 bevel and spur gear reduction system."}
+                                ? "采用双电机独立驱动，通过锥齿轮与直齿轮传动减速系统，实现 1.7° 的极高系统级转向分辨率。"
+                                : "Achieved 1.7° extreme steering resolution through a bevel and spur gear transmission reduction system."}
                         </p>
                     </div>
 

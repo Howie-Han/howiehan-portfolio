@@ -17,7 +17,7 @@ function DetailContent() {
                 <div className="w-full px-6 h-16 flex items-center">
                     <Link href={`/?lang=${lang}#projects`} className="text-sm font-semibold text-zinc-500 hover:text-zinc-900 transition-colors flex items-center gap-2">
                         <span>←</span>
-                        {lang === "zh" ? "返回主页" : "Back to Home"}
+                        {lang === "zh" ? "返回项目经历" : "Back to Projects Experience"}
                     </Link>
                 </div>
             </nav>
@@ -29,10 +29,15 @@ function DetailContent() {
                         <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-tight leading-tight w-full text-zinc-900">
                             {lang === "zh"
                                 ? "磁驱动左心室辅助装置设计与多物理场仿真"
-                                : "Magnetically-Driven Left Ventricular Assist Device"}
+                                : "Magnetically-Driven Left Ventricular Assist Device Design & Multiphysics Simulation"}
                         </h1>
                         <div className="flex flex-wrap justify-center gap-3 mt-8">
-                            {["COMSOL FSI", "Neo-Hookean Model", "ALE Dynamic Mesh", "Hemodynamics"].map((badge) => (
+                            {[
+                                lang === "zh" ? "COMSOL FSI" : "COMSOL FSI",
+                                lang === "zh" ? "Neo-Hookean模型" : "Neo-Hookean Model",
+                                lang === "zh" ? "ALE动态网格" : "ALE Dynamic Mesh",
+                                lang === "zh" ? "血流动力学" : "Hemodynamics"
+                            ].map((badge) => (
                                 <span key={badge} className="bg-zinc-100 text-zinc-600 px-4 py-1.5 rounded-full text-xs font-semibold tracking-wide border border-zinc-200">
                                     {badge}
                                 </span>
@@ -40,7 +45,7 @@ function DetailContent() {
                         </div>
                         <p className="text-lg text-zinc-500 md:text-xl leading-relaxed w-full mt-10">
                             {lang === "zh"
-                                ? "研发基于磁场驱动的柔性左心室辅助装置。独立构建极其严谨的磁-固-流强耦合多物理场仿真体系，以理论闭环验证其设计满足临床级血流动力学标准。"
+                                ? "研发基于磁场驱动的柔性左心室辅助装置。独立构建严谨的磁-固-流强耦合多物理场仿真体系，以理论闭环验证其设计满足临床级血流动力学标准。"
                                 : "Engineered a biomimetic Left Ventricular Assist Device (LVAD) driven by external magnetic fields. Developed a rigorous magneto-solid-fluid coupled simulation framework to validate its hemodynamic performance and structural feasibility against clinical standards."}
                         </p>
                     </div>
@@ -191,12 +196,12 @@ function DetailContent() {
                                 <div className={`${CONTAINER_CLASSES} aspect-[16/9]`}>
                                     <img
                                         src="/media/project/lvad/sim-deformation.gif"
-                                        alt={lang === "zh" ? "理论计算孪生" : "Theoretical Simulation"}
+                                        alt={lang === "zh" ? "COMSOL仿真模拟" : "Theoretical Simulation"}
                                         className={IMG_CLASSES}
                                     />
                                 </div>
                                 <p className="text-sm text-zinc-500 text-center mt-3">
-                                    {lang === "zh" ? "理论计算孪生" : "Theoretical Simulation"}
+                                    {lang === "zh" ? "COMSOL仿真模拟" : "Theoretical Simulation"}
                                 </p>
                             </div>
                             <div>

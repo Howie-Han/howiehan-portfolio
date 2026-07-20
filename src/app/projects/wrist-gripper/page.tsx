@@ -17,7 +17,7 @@ function DetailContent() {
                 <div className="w-full px-6 h-16 flex items-center">
                     <Link href={`/?lang=${lang}#projects`} className="text-sm font-semibold text-zinc-500 hover:text-zinc-900 transition-colors flex items-center gap-2">
                         <span>←</span>
-                        {lang === "zh" ? "返回主页" : "Back to Home"}
+                        {lang === "zh" ? "返回项目经历" : "Back to Projects Experience"}
                     </Link>
                 </div>
             </nav>
@@ -28,11 +28,16 @@ function DetailContent() {
                     <div className="w-full max-w-6xl mx-auto flex flex-col items-center text-center">
                         <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-tight leading-tight w-full text-zinc-900">
                             {lang === "zh"
-                                ? "刚柔耦合绳驱空间腕关节及灵巧手开发"
+                                ? "刚柔耦合绳驱空间腕关节灵巧手开发"
                                 : "Rigid-Flexible Rope-Driven Wrist Joint"}
                         </h1>
                         <div className="flex flex-wrap justify-center gap-3 mt-8">
-                            {["D-H Kinematics", "Tendon-Driven", "Rigid-Flexible Coupling", "1kg Payload"].map((badge) => (
+                            {[
+                                lang === "zh" ? "D-H 运动学" : "D-H Kinematics",
+                                lang === "zh" ? "绳驱动" : "Rope-Driven",
+                                lang === "zh" ? "刚柔耦合" : "Rigid-Flexible Coupling",
+                                lang === "zh" ? "1kg 负载" : "1kg Payload"
+                            ].map((badge) => (
                                 <span key={badge} className="bg-zinc-100 text-zinc-600 px-4 py-1.5 rounded-full text-xs font-semibold tracking-wide border border-zinc-200">
                                     {badge}
                                 </span>
@@ -51,11 +56,11 @@ function DetailContent() {
                     <div className="w-full max-w-6xl mx-auto">
                         <div className="flex flex-col gap-4 mb-8 w-full">
                             <h2 className="text-3xl font-bold tracking-tight">
-                                {lang === "zh" ? "空间运动学与包络验证" : "D-H Kinematics & Workspace Validation"}
+                                {lang === "zh" ? "运动学与工作空间验证" : "D-H Kinematics & Workspace Validation"}
                             </h2>
                             <p className="text-zinc-600 leading-relaxed w-full">
                                 {lang === "zh"
-                                    ? "基于 D-H 参数建立严谨的正运动学数学模型，并通过 MATLAB 机器人工具箱完成蒙特卡洛仿真，验证了直径 200mm 的半球形工作空间包络。"
+                                    ? "基于 D-H 参数建立正运动学数学模型，并通过 MATLAB 机器人工具箱完成蒙特卡洛仿真，验证了直径 200mm 的半球形工作空间包络。"
                                     : "Established a rigorous mathematical model based on D-H parameters. Validated the 200mm hemispherical workspace envelope and optimized singularity avoidance trajectories via MATLAB Robotics Toolbox."}
                             </p>
                         </div>

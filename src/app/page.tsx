@@ -383,24 +383,24 @@ function HomeContent() {
               </Link>
             </div>
 
-            {/* 经历 3: BMW China (新增) */}
+            {/* 经历 3: BMW China (静态卡片) */}
             <div className="relative pl-12 md:pl-24 py-8 group">
-              <div className="absolute left-[17px] md:left-[33px] top-[52px] w-3 h-3 bg-white border-2 border-zinc-300 rounded-full group-hover:border-zinc-900 group-hover:scale-125 group-hover:bg-zinc-900 transition-all duration-300 z-10"></div>
-              <Link href={`/experience/bmw?lang=${lang}`} className="block bg-white border border-zinc-200/60 rounded-2xl p-6 md:p-8 group-hover:shadow-xl group-hover:border-zinc-300 group-hover:-translate-y-1 transition-all duration-300">
+              <div className="absolute left-[17px] md:left-[33px] top-[52px] w-3 h-3 bg-white border-2 border-zinc-300 rounded-full z-10"></div>
+              <div className="block bg-white border border-zinc-200/60 rounded-2xl p-6 md:p-8">
                 <h3 className="text-xl font-bold text-zinc-900 mb-2">{lang === 'zh' ? '数字化创新实习生' : 'Digitalistaion Innovation Intern'}</h3>
                 <p className="text-sm font-medium text-zinc-500 mb-4">{lang === 'zh' ? '宝马（中国）服务有限公司 | 2025.02 - 2025.05' : 'BMW China Service | Feb 2025 - May 2025'}</p>
                 <p className="text-zinc-600 text-sm md:text-base leading-relaxed text-justify">{lang === 'zh' ? '运用 Power Automate 与 Python 开发自动化项目管理工作流，将人工耗时缩减超90%，并开展核心智驾供应商调研与内部 AI 赋能。' : 'Developed automated project management workflows via Power Automate and Python, reducing manual effort by over 90%, alongside intelligent driving market research and corporate AI enablement.'}</p>
-              </Link>
+              </div>
             </div>
 
-            {/* 经历 4: AUBO */}
+            {/* 经历 4: AUBO (静态卡片) */}
             <div className="relative pl-12 md:pl-24 py-8 group">
-              <div className="absolute left-[17px] md:left-[33px] top-[52px] w-3 h-3 bg-white border-2 border-zinc-300 rounded-full group-hover:border-zinc-900 group-hover:scale-125 group-hover:bg-zinc-900 transition-all duration-300 z-10"></div>
-              <Link href={`/experience/aubo?lang=${lang}`} className="block bg-white border border-zinc-200/60 rounded-2xl p-6 md:p-8 group-hover:shadow-xl group-hover:border-zinc-300 group-hover:-translate-y-1 transition-all duration-300">
+              <div className="absolute left-[17px] md:left-[33px] top-[52px] w-3 h-3 bg-white border-2 border-zinc-300 rounded-full z-10"></div>
+              <div className="block bg-white border border-zinc-200/60 rounded-2xl p-6 md:p-8">
                 <h3 className="text-xl font-bold text-zinc-900 mb-2">{lang === 'zh' ? '机械臂系统测试实习生' : 'Robotic Arm System Testing Intern'}</h3>
                 <p className="text-sm font-medium text-zinc-500 mb-4">{lang === 'zh' ? '遨博（江苏）机器人有限公司 | 2024.06 - 2024.09' : 'AUBO Robotics | Jun 2024 - Sep 2024'}</p>
-                <p className="text-zinc-600 text-sm md:text-base leading-relaxed text-justify">{lang === 'zh' ? '完成协作机械臂系统控制系统上线前联调测试并准确定位多项漏洞，协助研发团队高效进行排障工作。' : 'Executed joint debugging and testing of the control system for a 6-axis collaborative robot arm, precisely locating multiple bugs to accelerate the R&D troubleshooting efficiently.'}</p>
-              </Link>
+                <p className="text-zinc-600 text-sm md:text-base leading-relaxed text-justify">{lang === 'zh' ? '完成协作机械臂系统控制系统上线前联调测试并准确定位多项漏洞，协助研发团队高效进行排障工作。' : 'Executed joint debugging and debugging of the control system for a 6-axis collaborative robot arm, precisely locating multiple bugs to accelerate the R&D troubleshooting efficiently.'}</p>
+              </div>
             </div>
           </div>
         </div>
@@ -417,8 +417,8 @@ function HomeContent() {
           </h2>
           <p className="text-center text-sm text-zinc-400 mb-16 tracking-wide">
             {lang === "zh"
-              ? "💡 点击项目卡片，深入查阅 SolidWorks 爆炸图、仿真图谱与设计 SOP"
-              : "💡 Click on each project to inspect SolidWorks exploded views, simulations, and SOPs"}
+              ? "💡 点击各经历卡片，查看详细工程交付物与技术细节"
+              : "💡 Click on each experience to view engineering deliverables and technical details"}
           </p>
           <div className="max-w-5xl mx-auto space-y-24 px-4">
             {/* 项目 1: 全向舵轮 (左图右文) */}

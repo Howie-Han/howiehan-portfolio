@@ -30,48 +30,63 @@ function AlstomContent() {
     const lang = searchParams.get("lang") || "zh";
     const isZh = lang === "zh";
 
-    const [activeGalleryIndex, setActiveGalleryIndex] = useState(3);
+    const [activeGalleryIndex, setActiveGalleryIndex] = useState(0);
     const galleryMedia = [
         {
             type: "image",
-            src: "/media/experience/alstom/gallery-1-tpu.gif",
-            title: isZh ? "FDM 打印工艺与构型多材料测试" : "PETG/TPU Multi-material Prototyping Optimization",
-            desc: isZh ? "测试柔性高分子构件在复杂应力条件下的回弹极限与层间黏结表现。" : "Evaluating interlayer adhesion and elasticity threshold under continuous stress profiling.",
+            src: "/media/experience/alstom/gallery-3-outdoor-img.png",
+            title: isZh ? "实车底部巡检运行测试" : "Under-Train Inspection Testing",
+            desc: isZh ? "机器人在列车底部真实环境下的运行实景，验证底盘的通过性与工作空间。" : "Real-world deployment of the robot operating under the train chassis to verify maneuverability and workspace clearance.",
         },
         {
             type: "image",
             src: "/media/experience/alstom/gallery-2-indoor-img.png",
-            title: isZh ? "车厂实机室内轨道标定与干涉校验" : "Depot Indoor Track Calibration & Interference Analysis",
-            desc: isZh ? "在 Kim Chuan Depot 进行实装匹配，通过多维尺寸校验确保运行动载间隙符合毫米级公差约束。" : "On-site precision fit verification to ensure dynamic clearances comply with millimeter-level tolerances.",
+            title: isZh ? "机电一体化组装实物" : "Fully Assembled Mechatronic Prototype",
+            desc: isZh ? "完成所有机械结构件打印加工、电子设备集成与内部走线布局后的机器人完整形态。" : "The complete robot prototype after the assembly of 3D-printed mechanical parts, electronic components integration, and internal wire routing.",
         },
         {
             type: "image",
-            src: "/media/experience/alstom/gallery-3-outdoor-img.png",
-            title: isZh ? "实地部署与复杂坡度地形通过性常规测试" : "Field Deployment & Complex Terrain Navigation Trials",
-            desc: isZh ? "评估小直径履带结构在砂石、坡道等多变地质环境下的越障通过能力。" : "Assessing high-angle climbing independence across highly irregular outdoor aggregate surfaces.",
+            src: "/media/experience/alstom/gallery-1-tpu.gif",
+            title: isZh ? "FDM 柔性履带打印过程" : "FDM Printing of Flexible Track",
+            desc: isZh ? "使用 Bambu Lab X1C 3D 打印机与 TPU 95A HF 柔性材料一体化打印机器人履带的延时摄影。" : "Time-lapse of printing the robot's continuous track using TPU 95A HF material on a Bambu Lab X1C 3D printer.",
         },
         {
             type: "video",
             src: "/media/experience/alstom/gallery-4-rail-test.mp4",
-            title: isZh ? "沿轨自主导向巡检实机闭环运行验证" : "Autonomous Rail-Guided Inspection Operations",
-            desc: isZh ? "针对列车底盘关键探测点执行全自动化视觉循迹与机械臂多姿态拟合巡检测试。" : "Validating closed-loop autonomous navigation and posture optimization for under-train imaging.",
+            title: isZh ? "户外铁轨越障测试" : "Outdoor Rail-Crossing Test",
+            desc: isZh ? "机器人在户外真实轨道环境中进行翻越铁轨等地形的越障能力测试。" : "Testing the robot's obstacle-clearing capabilities when crossing railway tracks in an outdoor environment.",
         },
         {
             type: "video",
             src: "/media/experience/alstom/gallery-5-outdoor-test.mp4",
-            title: isZh ? "全天候户外严苛环境长距离续航极限验证" : "All-Weather Endurance & Locomotion Performance Verification",
-            desc: isZh ? "实测极端高湿度及高温条件下，整体机电架构与电池管理系统的热耗散及防尘防水可靠性。" : "Verifying thermal dissipation efficiency and electromechanical enclosure integrity under high heat and moisture.",
+            title: isZh ? "陡坡攀爬能力测试" : "Steep Slope Climbing Test",
+            desc: isZh ? "验证机器人在户外大倾角陡坡地形下的抓地力与攀爬稳定性。" : "Verifying the robot's traction and climbing stability on steep slope terrains outdoors.",
         },
     ];
 
     const [activeStep, setActiveStep] = useState(0);
     const [activeWorkflowStep, setActiveWorkflowStep] = useState(0);
     const stepperData = [
-        { title: isZh ? "破损排查" : "Broken Parts Analysis", imgs: ["reverse-1-broken-1.png", "reverse-1-broken-2.png"] },
-        { title: isZh ? "点云扫描" : "3D Scan", imgs: ["reverse-2-scan-1.png", "reverse-2-scan-2.png"] },
-        { title: isZh ? "逆向重建" : "Reverse Engineering", imgs: ["reverse-3-reverse-1.png", "reverse-3-reverse-2.png"] },
-        { title: isZh ? "CAD工艺修复" : "CAD Optimization", imgs: ["reverse-4-cad-1.png", "reverse-4-cad-2.png"] },
-        { title: isZh ? "工业级交付" : "Industrial Delivery", imgs: ["reverse-4-final-1.png", "reverse-4-final-2.png"] },
+        {
+            title: isZh ? "实机破损原件勘查" : "Damaged Part Inspection",
+            imgs: ["reverse-1-broken-1.png", "reverse-1-broken-2.png"]
+        },
+        {
+            title: isZh ? "三维点云扫描捕获" : "3D Point Cloud Scanning",
+            imgs: ["reverse-2-scan-1.png", "reverse-2-scan-2.png"]
+        },
+        {
+            title: isZh ? "Quicksurface 逆向重建" : "Quicksurface Reverse Engineering",
+            imgs: ["reverse-3-reverse-1.png", "reverse-3-reverse-2.png"]
+        },
+        {
+            title: isZh ? "Onshape 打印前结构修复" : "Onshape Pre-print Optimization",
+            imgs: ["reverse-4-cad-1.png", "reverse-4-cad-2.png"]
+        },
+        {
+            title: isZh ? "工业级 3D 打印成品交付" : "Industrial 3D Printed Delivery",
+            imgs: ["reverse-4-final-1.png", "reverse-4-final-2.png"]
+        },
     ];
 
     const timelineData = [
@@ -89,16 +104,16 @@ function AlstomContent() {
         <main className="min-h-screen bg-zinc-50 text-zinc-900 pb-32">
             <nav className="p-8 max-w-7xl mx-auto">
                 <Link
-                    href={`/?lang=${lang}`}
+                    href={`/?lang=${lang}#experience`}
                     className="text-zinc-500 hover:text-zinc-900 transition-colors tracking-widest text-sm font-semibold uppercase"
                 >
-                    {"<"} {isZh ? "返回主页" : "BACK TO HOME"}
+                    {"<"} {isZh ? "返回工作经历" : "Back to Work Experience"}
                 </Link>
             </nav>
 
             <section className="max-w-7xl mx-auto px-8 pt-12 pb-24 flex flex-col items-center text-center">
                 <h1 className="text-5xl md:text-7xl font-bold tracking-tighter mb-6 text-zinc-900">
-                    {isZh ? "重塑工业级增材制造。" : "Redefining Industrial Additive Manufacturing."}
+                    {isZh ? "工业级增材制造重塑供应链" : "Industrial Additive Manufacturing Redefining Supply Chains"}
                 </h1>
                 <p className="text-xl text-zinc-500 font-light">
                     {isZh ? "机器人与增材制造研发实习生 @ 阿尔斯通（亚太）创新中心" : "Robotics & AM R&D Intern @ Alstom Innovation Station"}
@@ -107,9 +122,9 @@ function AlstomContent() {
                     {[
                         "DfAM",
                         isZh ? "逆向工程" : "Reverse Engineering",
-                        "EHS Compliance",
+                        isZh ? "EHS合规" : "EHS Compliance",
                         isZh ? "巡检机器人" : "Inspection Robot",
-                        "FDM / PA6",
+                        "PA6, TPU, PETG",
                     ].map((tag) => (
                         <span
                             key={tag}
@@ -184,7 +199,7 @@ function AlstomContent() {
                             <div>
                                 <h3 className="text-xl font-bold text-zinc-800 mb-2">{isZh ? "刚性复用与受力优化" : "Rigidity & Stress Optimization"}</h3>
                                 <p className="text-sm text-zinc-500 leading-relaxed mb-6">
-                                    {isZh ? "巧妙利用电机金属外壳的物理刚性来分散薄弱环节应力，极大提升了 3D 打印主体结构的整体刚度。配合高分辨率 CAD 数据与流式 3D 交互共同佐证。" : "Innovatively utilizes the motor's metal casing to disperse stress at weak points, significantly enhancing overall structural rigidity. Documented via high-res CAD renders combined with lightweight fluid 3D viewports."}
+                                    {isZh ? "利用电机金属外壳的物理刚性分散薄弱环节应力，提升了3D打印主体结构的整体刚度。" : "Innovatively utilizes the motor's metal casing to disperse stress at weak points, significantly enhancing overall structural rigidity."}
                                 </p>
                             </div>
                             <div className="relative w-full h-48 xl:h-52 bg-zinc-50 rounded-2xl overflow-hidden border border-zinc-200 mt-2">
