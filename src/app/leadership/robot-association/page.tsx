@@ -29,32 +29,21 @@ function RobotAssociationContent() {
         <main className="w-full min-h-screen bg-zinc-50 text-zinc-900 font-sans">
             {/* Sticky frosted-glass navigation bar */}
             <nav className="sticky top-0 z-50 w-full backdrop-blur-md bg-zinc-50/80 border-b border-zinc-200/50">
-                <div className="px-6 md:px-12 lg:px-24 h-16 flex items-center">
+                <div className="w-full px-6 md:px-12 lg:px-24 py-4 flex items-center">
                     <Link
                         href={`/?lang=${lang}#leadership`}
-                        className="text-zinc-500 hover:text-zinc-700 transition-colors duration-200 flex items-center gap-2"
+                        className="inline-flex items-center gap-2 text-sm font-medium text-zinc-500 hover:text-zinc-900 transition-colors"
                     >
-                        <svg
-                            width="20"
-                            height="20"
-                            viewBox="0 0 24 24"
-                            fill="none"
-                            stroke="currentColor"
-                            strokeWidth="1.5"
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                        >
-                            <path d="M15 18l-6-6 6-6" />
-                        </svg>
-                        {t("返回领导力", "Back to Leadership")}
+                        <span>{"<"}</span>
+                        <span>{t("返回领导力", "Back to Leadership")}</span>
                     </Link>
                 </div>
             </nav>
 
             {/* Main content container */}
-            <div className="px-6 md:px-12 lg:px-24 py-24 flex flex-col items-center w-full">
+            <div className="px-6 md:px-12 lg:px-24 py-12 md:py-24 flex flex-col items-center w-full">
                 {/* Centered main title */}
-                <h1 className="text-4xl font-extrabold text-zinc-900 mb-6 text-center tracking-tight">
+                <h1 className="text-2xl md:text-4xl font-extrabold text-zinc-900 mb-6 text-center tracking-tight">
                     {t(
                         "北航机器人协会会长 (2023.09 - 2024.06)",
                         "President, Robot Association of Beihang University (Sep. 2023 - Jun. 2024)"

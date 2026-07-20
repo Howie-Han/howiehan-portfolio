@@ -72,13 +72,13 @@ function HomeContent() {
       {/* ========== #hero ========== */}
       <section
         id="hero"
-        className="flex flex-col items-center justify-center min-h-screen px-6 pt-24 pb-16 md:px-12 lg:px-24"
+        className="flex flex-col items-center justify-center min-h-screen px-6 pt-20 pb-12 md:pt-24 md:pb-16 md:px-12 lg:px-24"
       >
         <div className="max-w-4xl mx-auto text-center">
           <span className="inline-block mb-6 text-xs tracking-widest uppercase text-zinc-500">
             {t("我的主页 · 2026", "My Portfolio · 2026")}
           </span>
-          <h1 className="text-5xl md:text-7xl font-extrabold tracking-widest bg-gradient-to-br from-zinc-900 via-zinc-700 to-zinc-500 bg-clip-text text-transparent drop-shadow-sm">
+          <h1 className="text-4xl md:text-5xl lg:text-7xl font-extrabold tracking-widest bg-gradient-to-br from-zinc-900 via-zinc-700 to-zinc-500 bg-clip-text text-transparent drop-shadow-sm">
             {lang === "zh" ? "韩浩宇" : "Howie Han"}
           </h1>
           <p className="max-w-2xl mx-auto text-xl md:text-2xl font-light text-zinc-500 tracking-wide mt-6 mb-8 text-balance">
@@ -128,7 +128,7 @@ function HomeContent() {
       {/* ========== #about ========== */}
       <section
         id="about"
-        className="min-h-screen flex items-center px-6 py-24 md:px-12 lg:px-24"
+        className="min-h-screen flex items-center px-6 py-16 md:py-24 md:px-12 lg:px-24"
       >
         <div className="max-w-5xl mx-auto w-full">
           <h2 className="text-3xl font-bold text-zinc-900 mb-12">
@@ -260,7 +260,7 @@ function HomeContent() {
       {/* ========== #skills ========== */}
       <section
         id="skills"
-        className="min-h-screen flex items-center px-6 py-24 md:px-12 lg:px-24"
+        className="min-h-screen flex items-center px-6 py-16 md:py-24 md:px-12 lg:px-24"
       >
         <div className="max-w-5xl mx-auto w-full">
           <h2 className="text-3xl font-bold text-zinc-900 mb-12">
@@ -352,7 +352,7 @@ function HomeContent() {
       {/* ========== #experience ========== */}
       <section
         id="experience"
-        className="min-h-screen flex items-center px-6 py-24 md:px-12 lg:px-24"
+        className="min-h-screen flex items-center px-6 py-16 md:py-24 md:px-12 lg:px-24"
       >
         <div className="max-w-5xl mx-auto w-full">
           <h2 className="text-3xl font-bold text-zinc-900 mb-12">
@@ -412,7 +412,7 @@ function HomeContent() {
       {/* ========== #projects ========== */}
       <section
         id="projects"
-        className="min-h-screen flex items-center px-6 py-24 md:px-12 lg:px-24"
+        className="min-h-screen flex items-center px-6 py-16 md:py-24 md:px-12 lg:px-24"
       >
         <div className="max-w-5xl mx-auto w-full">
           <h2 className="text-3xl font-bold text-zinc-900 mb-12">
@@ -423,7 +423,7 @@ function HomeContent() {
               ? "💡 点击各经历卡片，查看详细工程交付物与技术细节"
               : "💡 Click on each experience to view engineering deliverables and technical details"}
           </p>
-          <div className="max-w-5xl mx-auto space-y-24 px-4">
+          <div className="max-w-5xl mx-auto space-y-16 md:space-y-24 px-4">
             {/* 项目 1: 全向舵轮 (左图右文) */}
             <Link href={`/projects/omni-wheel?lang=${lang}`} className="flex flex-col md:flex-row items-center gap-12 group p-6 md:p-8 bg-white border border-transparent hover:border-zinc-200 hover:bg-zinc-50/50 rounded-3xl hover:shadow-xl hover:-translate-y-1 transition-all duration-300 w-full text-justify">
               <div className="w-full md:w-1/2 aspect-[4/3] flex items-center justify-center flex-shrink-0 transition-transform duration-500 group-hover:scale-[1.02] bg-zinc-50/50 rounded-2xl border border-zinc-200/60 shadow-inner p-4 md:p-6">
@@ -478,7 +478,7 @@ function HomeContent() {
       {/* ========== #leadership ========== */}
       <section
         id="leadership"
-        className="min-h-screen flex items-center px-6 py-24 md:px-12 lg:px-24"
+        className="min-h-screen flex items-center px-6 py-16 md:py-24 md:px-12 lg:px-24"
       >
         <div className="max-w-5xl mx-auto w-full">
           <h2 className="text-3xl font-bold text-zinc-900 mb-12">
@@ -524,7 +524,7 @@ function HomeContent() {
       {/* ========== #contact ========== */}
       <section
         id="contact"
-        className="px-6 py-24 md:px-12 lg:px-24"
+        className="px-6 py-16 md:py-24 md:px-12 lg:px-24"
       >
         <div className="max-w-5xl mx-auto w-full">
           <div className="border-t border-zinc-200 pt-12 flex flex-col md:flex-row items-center justify-between gap-6">

@@ -37,7 +37,7 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${inter.variable} h-full antialiased`}>
       {/* 【视觉红线修复】：将 slate-50 修正为与全站设计系统统一的 zinc-50，并加入优雅的选中文本高亮 */}
-      <body className="min-h-full bg-zinc-50 font-sans text-zinc-900 selection:bg-zinc-200">
+      <body className="min-h-full bg-zinc-50 font-sans text-zinc-900 selection:bg-zinc-200 overflow-x-hidden">
         {children}
       </body>
     </html>

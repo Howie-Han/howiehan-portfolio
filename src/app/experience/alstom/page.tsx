@@ -102,17 +102,20 @@ function AlstomContent() {
 
     return (
         <main className="min-h-screen bg-zinc-50 text-zinc-900 pb-32">
-            <nav className="p-8 max-w-7xl mx-auto">
-                <Link
-                    href={`/?lang=${lang}#experience`}
-                    className="text-zinc-500 hover:text-zinc-900 transition-colors tracking-widest text-sm font-semibold uppercase"
-                >
-                    {"<"} {isZh ? "返回工作经历" : "Back to Work Experience"}
-                </Link>
+            <nav className="sticky top-0 z-50 w-full backdrop-blur-md bg-zinc-50/80 border-b border-zinc-200/50">
+                <div className="w-full px-6 md:px-12 lg:px-24 py-4 flex items-center">
+                    <Link
+                        href={`/?lang=${lang}#experience`}
+                        className="inline-flex items-center gap-2 text-sm font-medium text-zinc-500 hover:text-zinc-900 transition-colors"
+                    >
+                        <span>{"<"}</span>
+                        <span>{isZh ? "返回工作经历" : "Back to Experience"}</span>
+                    </Link>
+                </div>
             </nav>
 
             <section className="max-w-7xl mx-auto px-8 pt-12 pb-24 flex flex-col items-center text-center">
-                <h1 className="text-5xl md:text-7xl font-bold tracking-tighter mb-6 text-zinc-900">
+                <h1 className="text-3xl md:text-5xl lg:text-7xl font-bold tracking-tighter mb-6 text-zinc-900">
                     {isZh ? "工业级增材制造重塑供应链" : "Industrial Additive Manufacturing Redefining Supply Chains"}
                 </h1>
                 <p className="text-xl text-zinc-500 font-light">
@@ -165,7 +168,7 @@ function AlstomContent() {
                 </div>
 
                 {/* 主展台 */}
-                <div className="w-full h-[420px] bg-white rounded-3xl overflow-hidden shadow-2xl shadow-zinc-200/50 mb-16 relative border border-zinc-100">
+                <div className="w-full h-[50vh] md:h-[420px] bg-white rounded-3xl overflow-hidden shadow-2xl shadow-zinc-200/50 mb-16 relative border border-zinc-100">
                     <RobotScene />
                 </div>
 
@@ -173,7 +176,7 @@ function AlstomContent() {
                 <div className="grid grid-cols-1 gap-12 mb-16">
 
                     {/* 局部组件 1：一体化集成设计 */}
-                    <div className="bg-white rounded-3xl p-8 shadow-xl shadow-zinc-200/30 border border-zinc-100 flex flex-col xl:flex-row gap-8 min-h-[450px] xl:h-[450px]">
+                    <div className="bg-white rounded-3xl p-4 md:p-8 shadow-xl shadow-zinc-200/30 border border-zinc-100 flex flex-col xl:flex-row gap-8 min-h-[300px] md:min-h-[450px] xl:h-[450px]">
                         {/* 左侧：文字描述 + 静态高精CAD渲染图 */}
                         <div className="flex-1 flex flex-col">
                             <div>
@@ -193,7 +196,7 @@ function AlstomContent() {
                     </div>
 
                     {/* 局部组件 2：刚性复用与受力优化 */}
-                    <div className="bg-white rounded-3xl p-8 shadow-xl shadow-zinc-200/30 border border-zinc-100 flex flex-col xl:flex-row gap-8 min-h-[450px] xl:h-[450px]">
+                    <div className="bg-white rounded-3xl p-4 md:p-8 shadow-xl shadow-zinc-200/30 border border-zinc-100 flex flex-col xl:flex-row gap-8 min-h-[300px] md:min-h-[450px] xl:h-[450px]">
                         {/* 左侧：文字描述 + 静态高精CAD渲染图 */}
                         <div className="flex-1 flex flex-col">
                             <div>
@@ -247,7 +250,7 @@ function AlstomContent() {
                             />
                         )}
                     </div>
-                    <div className="grid grid-cols-5 gap-4">
+                    <div className="grid grid-cols-3 md:grid-cols-5 gap-4">
                         {galleryMedia.map((media, idx) => (
                             <button
                                 key={idx}

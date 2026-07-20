@@ -36,24 +36,13 @@ function SocialPracticeContent() {
         <main className="w-full min-h-screen bg-zinc-50 text-zinc-900 font-sans">
             {/* Sticky frosted-glass navigation bar */}
             <nav className="sticky top-0 z-50 w-full backdrop-blur-md bg-zinc-50/80 border-b border-zinc-200/50">
-                <div className="px-6 md:px-12 lg:px-24 h-16 flex items-center">
+                <div className="w-full px-6 md:px-12 lg:px-24 py-4 flex items-center">
                     <Link
                         href={`/?lang=${lang}#leadership`}
-                        className="text-zinc-500 hover:text-zinc-700 transition-colors duration-200 flex items-center gap-2"
+                        className="inline-flex items-center gap-2 text-sm font-medium text-zinc-500 hover:text-zinc-900 transition-colors"
                     >
-                        <svg
-                            width="20"
-                            height="20"
-                            viewBox="0 0 24 24"
-                            fill="none"
-                            stroke="currentColor"
-                            strokeWidth="1.5"
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                        >
-                            <path d="M15 18l-6-6 6-6" />
-                        </svg>
-                        {t("返回领导力", "Back to Leadership")}
+                        <span>{"<"}</span>
+                        <span>{t("返回领导力", "Back to Leadership")}</span>
                     </Link>
                 </div>
             </nav>
@@ -61,7 +50,7 @@ function SocialPracticeContent() {
             {/* Main content container */}
             <div className="px-6 md:px-12 lg:px-24 py-24 flex flex-col items-center w-full">
                 {/* Centered main title */}
-                <h1 className="text-4xl font-extrabold text-zinc-900 mb-6 text-center tracking-tight">
+                <h1 className="text-2xl md:text-4xl font-extrabold text-zinc-900 mb-6 text-center tracking-tight">
                     {t(
                         "暑期社会实践队副队长 (2023.08)",
                         "Vice Captain, Summer Social Practice Team (Aug. 2023)"
@@ -79,7 +68,7 @@ function SocialPracticeContent() {
                 {/* ============================================================ */}
                 {/* Vertical three-module architecture                        */}
                 {/* ============================================================ */}
-                <div className="flex flex-col mt-24 w-full">
+                <div className="flex flex-col mt-16 md:mt-24 w-full">
                     {/* ------ Module 1: 产业调研与技术前瞻 / Industry Research & Tech Scouting ------ */}
                     <section>
                         <h2 className="text-2xl font-bold mb-4 text-center">
@@ -217,7 +206,7 @@ function SocialPracticeContent() {
                     </section>
 
                     {/* ------ Module 2: 下沉市场与需求定义 / Grassroots Market & Requirement Definition ------ */}
-                    <section className="mt-24">
+                    <section className="mt-16 md:mt-24">
                         <h2 className="text-2xl font-bold mb-4 text-center">
                             {t("下沉市场与需求定义", "Grassroots Market & Requirement Definition")}
                         </h2>
@@ -313,7 +302,7 @@ function SocialPracticeContent() {
                     </section>
 
                     {/* ------ Module 3: 成果交付与硬件孵化 / Project Delivery & Hardware Incubation ------ */}
-                    <section className="mt-24">
+                    <section className="mt-16 md:mt-24">
                         <h2 className="text-2xl font-bold mb-4 text-center">
                             {t("成果交付与硬件孵化", "Project Delivery & Hardware Incubation")}
                         </h2>

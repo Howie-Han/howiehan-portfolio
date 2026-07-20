@@ -33,14 +33,14 @@ function DetailContent() {
     return (
         <div className="min-h-screen bg-zinc-50 text-zinc-900 selection:bg-zinc-200">
             {/* ─── Navigation ─── */}
-            <nav className="fixed top-0 w-full bg-white/70 backdrop-blur-md border-b border-zinc-200 z-50">
-                <div className="max-w-6xl mx-auto px-6 h-16 flex items-center">
+            <nav className="sticky top-0 z-50 w-full backdrop-blur-md bg-zinc-50/80 border-b border-zinc-200/50">
+                <div className="w-full px-6 md:px-12 lg:px-24 py-4 flex items-center">
                     <Link
                         href={`/?lang=${lang}#projects`}
-                        className="text-sm font-semibold text-zinc-500 hover:text-zinc-900 transition-colors flex items-center gap-2"
+                        className="inline-flex items-center gap-2 text-sm font-medium text-zinc-500 hover:text-zinc-900 transition-colors"
                     >
-                        <span>←</span>
-                        {lang === "zh" ? "返回项目经历" : "Back to Projects Experience"}
+                        <span>{"<"}</span>
+                        <span>{lang === "zh" ? "返回项目经历" : "Back to Projects"}</span>
                     </Link>
                 </div>
             </nav>
@@ -51,7 +51,7 @@ function DetailContent() {
                    Module 01 – Hero 3D & Media Matrix
                    ═══════════════════════════════════════════════ */}
                 <section className="min-h-[80vh] flex flex-col items-center justify-center text-center mb-24">
-                    <h1 className="text-5xl md:text-7xl font-extrabold tracking-tight mb-6">
+                    <h1 className="text-3xl md:text-5xl lg:text-7xl font-extrabold tracking-tight mb-6">
                         {lang === "zh"
                             ? "高精度舵轮与移动机器人底盘研发"
                             : "High-Precision Omnidirectional Steering Wheel & Mobile Robot Chassis R&D"}

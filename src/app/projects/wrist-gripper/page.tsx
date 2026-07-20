@@ -13,11 +13,11 @@ function DetailContent() {
     return (
         <div className="min-h-screen bg-zinc-50 text-zinc-900 selection:bg-zinc-300">
             {/* Navigation */}
-            <nav className="fixed top-0 w-full bg-zinc-50/80 backdrop-blur-md border-b border-zinc-200 z-50">
-                <div className="w-full px-6 h-16 flex items-center">
-                    <Link href={`/?lang=${lang}#projects`} className="text-sm font-semibold text-zinc-500 hover:text-zinc-900 transition-colors flex items-center gap-2">
-                        <span>←</span>
-                        {lang === "zh" ? "返回项目经历" : "Back to Projects Experience"}
+            <nav className="sticky top-0 z-50 w-full backdrop-blur-md bg-zinc-50/80 border-b border-zinc-200/50">
+                <div className="w-full px-6 md:px-12 lg:px-24 py-4 flex items-center">
+                    <Link href={`/?lang=${lang}#projects`} className="inline-flex items-center gap-2 text-sm font-medium text-zinc-500 hover:text-zinc-900 transition-colors">
+                        <span>{"<"}</span>
+                        <span>{lang === "zh" ? "返回项目经历" : "Back to Projects"}</span>
                     </Link>
                 </div>
             </nav>
@@ -26,7 +26,7 @@ function DetailContent() {
                 {/* ========== Module 01: Hero Section ========== */}
                 <section className="w-full pt-32 pb-24 px-6">
                     <div className="w-full max-w-6xl mx-auto flex flex-col items-center text-center">
-                        <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-tight leading-tight w-full text-zinc-900">
+                        <h1 className="text-2xl md:text-4xl lg:text-6xl font-extrabold tracking-tight leading-tight w-full text-zinc-900">
                             {lang === "zh"
                                 ? "刚柔耦合绳驱空间腕关节灵巧手开发"
                                 : "Rigid-Flexible Rope-Driven Wrist Joint"}
@@ -52,7 +52,7 @@ function DetailContent() {
                 </section>
 
                 {/* ========== Module 02: Kinematic Modeling & Workspace ========== */}
-                <section className="w-full py-24 px-6 bg-white">
+                <section className="w-full py-16 md:py-24 px-6 bg-white">
                     <div className="w-full max-w-6xl mx-auto">
                         <div className="flex flex-col gap-4 mb-8 w-full">
                             <h2 className="text-3xl font-bold tracking-tight">
@@ -97,7 +97,7 @@ function DetailContent() {
                 </section>
 
                 {/* ========== Module 03: Tendon-Driven & Rigid-Flexible Mechanism ========== */}
-                <section className="w-full py-24 px-6">
+                <section className="w-full py-16 md:py-24 px-6">
                     <div className="w-full max-w-6xl mx-auto">
                         <div className="flex flex-col gap-4 mb-8 w-full">
                             <h2 className="text-3xl font-bold tracking-tight">
