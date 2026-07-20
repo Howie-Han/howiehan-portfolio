@@ -95,7 +95,10 @@ function HomeContent() {
               {t("更多项目", "View Projects")}
             </button>
             <a
-              href="/resume.pdf"
+              href={lang === "zh" ? "/resume-zh.pdf" : "/resume-en.pdf"}
+              download={lang === "zh" ? "简历-韩浩宇.pdf" : "Resume-Haoyu HAN.pdf"}
+              target="_blank"
+              rel="noopener noreferrer"
               className="inline-flex items-center gap-2 rounded-md border border-zinc-300 px-8 py-3.5 text-sm font-medium text-zinc-600 transition-all duration-300 hover:border-zinc-400 hover:text-zinc-900"
             >
               <svg
@@ -528,12 +531,12 @@ function HomeContent() {
             <p className="text-sm text-zinc-400 tracking-wide">
               &copy; 2026 Howiesme {t("保留所有权利。", "All rights reserved.")}
             </p>
-            <div className="flex items-center gap-6">
+            <div className="flex items-center gap-6 flex-wrap justify-center">
               <a
-                href="mailto:hello@howiehan.com"
+                href={lang === "zh" ? "mailto:howiehaoyuhan@163.com" : "mailto:howiehaoyuhan@gmail.com"}
                 className="text-sm text-zinc-400 hover:text-zinc-900 transition-colors duration-200"
               >
-                {t("邮箱", "Email")}
+                {lang === "zh" ? "howiehaoyuhan@163.com" : "howiehaoyuhan@gmail.com"}
               </a>
               <span className="text-zinc-300 text-sm">/</span>
               <a
@@ -546,15 +549,32 @@ function HomeContent() {
               </a>
               <span className="text-zinc-300 text-sm">/</span>
               <a
-                href="https://github.com/Howie-Han"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-sm text-zinc-400 hover:text-zinc-900 transition-colors duration-200"
+                href={lang === "zh" ? "tel:+8615393392866" : "tel:+6580991704"}
+                className="inline-flex items-center gap-1.5 text-sm text-zinc-400 hover:text-zinc-900 transition-colors duration-200"
               >
-                GitHub
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+                  <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
+                </svg>
+                {lang === "zh" ? "+86 15393392866" : "+65 80991704"}
               </a>
+              <span className="text-zinc-300 text-sm">/</span>
+              <button
+                onClick={() => {
+                  navigator.clipboard.writeText("howiesme");
+                  alert(lang === "zh" ? "微信号已复制到剪贴板！" : "WeChat ID copied to clipboard!");
+                }}
+                className="inline-flex items-center gap-1.5 text-sm text-zinc-400 hover:text-zinc-900 transition-colors duration-200 cursor-pointer bg-transparent border-none"
+              >
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+                  <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" />
+                </svg>
+                {t("微信 (点击复制)", "WeChat (Click to copy)")}
+              </button>
             </div>
           </div>
+          <p className="mt-12 text-sm text-zinc-500 text-center">
+            {t("面向 2026/2027 届机器人与机电一体化系统结构研发岗位", "Open to Robotics and Mechatronics System Architecture R&D for 2026/2027 graduates.")}
+          </p>
         </div>
       </section>
     </div>
