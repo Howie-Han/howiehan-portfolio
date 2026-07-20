@@ -18,17 +18,17 @@ function SocialPracticeContent() {
     const t = (zh: string, en: string) => (lang === "zh" ? zh : en);
 
     const HERO_CLASSES =
-        "w-full h-[40vh] max-h-[400px] object-cover bg-zinc-100 rounded-xl filter grayscale opacity-90 hover:grayscale-0 hover:opacity-100 transition-all duration-700";
+        "w-full h-[40vh] max-h-[400px] object-cover bg-zinc-100 rounded-xl";
     const HERO_VIDEO_CLASSES =
-        "w-full h-[40vh] max-h-[400px] object-cover bg-zinc-100 rounded-xl filter grayscale opacity-90 hover:grayscale-0 hover:opacity-100 transition-all duration-700";
+        "w-full h-[40vh] max-h-[400px] object-cover bg-zinc-100 rounded-xl";
     const HERO_CONTAIN_CLASSES =
-        "w-full h-[40vh] max-h-[400px] object-contain bg-zinc-100 rounded-xl filter grayscale opacity-90 hover:grayscale-0 hover:opacity-100 transition-all duration-700";
+        "w-full h-[40vh] max-h-[400px] object-contain bg-zinc-100 rounded-xl";
     const FILM_CLASSES =
-        "w-full aspect-[4/3] object-cover bg-zinc-100 rounded-xl filter grayscale opacity-90 hover:grayscale-0 hover:opacity-100 transition-all duration-700";
+        "w-full aspect-[4/3] object-cover bg-zinc-100 rounded-xl";
     const FILM_CONTAIN_CLASSES =
-        "w-full aspect-[4/3] object-contain bg-zinc-100 rounded-xl filter grayscale opacity-90 hover:grayscale-0 hover:opacity-100 transition-all duration-700";
+        "w-full aspect-[4/3] object-contain bg-zinc-100 rounded-xl";
     const FILM_VIDEO_CLASSES =
-        "w-full aspect-[4/3] object-cover bg-zinc-100 rounded-xl filter grayscale opacity-90 hover:grayscale-0 hover:opacity-100 transition-all duration-700";
+        "w-full aspect-[4/3] object-cover bg-zinc-100 rounded-xl";
     const HERO_CAPTION = "text-sm text-zinc-500 text-center mt-3";
     const FILM_CAPTION = "text-xs text-zinc-500 text-center mt-2";
 
@@ -42,7 +42,7 @@ function SocialPracticeContent() {
                         className="inline-flex items-center gap-2 text-sm font-medium text-zinc-500 hover:text-zinc-900 transition-colors"
                     >
                         <span>{"<"}</span>
-                        <span>{t("返回领导力", "Back to Leadership")}</span>
+                        <span>{t("返回社群与领导力", "Back to Leadership")}</span>
                     </Link>
                 </div>
             </nav>

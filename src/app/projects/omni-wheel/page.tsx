@@ -18,13 +18,13 @@ const ModelViewer = dynamic(() => import("@/components/ModelViewer"), {
 });
 
 const MEDIA_FILTER =
-    "filter grayscale opacity-90 hover:grayscale-0 hover:opacity-100 transition-all duration-700 w-full h-auto object-cover rounded-xl";
+    "w-full h-auto object-cover rounded-xl";
 
 const MEDIA_FILTER_VIDEO =
-    "filter grayscale opacity-90 hover:grayscale-0 hover:opacity-100 transition-all duration-700 bg-white object-cover w-full h-full scale-[1.02] rounded-xl";
+    "bg-white object-cover w-full h-full scale-[1.02] rounded-xl";
 
 const PLACEHOLDER_FILTER =
-    "w-full h-full flex items-center justify-center bg-zinc-200 rounded-xl border border-zinc-300 shadow-inner filter grayscale opacity-90 hover:grayscale-0 hover:opacity-100 transition-all duration-700";
+    "w-full h-full flex items-center justify-center bg-zinc-200 rounded-xl border border-zinc-300 shadow-inner";
 
 function DetailContent() {
     const searchParams = useSearchParams();
@@ -95,7 +95,7 @@ function DetailContent() {
                                 loop
                                 muted
                                 playsInline
-                                className="filter grayscale opacity-90 hover:grayscale-0 hover:opacity-100 transition-all duration-700 w-full h-full object-cover rounded-xl aspect-[4/3]"
+                                className="w-full h-full object-cover rounded-xl aspect-[4/3]"
                             />
                         </div>
                     </div>

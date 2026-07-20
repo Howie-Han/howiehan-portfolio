@@ -13,8 +13,7 @@ const ModelViewer = dynamic(() => import("@/components/ModelViewer"), {
     ),
 });
 
-const MEDIA_FILTER =
-    "filter grayscale opacity-90 hover:grayscale-0 hover:opacity-100 transition-all duration-700 w-full h-full rounded-xl";
+const MEDIA_FILTER = "w-full h-full rounded-xl";
 
 function DukeNusContent() {
     const searchParams = useSearchParams();
@@ -65,39 +64,64 @@ function DukeNusContent() {
                         </span>
                     ))}
                 </div>
+            </section>
 
-                {/* Hero 三列媒体网格 */}
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-6 w-full mt-16">
+            {/* ============================================ */}
+            {/* Module 01: Bionic Thoracic Simulator Design & Operation */}
+            {/* ============================================ */}
+            <section className="max-w-7xl mx-auto px-8 mb-24">
+                <div className="flex items-center gap-4 mb-8">
+                    <span className="text-sm font-bold text-zinc-400 tracking-widest">01 /</span>
+                    <h2 className="text-3xl font-semibold tracking-tight">
+                        {isZh ? "仿生胸腔模拟器设计与系统运行" : "Bionic Thoracic Simulator Design & Operation"}
+                    </h2>
+                </div>
+
+                {/* 顶层文字占位 */}
+                <p className="text-zinc-500 font-light leading-relaxed w-full">
+                    {isZh
+                        ? "针对仿生胸腔模拟器进行整机建模与力学拓扑优化。运用 DfAM（面向增材制造的设计）原则对软硬复合材料进行工艺调优，将TPU软体材料的打印失败率显著降低 20%，零部件数量从 62 件大幅锐减至 5 件。"
+                        : "Conducted full-scale modeling and structural optimization for a biomimetic ribcage simulator. Applied DfAM principles to optimize multi-material FDM print parameters, lowering the print-failure rate of TPU filament by 20% and reducing assembly parts from 62 to 5 pcs."}
+                </p>
+
+                {/* 三列等高栅格容器 */}
+                <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 w-full mt-8 items-stretch">
                     {/* 左列：GLB */}
-                    <div className="flex flex-col items-center">
-                        <div className="relative w-full h-full aspect-[4/3] rounded-xl overflow-hidden bg-zinc-50">
-                            <ModelViewer modelPath="/media/experience/duke-nus/simulator.glb" />
+                    <div className="flex flex-col w-full h-full min-w-0">
+                        <div className="relative w-full h-[40vh] md:h-[350px] max-h-[450px] object-contain bg-zinc-100 rounded-xl overflow-hidden">
+                            <div className="w-full h-full flex items-center justify-center">
+                                <ModelViewer modelPath="/media/experience/duke-nus/simulator.glb" />
+                            </div>
                         </div>
                         <p className="text-sm text-zinc-500 mt-3 text-center font-medium">
                             {isZh ? "交互式 3D 模型" : "Interactive 3D Model"}
                         </p>
                     </div>
                     {/* 中列：HD Render */}
-                    <div className="flex flex-col items-center">
-                        <img
-                            src="/media/experience/duke-nus/simulator-render.png"
-                            className={`${MEDIA_FILTER} object-cover aspect-[4/3]`}
-                            alt="HD Render"
-                        />
+                    <div className="flex flex-col w-full h-full min-w-0">
+                        <div className="w-full h-[40vh] md:h-[350px] max-h-[450px] object-contain bg-zinc-100 rounded-xl overflow-hidden">
+                            <img
+                                src="/media/experience/duke-nus/simulator-render.png"
+                                className="w-full h-full object-contain"
+                                alt="HD Render"
+                            />
+                        </div>
                         <p className="text-sm text-zinc-500 mt-3 text-center font-medium">
                             {isZh ? "CAD模型渲染" : "CAD Model Rendering"}
                         </p>
                     </div>
                     {/* 右列：Video */}
-                    <div className="flex flex-col items-center">
-                        <video
-                            src="/media/experience/duke-nus/system-operation.mp4"
-                            className={`${MEDIA_FILTER} object-cover aspect-[4/3]`}
-                            autoPlay
-                            loop
-                            muted
-                            playsInline
-                        />
+                    <div className="flex flex-col w-full h-full min-w-0">
+                        <div className="w-full h-[40vh] md:h-[350px] max-h-[450px] object-contain bg-zinc-100 rounded-xl overflow-hidden">
+                            <video
+                                src="/media/experience/duke-nus/system-operation.mp4"
+                                className="w-full h-full object-contain"
+                                autoPlay
+                                loop
+                                muted
+                                playsInline
+                            />
+                        </div>
                         <p className="text-sm text-zinc-500 mt-3 text-center font-medium">
                             {isZh ? "全系统实机连续运行" : "Full System Physical Operation"}
                         </p>
@@ -108,7 +132,7 @@ function DukeNusContent() {
             {/* ============================================ */}
             {/* Module 02: Kinematics & Mechatronics           */}
             {/* ============================================ */}
-            <section className="max-w-7xl mx-auto px-8 mb-32">
+            <section className="max-w-7xl mx-auto px-8 mb-32 mt-24">
                 <div className="flex items-center gap-4 mb-8">
                     <span className="text-sm font-bold text-zinc-400 tracking-widest">02 /</span>
                     <h2 className="text-3xl font-semibold tracking-tight">

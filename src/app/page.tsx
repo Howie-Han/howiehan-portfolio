@@ -540,7 +540,7 @@ function HomeContent() {
               </a>
               <span className="text-zinc-300 text-sm">/</span>
               <a
-                href="https://linkedin.com/in/howie-han"
+                href="https://www.linkedin.com/in/howiehan"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-sm text-zinc-400 hover:text-zinc-900 transition-colors duration-200"

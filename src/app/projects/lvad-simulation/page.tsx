@@ -3,7 +3,7 @@ import Link from "next/link";
 import { useSearchParams } from "next/navigation";
 import { Suspense } from "react";
 
-const IMG_CLASSES = "filter grayscale opacity-90 hover:grayscale-0 hover:opacity-100 transition-all duration-700 rounded-xl object-contain w-full h-full";
+const IMG_CLASSES = "rounded-xl object-contain w-full h-full";
 const CONTAINER_CLASSES = "bg-zinc-100 rounded-xl overflow-hidden";
 
 function DetailContent() {

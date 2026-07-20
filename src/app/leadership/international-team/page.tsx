@@ -24,7 +24,7 @@ function InternationalTeamContent() {
                 <div className="w-full px-6 md:px-12 lg:px-24 py-4 flex items-center">
                     <Link href={`/?lang=${lang}#leadership`} className="inline-flex items-center gap-2 text-sm font-medium text-zinc-500 hover:text-zinc-900 transition-colors">
                         <span>{"<"}</span>
-                        <span>{t("返回领导力", "Back to Leadership")}</span>
+                        <span>{t("返回社群与领导力", "Back to Leadership")}</span>
                     </Link>
                 </div>
             </nav>
@@ -58,7 +58,7 @@ function InternationalTeamContent() {
                             <img
                                 src="/media/leadership/robotics-team/p1-prelim-team.png"
                                 alt={t("斩获首届首都来华留学生机器人竞赛一等奖第一名", "1st Place at the 1st Capital International Students Robotics Competition")}
-                                className="w-full h-[50vh] md:h-[70vh] max-h-[700px] object-contain bg-zinc-100 rounded-xl filter grayscale opacity-90 hover:grayscale-0 hover:opacity-100 transition-all duration-700"
+                                className="w-full h-[50vh] md:h-[70vh] max-h-[700px] object-contain bg-zinc-100 rounded-xl"
                             />
                             <p className="text-sm text-zinc-500 text-center mt-3">
                                 {t("斩获首届首都来华留学生机器人竞赛一等奖第一名", "1st Place at the 1st Capital International Students Robotics Competition")}
@@ -70,7 +70,7 @@ function InternationalTeamContent() {
                                     <img
                                         src="/media/leadership/robotics-team/p1-founder-team.png"
                                         alt={t("机器人队 6 人初创团队合影", "6-Member Founding Team")}
-                                        className="w-full aspect-[4/3] object-contain bg-zinc-100 rounded-xl filter grayscale opacity-90 hover:grayscale-0 hover:opacity-100 transition-all duration-700"
+                                        className="w-full aspect-[4/3] object-contain bg-zinc-100 rounded-xl"
                                     />
                                     <p className="text-xs text-zinc-500 text-center">{t("机器人队 6 人初创团队合影", "6-Member Founding Team")}</p>
                                 </div>
@@ -78,7 +78,7 @@ function InternationalTeamContent() {
                                     <img
                                         src="/media/leadership/robotics-team/p1-prep-1.png"
                                         alt={t("早期实验室敏捷备赛与结构搭建", "Early-stage Agile Preparation & Assembly")}
-                                        className="w-full aspect-[4/3] object-contain bg-zinc-100 rounded-xl filter grayscale opacity-90 hover:grayscale-0 hover:opacity-100 transition-all duration-700"
+                                        className="w-full aspect-[4/3] object-contain bg-zinc-100 rounded-xl"
                                     />
                                     <p className="text-xs text-zinc-500 text-center">{t("早期实验室敏捷备赛与结构搭建", "Early-stage Agile Preparation & Assembly")}</p>
                                 </div>
@@ -86,7 +86,7 @@ function InternationalTeamContent() {
                                     <img
                                         src="/media/leadership/robotics-team/p1-prep-2.png"
                                         alt={t("跨文化技术沟通与底盘调试", "Cross-cultural Technical Communication & Chassis Tuning")}
-                                        className="w-full aspect-[4/3] object-contain bg-zinc-100 rounded-xl filter grayscale opacity-90 hover:grayscale-0 hover:opacity-100 transition-all duration-700"
+                                        className="w-full aspect-[4/3] object-contain bg-zinc-100 rounded-xl"
                                     />
                                     <p className="text-xs text-zinc-500 text-center">{t("跨文化技术沟通与底盘调试", "Cross-cultural Technical Communication & Chassis Tuning")}</p>
                                 </div>
@@ -94,7 +94,7 @@ function InternationalTeamContent() {
                                     <img
                                         src="/media/leadership/robotics-team/p1-personal-comp.png"
                                         alt={t("比赛现场作为技术骨干亲自操刀调试", "On-site Technical Lead Debugging")}
-                                        className="w-full aspect-[4/3] object-contain bg-zinc-100 rounded-xl filter grayscale opacity-90 hover:grayscale-0 hover:opacity-100 transition-all duration-700"
+                                        className="w-full aspect-[4/3] object-contain bg-zinc-100 rounded-xl"
                                     />
                                     <p className="text-xs text-zinc-500 text-center">{t("比赛现场作为技术骨干亲自操刀调试", "On-site Technical Lead Debugging")}</p>
                                 </div>
@@ -102,7 +102,7 @@ function InternationalTeamContent() {
                                     <img
                                         src="/media/leadership/robotics-team/p1-interview.png"
                                         alt={t("夺冠后接受官方媒体技术专访", "Post-championship Official Media Interview")}
-                                        className="w-full aspect-[4/3] object-contain bg-zinc-100 rounded-xl filter grayscale opacity-90 hover:grayscale-0 hover:opacity-100 transition-all duration-700"
+                                        className="w-full aspect-[4/3] object-contain bg-zinc-100 rounded-xl"
                                     />
                                     <p className="text-xs text-zinc-500 text-center">{t("夺冠后接受官方媒体技术专访", "Post-championship Official Media Interview")}</p>
                                 </div>
@@ -110,7 +110,7 @@ function InternationalTeamContent() {
                                     <img
                                         src="/media/leadership/robotics-team/p1-official-group.png"
                                         alt={t("首都预选赛全体参赛队伍官方大合影", "Official Group Photo of the Capital Preliminary")}
-                                        className="w-full aspect-[4/3] object-contain bg-zinc-100 rounded-xl filter grayscale opacity-90 hover:grayscale-0 hover:opacity-100 transition-all duration-700"
+                                        className="w-full aspect-[4/3] object-contain bg-zinc-100 rounded-xl"
                                     />
                                     <p className="text-xs text-zinc-500 text-center">{t("首都预选赛全体参赛队伍官方大合影", "Official Group Photo of the Capital Preliminary")}</p>
                                 </div>
@@ -118,7 +118,7 @@ function InternationalTeamContent() {
                                     <img
                                         src="/media/leadership/robotics-team/p1-robot-auto.png"
                                         alt={t("自主研发的自动机器人构型展示", "Automated Robot Architecture Display")}
-                                        className="w-full aspect-[4/3] object-contain bg-zinc-100 rounded-xl filter grayscale opacity-90 hover:grayscale-0 hover:opacity-100 transition-all duration-700"
+                                        className="w-full aspect-[4/3] object-contain bg-zinc-100 rounded-xl"
                                     />
                                     <p className="text-xs text-zinc-500 text-center">{t("自主研发的自动机器人构型展示", "Automated Robot Architecture Display")}</p>
                                 </div>
@@ -126,7 +126,7 @@ function InternationalTeamContent() {
                                     <img
                                         src="/media/leadership/robotics-team/p1-robot-manual.png"
                                         alt={t("自主研发的手动机器人构型展示", "Manual Robot High-mobility Chassis Display")}
-                                        className="w-full aspect-[4/3] object-contain bg-zinc-100 rounded-xl filter grayscale opacity-90 hover:grayscale-0 hover:opacity-100 transition-all duration-700"
+                                        className="w-full aspect-[4/3] object-contain bg-zinc-100 rounded-xl"
                                     />
                                     <p className="text-xs text-zinc-500 text-center">{t("自主研发的手动机器人构型展示", "Manual Robot High-mobility Chassis Display")}</p>
                                 </div>
@@ -134,7 +134,7 @@ function InternationalTeamContent() {
                                     <img
                                         src="/media/leadership/robotics-team/p1-lecture.png"
                                         alt={t("面向国际学院本硕博开展首次科技讲座", "First Tech Sharing Session for International Students")}
-                                        className="w-full aspect-[4/3] object-contain bg-zinc-100 rounded-xl filter grayscale opacity-90 hover:grayscale-0 hover:opacity-100 transition-all duration-700"
+                                        className="w-full aspect-[4/3] object-contain bg-zinc-100 rounded-xl"
                                     />
                                     <p className="text-xs text-zinc-500 text-center">{t("面向国际学院本硕博开展首次科技讲座", "First Tech Sharing Session for International Students")}</p>
                                 </div>
@@ -162,7 +162,7 @@ function InternationalTeamContent() {
                             <img
                                 src="/media/leadership/robotics-team/p2-un-gala.png"
                                 alt={t("联合国附属机构十周年晚会路演现场", "High-level Roadshow at UN Affiliated Centre Gala")}
-                                className="w-full h-[50vh] md:h-[70vh] max-h-[700px] object-contain bg-zinc-100 rounded-xl filter grayscale opacity-90 hover:grayscale-0 hover:opacity-100 transition-all duration-700"
+                                className="w-full h-[50vh] md:h-[70vh] max-h-[700px] object-contain bg-zinc-100 rounded-xl"
                             />
                             <p className="text-sm text-zinc-500 text-center mt-3">
                                 {t("联合国附属机构十周年晚会路演现场", "High-level Roadshow at UN Affiliated Centre Gala")}
@@ -174,7 +174,7 @@ function InternationalTeamContent() {
                                     <img
                                         src="/media/leadership/robotics-team/p2-training-1.png"
                                         alt={t("团队标准化\"老带新\"基础理论培训", "Standardized Mentoring SOP: Theoretical Training")}
-                                        className="w-full aspect-[4/3] object-contain bg-zinc-100 rounded-xl filter grayscale opacity-90 hover:grayscale-0 hover:opacity-100 transition-all duration-700"
+                                        className="w-full aspect-[4/3] object-contain bg-zinc-100 rounded-xl"
                                     />
                                     <p className="text-xs text-zinc-500 text-center">{t("团队标准化\"老带新\"基础理论培训", "Standardized Mentoring SOP: Theoretical Training")}</p>
                                 </div>
@@ -182,7 +182,7 @@ function InternationalTeamContent() {
                                     <img
                                         src="/media/leadership/robotics-team/p2-training-2.png"
                                         alt={t("机械硬件与电控算法双轨制工作坊", "Dual-track Workshop: Mechanics & Electronics")}
-                                        className="w-full aspect-[4/3] object-contain bg-zinc-100 rounded-xl filter grayscale opacity-90 hover:grayscale-0 hover:opacity-100 transition-all duration-700"
+                                        className="w-full aspect-[4/3] object-contain bg-zinc-100 rounded-xl"
                                     />
                                     <p className="text-xs text-zinc-500 text-center">{t("机械硬件与电控算法双轨制工作坊", "Dual-track Workshop: Mechanics & Electronics")}</p>
                                 </div>
@@ -190,7 +190,7 @@ function InternationalTeamContent() {
                                     <img
                                         src="/media/leadership/robotics-team/p2-un-gala-team.png"
                                         alt={t("联合国十周年晚会团队合影", "Core Delivery Team at the UN Gala")}
-                                        className="w-full aspect-[4/3] object-contain bg-zinc-100 rounded-xl filter grayscale opacity-90 hover:grayscale-0 hover:opacity-100 transition-all duration-700"
+                                        className="w-full aspect-[4/3] object-contain bg-zinc-100 rounded-xl"
                                     />
                                     <p className="text-xs text-zinc-500 text-center">{t("联合国十周年晚会团队合影", "Core Delivery Team at the UN Gala")}</p>
                                 </div>
@@ -198,7 +198,7 @@ function InternationalTeamContent() {
                                     <img
                                         src="/media/leadership/robotics-team/p2-un-gala-robot.png"
                                         alt={t("联合国晚会展示机器人实机", "Exhibition Robot Matrix at UN Gala")}
-                                        className="w-full aspect-[4/3] object-contain bg-zinc-100 rounded-xl filter grayscale opacity-90 hover:grayscale-0 hover:opacity-100 transition-all duration-700"
+                                        className="w-full aspect-[4/3] object-contain bg-zinc-100 rounded-xl"
                                     />
                                     <p className="text-xs text-zinc-500 text-center">{t("联合国晚会展示机器人实机", "Exhibition Robot Matrix at UN Gala")}</p>
                                 </div>
@@ -206,7 +206,7 @@ function InternationalTeamContent() {
                                     <img
                                         src="/media/leadership/robotics-team/p2-bj-night-team.png"
                                         alt={t("\"留学北京\"文化之夜登台团队合影", "Team Photo at \"Study in Beijing\" Night")}
-                                        className="w-full aspect-[4/3] object-contain bg-zinc-100 rounded-xl filter grayscale opacity-90 hover:grayscale-0 hover:opacity-100 transition-all duration-700"
+                                        className="w-full aspect-[4/3] object-contain bg-zinc-100 rounded-xl"
                                     />
                                     <p className="text-xs text-zinc-500 text-center">{t("\"留学北京\"文化之夜登台团队合影", "Team Photo at \"Study in Beijing\" Night")}</p>
                                 </div>
@@ -214,7 +214,7 @@ function InternationalTeamContent() {
                                     <img
                                         src="/media/leadership/robotics-team/p2-bj-night-robot.png"
                                         alt={t("北京之夜舞台机器人效果展示", "Dynamic Robot Exhibition at Beijing Night")}
-                                        className="w-full aspect-[4/3] object-contain bg-zinc-100 rounded-xl filter grayscale opacity-90 hover:grayscale-0 hover:opacity-100 transition-all duration-700"
+                                        className="w-full aspect-[4/3] object-contain bg-zinc-100 rounded-xl"
                                     />
                                     <p className="text-xs text-zinc-500 text-center">{t("北京之夜舞台机器人效果展示", "Dynamic Robot Exhibition at Beijing Night")}</p>
                                 </div>
@@ -222,7 +222,7 @@ function InternationalTeamContent() {
                                     <img
                                         src="/media/leadership/robotics-team/p2-workshop.png"
                                         alt={t("主持接待泰国中学生跨国机器人workshop", "Hosting Cross-national Robotics Workshop for Thai Students")}
-                                        className="w-full aspect-[4/3] object-contain bg-zinc-100 rounded-xl filter grayscale opacity-90 hover:grayscale-0 hover:opacity-100 transition-all duration-700"
+                                        className="w-full aspect-[4/3] object-contain bg-zinc-100 rounded-xl"
                                     />
                                     <p className="text-xs text-zinc-500 text-center">{t("主持接待泰国中学生跨国机器人workshop", "Hosting Cross-national Robotics Workshop for Thai Students")}</p>
                                 </div>
@@ -250,7 +250,7 @@ function InternationalTeamContent() {
                             <img
                                 src="/media/leadership/robotics-team/p3-award-ceremony.png"
                                 alt={t("新一代团队包揽预选赛亚军及季军奖项", "Next-Gen Team Sweeping Runner-up Awards at Preliminaries")}
-                                className="w-full h-[50vh] md:h-[70vh] max-h-[700px] object-contain bg-zinc-100 rounded-xl filter grayscale opacity-90 hover:grayscale-0 hover:opacity-100 transition-all duration-700"
+                                className="w-full h-[50vh] md:h-[70vh] max-h-[700px] object-contain bg-zinc-100 rounded-xl"
                             />
                             <p className="text-sm text-zinc-500 text-center mt-3">
                                 {t("新一代团队包揽预选赛亚军及季军奖项", "Next-Gen Team Sweeping Runner-up Awards at Preliminaries")}
@@ -262,7 +262,7 @@ function InternationalTeamContent() {
                                     <img
                                         src="/media/leadership/robotics-team/p3-robotac-team.png"
                                         alt={t("新团队卫冕第二十四届 ROBOTAC 全国总冠军", "Defending the 24th ROBOTAC National Championship")}
-                                        className="w-full aspect-[4/3] object-contain bg-zinc-100 rounded-xl filter grayscale opacity-90 hover:grayscale-0 hover:opacity-100 transition-all duration-700"
+                                        className="w-full aspect-[4/3] object-contain bg-zinc-100 rounded-xl"
                                     />
                                     <p className="text-xs text-zinc-500 text-center">{t("新团队卫冕第二十四届 ROBOTAC 全国总冠军", "Defending the 24th ROBOTAC National Championship")}</p>
                                 </div>
@@ -270,7 +270,7 @@ function InternationalTeamContent() {
                                     <img
                                         src="/media/leadership/robotics-team/p3-tech-exchange.png"
                                         alt={t("赛前新老核心成员技术方案评审与交流", "Pre-competition Technical Review & Exchange")}
-                                        className="w-full aspect-[4/3] object-contain bg-zinc-100 rounded-xl filter grayscale opacity-90 hover:grayscale-0 hover:opacity-100 transition-all duration-700"
+                                        className="w-full aspect-[4/3] object-contain bg-zinc-100 rounded-xl"
                                     />
                                     <p className="text-xs text-zinc-500 text-center">{t("赛前新老核心成员技术方案评审与交流", "Pre-competition Technical Review & Exchange")}</p>
                                 </div>
@@ -278,7 +278,7 @@ function InternationalTeamContent() {
                                     <img
                                         src="/media/leadership/robotics-team/p3-dev.png"
                                         alt={t("新成员独立主导机器人开发与测试", "New Members Leading Development without Direct Intervention")}
-                                        className="w-full aspect-[4/3] object-contain bg-zinc-100 rounded-xl filter grayscale opacity-90 hover:grayscale-0 hover:opacity-100 transition-all duration-700"
+                                        className="w-full aspect-[4/3] object-contain bg-zinc-100 rounded-xl"
                                     />
                                     <p className="text-xs text-zinc-500 text-center">{t("新成员独立主导机器人开发与测试", "New Members Leading Development without Direct Intervention")}</p>
                                 </div>
@@ -286,7 +286,7 @@ function InternationalTeamContent() {
                                     <img
                                         src="/media/leadership/robotics-team/p3-robotac-scene.png"
                                         alt={t("第二十四届 ROBOTAC 全国总决赛现场", "High-pressure Match at the 24th ROBOTAC National Finals")}
-                                        className="w-full aspect-[4/3] object-contain bg-zinc-100 rounded-xl filter grayscale opacity-90 hover:grayscale-0 hover:opacity-100 transition-all duration-700"
+                                        className="w-full aspect-[4/3] object-contain bg-zinc-100 rounded-xl"
                                     />
                                     <p className="text-xs text-zinc-500 text-center">{t("第二十四届 ROBOTAC 全国总决赛现场", "High-pressure Match at the 24th ROBOTAC National Finals")}</p>
                                 </div>

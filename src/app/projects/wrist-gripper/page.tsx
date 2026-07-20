@@ -3,7 +3,7 @@ import Link from "next/link";
 import { useSearchParams } from "next/navigation";
 import { Suspense } from "react";
 
-const MEDIA_CLASSES = "filter grayscale opacity-90 hover:grayscale-0 hover:opacity-100 transition-all duration-700 rounded-xl object-contain w-full h-full";
+const MEDIA_CLASSES = "rounded-xl object-contain w-full h-full";
 const CONTAINER_CLASSES = "bg-zinc-100 rounded-xl overflow-hidden";
 
 function DetailContent() {
@@ -72,7 +72,7 @@ function DetailContent() {
                                     <img
                                         src="/media/project/wrist/wrist-sim-kinematics.gif"
                                         alt="Kinematics Simulation"
-                                        className="object-contain w-full h-full filter grayscale opacity-90 hover:grayscale-0 hover:opacity-100 transition-all duration-700"
+                                        className="object-contain w-full h-full"
                                     />
                                 </div>
                                 <p className="text-sm text-zinc-500 text-center w-full mt-3">
@@ -85,7 +85,7 @@ function DetailContent() {
                                     <img
                                         src="/media/project/wrist/wrist-sim-workspace.png"
                                         alt="Workspace Cloud Map"
-                                        className="object-contain w-full h-full filter grayscale opacity-90 hover:grayscale-0 hover:opacity-100 transition-all duration-700"
+                                        className="object-contain w-full h-full"
                                     />
                                 </div>
                                 <p className="text-sm text-zinc-500 text-center w-full mt-3">

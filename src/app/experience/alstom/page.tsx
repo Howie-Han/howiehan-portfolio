@@ -59,7 +59,7 @@ function AlstomContent() {
         {
             type: "video",
             src: "/media/experience/alstom/gallery-5-outdoor-test.mp4",
-            title: isZh ? "陡坡攀爬能力测试" : "Steep Slope Climbing Test",
+            title: isZh ? "陡坎攀爬能力测试" : "Steep Slope Climbing Test",
             desc: isZh ? "验证机器人在户外大倾角陡坡地形下的抓地力与攀爬稳定性。" : "Verifying the robot's traction and climbing stability on steep slope terrains outdoors.",
         },
     ];
@@ -97,8 +97,7 @@ function AlstomContent() {
         { img: "workflow-5-dashboard.png", title: isZh ? "可视化多维交互看板" : "Interactive Dashboard" },
     ];
 
-    const MEDIA_FILTER =
-        "grayscale opacity-90 hover:grayscale-0 hover:opacity-100 transition-all duration-700 object-contain";
+    const MEDIA_FILTER = "object-contain";
 
     return (
         <main className="min-h-screen bg-zinc-50 text-zinc-900 pb-32">
@@ -255,9 +254,9 @@ function AlstomContent() {
                             <button
                                 key={idx}
                                 onClick={() => setActiveGalleryIndex(idx)}
-                                className={`relative h-16 md:h-24 rounded-xl border-2 transition-all overflow-hidden ${activeGalleryIndex === idx
-                                    ? "border-zinc-800 opacity-100"
-                                    : "border-transparent opacity-50 grayscale hover:opacity-100 hover:grayscale-0 bg-zinc-100"
+                                className={`relative h-16 md:h-24 rounded-xl border-2 overflow-hidden ${activeGalleryIndex === idx
+                                    ? "border-zinc-800"
+                                    : "border-transparent bg-zinc-100"
                                     }`}
                             >
                                 {media.type === "video" ? (
