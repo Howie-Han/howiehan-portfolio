@@ -40,7 +40,3 @@ yarn-error.log*
 *.tsbuildinfo
 next-env.d.ts
 
-# 防止 Tailwind v4 解析二进制文件导致内存爆炸
-public/**/*.glb
-public/**/*.mp4
-public/**/*.gif
