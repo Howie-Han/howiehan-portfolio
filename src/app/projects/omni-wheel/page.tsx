@@ -3,6 +3,7 @@ import Link from "next/link";
 import { useSearchParams } from "next/navigation";
 import { Suspense } from "react";
 import dynamic from "next/dynamic";
+import { ASSET_BASE } from "@/config/assets";
 
 // 3D 组件懒加载
 const ModelViewer = dynamic(() => import("@/components/ModelViewer"), {
@@ -90,7 +91,7 @@ function DetailContent() {
                         {/* Right – Exploded View Video */}
                         <div className="w-full rounded-2xl overflow-hidden border border-zinc-200 bg-zinc-100">
                             <video
-                                src="/media/project/omni-wheel/exploded-view.mp4"
+                                src={`${ASSET_BASE}/project/omni-wheel/exploded-view.mp4`}
                                 autoPlay
                                 loop
                                 muted
@@ -124,7 +125,7 @@ function DetailContent() {
                         {/* Axial Gear Video */}
                         <div className="w-full aspect-video rounded-xl overflow-hidden border border-zinc-200 bg-white">
                             <video
-                                src="/media/project/omni-wheel/sim-axial.mp4"
+                                src={`${ASSET_BASE}/project/omni-wheel/sim-axial.mp4`}
                                 autoPlay
                                 loop
                                 muted
@@ -136,7 +137,7 @@ function DetailContent() {
                         {/* Steering Gear Video */}
                         <div className="w-full aspect-video rounded-xl overflow-hidden border border-zinc-200 bg-white">
                             <video
-                                src="/media/project/omni-wheel/sim-steering.mp4"
+                                src={`${ASSET_BASE}/project/omni-wheel/sim-steering.mp4`}
                                 autoPlay
                                 loop
                                 muted
@@ -172,21 +173,21 @@ function DetailContent() {
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                         <div className="w-full aspect-[1292/925] rounded-xl overflow-hidden border border-zinc-200 bg-zinc-100">
                             <img
-                                src="/media/project/omni-wheel/cad-shaft.png"
+                                src={`${ASSET_BASE}/project/omni-wheel/cad-shaft.png`}
                                 alt="CAD Shaft Blueprint"
                                 className={MEDIA_FILTER}
                             />
                         </div>
                         <div className="w-full aspect-[1279/915] rounded-xl overflow-hidden border border-zinc-200 bg-zinc-100">
                             <img
-                                src="/media/project/omni-wheel/cad-gear.png"
+                                src={`${ASSET_BASE}/project/omni-wheel/cad-gear.png`}
                                 alt="CAD Gear Blueprint"
                                 className={MEDIA_FILTER}
                             />
                         </div>
                         <div className="w-full aspect-[1215/876] rounded-xl overflow-hidden border border-zinc-200 bg-zinc-100">
                             <img
-                                src="/media/project/omni-wheel/cad-part.png"
+                                src={`${ASSET_BASE}/project/omni-wheel/cad-part.png`}
                                 alt="CAD Part Blueprint"
                                 className={MEDIA_FILTER}
                             />
@@ -216,21 +217,21 @@ function DetailContent() {
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                         <div className="w-full aspect-[4/3] rounded-xl overflow-hidden border border-zinc-200 bg-zinc-100">
                             <img
-                                src="/media/project/omni-wheel/hardware-single.png"
+                                src={`${ASSET_BASE}/project/omni-wheel/hardware-single.png`}
                                 alt="Single Wheel Hardware"
                                 className={MEDIA_FILTER}
                             />
                         </div>
                         <div className="w-full aspect-[4/3] rounded-xl overflow-hidden border border-zinc-200 bg-zinc-100">
                             <img
-                                src="/media/project/omni-wheel/hardware-integration.png"
+                                src={`${ASSET_BASE}/project/omni-wheel/hardware-integration.png`}
                                 alt="Chassis Integration"
                                 className={MEDIA_FILTER}
                             />
                         </div>
                         <div className="w-full aspect-[4/3] rounded-xl overflow-hidden border border-zinc-200 bg-zinc-100">
                             <img
-                                src="/media/project/omni-wheel/hardware-debugging.png"
+                                src={`${ASSET_BASE}/project/omni-wheel/hardware-debugging.png`}
                                 alt="On-site Debugging"
                                 className={MEDIA_FILTER}
                             />
@@ -259,7 +260,7 @@ function DetailContent() {
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
                         <div className="w-full aspect-[1280/720] rounded-xl overflow-hidden border border-zinc-200 bg-zinc-100">
                             <video
-                                src="/media/project/omni-wheel/match-manual.mp4"
+                                src={`${ASSET_BASE}/project/omni-wheel/match-manual.mp4`}
                                 autoPlay
                                 loop
                                 muted
@@ -269,7 +270,7 @@ function DetailContent() {
                         </div>
                         <div className="w-full aspect-[1280/720] rounded-xl overflow-hidden border border-zinc-200 bg-zinc-100">
                             <video
-                                src="/media/project/omni-wheel/match-auto.mp4"
+                                src={`${ASSET_BASE}/project/omni-wheel/match-auto.mp4`}
                                 autoPlay
                                 loop
                                 muted
@@ -281,7 +282,7 @@ function DetailContent() {
 
                     <div className="w-full aspect-[2816/1600] rounded-xl overflow-hidden border border-zinc-200 bg-zinc-100">
                         <img
-                            src="/media/project/omni-wheel/team-photo.png"
+                            src={`${ASSET_BASE}/project/omni-wheel/team-photo.png`}
                             alt="Team Photo"
                             className={MEDIA_FILTER}
                         />

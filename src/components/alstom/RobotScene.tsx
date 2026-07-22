@@ -2,9 +2,10 @@
 import React, { Suspense } from "react";
 import { Canvas } from "@react-three/fiber";
 import { OrbitControls, useGLTF, Center, Bounds } from "@react-three/drei";
+import { ASSET_BASE } from "@/config/assets";
 
 function Model() {
-    const { scene } = useGLTF("/media/experience/alstom/robot-main.glb");
+    const { scene } = useGLTF(`${ASSET_BASE}/experience/alstom/robot-main.glb`);
     return <primitive object={scene} />;
 }
 
@@ -26,4 +27,4 @@ export default function RobotScene() {
     );
 }
 
-useGLTF.preload("/media/experience/alstom/robot-main.glb");
+useGLTF.preload(`${ASSET_BASE}/experience/alstom/robot-main.glb`);

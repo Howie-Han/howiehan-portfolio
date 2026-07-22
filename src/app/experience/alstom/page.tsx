@@ -4,6 +4,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { useSearchParams } from "next/navigation";
 import dynamic from "next/dynamic";
+import { ASSET_BASE } from "@/config/assets";
 
 // 懒加载 3D 组件，防止阻塞主线程
 const RobotScene = dynamic(() => import("@/components/alstom/RobotScene"), {
@@ -34,31 +35,31 @@ function AlstomContent() {
     const galleryMedia = [
         {
             type: "image",
-            src: "/media/experience/alstom/gallery-3-outdoor-img.png",
+            src: `${ASSET_BASE}/experience/alstom/gallery-3-outdoor-img.png`,
             title: isZh ? "实车底部巡检运行测试" : "Under-Train Inspection Testing",
             desc: isZh ? "机器人在列车底部真实环境下的运行实景，验证底盘的通过性与工作空间。" : "Real-world deployment of the robot operating under the train chassis to verify maneuverability and workspace clearance.",
         },
         {
             type: "image",
-            src: "/media/experience/alstom/gallery-2-indoor-img.png",
+            src: `${ASSET_BASE}/experience/alstom/gallery-2-indoor-img.png`,
             title: isZh ? "机电一体化组装实物" : "Fully Assembled Mechatronic Prototype",
             desc: isZh ? "完成所有机械结构件打印加工、电子设备集成与内部走线布局后的机器人完整形态。" : "The complete robot prototype after the assembly of 3D-printed mechanical parts, electronic components integration, and internal wire routing.",
         },
         {
             type: "image",
-            src: "/media/experience/alstom/gallery-1-tpu.gif",
+            src: `${ASSET_BASE}/experience/alstom/gallery-1-tpu.gif`,
             title: isZh ? "FDM 柔性履带打印过程" : "FDM Printing of Flexible Track",
             desc: isZh ? "使用 Bambu Lab X1C 3D 打印机与 TPU 95A HF 柔性材料一体化打印机器人履带的延时摄影。" : "Time-lapse of printing the robot's continuous track using TPU 95A HF material on a Bambu Lab X1C 3D printer.",
         },
         {
             type: "video",
-            src: "/media/experience/alstom/gallery-4-rail-test.mp4",
+            src: `${ASSET_BASE}/experience/alstom/gallery-4-rail-test.mp4`,
             title: isZh ? "户外铁轨越障测试" : "Outdoor Rail-Crossing Test",
             desc: isZh ? "机器人在户外真实轨道环境中进行翻越铁轨等地形的越障能力测试。" : "Testing the robot's obstacle-clearing capabilities when crossing railway tracks in an outdoor environment.",
         },
         {
             type: "video",
-            src: "/media/experience/alstom/gallery-5-outdoor-test.mp4",
+            src: `${ASSET_BASE}/experience/alstom/gallery-5-outdoor-test.mp4`,
             title: isZh ? "陡坎攀爬能力测试" : "Steep Slope Climbing Test",
             desc: isZh ? "验证机器人在户外大倾角陡坡地形下的抓地力与攀爬稳定性。" : "Verifying the robot's traction and climbing stability on steep slope terrains outdoors.",
         },
@@ -185,12 +186,12 @@ function AlstomContent() {
                                 </p>
                             </div>
                             <div className="relative w-full h-48 xl:h-52 bg-zinc-50 rounded-2xl overflow-hidden border border-zinc-200 mt-2">
-                                <Image src="/media/experience/alstom/robot-part-chassis-render.png" alt="Chassis CAD Render" fill unoptimized className={MEDIA_FILTER} />
+                                <Image src={`${ASSET_BASE}/experience/alstom/robot-part-chassis-render.png`} alt="Chassis CAD Render" fill unoptimized className={MEDIA_FILTER} />
                             </div>
                         </div>
                         {/* 右侧：丝滑低面互动 3D 视窗 */}
                         <div className="flex-1 relative bg-zinc-50 rounded-2xl overflow-hidden border border-zinc-200 h-64 xl:h-full">
-                            <InteractivePartScene modelPath="/media/experience/alstom/robot-part-chassis.glb" />
+                            <InteractivePartScene modelPath={`${ASSET_BASE}/experience/alstom/robot-part-chassis.glb`} />
                         </div>
                     </div>
 
@@ -205,12 +206,12 @@ function AlstomContent() {
                                 </p>
                             </div>
                             <div className="relative w-full h-48 xl:h-52 bg-zinc-50 rounded-2xl overflow-hidden border border-zinc-200 mt-2">
-                                <Image src="/media/experience/alstom/robot-part-joint-render.png" alt="Joint CAD Render" fill unoptimized className={MEDIA_FILTER} />
+                                <Image src={`${ASSET_BASE}/experience/alstom/robot-part-joint-render.png`} alt="Joint CAD Render" fill unoptimized className={MEDIA_FILTER} />
                             </div>
                         </div>
                         {/* 右侧：丝滑低面互动 3D 视窗 */}
                         <div className="flex-1 relative bg-zinc-50 rounded-2xl overflow-hidden border border-zinc-200 h-64 xl:h-full">
-                            <InteractivePartScene modelPath="/media/experience/alstom/robot-part-joint.glb" />
+                            <InteractivePartScene modelPath={`${ASSET_BASE}/experience/alstom/robot-part-joint.glb`} />
                         </div>
                     </div>
 
@@ -300,7 +301,7 @@ function AlstomContent() {
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 h-full">
                             <div className="relative w-full aspect-video md:aspect-square bg-zinc-50 rounded-2xl overflow-hidden border border-zinc-200">
                                 <Image
-                                    src={`/media/experience/alstom/${stepperData[activeStep].imgs[0]}`}
+                                    src={`${ASSET_BASE}/experience/alstom/${stepperData[activeStep].imgs[0]}`}
                                     alt="Part 1"
                                     fill
                                     unoptimized
@@ -309,7 +310,7 @@ function AlstomContent() {
                             </div>
                             <div className="relative w-full aspect-video md:aspect-square bg-zinc-50 rounded-2xl overflow-hidden border border-zinc-200">
                                 <Image
-                                    src={`/media/experience/alstom/${stepperData[activeStep].imgs[1]}`}
+                                    src={`${ASSET_BASE}/experience/alstom/${stepperData[activeStep].imgs[1]}`}
                                     alt="Part 2"
                                     fill
                                     unoptimized
@@ -358,7 +359,7 @@ function AlstomContent() {
 
                         <div className="w-full h-[400px] md:h-[600px] bg-zinc-50 rounded-2xl overflow-hidden flex items-center justify-center relative border border-zinc-200">
                             <Image
-                                src={`/media/experience/alstom/${timelineData[activeWorkflowStep].img}`}
+                                src={`${ASSET_BASE}/experience/alstom/${timelineData[activeWorkflowStep].img}`}
                                 alt={timelineData[activeWorkflowStep].title}
                                 fill
                                 unoptimized

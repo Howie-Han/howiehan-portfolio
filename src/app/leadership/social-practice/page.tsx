@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { Suspense, useEffect, useState } from "react";
 import { useSearchParams } from "next/navigation";
+import { ASSET_BASE } from "@/config/assets";
 
 function SocialPracticeContent() {
     const [lang, setLang] = useState<"zh" | "en">("zh");
@@ -84,7 +85,7 @@ function SocialPracticeContent() {
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 w-full mt-8">
                             <div>
                                 <img
-                                    src="/media/leadership/social-practice/sp-m1-robot.png"
+                                    src={`${ASSET_BASE}/leadership/social-practice/sp-m1-robot.png`}
                                     alt="WRC Agri Robots"
                                     className={HERO_CLASSES}
                                 />
@@ -101,7 +102,7 @@ function SocialPracticeContent() {
                                     className={HERO_VIDEO_CLASSES}
                                 >
                                     <source
-                                        src="/media/leadership/social-practice/sp-m1-bochuang.mp4"
+                                        src={`${ASSET_BASE}/leadership/social-practice/sp-m1-bochuang.mp4`}
                                         type="video/mp4"
                                     />
                                 </video>
@@ -114,7 +115,7 @@ function SocialPracticeContent() {
                         <div className="flex flex-nowrap overflow-x-auto snap-x snap-mandatory gap-4 pb-4 mt-6 scrollbar-hide w-full">
                             <div className="snap-center shrink-0 w-64 md:w-72 flex flex-col">
                                 <img
-                                    src="/media/leadership/social-practice/sp-m1-icebreak.png"
+                                    src={`${ASSET_BASE}/leadership/social-practice/sp-m1-icebreak.png`}
                                     alt="Team Icebreak"
                                     className={FILM_CLASSES}
                                 />
@@ -124,7 +125,7 @@ function SocialPracticeContent() {
                             </div>
                             <div className="snap-center shrink-0 w-64 md:w-72 flex flex-col">
                                 <img
-                                    src="/media/leadership/social-practice/sp-m1-sannong.png"
+                                    src={`${ASSET_BASE}/leadership/social-practice/sp-m1-sannong.png`}
                                     alt="San Nong"
                                     className={FILM_CLASSES}
                                 />
@@ -134,7 +135,7 @@ function SocialPracticeContent() {
                             </div>
                             <div className="snap-center shrink-0 w-64 md:w-72 flex flex-col">
                                 <img
-                                    src="/media/leadership/social-practice/sp-m1-museum-solo.png"
+                                    src={`${ASSET_BASE}/leadership/social-practice/sp-m1-museum-solo.png`}
                                     alt="Museum Solo"
                                     className={FILM_CLASSES}
                                 />
@@ -144,7 +145,7 @@ function SocialPracticeContent() {
                             </div>
                             <div className="snap-center shrink-0 w-64 md:w-72 flex flex-col">
                                 <img
-                                    src="/media/leadership/social-practice/sp-m1-museum-group.png"
+                                    src={`${ASSET_BASE}/leadership/social-practice/sp-m1-museum-group.png`}
                                     alt="Museum Group"
                                     className={FILM_CLASSES}
                                 />
@@ -154,7 +155,7 @@ function SocialPracticeContent() {
                             </div>
                             <div className="snap-center shrink-0 w-64 md:w-72 flex flex-col">
                                 <img
-                                    src="/media/leadership/social-practice/sp-m1-wrc-group.png"
+                                    src={`${ASSET_BASE}/leadership/social-practice/sp-m1-wrc-group.png`}
                                     alt="WRC Group"
                                     className={FILM_CLASSES}
                                 />
@@ -164,7 +165,7 @@ function SocialPracticeContent() {
                             </div>
                             <div className="snap-center shrink-0 w-64 md:w-72 flex flex-col">
                                 <img
-                                    src="/media/leadership/social-practice/sp-m1-wrc-interview.png"
+                                    src={`${ASSET_BASE}/leadership/social-practice/sp-m1-wrc-interview.png`}
                                     alt="WRC Interview"
                                     className={FILM_CLASSES}
                                 />
@@ -174,7 +175,7 @@ function SocialPracticeContent() {
                             </div>
                             <div className="snap-center shrink-0 w-64 md:w-72 flex flex-col">
                                 <img
-                                    src="/media/leadership/social-practice/sp-m1-cau-event.png"
+                                    src={`${ASSET_BASE}/leadership/social-practice/sp-m1-cau-event.png`}
                                     alt="CAU Event"
                                     className={FILM_CLASSES}
                                 />
@@ -184,7 +185,7 @@ function SocialPracticeContent() {
                             </div>
                             <div className="snap-center shrink-0 w-64 md:w-72 flex flex-col">
                                 <img
-                                    src="/media/leadership/social-practice/sp-m1-cau-group1.png"
+                                    src={`${ASSET_BASE}/leadership/social-practice/sp-m1-cau-group1.png`}
                                     alt="CAU Group 1"
                                     className={FILM_CLASSES}
                                 />
@@ -194,7 +195,7 @@ function SocialPracticeContent() {
                             </div>
                             <div className="snap-center shrink-0 w-64 md:w-72 flex flex-col">
                                 <img
-                                    src="/media/leadership/social-practice/sp-m1-cau-group2.png"
+                                    src={`${ASSET_BASE}/leadership/social-practice/sp-m1-cau-group2.png`}
                                     alt="CAU Group 2"
                                     className={FILM_CLASSES}
                                 />
@@ -220,7 +221,7 @@ function SocialPracticeContent() {
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 w-full mt-8">
                             <div>
                                 <img
-                                    src="/media/leadership/social-practice/sp-m2-greenhouse.png"
+                                    src={`${ASSET_BASE}/leadership/social-practice/sp-m2-greenhouse.png`}
                                     alt="Greenhouse Survey"
                                     className={HERO_CLASSES}
                                 />
@@ -230,7 +231,7 @@ function SocialPracticeContent() {
                             </div>
                             <div>
                                 <img
-                                    src="/media/leadership/social-practice/sp-m2-weihai-lecture.png"
+                                    src={`${ASSET_BASE}/leadership/social-practice/sp-m2-weihai-lecture.png`}
                                     alt="Weihai Lecture"
                                     className={HERO_CLASSES}
                                 />
@@ -243,7 +244,7 @@ function SocialPracticeContent() {
                         <div className="flex flex-nowrap overflow-x-auto snap-x snap-mandatory gap-4 pb-4 mt-6 scrollbar-hide w-full">
                             <div className="snap-center shrink-0 w-64 md:w-72 flex flex-col">
                                 <img
-                                    src="/media/leadership/social-practice/sp-m2-shouguang-group.png"
+                                    src={`${ASSET_BASE}/leadership/social-practice/sp-m2-shouguang-group.png`}
                                     alt="Shouguang Group"
                                     className={FILM_CLASSES}
                                 />
@@ -253,7 +254,7 @@ function SocialPracticeContent() {
                             </div>
                             <div className="snap-center shrink-0 w-64 md:w-72 flex flex-col">
                                 <img
-                                    src="/media/leadership/social-practice/sp-m2-shouguang-park.png"
+                                    src={`${ASSET_BASE}/leadership/social-practice/sp-m2-shouguang-park.png`}
                                     alt="Shouguang Park"
                                     className={FILM_CLASSES}
                                 />
@@ -263,7 +264,7 @@ function SocialPracticeContent() {
                             </div>
                             <div className="snap-center shrink-0 w-64 md:w-72 flex flex-col">
                                 <img
-                                    src="/media/leadership/social-practice/sp-m2-shouguang-expo.png"
+                                    src={`${ASSET_BASE}/leadership/social-practice/sp-m2-shouguang-expo.png`}
                                     alt="Shouguang Expo"
                                     className={FILM_CLASSES}
                                 />
@@ -273,7 +274,7 @@ function SocialPracticeContent() {
                             </div>
                             <div className="snap-center shrink-0 w-64 md:w-72 flex flex-col">
                                 <img
-                                    src="/media/leadership/social-practice/sp-m2-weihai-group.png"
+                                    src={`${ASSET_BASE}/leadership/social-practice/sp-m2-weihai-group.png`}
                                     alt="Weihai Group"
                                     className={FILM_CLASSES}
                                 />
@@ -290,7 +291,7 @@ function SocialPracticeContent() {
                                     className={FILM_VIDEO_CLASSES}
                                 >
                                     <source
-                                        src="/media/leadership/social-practice/sp-m2-weihai-visit.mp4"
+                                        src={`${ASSET_BASE}/leadership/social-practice/sp-m2-weihai-visit.mp4`}
                                         type="video/mp4"
                                     />
                                 </video>
@@ -316,7 +317,7 @@ function SocialPracticeContent() {
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 w-full mt-8">
                             <div>
                                 <img
-                                    src="/media/leadership/social-practice/sp-m3-cad.png"
+                                    src={`${ASSET_BASE}/leadership/social-practice/sp-m3-cad.png`}
                                     alt="Agri Robot CAD"
                                     className={HERO_CONTAIN_CLASSES}
                                 />
@@ -326,7 +327,7 @@ function SocialPracticeContent() {
                             </div>
                             <div>
                                 <img
-                                    src="/media/leadership/social-practice/sp-m3-summary-1.png"
+                                    src={`${ASSET_BASE}/leadership/social-practice/sp-m3-summary-1.png`}
                                     alt="Report Summary 1"
                                     className={HERO_CONTAIN_CLASSES}
                                 />
@@ -339,7 +340,7 @@ function SocialPracticeContent() {
                         <div className="flex flex-nowrap overflow-x-auto snap-x snap-mandatory gap-4 pb-4 mt-6 scrollbar-hide w-full">
                             <div className="snap-center shrink-0 w-64 md:w-72 flex flex-col">
                                 <img
-                                    src="/media/leadership/social-practice/sp-m3-flag.png"
+                                    src={`${ASSET_BASE}/leadership/social-practice/sp-m3-flag.png`}
                                     alt="Team Flag"
                                     className={FILM_CONTAIN_CLASSES}
                                 />
@@ -349,7 +350,7 @@ function SocialPracticeContent() {
                             </div>
                             <div className="snap-center shrink-0 w-64 md:w-72 flex flex-col">
                                 <img
-                                    src="/media/leadership/social-practice/sp-m3-summary-2.png"
+                                    src={`${ASSET_BASE}/leadership/social-practice/sp-m3-summary-2.png`}
                                     alt="Report Summary 2"
                                     className={FILM_CONTAIN_CLASSES}
                                 />
@@ -359,7 +360,7 @@ function SocialPracticeContent() {
                             </div>
                             <div className="snap-center shrink-0 w-64 md:w-72 flex flex-col">
                                 <img
-                                    src="/media/leadership/social-practice/sp-m3-summary-3.png"
+                                    src={`${ASSET_BASE}/leadership/social-practice/sp-m3-summary-3.png`}
                                     alt="Report Summary 3"
                                     className={FILM_CONTAIN_CLASSES}
                                 />

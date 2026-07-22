@@ -3,6 +3,7 @@ import Link from "next/link";
 import { useSearchParams } from "next/navigation";
 import { Suspense } from "react";
 import dynamic from "next/dynamic";
+import { ASSET_BASE } from "@/config/assets";
 
 const ModelViewer = dynamic(() => import("@/components/ModelViewer"), {
     ssr: false,
@@ -90,7 +91,7 @@ function DukeNusContent() {
                     <div className="flex flex-col w-full h-full min-w-0">
                         <div className="relative w-full h-[40vh] md:h-[350px] max-h-[450px] object-contain bg-zinc-100 rounded-xl overflow-hidden">
                             <div className="w-full h-full flex items-center justify-center">
-                                <ModelViewer modelPath="/media/experience/duke-nus/simulator.glb" />
+                                <ModelViewer modelPath={`${ASSET_BASE}/experience/duke-nus/simulator.glb`} />
                             </div>
                         </div>
                         <p className="text-sm text-zinc-500 mt-3 text-center font-medium">
@@ -101,7 +102,7 @@ function DukeNusContent() {
                     <div className="flex flex-col w-full h-full min-w-0">
                         <div className="w-full h-[40vh] md:h-[350px] max-h-[450px] object-contain bg-zinc-100 rounded-xl overflow-hidden">
                             <img
-                                src="/media/experience/duke-nus/simulator-render.png"
+                                src={`${ASSET_BASE}/experience/duke-nus/simulator-render.png`}
                                 className="w-full h-full object-contain"
                                 alt="HD Render"
                             />
@@ -114,7 +115,7 @@ function DukeNusContent() {
                     <div className="flex flex-col w-full h-full min-w-0">
                         <div className="w-full h-[40vh] md:h-[350px] max-h-[450px] object-contain bg-zinc-100 rounded-xl overflow-hidden">
                             <video
-                                src="/media/experience/duke-nus/system-operation.mp4"
+                                src={`${ASSET_BASE}/experience/duke-nus/system-operation.mp4`}
                                 className="w-full h-full object-contain"
                                 autoPlay
                                 loop
@@ -153,7 +154,7 @@ function DukeNusContent() {
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-6 w-full mb-6">
                     <div className="flex flex-col items-center">
                         <img
-                            src="/media/experience/duke-nus/gear-rack-cad.png"
+                            src={`${ASSET_BASE}/experience/duke-nus/gear-rack-cad.png`}
                             className={`${MEDIA_FILTER} object-cover aspect-[4/3]`}
                             alt="Gear/Rack CAD"
                         />
@@ -163,7 +164,7 @@ function DukeNusContent() {
                     </div>
                     <div className="flex flex-col items-center">
                         <video
-                            src="/media/experience/duke-nus/gear-rack-sim.mp4"
+                            src={`${ASSET_BASE}/experience/duke-nus/gear-rack-sim.mp4`}
                             className={`${MEDIA_FILTER} object-cover aspect-[4/3]`}
                             autoPlay
                             loop
@@ -176,7 +177,7 @@ function DukeNusContent() {
                     </div>
                     <div className="flex flex-col items-center">
                         <video
-                            src="/media/experience/duke-nus/gear-rack-test.mp4"
+                            src={`${ASSET_BASE}/experience/duke-nus/gear-rack-test.mp4`}
                             className={`${MEDIA_FILTER} object-contain bg-zinc-100 aspect-[4/3]`}
                             autoPlay
                             loop
@@ -193,7 +194,7 @@ function DukeNusContent() {
                 <div className="grid grid-cols-1 mt-6 w-full">
                     <div className="flex flex-col items-center max-w-full md:max-w-[50%] mx-auto">
                         <img
-                            src="/media/experience/duke-nus/control-architecture.png"
+                            src={`${ASSET_BASE}/experience/duke-nus/control-architecture.png`}
                             className={`${MEDIA_FILTER} object-cover aspect-[3075/1517]`}
                             alt="Control Architecture"
                         />
@@ -228,7 +229,7 @@ function DukeNusContent() {
                 <div className="grid grid-cols-1 w-full">
                     <div className="flex flex-col items-center max-w-full md:max-w-[66%] mx-auto">
                         <img
-                            src="/media/experience/duke-nus/servo-fea.png"
+                            src={`${ASSET_BASE}/experience/duke-nus/servo-fea.png`}
                             className={`${MEDIA_FILTER} object-cover aspect-[2096/757]`}
                             alt="Servo Mount Static FEA"
                         />
@@ -263,7 +264,7 @@ function DukeNusContent() {
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-6 w-full">
                     <div className="flex flex-col items-center">
                         <img
-                            src="/media/experience/duke-nus/tpu-pla-design.png"
+                            src={`${ASSET_BASE}/experience/duke-nus/tpu-pla-design.png`}
                             className={`${MEDIA_FILTER} object-contain bg-zinc-100 aspect-[4/3]`}
                             alt="TPU/PLA Interlocking Design"
                         />
@@ -273,7 +274,7 @@ function DukeNusContent() {
                     </div>
                     <div className="flex flex-col items-center">
                         <img
-                            src="/media/experience/duke-nus/print-detail-1.png"
+                            src={`${ASSET_BASE}/experience/duke-nus/print-detail-1.png`}
                             className={`${MEDIA_FILTER} object-cover aspect-[4/3]`}
                             alt="Print Close-up 1"
                         />
@@ -283,7 +284,7 @@ function DukeNusContent() {
                     </div>
                     <div className="flex flex-col items-center">
                         <img
-                            src="/media/experience/duke-nus/print-detail-2.png"
+                            src={`${ASSET_BASE}/experience/duke-nus/print-detail-2.png`}
                             className={`${MEDIA_FILTER} object-cover aspect-[4/3]`}
                             alt="Print Close-up 2"
                         />
@@ -317,12 +318,12 @@ function DukeNusContent() {
                 {/* 两列等宽网格（无描述文字） */}
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6 w-full">
                     <img
-                        src="/media/experience/duke-nus/sop-1.png"
+                        src={`${ASSET_BASE}/experience/duke-nus/sop-1.png`}
                         className={`${MEDIA_FILTER} object-contain bg-zinc-100 aspect-[1628/1085]`}
                         alt="SOP Screenshot 1"
                     />
                     <img
-                        src="/media/experience/duke-nus/sop-2.png"
+                        src={`${ASSET_BASE}/experience/duke-nus/sop-2.png`}
                         className={`${MEDIA_FILTER} object-contain bg-zinc-100 aspect-[1628/1085]`}
                         alt="SOP Screenshot 2"
                     />

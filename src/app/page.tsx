@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { useState, useEffect, Suspense } from "react";
 import { useSearchParams } from "next/navigation";
+import { ASSET_BASE } from "@/config/assets";
 
 const NAV_ZH = ["个人介绍", "核心技能", "工作经历", "项目经历", "社群与领导力", "联系方式"] as const;
 const NAV_EN = ["About", "Skills", "Experience", "Projects", "Leadership", "Contact"] as const;
@@ -139,7 +140,7 @@ function HomeContent() {
             <div className="w-full md:col-span-5 flex justify-center items-start">
               <div className="w-full max-w-md relative group rounded-2xl overflow-hidden shadow-lg border border-zinc-200/80 transition-transform duration-500 hover:scale-[1.02]">
                 <img
-                  src="/media/profile.png"
+                  src={`${ASSET_BASE}/profile.png`}
                   alt="Howie Han Profile"
                   className="w-full aspect-[3/4] object-cover bg-zinc-50"
                 />
@@ -427,7 +428,7 @@ function HomeContent() {
             {/* 项目 1: 全向舵轮 (左图右文) */}
             <Link href={`/projects/omni-wheel?lang=${lang}`} className="flex flex-col md:flex-row items-center gap-12 group p-6 md:p-8 bg-white border border-transparent hover:border-zinc-200 hover:bg-zinc-50/50 rounded-3xl hover:shadow-xl hover:-translate-y-1 transition-all duration-300 w-full text-justify">
               <div className="w-full md:w-1/2 aspect-[4/3] flex items-center justify-center flex-shrink-0 transition-transform duration-500 group-hover:scale-[1.02] bg-zinc-50/50 rounded-2xl border border-zinc-200/60 shadow-inner p-4 md:p-6">
-                <img src="/media/omni-wheel.png" alt="Omni-wheel Steering Chassis" className="w-full h-full object-contain drop-shadow-sm" />
+                <img src={`${ASSET_BASE}/omni-wheel.png`} alt="Omni-wheel Steering Chassis" className="w-full h-full object-contain drop-shadow-sm" />
               </div>
               <div className="w-full md:w-1/2 flex flex-col justify-center text-left">
                 <h3 className="text-2xl font-bold text-zinc-900 mb-2">{lang === 'zh' ? '高精度舵轮与移动机器人底盘研发' : 'High-Precision Omnidirectional Steering-Wheel Chassis R&D'}</h3>
@@ -443,7 +444,7 @@ function HomeContent() {
             {/* 项目 2: 绳驱动腕关节 (右图左文 md:flex-row-reverse) */}
             <Link href={`/projects/wrist-gripper?lang=${lang}`} className="flex flex-col md:flex-row-reverse items-center gap-12 group p-6 md:p-8 bg-white border border-transparent hover:border-zinc-200 hover:bg-zinc-50/50 rounded-3xl hover:shadow-xl hover:-translate-y-1 transition-all duration-300 w-full text-justify">
               <div className="w-full md:w-1/2 aspect-[4/3] flex items-center justify-center flex-shrink-0 transition-transform duration-500 group-hover:scale-[1.02] bg-zinc-50/50 rounded-2xl border border-zinc-200/60 shadow-inner p-4 md:p-6">
-                <img src="/media/wrist-gripper.png" alt="Tendon-Driven Spatial Wrist" className="w-full h-full object-contain drop-shadow-sm" />
+                <img src={`${ASSET_BASE}/wrist-gripper.png`} alt="Tendon-Driven Spatial Wrist" className="w-full h-full object-contain drop-shadow-sm" />
               </div>
               <div className="w-full md:w-1/2 flex flex-col justify-center text-left">
                 <h3 className="text-2xl font-bold text-zinc-900 mb-2">{lang === 'zh' ? '绳驱动刚柔耦合机械臂腕关节开发' : 'Rigid-Flexible Coupling Tendon-Driven Robotic Spatial Wrist R&D'}</h3>
@@ -459,7 +460,7 @@ function HomeContent() {
             {/* 项目 3: LVAD 仿真 (左图右文) */}
             <Link href={`/projects/lvad-simulation?lang=${lang}`} className="flex flex-col md:flex-row items-center gap-12 group p-6 md:p-8 bg-white border border-transparent hover:border-zinc-200 hover:bg-zinc-50/50 rounded-3xl hover:shadow-xl hover:-translate-y-1 transition-all duration-300 w-full text-justify">
               <div className="w-full md:w-1/2 aspect-[4/3] flex items-center justify-center flex-shrink-0 transition-transform duration-500 group-hover:scale-[1.02] bg-zinc-50/50 rounded-2xl border border-zinc-200/60 shadow-inner p-4 md:p-6">
-                <img src="/media/lvad-simulation.gif" alt="LVAD Simulation" className="w-full h-full object-contain drop-shadow-sm" />
+                <img src={`${ASSET_BASE}/lvad-simulation.gif`} alt="LVAD Simulation" className="w-full h-full object-contain drop-shadow-sm" />
               </div>
               <div className="w-full md:w-1/2 flex flex-col justify-center text-left">
                 <h3 className="text-2xl font-bold text-zinc-900 mb-2">{lang === 'zh' ? '磁驱动左心室辅助装置设计与仿真' : 'Design & Multiphysics Coupling Simulation of Magnetically Driven Left Ventricular Assist Device (LVAD)'}</h3>

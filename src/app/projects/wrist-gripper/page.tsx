@@ -2,6 +2,7 @@
 import Link from "next/link";
 import { useSearchParams } from "next/navigation";
 import { Suspense } from "react";
+import { ASSET_BASE } from "@/config/assets";
 
 const MEDIA_CLASSES = "rounded-xl object-contain w-full h-full";
 const CONTAINER_CLASSES = "bg-zinc-100 rounded-xl overflow-hidden";
@@ -70,7 +71,7 @@ function DetailContent() {
                             <div>
                                 <div className="w-full aspect-[4/3] bg-zinc-100 rounded-xl overflow-hidden shadow-inner border border-zinc-200">
                                     <img
-                                        src="/media/project/wrist/wrist-sim-kinematics.gif"
+                                        src={`${ASSET_BASE}/project/wrist/wrist-sim-kinematics.gif`}
                                         alt="Kinematics Simulation"
                                         className="object-contain w-full h-full"
                                     />
@@ -83,7 +84,7 @@ function DetailContent() {
                             <div>
                                 <div className="w-full aspect-[4/3] bg-zinc-100 rounded-xl overflow-hidden shadow-inner border border-zinc-200">
                                     <img
-                                        src="/media/project/wrist/wrist-sim-workspace.png"
+                                        src={`${ASSET_BASE}/project/wrist/wrist-sim-workspace.png`}
                                         alt="Workspace Cloud Map"
                                         className="object-contain w-full h-full"
                                     />
@@ -114,7 +115,7 @@ function DetailContent() {
                             <div>
                                 <div className={`${CONTAINER_CLASSES} aspect-[4/3]`}>
                                     <img
-                                        src="/media/project/wrist/wrist-cad-render.png"
+                                        src={`${ASSET_BASE}/project/wrist/wrist-cad-render.png`}
                                         alt={lang === "zh" ? "3DoF腕关节三维构型" : "3D CAD Assembly"}
                                         className={MEDIA_CLASSES}
                                     />
@@ -126,7 +127,7 @@ function DetailContent() {
                             <div>
                                 <div className={`${CONTAINER_CLASSES} aspect-[4/3]`}>
                                     <video
-                                        src="/media/project/wrist/wrist-exploded.mp4"
+                                        src={`${ASSET_BASE}/project/wrist/wrist-exploded.mp4`}
                                         autoPlay
                                         loop
                                         muted
@@ -181,7 +182,7 @@ function DetailContent() {
                             <div>
                                 <div className={`${CONTAINER_CLASSES} aspect-[4/3]`}>
                                     <img
-                                        src="/media/project/wrist/real-gripper.png"
+                                        src={`${ASSET_BASE}/project/wrist/real-gripper.png`}
                                         alt={lang === "zh" ? "刚柔耦合夹爪实物装配" : "Gripper Assembly"}
                                         className={MEDIA_CLASSES}
                                     />
@@ -193,7 +194,7 @@ function DetailContent() {
                             <div>
                                 <div className={`${CONTAINER_CLASSES} aspect-[4/3]`}>
                                     <img
-                                        src="/media/project/wrist/real-joint.png"
+                                        src={`${ASSET_BASE}/project/wrist/real-joint.png`}
                                         alt={lang === "zh" ? "空间腕关节实物装配" : "Wrist Joint Assembly"}
                                         className={MEDIA_CLASSES}
                                     />
@@ -205,7 +206,7 @@ function DetailContent() {
                             <div>
                                 <div className={`${CONTAINER_CLASSES} aspect-[4/3]`}>
                                     <img
-                                        src="/media/project/wrist/real-system-payload.png"
+                                        src={`${ASSET_BASE}/project/wrist/real-system-payload.png`}
                                         alt={lang === "zh" ? "末端 1kg 负载抓取测试" : "System Payload Test"}
                                         className={MEDIA_CLASSES}
                                     />

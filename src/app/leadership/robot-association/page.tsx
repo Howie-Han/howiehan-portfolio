@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { Suspense, useEffect, useState } from "react";
 import { useSearchParams } from "next/navigation";
+import { ASSET_BASE } from "@/config/assets";
 
 function RobotAssociationContent() {
     const [lang, setLang] = useState<"zh" | "en">("zh");
@@ -77,7 +78,7 @@ function RobotAssociationContent() {
                         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 w-full mt-6">
                             <div>
                                 <img
-                                    src="/media/leadership/robot-association/ra-event-test.png"
+                                    src={`${ASSET_BASE}/leadership/robot-association/ra-event-test.png`}
                                     alt="Event Test"
                                     className={IMG_CLASSES}
                                 />
@@ -87,7 +88,7 @@ function RobotAssociationContent() {
                             </div>
                             <div>
                                 <img
-                                    src="/media/leadership/robot-association/ra-event-tour.png"
+                                    src={`${ASSET_BASE}/leadership/robot-association/ra-event-tour.png`}
                                     alt="Event Tour"
                                     className={IMG_CLASSES}
                                 />
@@ -97,7 +98,7 @@ function RobotAssociationContent() {
                             </div>
                             <div>
                                 <img
-                                    src="/media/leadership/robot-association/ra-event-group.png"
+                                    src={`${ASSET_BASE}/leadership/robot-association/ra-event-group.png`}
                                     alt="Event Group Photo"
                                     className="w-full aspect-[4/3] object-contain bg-zinc-100 rounded-xl"
                                 />
@@ -123,7 +124,7 @@ function RobotAssociationContent() {
                         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 w-full mt-6">
                             <div>
                                 <img
-                                    src="/media/leadership/robot-association/ra-incub-poster.png"
+                                    src={`${ASSET_BASE}/leadership/robot-association/ra-incub-poster.png`}
                                     alt="Incubation Poster"
                                     className={IMG_CONTAIN_CLASSES}
                                 />
@@ -133,7 +134,7 @@ function RobotAssociationContent() {
                             </div>
                             <div>
                                 <img
-                                    src="/media/leadership/robot-association/ra-incub-cad.png"
+                                    src={`${ASSET_BASE}/leadership/robot-association/ra-incub-cad.png`}
                                     alt="Incubation CAD"
                                     className={IMG_CLASSES}
                                 />
@@ -150,7 +151,7 @@ function RobotAssociationContent() {
                                     className={VIDEO_CLASSES}
                                 >
                                     <source
-                                        src="/media/leadership/robot-association/ra-incub-promo.mp4"
+                                        src={`${ASSET_BASE}/leadership/robot-association/ra-incub-promo.mp4`}
                                         type="video/mp4"
                                     />
                                 </video>
@@ -176,7 +177,7 @@ function RobotAssociationContent() {
                         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 w-full mt-6 items-stretch">
                             <div className="w-full flex flex-col min-w-0">
                                 <img
-                                    src="/media/leadership/robot-association/ra-comm-team.png"
+                                    src={`${ASSET_BASE}/leadership/robot-association/ra-comm-team.png`}
                                     alt="Community Team"
                                     className="w-full h-full aspect-[4/3] object-cover bg-zinc-100 rounded-xl"
                                 />
@@ -186,7 +187,7 @@ function RobotAssociationContent() {
                             </div>
                             <div className="w-full flex flex-col min-w-0">
                                 <img
-                                    src="/media/leadership/robot-association/ra-comm-lec1.png"
+                                    src={`${ASSET_BASE}/leadership/robot-association/ra-comm-lec1.png`}
                                     alt="Lecture 1"
                                     className="w-full h-full aspect-[4/3] object-cover bg-zinc-100 rounded-xl"
                                 />
@@ -196,7 +197,7 @@ function RobotAssociationContent() {
                             </div>
                             <div className="w-full flex flex-col min-w-0">
                                 <img
-                                    src="/media/leadership/robot-association/ra-comm-lec2.png"
+                                    src={`${ASSET_BASE}/leadership/robot-association/ra-comm-lec2.png`}
                                     alt="Lecture 2"
                                     className="w-full h-full aspect-[4/3] object-cover bg-zinc-100 rounded-xl"
                                 />
@@ -206,7 +207,7 @@ function RobotAssociationContent() {
                             </div>
                             <div className="w-full flex flex-col min-w-0">
                                 <img
-                                    src="/media/leadership/robot-association/ra-comm-out1.png"
+                                    src={`${ASSET_BASE}/leadership/robot-association/ra-comm-out1.png`}
                                     alt="Outdoor Exhibition 1"
                                     className="w-full h-full aspect-[4/3] object-cover bg-zinc-100 rounded-xl"
                                 />
@@ -216,7 +217,7 @@ function RobotAssociationContent() {
                             </div>
                             <div className="w-full flex flex-col min-w-0">
                                 <img
-                                    src="/media/leadership/robot-association/ra-comm-out2.png"
+                                    src={`${ASSET_BASE}/leadership/robot-association/ra-comm-out2.png`}
                                     alt="Outdoor Exhibition 2"
                                     className="w-full h-full aspect-[4/3] object-cover bg-zinc-100 rounded-xl"
                                 />
@@ -226,7 +227,7 @@ function RobotAssociationContent() {
                             </div>
                             <div className="w-full flex flex-col min-w-0">
                                 <img
-                                    src="/media/leadership/robot-association/ra-comm-out3.png"
+                                    src={`${ASSET_BASE}/leadership/robot-association/ra-comm-out3.png`}
                                     alt="Outdoor Exhibition 3"
                                     className="w-full h-full aspect-[4/3] object-cover bg-zinc-100 rounded-xl"
                                 />

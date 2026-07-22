@@ -10,6 +10,7 @@ import {
     Center,
     Bounds,
 } from "@react-three/drei";
+import { ASSET_BASE } from "@/config/assets";
 
 // ─── Step 1: Cut off Draco CDN completely ───────────────────────────────
 (useGLTF as any).setDecoderPath?.("");
@@ -204,7 +205,7 @@ interface ModelViewerProps {
     modelPath?: string;
 }
 
-export default function ModelViewer({ modelPath = "/media/project/omni-wheel/omni-wheel.glb" }: ModelViewerProps) {
+export default function ModelViewer({ modelPath = `${ASSET_BASE}/project/omni-wheel/omni-wheel.glb` }: ModelViewerProps) {
     return (
         <ThreeErrorBoundary>
             <div className="relative w-full h-full min-h-[300px] rounded-xl overflow-hidden">

@@ -2,6 +2,7 @@
 import Link from "next/link";
 import { useSearchParams } from "next/navigation";
 import { Suspense } from "react";
+import { ASSET_BASE } from "@/config/assets";
 
 const IMG_CLASSES = "rounded-xl object-contain w-full h-full";
 const CONTAINER_CLASSES = "bg-zinc-100 rounded-xl overflow-hidden";
@@ -71,7 +72,7 @@ function DetailContent() {
                             <div>
                                 <div className={`${CONTAINER_CLASSES} aspect-[4/3]`}>
                                     <img
-                                        src="/media/project/lvad/lvad-principle.png"
+                                        src={`${ASSET_BASE}/project/lvad/lvad-principle.png`}
                                         alt={lang === "zh" ? "磁致驱动机理" : "Actuation Principle"}
                                         className={IMG_CLASSES}
                                     />
@@ -83,7 +84,7 @@ function DetailContent() {
                             <div>
                                 <div className={`${CONTAINER_CLASSES} aspect-[4/3]`}>
                                     <img
-                                        src="/media/project/lvad/lvad-comsol-mesh.png"
+                                        src={`${ASSET_BASE}/project/lvad/lvad-comsol-mesh.png`}
                                         alt={lang === "zh" ? "多场耦合网格" : "Multiphysics Mesh"}
                                         className={IMG_CLASSES}
                                     />
@@ -116,7 +117,7 @@ function DetailContent() {
                             <div>
                                 <div className={`${CONTAINER_CLASSES} aspect-[4/3]`}>
                                     <img
-                                        src="/media/project/lvad/sim-magnetic.gif"
+                                        src={`${ASSET_BASE}/project/lvad/sim-magnetic.gif`}
                                         alt={lang === "zh" ? "磁通密度分布与应力" : "Magnetic Flux Density"}
                                         className={IMG_CLASSES}
                                     />
@@ -128,7 +129,7 @@ function DetailContent() {
                             <div>
                                 <div className={`${CONTAINER_CLASSES} aspect-[4/3]`}>
                                     <img
-                                        src="/media/project/lvad/sim-stress.gif"
+                                        src={`${ASSET_BASE}/project/lvad/sim-stress.gif`}
                                         alt={lang === "zh" ? "固体形变与应力响应" : "Solid Stress-Strain"}
                                         className={IMG_CLASSES}
                                     />
@@ -140,7 +141,7 @@ function DetailContent() {
                             <div>
                                 <div className={`${CONTAINER_CLASSES} aspect-[4/3]`}>
                                     <img
-                                        src="/media/project/lvad/sim-fluid.gif"
+                                        src={`${ASSET_BASE}/project/lvad/sim-fluid.gif`}
                                         alt={lang === "zh" ? "动网格流场演化" : "FSI Fluid Streamlines"}
                                         className={IMG_CLASSES}
                                     />
@@ -195,7 +196,7 @@ function DetailContent() {
                             <div>
                                 <div className={`${CONTAINER_CLASSES} aspect-[16/9]`}>
                                     <img
-                                        src="/media/project/lvad/sim-deformation.gif"
+                                        src={`${ASSET_BASE}/project/lvad/sim-deformation.gif`}
                                         alt={lang === "zh" ? "COMSOL仿真模拟" : "Theoretical Simulation"}
                                         className={IMG_CLASSES}
                                     />
@@ -207,7 +208,7 @@ function DetailContent() {
                             <div>
                                 <div className={`${CONTAINER_CLASSES} aspect-[16/9]`}>
                                     <img
-                                        src="/media/project/lvad/real-deformation.gif"
+                                        src={`${ASSET_BASE}/project/lvad/real-deformation.gif`}
                                         alt={lang === "zh" ? "物理原型机运转" : "Physical Prototype"}
                                         className={IMG_CLASSES}
                                     />
