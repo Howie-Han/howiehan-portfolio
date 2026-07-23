@@ -78,7 +78,7 @@ function RobotAssociationContent() {
                         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 w-full mt-6">
                             <div>
                                 <img
-                                    src={`${ASSET_BASE}/leadership/robot-association/ra-event-test.png`}
+                                    src={`${ASSET_BASE}/leadership/robot-association/ra-event-test.webp`}
                                     alt="Event Test"
                                     className={IMG_CLASSES}
                                 />
@@ -88,7 +88,7 @@ function RobotAssociationContent() {
                             </div>
                             <div>
                                 <img
-                                    src={`${ASSET_BASE}/leadership/robot-association/ra-event-tour.png`}
+                                    src={`${ASSET_BASE}/leadership/robot-association/ra-event-tour.webp`}
                                     alt="Event Tour"
                                     className={IMG_CLASSES}
                                 />
@@ -98,7 +98,7 @@ function RobotAssociationContent() {
                             </div>
                             <div>
                                 <img
-                                    src={`${ASSET_BASE}/leadership/robot-association/ra-event-group.png`}
+                                    src={`${ASSET_BASE}/leadership/robot-association/ra-event-group.webp`}
                                     alt="Event Group Photo"
                                     className="w-full aspect-[4/3] object-contain bg-zinc-100 rounded-xl"
                                 />
@@ -124,7 +124,7 @@ function RobotAssociationContent() {
                         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 w-full mt-6">
                             <div>
                                 <img
-                                    src={`${ASSET_BASE}/leadership/robot-association/ra-incub-poster.png`}
+                                    src={`${ASSET_BASE}/leadership/robot-association/ra-incub-poster.webp`}
                                     alt="Incubation Poster"
                                     className={IMG_CONTAIN_CLASSES}
                                 />
@@ -134,7 +134,7 @@ function RobotAssociationContent() {
                             </div>
                             <div>
                                 <img
-                                    src={`${ASSET_BASE}/leadership/robot-association/ra-incub-cad.png`}
+                                    src={`${ASSET_BASE}/leadership/robot-association/ra-incub-cad.webp`}
                                     alt="Incubation CAD"
                                     className={IMG_CLASSES}
                                 />
@@ -177,7 +177,7 @@ function RobotAssociationContent() {
                         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 w-full mt-6 items-stretch">
                             <div className="w-full flex flex-col min-w-0">
                                 <img
-                                    src={`${ASSET_BASE}/leadership/robot-association/ra-comm-team.png`}
+                                    src={`${ASSET_BASE}/leadership/robot-association/ra-comm-team.webp`}
                                     alt="Community Team"
                                     className="w-full h-full aspect-[4/3] object-cover bg-zinc-100 rounded-xl"
                                 />
@@ -187,7 +187,7 @@ function RobotAssociationContent() {
                             </div>
                             <div className="w-full flex flex-col min-w-0">
                                 <img
-                                    src={`${ASSET_BASE}/leadership/robot-association/ra-comm-lec1.png`}
+                                    src={`${ASSET_BASE}/leadership/robot-association/ra-comm-lec1.webp`}
                                     alt="Lecture 1"
                                     className="w-full h-full aspect-[4/3] object-cover bg-zinc-100 rounded-xl"
                                 />
@@ -197,7 +197,7 @@ function RobotAssociationContent() {
                             </div>
                             <div className="w-full flex flex-col min-w-0">
                                 <img
-                                    src={`${ASSET_BASE}/leadership/robot-association/ra-comm-lec2.png`}
+                                    src={`${ASSET_BASE}/leadership/robot-association/ra-comm-lec2.webp`}
                                     alt="Lecture 2"
                                     className="w-full h-full aspect-[4/3] object-cover bg-zinc-100 rounded-xl"
                                 />
@@ -207,7 +207,7 @@ function RobotAssociationContent() {
                             </div>
                             <div className="w-full flex flex-col min-w-0">
                                 <img
-                                    src={`${ASSET_BASE}/leadership/robot-association/ra-comm-out1.png`}
+                                    src={`${ASSET_BASE}/leadership/robot-association/ra-comm-out1.webp`}
                                     alt="Outdoor Exhibition 1"
                                     className="w-full h-full aspect-[4/3] object-cover bg-zinc-100 rounded-xl"
                                 />
@@ -217,7 +217,7 @@ function RobotAssociationContent() {
                             </div>
                             <div className="w-full flex flex-col min-w-0">
                                 <img
-                                    src={`${ASSET_BASE}/leadership/robot-association/ra-comm-out2.png`}
+                                    src={`${ASSET_BASE}/leadership/robot-association/ra-comm-out2.webp`}
                                     alt="Outdoor Exhibition 2"
                                     className="w-full h-full aspect-[4/3] object-cover bg-zinc-100 rounded-xl"
                                 />
@@ -227,7 +227,7 @@ function RobotAssociationContent() {
                             </div>
                             <div className="w-full flex flex-col min-w-0">
                                 <img
-                                    src={`${ASSET_BASE}/leadership/robot-association/ra-comm-out3.png`}
+                                    src={`${ASSET_BASE}/leadership/robot-association/ra-comm-out3.webp`}
                                     alt="Outdoor Exhibition 3"
                                     className="w-full h-full aspect-[4/3] object-cover bg-zinc-100 rounded-xl"
                                 />

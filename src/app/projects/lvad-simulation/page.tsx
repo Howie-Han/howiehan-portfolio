@@ -72,7 +72,7 @@ function DetailContent() {
                             <div>
                                 <div className={`${CONTAINER_CLASSES} aspect-[4/3]`}>
                                     <img
-                                        src={`${ASSET_BASE}/project/lvad/lvad-principle.png`}
+                                        src={`${ASSET_BASE}/project/lvad/lvad-principle.webp`}
                                         alt={lang === "zh" ? "磁致驱动机理" : "Actuation Principle"}
                                         className={IMG_CLASSES}
                                     />
@@ -84,7 +84,7 @@ function DetailContent() {
                             <div>
                                 <div className={`${CONTAINER_CLASSES} aspect-[4/3]`}>
                                     <img
-                                        src={`${ASSET_BASE}/project/lvad/lvad-comsol-mesh.png`}
+                                        src={`${ASSET_BASE}/project/lvad/lvad-comsol-mesh.webp`}
                                         alt={lang === "zh" ? "多场耦合网格" : "Multiphysics Mesh"}
                                         className={IMG_CLASSES}
                                     />
@@ -117,7 +117,7 @@ function DetailContent() {
                             <div>
                                 <div className={`${CONTAINER_CLASSES} aspect-[4/3]`}>
                                     <img
-                                        src={`${ASSET_BASE}/project/lvad/sim-magnetic.gif`}
+                                        src={`${ASSET_BASE}/project/lvad/sim-magnetic.webp`}
                                         alt={lang === "zh" ? "磁通密度分布与应力" : "Magnetic Flux Density"}
                                         className={IMG_CLASSES}
                                     />
@@ -129,7 +129,7 @@ function DetailContent() {
                             <div>
                                 <div className={`${CONTAINER_CLASSES} aspect-[4/3]`}>
                                     <img
-                                        src={`${ASSET_BASE}/project/lvad/sim-stress.gif`}
+                                        src={`${ASSET_BASE}/project/lvad/sim-stress.webp`}
                                         alt={lang === "zh" ? "固体形变与应力响应" : "Solid Stress-Strain"}
                                         className={IMG_CLASSES}
                                     />
@@ -141,7 +141,7 @@ function DetailContent() {
                             <div>
                                 <div className={`${CONTAINER_CLASSES} aspect-[4/3]`}>
                                     <img
-                                        src={`${ASSET_BASE}/project/lvad/sim-fluid.gif`}
+                                        src={`${ASSET_BASE}/project/lvad/sim-fluid.webp`}
                                         alt={lang === "zh" ? "动网格流场演化" : "FSI Fluid Streamlines"}
                                         className={IMG_CLASSES}
                                     />
@@ -196,7 +196,7 @@ function DetailContent() {
                             <div>
                                 <div className={`${CONTAINER_CLASSES} aspect-[16/9]`}>
                                     <img
-                                        src={`${ASSET_BASE}/project/lvad/sim-deformation.gif`}
+                                        src={`${ASSET_BASE}/project/lvad/sim-deformation.webp`}
                                         alt={lang === "zh" ? "COMSOL仿真模拟" : "Theoretical Simulation"}
                                         className={IMG_CLASSES}
                                     />
@@ -208,7 +208,7 @@ function DetailContent() {
                             <div>
                                 <div className={`${CONTAINER_CLASSES} aspect-[16/9]`}>
                                     <img
-                                        src={`${ASSET_BASE}/project/lvad/real-deformation.gif`}
+                                        src={`${ASSET_BASE}/project/lvad/real-deformation.webp`}
                                         alt={lang === "zh" ? "物理原型机运转" : "Physical Prototype"}
                                         className={IMG_CLASSES}
                                     />

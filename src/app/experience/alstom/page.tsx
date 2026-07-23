@@ -35,19 +35,19 @@ function AlstomContent() {
     const galleryMedia = [
         {
             type: "image",
-            src: `${ASSET_BASE}/experience/alstom/gallery-3-outdoor-img.png`,
+            src: `${ASSET_BASE}/experience/alstom/gallery-3-outdoor-img.webp`,
             title: isZh ? "实车底部巡检运行测试" : "Under-Train Inspection Testing",
             desc: isZh ? "机器人在列车底部真实环境下的运行实景，验证底盘的通过性与工作空间。" : "Real-world deployment of the robot operating under the train chassis to verify maneuverability and workspace clearance.",
         },
         {
             type: "image",
-            src: `${ASSET_BASE}/experience/alstom/gallery-2-indoor-img.png`,
+            src: `${ASSET_BASE}/experience/alstom/gallery-2-indoor-img.webp`,
             title: isZh ? "机电一体化组装实物" : "Fully Assembled Mechatronic Prototype",
             desc: isZh ? "完成所有机械结构件打印加工、电子设备集成与内部走线布局后的机器人完整形态。" : "The complete robot prototype after the assembly of 3D-printed mechanical parts, electronic components integration, and internal wire routing.",
         },
         {
             type: "image",
-            src: `${ASSET_BASE}/experience/alstom/gallery-1-tpu.gif`,
+            src: `${ASSET_BASE}/experience/alstom/gallery-1-tpu.webp`,
             title: isZh ? "FDM 柔性履带打印过程" : "FDM Printing of Flexible Track",
             desc: isZh ? "使用 Bambu Lab X1C 3D 打印机与 TPU 95A HF 柔性材料一体化打印机器人履带的延时摄影。" : "Time-lapse of printing the robot's continuous track using TPU 95A HF material on a Bambu Lab X1C 3D printer.",
         },
@@ -70,32 +70,32 @@ function AlstomContent() {
     const stepperData = [
         {
             title: isZh ? "实机破损原件勘查" : "Damaged Part Inspection",
-            imgs: ["reverse-1-broken-1.png", "reverse-1-broken-2.png"]
+            imgs: ["reverse-1-broken-1.webp", "reverse-1-broken-2.webp"]
         },
         {
             title: isZh ? "三维点云扫描捕获" : "3D Point Cloud Scanning",
-            imgs: ["reverse-2-scan-1.png", "reverse-2-scan-2.png"]
+            imgs: ["reverse-2-scan-1.webp", "reverse-2-scan-2.webp"]
         },
         {
             title: isZh ? "Quicksurface 逆向重建" : "Quicksurface Reverse Engineering",
-            imgs: ["reverse-3-reverse-1.png", "reverse-3-reverse-2.png"]
+            imgs: ["reverse-3-reverse-1.webp", "reverse-3-reverse-2.webp"]
         },
         {
             title: isZh ? "Onshape 打印前结构修复" : "Onshape Pre-print Optimization",
-            imgs: ["reverse-4-cad-1.png", "reverse-4-cad-2.png"]
+            imgs: ["reverse-4-cad-1.webp", "reverse-4-cad-2.webp"]
         },
         {
             title: isZh ? "工业级 3D 打印成品交付" : "Industrial 3D Printed Delivery",
-            imgs: ["reverse-4-final-1.png", "reverse-4-final-2.png"]
+            imgs: ["reverse-4-final-1.webp", "reverse-4-final-2.webp"]
         },
     ];
 
     const timelineData = [
-        { img: "workflow-1-form.png", title: isZh ? "需求标准化表单发起" : "Request Form Generation" },
-        { img: "workflow-2-database.png", title: isZh ? "云端数据库结构化归档" : "Cloud Database Archiving" },
-        { img: "workflow-3-automate.png", title: isZh ? "自动化引擎逻辑流转" : "Power Automate Engine" },
-        { img: "workflow-4-email.png", title: isZh ? "状态确认与邮件通知" : "Automated Notifications" },
-        { img: "workflow-5-dashboard.png", title: isZh ? "可视化多维交互看板" : "Interactive Dashboard" },
+        { img: "workflow-1-form.webp", title: isZh ? "需求标准化表单发起" : "Request Form Generation" },
+        { img: "workflow-2-database.webp", title: isZh ? "云端数据库结构化归档" : "Cloud Database Archiving" },
+        { img: "workflow-3-automate.webp", title: isZh ? "自动化引擎逻辑流转" : "Power Automate Engine" },
+        { img: "workflow-4-email.webp", title: isZh ? "状态确认与邮件通知" : "Automated Notifications" },
+        { img: "workflow-5-dashboard.webp", title: isZh ? "可视化多维交互看板" : "Interactive Dashboard" },
     ];
 
     const MEDIA_FILTER = "object-contain";
@@ -186,7 +186,7 @@ function AlstomContent() {
                                 </p>
                             </div>
                             <div className="relative w-full h-48 xl:h-52 bg-zinc-50 rounded-2xl overflow-hidden border border-zinc-200 mt-2">
-                                <Image src={`${ASSET_BASE}/experience/alstom/robot-part-chassis-render.png`} alt="Chassis CAD Render" fill unoptimized className={MEDIA_FILTER} />
+                                <Image src={`${ASSET_BASE}/experience/alstom/robot-part-chassis-render.webp`} alt="Chassis CAD Render" fill unoptimized className={MEDIA_FILTER} />
                             </div>
                         </div>
                         {/* 右侧：丝滑低面互动 3D 视窗 */}
@@ -206,7 +206,7 @@ function AlstomContent() {
                                 </p>
                             </div>
                             <div className="relative w-full h-48 xl:h-52 bg-zinc-50 rounded-2xl overflow-hidden border border-zinc-200 mt-2">
-                                <Image src={`${ASSET_BASE}/experience/alstom/robot-part-joint-render.png`} alt="Joint CAD Render" fill unoptimized className={MEDIA_FILTER} />
+                                <Image src={`${ASSET_BASE}/experience/alstom/robot-part-joint-render.webp`} alt="Joint CAD Render" fill unoptimized className={MEDIA_FILTER} />
                             </div>
                         </div>
                         {/* 右侧：丝滑低面互动 3D 视窗 */}

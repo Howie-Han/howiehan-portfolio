@@ -71,7 +71,7 @@ function DetailContent() {
                             <div>
                                 <div className="w-full aspect-[4/3] bg-zinc-100 rounded-xl overflow-hidden shadow-inner border border-zinc-200">
                                     <img
-                                        src={`${ASSET_BASE}/project/wrist/wrist-sim-kinematics.gif`}
+                                        src={`${ASSET_BASE}/project/wrist/wrist-sim-kinematics.webp`}
                                         alt="Kinematics Simulation"
                                         className="object-contain w-full h-full"
                                     />
@@ -84,7 +84,7 @@ function DetailContent() {
                             <div>
                                 <div className="w-full aspect-[4/3] bg-zinc-100 rounded-xl overflow-hidden shadow-inner border border-zinc-200">
                                     <img
-                                        src={`${ASSET_BASE}/project/wrist/wrist-sim-workspace.png`}
+                                        src={`${ASSET_BASE}/project/wrist/wrist-sim-workspace.webp`}
                                         alt="Workspace Cloud Map"
                                         className="object-contain w-full h-full"
                                     />
@@ -115,7 +115,7 @@ function DetailContent() {
                             <div>
                                 <div className={`${CONTAINER_CLASSES} aspect-[4/3]`}>
                                     <img
-                                        src={`${ASSET_BASE}/project/wrist/wrist-cad-render.png`}
+                                        src={`${ASSET_BASE}/project/wrist/wrist-cad-render.webp`}
                                         alt={lang === "zh" ? "3DoF腕关节三维构型" : "3D CAD Assembly"}
                                         className={MEDIA_CLASSES}
                                     />
@@ -182,7 +182,7 @@ function DetailContent() {
                             <div>
                                 <div className={`${CONTAINER_CLASSES} aspect-[4/3]`}>
                                     <img
-                                        src={`${ASSET_BASE}/project/wrist/real-gripper.png`}
+                                        src={`${ASSET_BASE}/project/wrist/real-gripper.webp`}
                                         alt={lang === "zh" ? "刚柔耦合夹爪实物装配" : "Gripper Assembly"}
                                         className={MEDIA_CLASSES}
                                     />
@@ -194,7 +194,7 @@ function DetailContent() {
                             <div>
                                 <div className={`${CONTAINER_CLASSES} aspect-[4/3]`}>
                                     <img
-                                        src={`${ASSET_BASE}/project/wrist/real-joint.png`}
+                                        src={`${ASSET_BASE}/project/wrist/real-joint.webp`}
                                         alt={lang === "zh" ? "空间腕关节实物装配" : "Wrist Joint Assembly"}
                                         className={MEDIA_CLASSES}
                                     />
@@ -206,7 +206,7 @@ function DetailContent() {
                             <div>
                                 <div className={`${CONTAINER_CLASSES} aspect-[4/3]`}>
                                     <img
-                                        src={`${ASSET_BASE}/project/wrist/real-system-payload.png`}
+                                        src={`${ASSET_BASE}/project/wrist/real-system-payload.webp`}
                                         alt={lang === "zh" ? "末端 1kg 负载抓取测试" : "System Payload Test"}
                                         className={MEDIA_CLASSES}
                                     />

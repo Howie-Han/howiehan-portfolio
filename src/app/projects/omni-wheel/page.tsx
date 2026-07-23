@@ -173,21 +173,21 @@ function DetailContent() {
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                         <div className="w-full aspect-[1292/925] rounded-xl overflow-hidden border border-zinc-200 bg-zinc-100">
                             <img
-                                src={`${ASSET_BASE}/project/omni-wheel/cad-shaft.png`}
+                                src={`${ASSET_BASE}/project/omni-wheel/cad-shaft.webp`}
                                 alt="CAD Shaft Blueprint"
                                 className={MEDIA_FILTER}
                             />
                         </div>
                         <div className="w-full aspect-[1279/915] rounded-xl overflow-hidden border border-zinc-200 bg-zinc-100">
                             <img
-                                src={`${ASSET_BASE}/project/omni-wheel/cad-gear.png`}
+                                src={`${ASSET_BASE}/project/omni-wheel/cad-gear.webp`}
                                 alt="CAD Gear Blueprint"
                                 className={MEDIA_FILTER}
                             />
                         </div>
                         <div className="w-full aspect-[1215/876] rounded-xl overflow-hidden border border-zinc-200 bg-zinc-100">
                             <img
-                                src={`${ASSET_BASE}/project/omni-wheel/cad-part.png`}
+                                src={`${ASSET_BASE}/project/omni-wheel/cad-part.webp`}
                                 alt="CAD Part Blueprint"
                                 className={MEDIA_FILTER}
                             />
@@ -217,21 +217,21 @@ function DetailContent() {
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                         <div className="w-full aspect-[4/3] rounded-xl overflow-hidden border border-zinc-200 bg-zinc-100">
                             <img
-                                src={`${ASSET_BASE}/project/omni-wheel/hardware-single.png`}
+                                src={`${ASSET_BASE}/project/omni-wheel/hardware-single.webp`}
                                 alt="Single Wheel Hardware"
                                 className={MEDIA_FILTER}
                             />
                         </div>
                         <div className="w-full aspect-[4/3] rounded-xl overflow-hidden border border-zinc-200 bg-zinc-100">
                             <img
-                                src={`${ASSET_BASE}/project/omni-wheel/hardware-integration.png`}
+                                src={`${ASSET_BASE}/project/omni-wheel/hardware-integration.webp`}
                                 alt="Chassis Integration"
                                 className={MEDIA_FILTER}
                             />
                         </div>
                         <div className="w-full aspect-[4/3] rounded-xl overflow-hidden border border-zinc-200 bg-zinc-100">
                             <img
-                                src={`${ASSET_BASE}/project/omni-wheel/hardware-debugging.png`}
+                                src={`${ASSET_BASE}/project/omni-wheel/hardware-debugging.webp`}
                                 alt="On-site Debugging"
                                 className={MEDIA_FILTER}
                             />
@@ -282,7 +282,7 @@ function DetailContent() {
 
                     <div className="w-full aspect-[2816/1600] rounded-xl overflow-hidden border border-zinc-200 bg-zinc-100">
                         <img
-                            src={`${ASSET_BASE}/project/omni-wheel/team-photo.png`}
+                            src={`${ASSET_BASE}/project/omni-wheel/team-photo.webp`}
                             alt="Team Photo"
                             className={MEDIA_FILTER}
                         />
