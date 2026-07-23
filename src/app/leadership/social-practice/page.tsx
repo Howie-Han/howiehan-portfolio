@@ -95,8 +95,8 @@ function SocialPracticeContent() {
                             </div>
                             <div>
                                 <video
-                                    autoPlay
-                                    loop
+                                    controls
+                                    preload="metadata"
                                     muted
                                     playsInline
                                     className={HERO_VIDEO_CLASSES}
@@ -284,8 +284,8 @@ function SocialPracticeContent() {
                             </div>
                             <div className="snap-center shrink-0 w-64 md:w-72 flex flex-col">
                                 <video
-                                    autoPlay
-                                    loop
+                                    controls
+                                    preload="metadata"
                                     muted
                                     playsInline
                                     className={FILM_VIDEO_CLASSES}

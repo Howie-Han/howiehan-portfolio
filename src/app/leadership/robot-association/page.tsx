@@ -144,8 +144,8 @@ function RobotAssociationContent() {
                             </div>
                             <div>
                                 <video
-                                    autoPlay
-                                    loop
+                                    controls
+                                    preload="metadata"
                                     muted
                                     playsInline
                                     className={VIDEO_CLASSES}

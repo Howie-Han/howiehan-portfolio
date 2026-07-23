@@ -237,7 +237,6 @@ function AlstomContent() {
                                 loop
                                 muted
                                 playsInline
-                                controls
                                 className={`w-full h-full ${MEDIA_FILTER}`}
                             />
                         ) : (
@@ -261,7 +260,14 @@ function AlstomContent() {
                                     }`}
                             >
                                 {media.type === "video" ? (
-                                    <video src={media.src} className="w-full h-full object-cover pointer-events-none" />
+                                    <video
+                                        src={media.src}
+                                        autoPlay
+                                        loop
+                                        muted
+                                        playsInline
+                                        className="w-full h-full object-cover pointer-events-none"
+                                    />
                                 ) : (
                                     <Image src={media.src} alt={`thumb-${idx}`} fill unoptimized className="object-cover pointer-events-none" />
                                 )}
