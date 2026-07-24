@@ -3,12 +3,6 @@ const nextConfig = {
   // 1. 关闭图片优化，防止 Vercel 处理图片导致内存飙升
   images: {
     unoptimized: true,
-    remotePatterns: [
-      {
-        protocol: 'https',
-        hostname: 'cdn.jsdelivr.net',
-      },
-    ],
   },
   // 2. 忽略所有的语法和类型检查
   eslint: {
