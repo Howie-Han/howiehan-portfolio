@@ -117,8 +117,8 @@ function DukeNusContent() {
                             <video
                                 src={`${ASSET_BASE}/experience/duke-nus/system-operation.mp4`}
                                 className="w-full h-full object-contain"
-                                autoPlay
-                                loop
+                                controls
+                                preload="metadata"
                                 muted
                                 playsInline
                             />
@@ -166,8 +166,8 @@ function DukeNusContent() {
                         <video
                             src={`${ASSET_BASE}/experience/duke-nus/gear-rack-sim.mp4`}
                             className={`${MEDIA_FILTER} object-cover aspect-[4/3]`}
-                            autoPlay
-                            loop
+                            controls
+                            preload="metadata"
                             muted
                             playsInline
                         />
@@ -179,8 +179,8 @@ function DukeNusContent() {
                         <video
                             src={`${ASSET_BASE}/experience/duke-nus/gear-rack-test.mp4`}
                             className={`${MEDIA_FILTER} object-contain bg-zinc-100 aspect-[4/3]`}
-                            autoPlay
-                            loop
+                            controls
+                            preload="metadata"
                             muted
                             playsInline
                         />

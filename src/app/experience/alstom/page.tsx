@@ -233,8 +233,8 @@ function AlstomContent() {
                             <video
                                 key={galleryMedia[activeGalleryIndex].src}
                                 src={galleryMedia[activeGalleryIndex].src}
-                                autoPlay
-                                loop
+                                controls
+                                preload="metadata"
                                 muted
                                 playsInline
                                 className={`w-full h-full ${MEDIA_FILTER}`}
@@ -262,8 +262,8 @@ function AlstomContent() {
                                 {media.type === "video" ? (
                                     <video
                                         src={media.src}
-                                        autoPlay
-                                        loop
+                                        controls
+                                        preload="metadata"
                                         muted
                                         playsInline
                                         className="w-full h-full object-cover pointer-events-none"

@@ -92,8 +92,8 @@ function DetailContent() {
                         <div className="w-full rounded-2xl overflow-hidden border border-zinc-200 bg-zinc-100">
                             <video
                                 src={`${ASSET_BASE}/project/omni-wheel/exploded-view.mp4`}
-                                autoPlay
-                                loop
+                                controls
+                                preload="metadata"
                                 muted
                                 playsInline
                                 className="w-full h-full object-cover rounded-xl aspect-[4/3]"
@@ -126,8 +126,8 @@ function DetailContent() {
                         <div className="w-full aspect-video rounded-xl overflow-hidden border border-zinc-200 bg-white">
                             <video
                                 src={`${ASSET_BASE}/project/omni-wheel/sim-axial.mp4`}
-                                autoPlay
-                                loop
+                                controls
+                                preload="metadata"
                                 muted
                                 playsInline
                                 className={MEDIA_FILTER_VIDEO}
@@ -138,8 +138,8 @@ function DetailContent() {
                         <div className="w-full aspect-video rounded-xl overflow-hidden border border-zinc-200 bg-white">
                             <video
                                 src={`${ASSET_BASE}/project/omni-wheel/sim-steering.mp4`}
-                                autoPlay
-                                loop
+                                controls
+                                preload="metadata"
                                 muted
                                 playsInline
                                 className={MEDIA_FILTER_VIDEO}
@@ -261,8 +261,8 @@ function DetailContent() {
                         <div className="w-full aspect-[1280/720] rounded-xl overflow-hidden border border-zinc-200 bg-zinc-100">
                             <video
                                 src={`${ASSET_BASE}/project/omni-wheel/match-manual.mp4`}
-                                autoPlay
-                                loop
+                                controls
+                                preload="metadata"
                                 muted
                                 playsInline
                                 className={MEDIA_FILTER}
@@ -271,8 +271,8 @@ function DetailContent() {
                         <div className="w-full aspect-[1280/720] rounded-xl overflow-hidden border border-zinc-200 bg-zinc-100">
                             <video
                                 src={`${ASSET_BASE}/project/omni-wheel/match-auto.mp4`}
-                                autoPlay
-                                loop
+                                controls
+                                preload="metadata"
                                 muted
                                 playsInline
                                 className={MEDIA_FILTER}

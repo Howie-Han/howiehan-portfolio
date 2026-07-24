@@ -128,8 +128,8 @@ function DetailContent() {
                                 <div className={`${CONTAINER_CLASSES} aspect-[4/3]`}>
                                     <video
                                         src={`${ASSET_BASE}/project/wrist/wrist-exploded.mp4`}
-                                        autoPlay
-                                        loop
+                                        controls
+                                        preload="metadata"
                                         muted
                                         playsInline
                                         className={MEDIA_CLASSES}
