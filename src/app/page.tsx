@@ -96,7 +96,7 @@ function HomeContent() {
               {t("更多项目", "View Projects")}
             </button>
             <a
-              href={lang === "zh" ? "/简历-韩浩宇.pdf" : "/Resume-Haoyu HAN.pdf"}
+              href={lang === "zh" ? "/cv/简历-韩浩宇.pdf" : "/cv/Resume-Haoyu HAN.pdf"}
               download={lang === "zh" ? "简历-韩浩宇.pdf" : "Resume-Haoyu HAN.pdf"}
               target="_blank"
               rel="noopener noreferrer"
@@ -184,7 +184,7 @@ function HomeContent() {
                 <div className="flex items-start gap-6 w-full">
                   {/* 学校 Logo 标准替换占位符 */}
                   <div id="nus-logo-placeholder" className="w-14 h-14 md:w-16 md:h-16 flex items-center justify-center flex-shrink-0 pt-1">
-                    <img src="/logos/nus-logo.png" alt="NUS Logo" className="w-full h-full object-contain drop-shadow-sm" />
+                    <img src="/logos/nus-logo.webp" alt="NUS Logo" className="w-full h-full object-contain drop-shadow-sm" />
                   </div>
                   <div className="flex-grow">
                     <div className="flex justify-between items-start w-full">
@@ -212,7 +212,7 @@ function HomeContent() {
                 <div className="flex items-start gap-6 w-full">
                   {/* 学校 Logo 标准替换占位符 */}
                   <div id="buaa-logo-placeholder" className="w-14 h-14 md:w-16 md:h-16 flex items-center justify-center flex-shrink-0 pt-1">
-                    <img src="/logos/buaa-logo.png" alt="BUAA Logo" className="w-full h-full object-contain drop-shadow-sm" />
+                    <img src="/logos/buaa-logo.webp" alt="BUAA Logo" className="w-full h-full object-contain drop-shadow-sm" />
                   </div>
                   <div className="flex-grow">
                     <div className="flex justify-between items-start w-full">
@@ -371,9 +371,16 @@ function HomeContent() {
             <div className="relative pl-12 md:pl-24 py-8 group">
               <div className="absolute left-[17px] md:left-[33px] top-[52px] w-3 h-3 bg-white border-2 border-zinc-300 rounded-full group-hover:border-zinc-900 group-hover:scale-125 group-hover:bg-zinc-900 transition-all duration-300 z-10"></div>
               <Link href={`/experience/alstom?lang=${lang}`} className="block bg-white border border-zinc-200/60 rounded-2xl p-6 md:p-8 group-hover:shadow-xl group-hover:border-zinc-300 group-hover:-translate-y-1 transition-all duration-300">
-                <h3 className="text-xl font-bold text-zinc-900 mb-2">{lang === 'zh' ? '机器人与增材制造研发实习生' : 'Robotics & Additive Manufacturing R&D Intern'}</h3>
-                <p className="text-sm font-medium text-zinc-500 mb-4">{lang === 'zh' ? '阿尔斯通（亚太）创新中心 | 2026.01 - 2026.07' : 'Alstom (APAC) Innovation Station | Jan 2026 - July 2026'}</p>
-                <p className="text-zinc-600 text-sm md:text-base leading-relaxed text-justify">{lang === 'zh' ? '交付巡检机器人产品整机，打通企业增材制造备件企业内生产链路，助力轨交供应链降本增效。' : 'Delivered the track inspection robot product and established the localized spare-parts additive manufacturing workflow, significantly optimizing supply chain cost-efficiency.'}</p>
+                <div className="flex items-start gap-4">
+                  <div className="w-12 h-12 md:w-14 md:h-14 flex-shrink-0 bg-white border border-zinc-200 rounded-md flex items-center justify-center overflow-hidden">
+                    <img src="/logos/alstom-logo.webp" alt="Alstom Logo" className="w-full h-full object-contain" />
+                  </div>
+                  <div className="flex flex-col min-w-0 flex-1">
+                    <h3 className="text-xl font-bold text-zinc-900 mb-2">{lang === 'zh' ? '机器人与增材制造研发实习生' : 'Robotics & Additive Manufacturing R&D Intern'}</h3>
+                    <p className="text-sm font-medium text-zinc-500 mb-4">{lang === 'zh' ? '阿尔斯通（亚太）创新中心 | 2026.01 - 2026.07' : 'Alstom (APAC) Innovation Station | Jan 2026 - July 2026'}</p>
+                    <p className="text-zinc-600 text-sm md:text-base leading-relaxed text-justify">{lang === 'zh' ? '交付巡检机器人产品整机，打通企业增材制造备件企业内生产链路，助力轨交供应链降本增效。' : 'Delivered the track inspection robot product and established the localized spare-parts additive manufacturing workflow, significantly optimizing supply chain cost-efficiency.'}</p>
+                  </div>
+                </div>
               </Link>
             </div>
 
@@ -381,9 +388,16 @@ function HomeContent() {
             <div className="relative pl-12 md:pl-24 py-8 group">
               <div className="absolute left-[17px] md:left-[33px] top-[52px] w-3 h-3 bg-white border-2 border-zinc-300 rounded-full group-hover:border-zinc-900 group-hover:scale-125 group-hover:bg-zinc-900 transition-all duration-300 z-10"></div>
               <Link href={`/experience/duke-nus?lang=${lang}`} className="block bg-white border border-zinc-200/60 rounded-2xl p-6 md:p-8 group-hover:shadow-xl group-hover:border-zinc-300 group-hover:-translate-y-1 transition-all duration-300">
-                <h3 className="text-xl font-bold text-zinc-900 mb-2">{lang === 'zh' ? '仿生机电系统研发实习生' : 'Bionic Mechatronic Systems R&D Intern'}</h3>
-                <p className="text-sm font-medium text-zinc-500 mb-4">{lang === 'zh' ? 'Duke-NUS医学院 | 2025.08 - 2026.01' : 'Duke-NUS Medical School | Aug 2025 - Jan 2026'}</p>
-                <p className="text-zinc-600 text-sm md:text-base leading-relaxed text-justify">{lang === 'zh' ? '成功开发满足医学指标的胸腔模拟器机电一体化原型，并引入一体化打印创新大幅降低了制造成本。' : 'Successfully developed a biomimetic ribcage prototype meeting stringent medical indicators, leveraging integrated DfAM guidelines to dramatically reduce manufacturing costs.'}</p>
+                <div className="flex items-start gap-4">
+                  <div className="w-12 h-12 md:w-14 md:h-14 flex-shrink-0 bg-white border border-zinc-200 rounded-md flex items-center justify-center overflow-hidden">
+                    <img src="/logos/duke-nus-logo.webp" alt="Duke-NUS Logo" className="w-full h-full object-contain" />
+                  </div>
+                  <div className="flex flex-col min-w-0 flex-1">
+                    <h3 className="text-xl font-bold text-zinc-900 mb-2">{lang === 'zh' ? '仿生机电系统研发实习生' : 'Bionic Mechatronic Systems R&D Intern'}</h3>
+                    <p className="text-sm font-medium text-zinc-500 mb-4">{lang === 'zh' ? 'Duke-NUS医学院 | 2025.08 - 2026.01' : 'Duke-NUS Medical School | Aug 2025 - Jan 2026'}</p>
+                    <p className="text-zinc-600 text-sm md:text-base leading-relaxed text-justify">{lang === 'zh' ? '成功开发满足医学指标的胸腔模拟器机电一体化原型，并引入一体化打印创新大幅降低了制造成本。' : 'Successfully developed a biomimetic ribcage prototype meeting stringent medical indicators, leveraging integrated DfAM guidelines to dramatically reduce manufacturing costs.'}</p>
+                  </div>
+                </div>
               </Link>
             </div>
 
@@ -391,9 +405,16 @@ function HomeContent() {
             <div className="relative pl-12 md:pl-24 py-8 group">
               <div className="absolute left-[17px] md:left-[33px] top-[52px] w-3 h-3 bg-white border-2 border-zinc-300 rounded-full z-10"></div>
               <div className="block bg-white border border-zinc-200/60 rounded-2xl p-6 md:p-8">
-                <h3 className="text-xl font-bold text-zinc-900 mb-2">{lang === 'zh' ? '数字化创新实习生' : 'Digitalistaion Innovation Intern'}</h3>
-                <p className="text-sm font-medium text-zinc-500 mb-4">{lang === 'zh' ? '宝马（中国）服务有限公司 | 2025.02 - 2025.05' : 'BMW China Service | Feb 2025 - May 2025'}</p>
-                <p className="text-zinc-600 text-sm md:text-base leading-relaxed text-justify">{lang === 'zh' ? '运用 Power Automate 与 Python 开发自动化项目管理工作流，将人工耗时缩减超90%，并开展核心智驾供应商调研与内部 AI 赋能。' : 'Developed automated project management workflows via Power Automate and Python, reducing manual effort by over 90%, alongside intelligent driving market research and corporate AI enablement.'}</p>
+                <div className="flex items-start gap-4">
+                  <div className="w-12 h-12 md:w-14 md:h-14 flex-shrink-0 bg-white border border-zinc-200 rounded-md flex items-center justify-center overflow-hidden">
+                    <img src="/logos/bmw-logo.webp" alt="BMW Logo" className="w-full h-full object-contain" />
+                  </div>
+                  <div className="flex flex-col min-w-0 flex-1">
+                    <h3 className="text-xl font-bold text-zinc-900 mb-2">{lang === 'zh' ? '数字化创新实习生' : 'Digitalistaion Innovation Intern'}</h3>
+                    <p className="text-sm font-medium text-zinc-500 mb-4">{lang === 'zh' ? '宝马（中国）服务有限公司 | 2025.02 - 2025.05' : 'BMW China Service | Feb 2025 - May 2025'}</p>
+                    <p className="text-zinc-600 text-sm md:text-base leading-relaxed text-justify">{lang === 'zh' ? '运用 Power Automate 与 Python 开发自动化项目管理工作流，将人工耗时缩减超90%，并开展核心智驾供应商调研与内部 AI 赋能。' : 'Developed automated project management workflows via Power Automate and Python, reducing manual effort by over 90%, alongside intelligent driving market research and corporate AI enablement.'}</p>
+                  </div>
+                </div>
               </div>
             </div>
 
@@ -401,9 +422,16 @@ function HomeContent() {
             <div className="relative pl-12 md:pl-24 py-8 group">
               <div className="absolute left-[17px] md:left-[33px] top-[52px] w-3 h-3 bg-white border-2 border-zinc-300 rounded-full z-10"></div>
               <div className="block bg-white border border-zinc-200/60 rounded-2xl p-6 md:p-8">
-                <h3 className="text-xl font-bold text-zinc-900 mb-2">{lang === 'zh' ? '机械臂系统测试实习生' : 'Robotic Arm System Testing Intern'}</h3>
-                <p className="text-sm font-medium text-zinc-500 mb-4">{lang === 'zh' ? '遨博（江苏）机器人有限公司 | 2024.06 - 2024.09' : 'AUBO Robotics | Jun 2024 - Sep 2024'}</p>
-                <p className="text-zinc-600 text-sm md:text-base leading-relaxed text-justify">{lang === 'zh' ? '完成协作机械臂系统控制系统上线前联调测试并准确定位多项漏洞，协助研发团队高效进行排障工作。' : 'Executed joint debugging and debugging of the control system for a 6-axis collaborative robot arm, precisely locating multiple bugs to accelerate the R&D troubleshooting efficiently.'}</p>
+                <div className="flex items-start gap-4">
+                  <div className="w-12 h-12 md:w-14 md:h-14 flex-shrink-0 bg-white border border-zinc-200 rounded-md flex items-center justify-center overflow-hidden">
+                    <img src="/logos/aubo-logo.webp" alt="AUBO Logo" className="w-full h-full object-contain" />
+                  </div>
+                  <div className="flex flex-col min-w-0 flex-1">
+                    <h3 className="text-xl font-bold text-zinc-900 mb-2">{lang === 'zh' ? '机械臂系统测试实习生' : 'Robotic Arm System Testing Intern'}</h3>
+                    <p className="text-sm font-medium text-zinc-500 mb-4">{lang === 'zh' ? '遨博（江苏）机器人有限公司 | 2024.06 - 2024.09' : 'AUBO Robotics | Jun 2024 - Sep 2024'}</p>
+                    <p className="text-zinc-600 text-sm md:text-base leading-relaxed text-justify">{lang === 'zh' ? '完成协作机械臂系统控制系统上线前联调测试并准确定位多项漏洞，协助研发团队高效进行排障工作。' : 'Executed joint debugging and debugging of the control system for a 6-axis collaborative robot arm, precisely locating multiple bugs to accelerate the R&D troubleshooting efficiently.'}</p>
+                  </div>
+                </div>
               </div>
             </div>
           </div>

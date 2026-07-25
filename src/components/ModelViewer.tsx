@@ -72,9 +72,6 @@ class ThreeErrorBoundary extends Component<
                             <span className="text-xs tracking-widest uppercase text-zinc-500">
                                 3D Model Unavailable
                             </span>
-                            <span className="text-[11px] text-zinc-600 leading-relaxed max-w-[200px]">
-                                请下载简历查看图纸 · Download CV for blueprints
-                            </span>
                         </div>
                     </div>
                 )
@@ -190,9 +187,6 @@ function DegradedFallback() {
                 </svg>
                 <span className="text-xs tracking-widest uppercase text-zinc-500">
                     3D Model Unavailable
-                </span>
-                <span className="text-[11px] text-zinc-600 leading-relaxed max-w-[200px]">
-                    请下载简历查看图纸 · Download CV for blueprints
                 </span>
             </div>
         </div>
