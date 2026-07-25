@@ -26,5 +26,3 @@ export default function RobotScene() {
         </Canvas>
     );
 }
-
-useGLTF.preload(`${ASSET_BASE}/experience/alstom/robot-main.glb`);

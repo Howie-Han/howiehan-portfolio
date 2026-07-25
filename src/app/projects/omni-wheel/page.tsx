@@ -4,6 +4,7 @@ import { useSearchParams } from "next/navigation";
 import { Suspense } from "react";
 import dynamic from "next/dynamic";
 import { ASSET_BASE } from "@/config/assets";
+import LazyMedia from "@/components/LazyMedia";
 
 // 3D 组件懒加载
 const ModelViewer = dynamic(() => import("@/components/ModelViewer"), {
@@ -90,14 +91,16 @@ function DetailContent() {
 
                         {/* Right – Exploded View Video */}
                         <div className="w-full rounded-2xl overflow-hidden border border-zinc-200 bg-zinc-100">
-                            <video
-                                src={`${ASSET_BASE}/project/omni-wheel/exploded-view.mp4`}
-                                controls
-                                preload="metadata"
-                                muted
-                                playsInline
-                                className="w-full h-full object-cover rounded-xl aspect-[4/3]"
-                            />
+                            <LazyMedia placeholderClass="w-full aspect-[4/3] rounded-xl">
+                                <video
+                                    src={`${ASSET_BASE}/project/omni-wheel/exploded-view.mp4`}
+                                    controls
+                                    preload="metadata"
+                                    muted
+                                    playsInline
+                                    className="w-full h-full object-cover rounded-xl aspect-[4/3]"
+                                />
+                            </LazyMedia>
                         </div>
                     </div>
                 </section>
@@ -124,26 +127,30 @@ function DetailContent() {
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-6 w-full">
                         {/* Axial Gear Video */}
                         <div className="w-full aspect-video rounded-xl overflow-hidden border border-zinc-200 bg-white">
-                            <video
-                                src={`${ASSET_BASE}/project/omni-wheel/sim-axial.mp4`}
-                                controls
-                                preload="metadata"
-                                muted
-                                playsInline
-                                className={MEDIA_FILTER_VIDEO}
-                            />
+                            <LazyMedia placeholderClass="w-full aspect-video rounded-xl">
+                                <video
+                                    src={`${ASSET_BASE}/project/omni-wheel/sim-axial.mp4`}
+                                    controls
+                                    preload="metadata"
+                                    muted
+                                    playsInline
+                                    className={MEDIA_FILTER_VIDEO}
+                                />
+                            </LazyMedia>
                         </div>
 
                         {/* Steering Gear Video */}
                         <div className="w-full aspect-video rounded-xl overflow-hidden border border-zinc-200 bg-white">
-                            <video
-                                src={`${ASSET_BASE}/project/omni-wheel/sim-steering.mp4`}
-                                controls
-                                preload="metadata"
-                                muted
-                                playsInline
-                                className={MEDIA_FILTER_VIDEO}
-                            />
+                            <LazyMedia placeholderClass="w-full aspect-video rounded-xl">
+                                <video
+                                    src={`${ASSET_BASE}/project/omni-wheel/sim-steering.mp4`}
+                                    controls
+                                    preload="metadata"
+                                    muted
+                                    playsInline
+                                    className={MEDIA_FILTER_VIDEO}
+                                />
+                            </LazyMedia>
                         </div>
                     </div>
                 </section>
@@ -259,24 +266,28 @@ function DetailContent() {
 
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
                         <div className="w-full aspect-[1280/720] rounded-xl overflow-hidden border border-zinc-200 bg-zinc-100">
-                            <video
-                                src={`${ASSET_BASE}/project/omni-wheel/match-manual.mp4`}
-                                controls
-                                preload="metadata"
-                                muted
-                                playsInline
-                                className={MEDIA_FILTER}
-                            />
+                            <LazyMedia placeholderClass="w-full aspect-[1280/720] rounded-xl">
+                                <video
+                                    src={`${ASSET_BASE}/project/omni-wheel/match-manual.mp4`}
+                                    controls
+                                    preload="metadata"
+                                    muted
+                                    playsInline
+                                    className={MEDIA_FILTER}
+                                />
+                            </LazyMedia>
                         </div>
                         <div className="w-full aspect-[1280/720] rounded-xl overflow-hidden border border-zinc-200 bg-zinc-100">
-                            <video
-                                src={`${ASSET_BASE}/project/omni-wheel/match-auto.mp4`}
-                                controls
-                                preload="metadata"
-                                muted
-                                playsInline
-                                className={MEDIA_FILTER}
-                            />
+                            <LazyMedia placeholderClass="w-full aspect-[1280/720] rounded-xl">
+                                <video
+                                    src={`${ASSET_BASE}/project/omni-wheel/match-auto.mp4`}
+                                    controls
+                                    preload="metadata"
+                                    muted
+                                    playsInline
+                                    className={MEDIA_FILTER}
+                                />
+                            </LazyMedia>
                         </div>
                     </div>
 

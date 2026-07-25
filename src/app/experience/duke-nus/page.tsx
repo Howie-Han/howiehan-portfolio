@@ -4,6 +4,7 @@ import { useSearchParams } from "next/navigation";
 import { Suspense } from "react";
 import dynamic from "next/dynamic";
 import { ASSET_BASE } from "@/config/assets";
+import LazyMedia from "@/components/LazyMedia";
 
 const ModelViewer = dynamic(() => import("@/components/ModelViewer"), {
     ssr: false,
@@ -91,7 +92,9 @@ function DukeNusContent() {
                     <div className="flex flex-col w-full h-full min-w-0">
                         <div className="relative w-full h-[40vh] md:h-[350px] max-h-[450px] object-contain bg-zinc-100 rounded-xl overflow-hidden">
                             <div className="w-full h-full flex items-center justify-center">
-                                <ModelViewer modelPath={`${ASSET_BASE}/experience/duke-nus/simulator.glb`} />
+                                <LazyMedia placeholderClass="w-full h-full min-h-[200px]">
+                                    <ModelViewer modelPath={`${ASSET_BASE}/experience/duke-nus/simulator.glb`} />
+                                </LazyMedia>
                             </div>
                         </div>
                         <p className="text-sm text-zinc-500 mt-3 text-center font-medium">
@@ -114,14 +117,16 @@ function DukeNusContent() {
                     {/* 右列：Video */}
                     <div className="flex flex-col w-full h-full min-w-0">
                         <div className="w-full h-[40vh] md:h-[350px] max-h-[450px] object-contain bg-zinc-100 rounded-xl overflow-hidden">
-                            <video
-                                src={`${ASSET_BASE}/experience/duke-nus/system-operation.mp4`}
-                                className="w-full h-full object-contain"
-                                controls
-                                preload="metadata"
-                                muted
-                                playsInline
-                            />
+                            <LazyMedia placeholderClass="w-full h-full">
+                                <video
+                                    src={`${ASSET_BASE}/experience/duke-nus/system-operation.mp4`}
+                                    className="w-full h-full object-contain"
+                                    controls
+                                    preload="metadata"
+                                    muted
+                                    playsInline
+                                />
+                            </LazyMedia>
                         </div>
                         <p className="text-sm text-zinc-500 mt-3 text-center font-medium">
                             {isZh ? "全系统实机连续运行" : "Full System Physical Operation"}
@@ -163,27 +168,31 @@ function DukeNusContent() {
                         </p>
                     </div>
                     <div className="flex flex-col items-center">
-                        <video
-                            src={`${ASSET_BASE}/experience/duke-nus/gear-rack-sim.mp4`}
-                            className={`${MEDIA_FILTER} object-cover aspect-[4/3]`}
-                            controls
-                            preload="metadata"
-                            muted
-                            playsInline
-                        />
+                        <LazyMedia placeholderClass="w-full aspect-[4/3] rounded-xl">
+                            <video
+                                src={`${ASSET_BASE}/experience/duke-nus/gear-rack-sim.mp4`}
+                                className={`${MEDIA_FILTER} object-cover aspect-[4/3]`}
+                                controls
+                                preload="metadata"
+                                muted
+                                playsInline
+                            />
+                        </LazyMedia>
                         <p className="text-sm text-zinc-500 mt-3 text-center font-medium">
                             {isZh ? "运动学仿真" : "Kinematic Simulation"}
                         </p>
                     </div>
                     <div className="flex flex-col items-center">
-                        <video
-                            src={`${ASSET_BASE}/experience/duke-nus/gear-rack-test.mp4`}
-                            className={`${MEDIA_FILTER} object-contain bg-zinc-100 aspect-[4/3]`}
-                            controls
-                            preload="metadata"
-                            muted
-                            playsInline
-                        />
+                        <LazyMedia placeholderClass="w-full aspect-[4/3] rounded-xl">
+                            <video
+                                src={`${ASSET_BASE}/experience/duke-nus/gear-rack-test.mp4`}
+                                className={`${MEDIA_FILTER} object-contain bg-zinc-100 aspect-[4/3]`}
+                                controls
+                                preload="metadata"
+                                muted
+                                playsInline
+                            />
+                        </LazyMedia>
                         <p className="text-sm text-zinc-500 mt-3 text-center font-medium">
                             {isZh ? "驱动器单体性能测试" : "Actuator Unit Performance Test"}
                         </p>

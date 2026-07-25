@@ -4,6 +4,7 @@ import Link from "next/link";
 import { Suspense, useEffect, useState } from "react";
 import { useSearchParams } from "next/navigation";
 import { ASSET_BASE } from "@/config/assets";
+import LazyMedia from "@/components/LazyMedia";
 
 function SocialPracticeContent() {
     const [lang, setLang] = useState<"zh" | "en">("zh");
@@ -94,18 +95,20 @@ function SocialPracticeContent() {
                                 </p>
                             </div>
                             <div>
-                                <video
-                                    controls
-                                    preload="metadata"
-                                    muted
-                                    playsInline
-                                    className={HERO_VIDEO_CLASSES}
-                                >
-                                    <source
-                                        src={`${ASSET_BASE}/leadership/social-practice/sp-m1-bochuang.mp4`}
-                                        type="video/mp4"
-                                    />
-                                </video>
+                                <LazyMedia placeholderClass="w-full h-[40vh] max-h-[400px] rounded-xl">
+                                    <video
+                                        controls
+                                        preload="metadata"
+                                        muted
+                                        playsInline
+                                        className={HERO_VIDEO_CLASSES}
+                                    >
+                                        <source
+                                            src={`${ASSET_BASE}/leadership/social-practice/sp-m1-bochuang.mp4`}
+                                            type="video/mp4"
+                                        />
+                                    </video>
+                                </LazyMedia>
                                 <p className={HERO_CAPTION}>
                                     {t("校友企业博创联动科技总部实地调研", "Field Study at Bochuang Tech HQ")}
                                 </p>
@@ -283,18 +286,20 @@ function SocialPracticeContent() {
                                 </p>
                             </div>
                             <div className="snap-center shrink-0 w-64 md:w-72 flex flex-col">
-                                <video
-                                    controls
-                                    preload="metadata"
-                                    muted
-                                    playsInline
-                                    className={FILM_VIDEO_CLASSES}
-                                >
-                                    <source
-                                        src={`${ASSET_BASE}/leadership/social-practice/sp-m2-weihai-visit.mp4`}
-                                        type="video/mp4"
-                                    />
-                                </video>
+                                <LazyMedia placeholderClass="w-full aspect-[4/3] rounded-xl">
+                                    <video
+                                        controls
+                                        preload="metadata"
+                                        muted
+                                        playsInline
+                                        className={FILM_VIDEO_CLASSES}
+                                    >
+                                        <source
+                                            src={`${ASSET_BASE}/leadership/social-practice/sp-m2-weihai-visit.mp4`}
+                                            type="video/mp4"
+                                        />
+                                    </video>
+                                </LazyMedia>
                                 <p className={FILM_CAPTION}>
                                     {t("农作痛点实地采集录像", "On-site Pain Point Collection Footage")}
                                 </p>

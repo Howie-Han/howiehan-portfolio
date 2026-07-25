@@ -5,6 +5,7 @@ import Image from "next/image";
 import { useSearchParams } from "next/navigation";
 import dynamic from "next/dynamic";
 import { ASSET_BASE } from "@/config/assets";
+import LazyMedia from "@/components/LazyMedia";
 
 // 懒加载 3D 组件，防止阻塞主线程
 const RobotScene = dynamic(() => import("@/components/alstom/RobotScene"), {
@@ -191,7 +192,9 @@ function AlstomContent() {
                         </div>
                         {/* 右侧：丝滑低面互动 3D 视窗 */}
                         <div className="flex-1 relative bg-zinc-50 rounded-2xl overflow-hidden border border-zinc-200 h-64 xl:h-full">
-                            <InteractivePartScene modelPath={`${ASSET_BASE}/experience/alstom/robot-part-chassis.glb`} />
+                            <LazyMedia placeholderClass="w-full h-full min-h-[200px]">
+                                <InteractivePartScene modelPath={`${ASSET_BASE}/experience/alstom/robot-part-chassis.glb`} />
+                            </LazyMedia>
                         </div>
                     </div>
 
@@ -211,7 +214,9 @@ function AlstomContent() {
                         </div>
                         {/* 右侧：丝滑低面互动 3D 视窗 */}
                         <div className="flex-1 relative bg-zinc-50 rounded-2xl overflow-hidden border border-zinc-200 h-64 xl:h-full">
-                            <InteractivePartScene modelPath={`${ASSET_BASE}/experience/alstom/robot-part-joint.glb`} />
+                            <LazyMedia placeholderClass="w-full h-full min-h-[200px]">
+                                <InteractivePartScene modelPath={`${ASSET_BASE}/experience/alstom/robot-part-joint.glb`} />
+                            </LazyMedia>
                         </div>
                     </div>
 
@@ -230,15 +235,17 @@ function AlstomContent() {
                     </div>
                     <div className="w-full h-[400px] md:h-[600px] bg-zinc-50 rounded-2xl overflow-hidden flex items-center justify-center mb-8 relative border border-zinc-200">
                         {galleryMedia[activeGalleryIndex].type === "video" ? (
-                            <video
-                                key={galleryMedia[activeGalleryIndex].src}
-                                src={galleryMedia[activeGalleryIndex].src}
-                                controls
-                                preload="metadata"
-                                muted
-                                playsInline
-                                className={`w-full h-full ${MEDIA_FILTER}`}
-                            />
+                            <LazyMedia placeholderClass="w-full h-full">
+                                <video
+                                    key={galleryMedia[activeGalleryIndex].src}
+                                    src={galleryMedia[activeGalleryIndex].src}
+                                    controls
+                                    preload="metadata"
+                                    muted
+                                    playsInline
+                                    className={`w-full h-full ${MEDIA_FILTER}`}
+                                />
+                            </LazyMedia>
                         ) : (
                             <Image
                                 src={galleryMedia[activeGalleryIndex].src}
@@ -260,14 +267,16 @@ function AlstomContent() {
                                     }`}
                             >
                                 {media.type === "video" ? (
-                                    <video
-                                        src={media.src}
-                                        controls
-                                        preload="metadata"
-                                        muted
-                                        playsInline
-                                        className="w-full h-full object-cover pointer-events-none"
-                                    />
+                                    <LazyMedia placeholderClass="w-full h-full">
+                                        <video
+                                            src={media.src}
+                                            controls
+                                            preload="metadata"
+                                            muted
+                                            playsInline
+                                            className="w-full h-full object-cover pointer-events-none"
+                                        />
+                                    </LazyMedia>
                                 ) : (
                                     <Image src={media.src} alt={`thumb-${idx}`} fill unoptimized className="object-cover pointer-events-none" />
                                 )}

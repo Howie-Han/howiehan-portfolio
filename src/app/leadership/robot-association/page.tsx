@@ -4,6 +4,7 @@ import Link from "next/link";
 import { Suspense, useEffect, useState } from "react";
 import { useSearchParams } from "next/navigation";
 import { ASSET_BASE } from "@/config/assets";
+import LazyMedia from "@/components/LazyMedia";
 
 function RobotAssociationContent() {
     const [lang, setLang] = useState<"zh" | "en">("zh");
@@ -143,18 +144,20 @@ function RobotAssociationContent() {
                                 </p>
                             </div>
                             <div>
-                                <video
-                                    controls
-                                    preload="metadata"
-                                    muted
-                                    playsInline
-                                    className={VIDEO_CLASSES}
-                                >
-                                    <source
-                                        src={`${ASSET_BASE}/leadership/robot-association/ra-incub-promo.mp4`}
-                                        type="video/mp4"
-                                    />
-                                </video>
+                                <LazyMedia placeholderClass="w-full aspect-[4/3] rounded-xl">
+                                    <video
+                                        controls
+                                        preload="metadata"
+                                        muted
+                                        playsInline
+                                        className={VIDEO_CLASSES}
+                                    >
+                                        <source
+                                            src={`${ASSET_BASE}/leadership/robot-association/ra-incub-promo.mp4`}
+                                            type="video/mp4"
+                                        />
+                                    </video>
+                                </LazyMedia>
                                 <p className={CAPTION_CLASSES}>
                                     {t("面向新生的机电孵化成果实机演示", "Electromechanical Incubation Live Demo")}
                                 </p>

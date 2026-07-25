@@ -3,6 +3,7 @@ import Link from "next/link";
 import { useSearchParams } from "next/navigation";
 import { Suspense } from "react";
 import { ASSET_BASE } from "@/config/assets";
+import LazyMedia from "@/components/LazyMedia";
 
 const MEDIA_CLASSES = "rounded-xl object-contain w-full h-full";
 const CONTAINER_CLASSES = "bg-zinc-100 rounded-xl overflow-hidden";
@@ -126,14 +127,16 @@ function DetailContent() {
                             </div>
                             <div>
                                 <div className={`${CONTAINER_CLASSES} aspect-[4/3]`}>
-                                    <video
-                                        src={`${ASSET_BASE}/project/wrist/wrist-exploded.mp4`}
-                                        controls
-                                        preload="metadata"
-                                        muted
-                                        playsInline
-                                        className={MEDIA_CLASSES}
-                                    />
+                                    <LazyMedia placeholderClass="w-full h-full">
+                                        <video
+                                            src={`${ASSET_BASE}/project/wrist/wrist-exploded.mp4`}
+                                            controls
+                                            preload="metadata"
+                                            muted
+                                            playsInline
+                                            className={MEDIA_CLASSES}
+                                        />
+                                    </LazyMedia>
                                 </div>
                                 <p className="text-sm text-zinc-500 text-center mt-3">
                                     {lang === "zh" ? "欠驱动绳驱传动链拆解" : "Exploded Transmission View"}
