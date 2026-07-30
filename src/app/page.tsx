@@ -96,8 +96,8 @@ function HomeContent() {
               {t("更多项目", "View Projects")}
             </button>
             <a
-              href={lang === "zh" ? "/cv/简历-韩浩宇.pdf" : "/cv/Resume-Haoyu HAN.pdf"}
-              download={lang === "zh" ? "简历-韩浩宇.pdf" : "Resume-Haoyu HAN.pdf"}
+              href={lang === "zh" ? "/cv/简历-韩浩宇.pdf" : "/cv/Resume-Haoyu_HAN.pdf"}
+              download={lang === "zh" ? "简历-韩浩宇.pdf" : "Resume-Haoyu_HAN.pdf"}
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 rounded-md border border-zinc-300 px-8 py-3.5 text-sm font-medium text-zinc-600 transition-all duration-300 hover:border-zinc-400 hover:text-zinc-900"
@@ -275,14 +275,14 @@ function HomeContent() {
               </h3>
               {lang === "zh" ? (
                 <ul className="flex flex-col space-y-3 justify-center h-full w-full text-left">
-                  <li className="text-sm md:text-base"><span className="font-semibold text-zinc-800 mr-2 whitespace-nowrap flex-shrink-0">设计建模：</span><span className="text-zinc-600">SolidWorks, OnShape, AutoCAD (GB&T，BOM出图)</span></li>
+                  <li className="text-sm md:text-base"><span className="font-semibold text-zinc-800 mr-2 whitespace-nowrap flex-shrink-0">设计建模：</span><span className="text-zinc-600">SolidWorks, OnShape, AutoCAD (GD&T，BOM出图)</span></li>
                   <li className="text-sm md:text-base"><span className="font-semibold text-zinc-800 mr-2 whitespace-nowrap flex-shrink-0">逆向工程：</span><span className="text-zinc-600">3D扫描, QuickSurface重建</span></li>
                   <li className="text-sm md:text-base"><span className="font-semibold text-zinc-800 mr-2 whitespace-nowrap flex-shrink-0">加工制造：</span><span className="text-zinc-600">CNC机加工，3D打印/增材制造</span></li>
                   <li className="text-sm md:text-base"><span className="font-semibold text-zinc-800 mr-2 whitespace-nowrap flex-shrink-0">工程理念：</span><span className="text-zinc-600">精通 DfM/DfAM 设计理念，具备快速原型与产品迭代经验</span></li>
                 </ul>
               ) : (
                 <ul className="flex flex-col space-y-3 justify-center h-full w-full text-left">
-                  <li className="text-sm md:text-base"><span className="font-semibold text-zinc-800 mr-2 whitespace-nowrap flex-shrink-0">CAD Modeling:</span><span className="text-zinc-600">SolidWorks, OnShape, AutoCAD (GB&T Standards & BOM)</span></li>
+                  <li className="text-sm md:text-base"><span className="font-semibold text-zinc-800 mr-2 whitespace-nowrap flex-shrink-0">CAD Modeling:</span><span className="text-zinc-600">SolidWorks, OnShape, AutoCAD (GD&T Standards & BOM)</span></li>
                   <li className="text-sm md:text-base"><span className="font-semibold text-zinc-800 mr-2 whitespace-nowrap flex-shrink-0">Reverse Eng.:</span><span className="text-zinc-600">3D Scanning, QuickSurface</span></li>
                   <li className="text-sm md:text-base"><span className="font-semibold text-zinc-800 mr-2 whitespace-nowrap flex-shrink-0">Manufacturing:</span><span className="text-zinc-600">CNC Machining, 3D Printing/Additive Manufacturing</span></li>
                   <li className="text-sm md:text-base"><span className="font-semibold text-zinc-800 mr-2 whitespace-nowrap flex-shrink-0">Methodology:</span><span className="text-zinc-600">Proficient in DfM/DfAM, Rapid Prototyping & Product Iteration</span></li>
