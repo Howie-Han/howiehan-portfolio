@@ -96,7 +96,7 @@ function HomeContent() {
               {t("更多项目", "View Projects")}
             </button>
             <a
-              href={lang === "zh" ? "/cv/简历-韩浩宇.pdf" : "/cv/Resume-Haoyu_HAN.pdf"}
+              href={lang === "zh" ? "/cv/haoyu-han-cv-cn.pdf" : "/cv/haoyu-han-cv-en.pdf"}
               download={lang === "zh" ? "简历-韩浩宇.pdf" : "Resume-Haoyu_HAN.pdf"}
               target="_blank"
               rel="noopener noreferrer"
