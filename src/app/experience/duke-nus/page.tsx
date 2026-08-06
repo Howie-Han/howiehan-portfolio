@@ -82,8 +82,8 @@ function DukeNusContent() {
                 {/* 顶层文字占位 */}
                 <p className="text-zinc-500 font-light leading-relaxed w-full">
                     {isZh
-                        ? "针对仿生胸腔模拟器进行整机建模与力学拓扑优化。运用 DfAM（面向增材制造的设计）原则对软硬复合材料进行工艺调优，将TPU软体材料的打印失败率显著降低 20%，零部件数量从 62 件大幅锐减至 5 件。"
-                        : "Conducted full-scale modeling and structural optimization for a biomimetic ribcage simulator. Applied DfAM principles to optimize multi-material FDM print parameters, lowering the print-failure rate of TPU filament by 20% and reducing assembly parts from 62 to 5 pcs."}
+                        ? "完成仿生胸腔模拟器整机建模与结构优化，基于 DfAM 原则优化 TPU/PLA 多材料打印工艺，将零部件数量由 62 件整合至 5 件，并降低 TPU 柔性材料打印失败率约 20%。"
+                        : "Developed the complete biomimetic thoracic simulator and optimized its structure using DfAM principles. The TPU/PLA multi-material printing process reduced the number of components from 62 to 5 while lowering TPU print failure by approximately 20%."}
                 </p>
 
                 {/* 三列等高栅格容器 */}
@@ -129,7 +129,7 @@ function DukeNusContent() {
                             </LazyMedia>
                         </div>
                         <p className="text-sm text-zinc-500 mt-3 text-center font-medium">
-                            {isZh ? "全系统实机连续运行" : "Full System Physical Operation"}
+                            {isZh ? "系统连续运行测试" : "Continuous System Operation Test"}
                         </p>
                     </div>
                 </div>
@@ -150,8 +150,8 @@ function DukeNusContent() {
                 <div className="w-full mb-10 space-y-3">
                     <p className="text-zinc-500 font-light leading-relaxed w-full">
                         {isZh
-                            ? "通过齿轮齿条机构将复杂呼吸运动降维为可控直线运动，采用 Dynamixel 伺服电机驱动，并基于 Arduino 搭建底层电控链路。"
-                            : "Decoupled complex respiratory motions into controlled linear actuations via rack and pinion, driven by Dynamixel servos and orchestrated by an Arduino-based lower-level framework."}
+                            ? "采用齿轮齿条机构实现呼吸运动转换，由 Dynamixel 伺服电机驱动，并基于 Arduino 搭建底层控制系统。"
+                            : "Implemented respiratory motion through a rack-and-pinion mechanism driven by Dynamixel servos, with the embedded control system developed on Arduino."}
                     </p>
                 </div>
 
@@ -229,8 +229,8 @@ function DukeNusContent() {
                 <div className="w-full mb-10 space-y-3">
                     <p className="text-zinc-500 font-light leading-relaxed w-full">
                         {isZh
-                            ? "运用 SolidWorks Simulation 对伺服电机基座进行静力学分析，指导结构设计，确保动态交变负载下的结构刚度与强度。"
-                            : "Conducted rigorous static stress analysis on the servo mounting structures using SolidWorks Simulation to ensure sufficient stiffness and load-bearing capacity under dynamic conditions."}
+                            ? "采用 SolidWorks Simulation 对伺服电机安装基座开展静力学分析，评估结构应力与刚度，为结构设计提供验证依据。"
+                            : "Static finite element analysis was conducted in SolidWorks Simulation to evaluate the stress distribution and stiffness of the servo mounting bracket, providing quantitative support for structural design."}
                     </p>
                 </div>
 
@@ -256,7 +256,7 @@ function DukeNusContent() {
                 <div className="flex items-center gap-4 mb-8">
                     <span className="text-sm font-bold text-zinc-400 tracking-widest">04 /</span>
                     <h2 className="text-3xl font-semibold tracking-tight">
-                        {isZh ? "极限增材制造与材料工程" : "Advanced DfAM & Material Engineering"}
+                        {isZh ? "面向增材制造的设计" : "Design for Additive Manufacturing (DfAM)"}
                     </h2>
                 </div>
 
@@ -264,8 +264,8 @@ function DukeNusContent() {
                 <div className="w-full mb-10 space-y-3">
                     <p className="text-zinc-500 font-light leading-relaxed w-full">
                         {isZh
-                            ? "突破传统 FDM 边界，通过刚性 PLA 与柔性 TPU 的多材料互锁连接设计，将系统零件总数从 62 个极限压缩至 5 个，实现系统结构优化与降本。"
-                            : "Explored the limits of FDM by integrating rigid PLA and flexible TPU through multi-segment interlocking designs, drastically reducing the BOM from 62 to just 5 consolidated parts."}
+                            ? "基于 PLA 与 TPU 多材料互锁连接设计，减少装配接口，将系统零部件数量由 62 件整合至 5 件，实现结构集成与制造成本优化。"
+                            : "Designed an interlocking PLA–TPU multi-material structure to reduce assembly interfaces, consolidating the system from 62 components to 5 while improving structural integration and manufacturing efficiency."}
                     </p>
                 </div>
 
@@ -278,7 +278,7 @@ function DukeNusContent() {
                             alt="TPU/PLA Interlocking Design"
                         />
                         <p className="text-sm text-zinc-500 mt-3 text-center font-medium">
-                            {isZh ? "多材料互锁结构理论设计" : "Multi-Material Interlocking Design"}
+                            {isZh ? "多材料互锁结构设计" : "Interlocking Multi-material Design"}
                         </p>
                     </div>
                     <div className="flex flex-col items-center">
@@ -288,7 +288,7 @@ function DukeNusContent() {
                             alt="Print Close-up 1"
                         />
                         <p className="text-sm text-zinc-500 mt-3 text-center font-medium">
-                            {isZh ? "柔性关节表面光洁度优化" : "Flexible Joint Surface Optimization"}
+                            {isZh ? "柔性关节打印质量优化" : "Flexible Joint Print Optimization"}
                         </p>
                     </div>
                     <div className="flex flex-col items-center">
@@ -298,7 +298,7 @@ function DukeNusContent() {
                             alt="Print Close-up 2"
                         />
                         <p className="text-sm text-zinc-500 mt-3 text-center font-medium">
-                            {isZh ? "刚柔耦合实物高精打印" : "Rigid-Flexible Coupled High-Precision Print"}
+                            {isZh ? "刚柔耦合打印原型" : "Rigid–Soft Integrated Prototype"}
                         </p>
                     </div>
                 </div>
@@ -319,8 +319,8 @@ function DukeNusContent() {
                 <div className="w-full mb-10 space-y-3">
                     <p className="text-zinc-500 font-light leading-relaxed w-full">
                         {isZh
-                            ? "提炼并验证 TPU 柔性材料打印核心工艺参数，撰写输出实验室级操作规程，展现成熟硬件工程师的技术沉淀与标准化文档能力。"
-                            : "Formulated a comprehensive laboratory-level Standard Operating Procedure (SOP) for TPU printing, demonstrating maturity in technical documentation and knowledge transfer."}
+                            ? "整理 TPU 柔性材料打印工艺参数，形成实验室标准操作规程（SOP），用于统一打印流程与工艺规范。"
+                            : "Documented key TPU printing parameters and established a laboratory Standard Operating Procedure (SOP) to standardize the printing workflow."}
                     </p>
                 </div>
 

@@ -275,17 +275,17 @@ function HomeContent() {
               </h3>
               {lang === "zh" ? (
                 <ul className="flex flex-col space-y-3 justify-center h-full w-full text-left">
-                  <li className="text-sm md:text-base"><span className="font-semibold text-zinc-800 mr-2 whitespace-nowrap flex-shrink-0">设计建模：</span><span className="text-zinc-600">SolidWorks, OnShape, AutoCAD (GD&T，BOM出图)</span></li>
+                  <li className="text-sm md:text-base"><span className="font-semibold text-zinc-800 mr-2 whitespace-nowrap flex-shrink-0">设计建模：</span><span className="text-zinc-600">SolidWorks, OnShape, AutoCAD (GD&T，BOM)</span></li>
                   <li className="text-sm md:text-base"><span className="font-semibold text-zinc-800 mr-2 whitespace-nowrap flex-shrink-0">逆向工程：</span><span className="text-zinc-600">3D扫描, QuickSurface重建</span></li>
                   <li className="text-sm md:text-base"><span className="font-semibold text-zinc-800 mr-2 whitespace-nowrap flex-shrink-0">加工制造：</span><span className="text-zinc-600">CNC机加工，3D打印/增材制造</span></li>
-                  <li className="text-sm md:text-base"><span className="font-semibold text-zinc-800 mr-2 whitespace-nowrap flex-shrink-0">工程理念：</span><span className="text-zinc-600">精通 DfM/DfAM 设计理念，具备快速原型与产品迭代经验</span></li>
+                  <li className="text-sm md:text-base"><span className="font-semibold text-zinc-800 mr-2 whitespace-nowrap flex-shrink-0">工程理念：</span><span className="text-zinc-600">DfM/DfAM 设计理念，快速原型与产品迭代经验</span></li>
                 </ul>
               ) : (
                 <ul className="flex flex-col space-y-3 justify-center h-full w-full text-left">
                   <li className="text-sm md:text-base"><span className="font-semibold text-zinc-800 mr-2 whitespace-nowrap flex-shrink-0">CAD Modeling:</span><span className="text-zinc-600">SolidWorks, OnShape, AutoCAD (GD&T Standards & BOM)</span></li>
                   <li className="text-sm md:text-base"><span className="font-semibold text-zinc-800 mr-2 whitespace-nowrap flex-shrink-0">Reverse Eng.:</span><span className="text-zinc-600">3D Scanning, QuickSurface</span></li>
                   <li className="text-sm md:text-base"><span className="font-semibold text-zinc-800 mr-2 whitespace-nowrap flex-shrink-0">Manufacturing:</span><span className="text-zinc-600">CNC Machining, 3D Printing/Additive Manufacturing</span></li>
-                  <li className="text-sm md:text-base"><span className="font-semibold text-zinc-800 mr-2 whitespace-nowrap flex-shrink-0">Methodology:</span><span className="text-zinc-600">Proficient in DfM/DfAM, Rapid Prototyping & Product Iteration</span></li>
+                  <li className="text-sm md:text-base"><span className="font-semibold text-zinc-800 mr-2 whitespace-nowrap flex-shrink-0">Methodology:</span><span className="text-zinc-600">DfM/DfAM, Rapid Prototyping & Product Iteration</span></li>
                 </ul>
               )}
             </div>
@@ -319,13 +319,13 @@ function HomeContent() {
                 <ul className="flex flex-col space-y-3 justify-center h-full w-full text-left">
                   <li className="text-sm md:text-base"><span className="font-semibold text-zinc-800 mr-2 whitespace-nowrap flex-shrink-0">编程语言：</span><span className="text-zinc-600">C/C++, Python</span></li>
                   <li className="text-sm md:text-base"><span className="font-semibold text-zinc-800 mr-2 whitespace-nowrap flex-shrink-0">底层硬件：</span><span className="text-zinc-600">Arduino, ESP32, STM32 硬件布局与伺服控制</span></li>
-                  <li className="text-sm md:text-base"><span className="font-semibold text-zinc-800 mr-2 whitespace-nowrap flex-shrink-0">系统集成：</span><span className="text-zinc-600">具备丰富的系统级软硬联调经验</span></li>
+                  <li className="text-sm md:text-base"><span className="font-semibold text-zinc-800 mr-2 whitespace-nowrap flex-shrink-0">系统集成：</span><span className="text-zinc-600">系统级软硬联调经验，最小可行性产品</span></li>
                 </ul>
               ) : (
                 <ul className="flex flex-col space-y-3 justify-center h-full w-full text-left">
                   <li className="text-sm md:text-base"><span className="font-semibold text-zinc-800 mr-2 whitespace-nowrap flex-shrink-0">Programming:</span><span className="text-zinc-600">C/C++, Python</span></li>
                   <li className="text-sm md:text-base"><span className="font-semibold text-zinc-800 mr-2 whitespace-nowrap flex-shrink-0">Hardware:</span><span className="text-zinc-600">Arduino, ESP32, STM32 Layout & Servo Control</span></li>
-                  <li className="text-sm md:text-base"><span className="font-semibold text-zinc-800 mr-2 whitespace-nowrap flex-shrink-0">Integration:</span><span className="text-zinc-600">Extensive Experience in System-level Hardware and Software Integration.</span></li>
+                  <li className="text-sm md:text-base"><span className="font-semibold text-zinc-800 mr-2 whitespace-nowrap flex-shrink-0">Integration:</span><span className="text-zinc-600">Experience in System-level Hardware and Software Integration， MVP</span></li>
                 </ul>
               )}
             </div>
@@ -378,7 +378,7 @@ function HomeContent() {
                   <div className="flex flex-col min-w-0 flex-1">
                     <h3 className="text-xl font-bold text-zinc-900 mb-2">{lang === 'zh' ? '机器人与增材制造研发实习生' : 'Robotics & Additive Manufacturing R&D Intern'}</h3>
                     <p className="text-sm font-medium text-zinc-500 mb-4">{lang === 'zh' ? '阿尔斯通（亚太）创新中心 | 2026.01 - 2026.07' : 'Alstom (APAC) Innovation Station | Jan 2026 - July 2026'}</p>
-                    <p className="text-zinc-600 text-sm md:text-base leading-relaxed text-justify">{lang === 'zh' ? '交付巡检机器人产品整机，打通企业增材制造备件企业内生产链路，助力轨交供应链降本增效。' : 'Delivered the track inspection robot product and established the localized spare-parts additive manufacturing workflow, significantly optimizing supply chain cost-efficiency.'}</p>
+                    <p className="text-zinc-600 text-sm md:text-base leading-relaxed text-justify">{lang === 'zh' ? '交付1台巡检机器人整机及3类40余项增材制造备件，打通企业内部增材制造备件生产流程，支撑轨道交通装备维护与供应链降本增效。' : 'Delivered inspection robot systems and additively manufactured spare parts, establishing an internal AM production workflow to support railway equipment maintenance and supply chain cost-efficiency optimisation.'}</p>
                   </div>
                 </div>
               </Link>
@@ -395,7 +395,7 @@ function HomeContent() {
                   <div className="flex flex-col min-w-0 flex-1">
                     <h3 className="text-xl font-bold text-zinc-900 mb-2">{lang === 'zh' ? '仿生机电系统研发实习生' : 'Bionic Mechatronic Systems R&D Intern'}</h3>
                     <p className="text-sm font-medium text-zinc-500 mb-4">{lang === 'zh' ? 'Duke-NUS医学院 | 2025.08 - 2026.01' : 'Duke-NUS Medical School | Aug 2025 - Jan 2026'}</p>
-                    <p className="text-zinc-600 text-sm md:text-base leading-relaxed text-justify">{lang === 'zh' ? '成功开发满足医学指标的胸腔模拟器机电一体化原型，并引入一体化打印创新大幅降低了制造成本。' : 'Successfully developed a biomimetic ribcage prototype meeting stringent medical indicators, leveraging integrated DfAM guidelines to dramatically reduce manufacturing costs.'}</p>
+                    <p className="text-zinc-600 text-sm md:text-base leading-relaxed text-justify">{lang === 'zh' ? '完成1台满足医学指标的胸腔模拟器机电一体化原型开发，并引入一体化增材制造方案，有效降低零件数量与制造成本。' : 'Developed a mechatronic thoracic simulator prototype that met medical performance requirements, introducing an integrated additive manufacturing approach to reduce part count and manufacturing cost.'}</p>
                   </div>
                 </div>
               </Link>
@@ -461,11 +461,11 @@ function HomeContent() {
               <div className="w-full md:w-1/2 flex flex-col justify-center text-left">
                 <h3 className="text-2xl font-bold text-zinc-900 mb-2">{lang === 'zh' ? '高精度舵轮与移动机器人底盘研发' : 'High-Precision Omnidirectional Steering-Wheel Chassis R&D'}</h3>
                 <div className="flex flex-wrap gap-2 my-4">
-                  {(lang === 'zh' ? ['SolidWorks', 'AutoCAD', 'Adams', '公差分析', 'GB工程图', 'CNC外协加工'] : ['SolidWorks', 'AutoCAD', 'Adams', 'GB/T', 'CNC']).map(tag => (
+                  {(lang === 'zh' ? ['SolidWorks', 'AutoCAD', '公差分析', 'GB工程图', 'CNC外协加工'] : ['SolidWorks', 'AutoCAD', 'GB/T', 'CNC']).map(tag => (
                     <span key={tag} className="bg-zinc-100 text-zinc-600 px-3 py-1 rounded-full text-xs font-medium">{tag}</span>
                   ))}
                 </div>
-                <p className="text-zinc-600 text-sm md:text-base leading-relaxed text-justify">{lang === 'zh' ? '独立研发包含双电机驱动与锥/直齿轮传动的高集成度舵轮，完成10台舵轮和配套的2套移动机器人底盘的设计、加工制造、测试与部署全流程工作。' : 'Engineered a highly integrated steering-wheel drive module featuring dual-motor spur/bevel gear transmission, delivering 10 production-ready omnidirectional wheels and 2 corresponding chassis.'}</p>
+                <p className="text-zinc-600 text-sm md:text-base leading-relaxed text-justify">{lang === 'zh' ? '完成高集成度舵轮及配套移动机器人底盘研发，负责10台舵轮与2套底盘的设计、加工制造、装配测试及部署全流程，助力团队斩获第23届全国大学生机器人大赛ROBOCON全国季军。' : 'Developed a highly integrated dual-motor swerve module and its mobile robot chassis, completing the end-to-end design, fabrication, testing, and deployment of 10 swerve modules and 2 robotic platforms.'}</p>
               </div>
             </Link>
 
@@ -481,7 +481,7 @@ function HomeContent() {
                     <span key={tag} className="bg-zinc-100 text-zinc-600 px-3 py-1 rounded-full text-xs font-medium">{tag}</span>
                   ))}
                 </div>
-                <p className="text-zinc-600 text-sm md:text-base leading-relaxed text-justify">{lang === 'zh' ? '针对移动机器人平台，完成3自由度空间球关节运动学模型建立与结构设计，引入通过绳索拉力触发铝制薄片变形实现对日常异形物品的自适应稳定抓取的灵巧手设计。' : 'Modeled a 3 DoF spatial spherical joint workspace via MATLAB, developing a tendon-driven manipulator where line tension triggers elastic deformation of flexible sheet metals for adaptive organic object manipulation.'}</p>
+                <p className="text-zinc-600 text-sm md:text-base leading-relaxed text-justify">{lang === 'zh' ? '完成面向移动机器人的3自由度球腕关节运动学建模与结构设计，并设计基于绳驱动和铝制柔性薄片的自适应灵巧手，实现对日常异形物品的稳定抓取。' : 'Developed the kinematic model and mechanical design of a 3-DOF spherical wrist for mobile robots, together with a tendon-driven adaptive gripper utilizing compliant aluminum flexures for stable grasping of irregular objects.'}</p>
               </div>
             </Link>
 
@@ -497,7 +497,7 @@ function HomeContent() {
                     <span key={tag} className="bg-zinc-100 text-zinc-600 px-3 py-1 rounded-full text-xs font-medium">{tag}</span>
                   ))}
                 </div>
-                <p className="text-zinc-600 text-sm md:text-base leading-relaxed text-justify">{lang === 'zh' ? '运用 COMSOL 开展磁-固-流三场耦合动态仿真，应用 Neo-Hookean 超弹性构型与 ALE 动网格技术，全面验证左心室辅助装置（LVAD）的设计可行性与关键医学动力学指标。' : 'Conducted dynamic magnetic-solid-fluid three-field couplled simulations. Applied Neo-Hookean hyperelastic configuration and ALE dynamic mesh to fully verify the design feasibility and key medical indicators of the left ventricular assist device (LVAD).'}</p>
+                <p className="text-zinc-600 text-sm md:text-base leading-relaxed text-justify">{lang === 'zh' ? '基于 COMSOL 开展磁-固-流多物理场耦合仿真，结合 Neo-Hookean 超弹性模型与 ALE 动网格技术，对磁驱动左心室辅助装置的设计可行性及关键医学动力学指标进行验证。' : 'Performed magneto-structural-fluid multiphysics simulations in COMSOL, combining the Neo-Hookean hyperelastic model with ALE moving mesh techniques to evaluate the feasibility and key hemodynamic performance of a magnetically actuated LVAD.'}</p>
               </div>
             </Link>
           </div>
@@ -523,7 +523,7 @@ function HomeContent() {
                 {lang === 'zh' ? '北航国际学生机器人队创始人' : 'Founder of BUAA International Robot Team'}
               </h3>
               <p className="text-zinc-500 text-sm leading-relaxed text-justify mt-1">
-                {lang === 'zh' ? '从0到1统筹建队，带领40余名多国留学生斩获4项国家级赛事冠军，并主导多场科技讲座与跨文化交流活动。' : 'Founded the team from scratch and led over 40 international students to win 4 national championships, alongside directing multiple tech-lectures.'}
+                {lang === 'zh' ? '从0到1组建北航国际学生机器人队，带领40余名国际学生斩获4项国家级赛事冠军，并组织多场机器人技术讲座与跨文化交流活动。' : 'Founded the Beihang International Robotics Team from the ground up, leading more than 40 international students to win four national robotics championships while organizing technical seminars and cross-cultural exchange events.'}
               </p>
             </Link>
 
@@ -533,7 +533,7 @@ function HomeContent() {
                 {lang === 'zh' ? '北航机器人协会会长' : 'President of BUAA Robotics Association'}
               </h3>
               <p className="text-zinc-500 text-sm leading-relaxed text-justify mt-1">
-                {lang === 'zh' ? '主导四足机器人原型全栈开发与微型创业试销，并组织超400人规模的大型校级机器人竞赛与12场技术工作坊。' : 'Directed the development and market-testing of a robot dog prototype, whilst organizing a 400+ participant robotics competition and 12 technical workshops.'}
+                {lang === 'zh' ? '主导四足机器人原型研发及创业试销，并组织400余人规模校级机器人竞赛与12场机器人技术工作坊。' : 'Led the development and pilot commercialization of a quadruped robot prototype while organizing a university-wide robotics competition with over 400 participants and 12 technical workshops.'}
               </p>
             </Link>
 
@@ -543,7 +543,7 @@ function HomeContent() {
                 {lang === 'zh' ? '暑期社会实践队副队长' : 'Vice Captain of Summer Social Practice'}
               </h3>
               <p className="text-zinc-500 text-sm leading-relaxed text-justify mt-1">
-                {lang === 'zh' ? '统筹山东威海农业机器人实地调研项目，全权负责团队协调、志愿者培训及运营规划，并撰写详尽的洞察报告。' : 'Coordinated a field research project on agricultural robotics in Weihai. Managed team operations, volunteer training, and authored a comprehensive insight report.'}
+                {lang === 'zh' ? '统筹山东威海农业机器人调研项目，负责团队协调、志愿者培训及运营规划，并完成项目调研报告撰写。' : 'Coordinated an agricultural robotics field study in Weihai, China, overseeing team coordination, volunteer training, operational planning, and preparation of the final project report.'}
               </p>
             </Link>
           </div>
@@ -602,7 +602,7 @@ function HomeContent() {
             </div>
           </div>
           <p className="mt-12 text-sm text-zinc-500 text-center">
-            {t("面向 2026/2027 届机器人与机电一体化系统结构研发岗位", "Open to Robotics and Mechatronics System Architecture R&D for 2026/2027 graduates.")}
+            {t("面向机器人与机电一体化系统机械研发岗位", "Open to Robotics and Mechatronics System Architecture R&D.")}
           </p>
         </div>
       </section>

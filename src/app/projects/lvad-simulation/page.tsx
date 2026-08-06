@@ -34,7 +34,7 @@ function DetailContent() {
                         </h1>
                         <div className="flex flex-wrap justify-center gap-3 mt-8">
                             {[
-                                lang === "zh" ? "COMSOL FSI" : "COMSOL FSI",
+                                lang === "zh" ? "COMSOL Multiphysics" : "COMSOL Multiphysics",
                                 lang === "zh" ? "Neo-Hookean模型" : "Neo-Hookean Model",
                                 lang === "zh" ? "ALE动态网格" : "ALE Dynamic Mesh",
                                 lang === "zh" ? "血流动力学" : "Hemodynamics"
@@ -46,8 +46,8 @@ function DetailContent() {
                         </div>
                         <p className="text-lg text-zinc-500 md:text-xl leading-relaxed w-full mt-10">
                             {lang === "zh"
-                                ? "研发基于磁场驱动的柔性左心室辅助装置。独立构建严谨的磁-固-流强耦合多物理场仿真体系，以理论闭环验证其设计满足临床级血流动力学标准。"
-                                : "Engineered a biomimetic Left Ventricular Assist Device (LVAD) driven by external magnetic fields. Developed a rigorous magneto-solid-fluid coupled simulation framework to validate its hemodynamic performance and structural feasibility against clinical standards."}
+                                ? "设计基于磁场驱动的柔性左心室辅助装置，并在 COMSOL 中建立磁场、结构变形与流体流动耦合模型，对装置工作机理及血流动力学性能进行评估。"
+                                : "Designed a magnetically actuated flexible left ventricular assist device (LVAD) and established a coupled multiphysics model in COMSOL to evaluate magnetic actuation, structural deformation, and hemodynamic performance."}
                         </p>
                     </div>
                 </section>
@@ -62,8 +62,8 @@ function DetailContent() {
                             </h2>
                             <p className="text-zinc-600 leading-relaxed w-full">
                                 {lang === "zh"
-                                    ? "从底层磁致驱动原理图出发，在 SolidWorks 中构建含单向阀的仿生泵体，并在 COMSOL 中完成复杂的网格划分与多场边界条件设定。"
-                                    : "Initiated with a simplified working principle diagram to map the magnetic actuation mechanism. Reconstructed the biomimetic pump chamber and unidirectional valve via SolidWorks, and established fundamental boundary conditions and mesh physics in COMSOL."}
+                                    ? "基于磁致驱动原理完成含单向阀的仿生泵体设计，并在 COMSOL 中建立有限元网格及多物理场边界条件。"
+                                    : "Developed a biomimetic pump with integrated check valves based on magnetic actuation principles, and established finite element meshes and multiphysics boundary conditions in COMSOL."}
                             </p>
                         </div>
 
@@ -103,12 +103,12 @@ function DetailContent() {
                         {/* Text intro */}
                         <div className="w-full mb-12">
                             <h2 className="text-3xl font-bold tracking-tight mb-6">
-                                {lang === "zh" ? "三场强耦合动态仿真矩阵" : "Magneto-Solid-Fluid Strong Coupling"}
+                                {lang === "zh" ? "磁-固-流耦合动态仿真" : "Magneto-Solid-Fluid Coupled Simulation"}
                             </h2>
                             <p className="text-zinc-600 leading-relaxed w-full mb-4">
                                 {lang === "zh"
-                                    ? "引入 Neo-Hookean 超弹性本构处理柔性大变形，运用麦克斯韦应力张量计算磁场驱动力，并采用 ALE 动网格技术攻克流固耦合边界极难收敛的痛点。"
-                                    : "Applied Neo-Hookean hyperelastic models for material deformation, Maxwell stress tensors for magnetic induction, and ALE dynamic mesh solvers to resolve highly non-linear fluid-structure interactions."}
+                                    ? "采用 Neo-Hookean 超弹性模型描述柔性结构大变形，通过麦克斯韦应力张量计算磁场驱动力，并结合 ALE 动网格方法实现流固耦合边界的动态求解。"
+                                    : "Applied the Neo-Hookean hyperelastic model to capture large structural deformation, calculated magnetic forces using Maxwell stress tensors, and employed ALE moving meshes to solve the evolving fluid–structure interface."}
                             </p>
                         </div>
 
@@ -118,36 +118,36 @@ function DetailContent() {
                                 <div className={`${CONTAINER_CLASSES} aspect-[4/3]`}>
                                     <img
                                         src={`${ASSET_BASE}/project/lvad/sim-magnetic.webp`}
-                                        alt={lang === "zh" ? "磁通密度分布与应力" : "Magnetic Flux Density"}
+                                        alt={lang === "zh" ? "磁通密度与结构应力分布" : "Magnetic Flux & Structural Stress"}
                                         className={IMG_CLASSES}
                                     />
                                 </div>
                                 <p className="text-zinc-500 text-sm mt-3 text-center">
-                                    {lang === "zh" ? "磁通密度分布与应力" : "Magnetic Flux Density"}
+                                    {lang === "zh" ? "磁通密度与结构应力分布" : "Magnetic Flux & Structural Stress"}
                                 </p>
                             </div>
                             <div>
                                 <div className={`${CONTAINER_CLASSES} aspect-[4/3]`}>
                                     <img
                                         src={`${ASSET_BASE}/project/lvad/sim-stress.webp`}
-                                        alt={lang === "zh" ? "固体形变与应力响应" : "Solid Stress-Strain"}
+                                        alt={lang === "zh" ? "固体形变响应" : "Solid Stress-Strain"}
                                         className={IMG_CLASSES}
                                     />
                                 </div>
                                 <p className="text-zinc-500 text-sm mt-3 text-center">
-                                    {lang === "zh" ? "固体形变与应力响应" : "Solid Stress-Strain"}
+                                    {lang === "zh" ? "固体形变响应" : "Solid Stress-Strain"}
                                 </p>
                             </div>
                             <div>
                                 <div className={`${CONTAINER_CLASSES} aspect-[4/3]`}>
                                     <img
                                         src={`${ASSET_BASE}/project/lvad/sim-fluid.webp`}
-                                        alt={lang === "zh" ? "动网格流场演化" : "FSI Fluid Streamlines"}
+                                        alt={lang === "zh" ? "流场动态演化" : "Flow Field Evolution"}
                                         className={IMG_CLASSES}
                                     />
                                 </div>
                                 <p className="text-zinc-500 text-sm mt-3 text-center">
-                                    {lang === "zh" ? "动网格流场演化" : "FSI Fluid Streamlines"}
+                                    {lang === "zh" ? "流场动态演化" : "Flow Field Evolution"}
                                 </p>
                             </div>
                         </div>
@@ -159,14 +159,14 @@ function DetailContent() {
                     <div className="w-full max-w-6xl mx-auto flex flex-col w-full">
                         {/* Row 1: Title */}
                         <h2 className="text-3xl font-bold tracking-tight">
-                            {lang === "zh" ? "临床级血流动力学指标闭环" : "Clinical Metrics Verified"}
+                            {lang === "zh" ? "血流动力学性能评估" : "Hemodynamic Performance Evaluation"}
                         </h2>
 
                         {/* Row 2: Description */}
                         <p className="text-zinc-600 leading-relaxed w-full mt-4">
                             {lang === "zh"
-                                ? "实现类心肌稳定收缩与单向流驱动特性，各项泵血核心数据均满足预期的前临床医疗标准。"
-                                : "Achieved stable myocardial-like contraction and unidirectional flow, fully meeting the expected pre-clinical hemodynamic feasibility targets."}
+                                ? "仿真结果表明装置能够实现周期性驱动与单向流输运特性，主要血流动力学指标达到设计目标范围。"
+                                : "Simulation results indicate stable cyclic pumping and unidirectional flow behavior, with key hemodynamic metrics reaching the intended design targets."}
                         </p>
 
                         {/* Row 3: Metrics cards — horizontal 3-column grid, compact */}
@@ -197,24 +197,24 @@ function DetailContent() {
                                 <div className={`${CONTAINER_CLASSES} aspect-[16/9]`}>
                                     <img
                                         src={`${ASSET_BASE}/project/lvad/sim-deformation.webp`}
-                                        alt={lang === "zh" ? "COMSOL仿真模拟" : "Theoretical Simulation"}
+                                        alt={lang === "zh" ? "多物理场仿真结果" : "Multiphysics Simulation Results"}
                                         className={IMG_CLASSES}
                                     />
                                 </div>
                                 <p className="text-sm text-zinc-500 text-center mt-3">
-                                    {lang === "zh" ? "COMSOL仿真模拟" : "Theoretical Simulation"}
+                                    {lang === "zh" ? "多物理场仿真结果" : "Multiphysics Simulation Results"}
                                 </p>
                             </div>
                             <div>
                                 <div className={`${CONTAINER_CLASSES} aspect-[16/9]`}>
                                     <img
                                         src={`${ASSET_BASE}/project/lvad/real-deformation.webp`}
-                                        alt={lang === "zh" ? "物理原型机运转" : "Physical Prototype"}
+                                        alt={lang === "zh" ? "磁致驱动原型测试" : "Magnetic Actuation Prototype Test"}
                                         className={IMG_CLASSES}
                                     />
                                 </div>
                                 <p className="text-sm text-zinc-500 text-center mt-3">
-                                    {lang === "zh" ? "物理原型机运转" : "Physical Prototype"}
+                                    {lang === "zh" ? "磁致驱动原型测试" : "Magnetic Actuation Prototype Test"}
                                 </p>
                             </div>
                         </div>

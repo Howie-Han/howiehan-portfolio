@@ -62,8 +62,8 @@ function SocialPracticeContent() {
                 {/* Full-width overview paragraph — max-w-none prevents line break truncation */}
                 <p className="w-full text-zinc-600 text-center max-w-none">
                     {t(
-                        "带领\"灵创巧探\"实践队开展农业机器人实地调研。统筹前沿技术走访与山东下沉市场勘察，产出1.5万字调研报告及多项校企合作意向。获全网40万+曝光，并成功将一线痛点转化为农业机器人CAD工程实体。",
-                        "Led a field research team focusing on agricultural robotics. Coordinated frontier tech visits and grassroots market investigations in Shandong. Delivered a 15k-word report, 400k+ impressions, and translated frontline pain points into a CAD engineering prototype."
+                        "带领\"灵创巧探\"实践队开展农业机器人实地调研。完成企业走访、农村实地调研及需求分析，形成1.5万字调研报告，并基于调研结果完成农业机器人概念方案设计。",
+                        "Led the \"LingChuang QiaoTan\" field research team to investigate agricultural robotics through industry visits, rural field studies, and user requirement analysis. Produced a 15,000-word technical report and developed a concept design for an agricultural robot based on the findings."
                     )}
                 </p>
 
@@ -78,8 +78,8 @@ function SocialPracticeContent() {
                         </h2>
                         <p className="w-full text-zinc-600">
                             {t(
-                                "对接博创联动等头部企业及 2023 世界机器人大会。从宏观视角梳理当代农业机器人的技术栈与商业落地痛点。",
-                                "Visited top-tier enterprises and the 2023 World Robot Conference. Analyzed the technology stack and commercialization bottlenecks of modern agricultural robots."
+                                "走访农业机器人企业及 2023 世界机器人大会，调研农业机器人关键技术路线、典型产品及产业应用现状。",
+                                "Visited agricultural robotics companies and the 2023 World Robot Conference to investigate key technologies, representative products, and current industrial applications."
                             )}
                         </p>
                         {/* Hero 2-col */}
@@ -91,7 +91,7 @@ function SocialPracticeContent() {
                                     className={HERO_CLASSES}
                                 />
                                 <p className={HERO_CAPTION}>
-                                    {t("WRC 农业采摘机器人技术架构分析", "Tech Architecture Analysis of WRC Agri-Robots")}
+                                    {t("WRC 农业采摘机器人技术调研", "Agricultural Robotics Survey at WRC 2023")}
                                 </p>
                             </div>
                             <div>
@@ -110,7 +110,7 @@ function SocialPracticeContent() {
                                     </video>
                                 </LazyMedia>
                                 <p className={HERO_CAPTION}>
-                                    {t("校友企业博创联动科技总部实地调研", "Field Study at Bochuang Tech HQ")}
+                                    {t("校友企业博创联动调研", "Field Study at Bochuang Tech HQ")}
                                 </p>
                             </div>
                         </div>
@@ -123,7 +123,7 @@ function SocialPracticeContent() {
                                     className={FILM_CLASSES}
                                 />
                                 <p className={FILM_CAPTION}>
-                                    {t("团队破冰合影", "Team Icebreaker Photo")}
+                                    {t("实践团队合影", "Team Photo")}
                                 </p>
                             </div>
                             <div className="snap-center shrink-0 w-64 md:w-72 flex flex-col">
@@ -133,7 +133,7 @@ function SocialPracticeContent() {
                                     className={FILM_CLASSES}
                                 />
                                 <p className={FILM_CAPTION}>
-                                    {t("三农主题团日大会", "San Nong Themed Group Meeting")}
+                                    {t("三农主题交流活动", "Rural Development Seminar")}
                                 </p>
                             </div>
                             <div className="snap-center shrink-0 w-64 md:w-72 flex flex-col">
@@ -143,7 +143,7 @@ function SocialPracticeContent() {
                                     className={FILM_CLASSES}
                                 />
                                 <p className={FILM_CAPTION}>
-                                    {t("农业博物馆溯源 - 个人", "Agri-Museum Origin Trace - Solo")}
+                                    {t("中国农业博物馆调研", "China Agricultural Museum Visit")}
                                 </p>
                             </div>
                             <div className="snap-center shrink-0 w-64 md:w-72 flex flex-col">
@@ -153,7 +153,7 @@ function SocialPracticeContent() {
                                     className={FILM_CLASSES}
                                 />
                                 <p className={FILM_CAPTION}>
-                                    {t("农业博物馆溯源 - 团队", "Agri-Museum Origin Trace - Group")}
+                                    {t("中国农业博物馆团队调研", "China Agricultural Museum Group Visit")}
                                 </p>
                             </div>
                             <div className="snap-center shrink-0 w-64 md:w-72 flex flex-col">
@@ -163,7 +163,7 @@ function SocialPracticeContent() {
                                     className={FILM_CLASSES}
                                 />
                                 <p className={FILM_CAPTION}>
-                                    {t("WRC 2023 核心展区合影", "WRC 2023 Core Exhibition Group Photo")}
+                                    {t("WRC 2023 展区调研", "WRC 2023 Exhibition Survey")}
                                 </p>
                             </div>
                             <div className="snap-center shrink-0 w-64 md:w-72 flex flex-col">
@@ -173,7 +173,7 @@ function SocialPracticeContent() {
                                     className={FILM_CLASSES}
                                 />
                                 <p className={FILM_CAPTION}>
-                                    {t("WRC 行业生态专访", "WRC Industry Ecosystem Interview")}
+                                    {t("WRC 行业交流采访", "Industry Interview at WRC 2023")}
                                 </p>
                             </div>
                             <div className="snap-center shrink-0 w-64 md:w-72 flex flex-col">
@@ -183,7 +183,7 @@ function SocialPracticeContent() {
                                     className={FILM_CLASSES}
                                 />
                                 <p className={FILM_CAPTION}>
-                                    {t("中国农大联合团日交流", "CAU Joint Group Exchange")}
+                                    {t("中国农大交流活动", "Exchange with China Agricultural University")}
                                 </p>
                             </div>
                             <div className="snap-center shrink-0 w-64 md:w-72 flex flex-col">
@@ -193,7 +193,7 @@ function SocialPracticeContent() {
                                     className={FILM_CLASSES}
                                 />
                                 <p className={FILM_CAPTION}>
-                                    {t("农大农学院技术共建", "CAU Agri-Tech Co-Development")}
+                                    {t("农大农学院技术交流", "Technical Exchange with CAU")}
                                 </p>
                             </div>
                             <div className="snap-center shrink-0 w-64 md:w-72 flex flex-col">
@@ -203,7 +203,7 @@ function SocialPracticeContent() {
                                     className={FILM_CLASSES}
                                 />
                                 <p className={FILM_CAPTION}>
-                                    {t("农大科技小院深度联动", "CAU Sci-Tech Courtyard Deep Collaboration")}
+                                    {t("农大科技小院调研", "CAU Sci-Tech Courtyard Visit")}
                                 </p>
                             </div>
                         </div>
@@ -212,12 +212,12 @@ function SocialPracticeContent() {
                     {/* ------ Module 2: 下沉市场与需求定义 / Grassroots Market & Requirement Definition ------ */}
                     <section className="mt-16 md:mt-24">
                         <h2 className="text-2xl font-bold mb-4 text-center">
-                            {t("下沉市场与需求定义", "Grassroots Market & Requirement Definition")}
+                            {t("下沉市场与需求定义", "Field Investigation & Requirement Analysis")}
                         </h2>
                         <p className="w-full text-zinc-600">
                             {t(
-                                "深入寿光市与威海大水泊镇。走访6个自然村与30余家农户，明确非结构化农田环境下的真实机器换人需求。",
-                                "Immersed in Shouguang and Dashuipo Town. Visited 6 villages and 30+ farmers to define authentic requirements for robot substitution in unstructured farmlands."
+                                "深入寿光市及威海大水泊镇，走访6个自然村和30余户农户，调研非结构化农田环境下农业机器人的实际应用需求。",
+                                "Conducted field studies in Shouguang and Dashuibo Town, visiting six villages and over 30 farming households to identify practical requirements for agricultural robots in unstructured farming environments."
                             )}
                         </p>
                         {/* Hero 2-col (both img) */}
@@ -229,7 +229,7 @@ function SocialPracticeContent() {
                                     className={HERO_CLASSES}
                                 />
                                 <p className={HERO_CAPTION}>
-                                    {t("寿光蔬菜大棚非结构化作业环境勘察", "Environmental Survey in Shouguang Greenhouses")}
+                                    {t("寿光蔬菜大棚调研", "Greenhouse Field Investigation in Shouguang")}
                                 </p>
                             </div>
                             <div>
@@ -239,7 +239,7 @@ function SocialPracticeContent() {
                                     className={HERO_CLASSES}
                                 />
                                 <p className={HERO_CAPTION}>
-                                    {t("威海大水泊镇乡村振兴首席专家深度座谈", "Panel with Rural Revitalization Experts")}
+                                    {t("乡村振兴专家座谈", "Discussion with Rural Revitalization Experts")}
                                 </p>
                             </div>
                         </div>
@@ -252,7 +252,7 @@ function SocialPracticeContent() {
                                     className={FILM_CLASSES}
                                 />
                                 <p className={FILM_CAPTION}>
-                                    {t("寿光三元朱村田间合影", "Field Group Photo at Sanyuanzhu Village")}
+                                    {t("寿光三元朱村田间调研", "Field Investigation in Sanyuanzhu Village")}
                                 </p>
                             </div>
                             <div className="snap-center shrink-0 w-64 md:w-72 flex flex-col">
@@ -262,7 +262,7 @@ function SocialPracticeContent() {
                                     className={FILM_CLASSES}
                                 />
                                 <p className={FILM_CAPTION}>
-                                    {t("寿光高新农业示范园", "Shouguang Hi-Tech Agri Demo Park")}
+                                    {t("寿光高新农业示范园调研", "Agricultural Demonstration Park Visit")}
                                 </p>
                             </div>
                             <div className="snap-center shrink-0 w-64 md:w-72 flex flex-col">
@@ -282,7 +282,7 @@ function SocialPracticeContent() {
                                     className={FILM_CLASSES}
                                 />
                                 <p className={FILM_CAPTION}>
-                                    {t("威海基层走访团队合影", "Weihai Grassroots Visit Team Photo")}
+                                    {t("威海基层调研团队", "Weihai Grassroots Visit Team")}
                                 </p>
                             </div>
                             <div className="snap-center shrink-0 w-64 md:w-72 flex flex-col">
@@ -301,7 +301,7 @@ function SocialPracticeContent() {
                                     </video>
                                 </LazyMedia>
                                 <p className={FILM_CAPTION}>
-                                    {t("农作痛点实地采集录像", "On-site Pain Point Collection Footage")}
+                                    {t("农业生产痛点调研", "Agricultural Workflow Investigation")}
                                 </p>
                             </div>
                         </div>
@@ -310,12 +310,12 @@ function SocialPracticeContent() {
                     {/* ------ Module 3: 成果交付与硬件孵化 / Project Delivery & Hardware Incubation ------ */}
                     <section className="mt-16 md:mt-24">
                         <h2 className="text-2xl font-bold mb-4 text-center">
-                            {t("成果交付与硬件孵化", "Project Delivery & Hardware Incubation")}
+                            {t("调研成果与概念设计", "Project Delivery & Conceptual Design")}
                         </h2>
                         <p className="w-full text-zinc-600">
                             {t(
-                                "统筹撰写1.5万字报告，作为技术骨干，将调研需求直接闭环转化为农用机器人机构设计。",
-                                "Coordinated a 15k-word technical report. As technical lead, translated field requirements directly into a custom robot mechanism design."
+                                "统筹完成1.5万字农业机器人调研报告，并结合实地需求完成农业机器人概念结构设计，为后续产品开发提供参考。",
+                                "Coordinated the preparation of a 15,000-word technical report and translated field research findings into a conceptual mechanical design for an agricultural robot."
                             )}
                         </p>
                         {/* Hero 2-col (both img with object-contain) */}
@@ -327,7 +327,7 @@ function SocialPracticeContent() {
                                     className={HERO_CONTAIN_CLASSES}
                                 />
                                 <p className={HERO_CAPTION}>
-                                    {t("基于下沉需求孵化设计的农业机器人 CAD 原型", "Agri-Robot CAD Prototype from Market Needs")}
+                                    {t("农业机器人概念 CAD 模型", "Agricultural Robot Concept CAD Model")}
                                 </p>
                             </div>
                             <div>
@@ -337,7 +337,7 @@ function SocialPracticeContent() {
                                     className={HERO_CONTAIN_CLASSES}
                                 />
                                 <p className={HERO_CAPTION}>
-                                    {t("产出万字调研分析报告", "Comprehensive Technical & Market Report")}
+                                    {t("农业机器人调研报告", "Agricultural Robotics Research Report")}
                                 </p>
                             </div>
                         </div>
@@ -350,7 +350,7 @@ function SocialPracticeContent() {
                                     className={FILM_CONTAIN_CLASSES}
                                 />
                                 <p className={FILM_CAPTION}>
-                                    {t("灵创巧探实践队出征队旗", "Lingchuang Qiaotan Practice Team Flag")}
+                                    {t("灵创巧探实践队旗", "Lingchuang Qiaotan Practice Team Flag")}
                                 </p>
                             </div>
                             <div className="snap-center shrink-0 w-64 md:w-72 flex flex-col">
@@ -370,7 +370,7 @@ function SocialPracticeContent() {
                                     className={FILM_CONTAIN_CLASSES}
                                 />
                                 <p className={FILM_CAPTION}>
-                                    {t("校地合作规划与闭环总结", "University-Local Collaboration & Closure Summary")}
+                                    {t("校地合作规划", "University-Local Collaboration")}
                                 </p>
                             </div>
                         </div>

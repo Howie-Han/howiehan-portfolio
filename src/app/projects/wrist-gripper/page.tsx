@@ -31,7 +31,7 @@ function DetailContent() {
                         <h1 className="text-2xl md:text-4xl lg:text-6xl font-extrabold tracking-tight leading-tight w-full text-zinc-900">
                             {lang === "zh"
                                 ? "刚柔耦合绳驱空间腕关节灵巧手开发"
-                                : "Rigid-Flexible Rope-Driven Wrist Joint"}
+                                : "Development of a Tendon-Driven Compliant Robotic Wrist & Adaptive Gripper"}
                         </h1>
                         <div className="flex flex-wrap justify-center gap-3 mt-8">
                             {[
@@ -47,8 +47,8 @@ function DetailContent() {
                         </div>
                         <p className="text-lg text-zinc-500 md:text-xl leading-relaxed w-full mt-10">
                             {lang === "zh"
-                                ? "主导设计 3 自由度串联球腕关节与欠驱动刚柔耦合夹爪。独立完成从 D-H 正运动学建模、SolidWorks 机构设计到混合制造装配的全链路研发，最终实现 1kg 的末端有效负载闭环。"
-                                : "Engineered a 3-DoF spherical wrist joint and an underactuated rigid-flexible gripper. Independently drove the full lifecycle from D-H kinematic modeling and SolidWorks mechanism design to hybrid manufacturing, achieving a 1kg payload capacity."}
+                                ? "主导设计 3 自由度串联球腕关节与欠驱动刚柔耦合夹爪，完成 D-H 正运动学建模、机构设计、加工装配及样机验证，实现 1 kg 末端有效负载。"
+                                : "Led the development of a 3-DOF serial spherical wrist and an underactuated compliant gripper, completing D-H kinematic modeling, mechanical design, fabrication, assembly, and prototype validation with a verified 1 kg payload."}
                         </p>
                     </div>
                 </section>
@@ -62,8 +62,8 @@ function DetailContent() {
                             </h2>
                             <p className="text-zinc-600 leading-relaxed w-full">
                                 {lang === "zh"
-                                    ? "基于 D-H 参数建立正运动学数学模型，并通过 MATLAB 机器人工具箱完成蒙特卡洛仿真，验证了直径 200mm 的半球形工作空间包络。"
-                                    : "Established a rigorous mathematical model based on D-H parameters. Validated the 200mm hemispherical workspace envelope and optimized singularity avoidance trajectories via MATLAB Robotics Toolbox."}
+                                    ? "基于 D-H 参数建立正运动学模型，并利用 MATLAB Robotics Toolbox 开展蒙特卡洛仿真，验证约 200 mm 半球形工作空间。"
+                                    : "Established the forward kinematic model using D-H parameters and performed Monte Carlo simulations in MATLAB Robotics Toolbox to validate an approximately 200 mm hemispherical workspace."}
                             </p>
                         </div>
                         {/* MATLAB Academic Dual-Column Media Grid */}
@@ -78,7 +78,7 @@ function DetailContent() {
                                     />
                                 </div>
                                 <p className="text-sm text-zinc-500 text-center w-full mt-3">
-                                    {lang === 'zh' ? '6-DoF 关节空间多项式轨迹与末端位姿轴向补偿仿真' : '6-DoF Joint-Space Polynomial Trajectory & Axial End-Effector Pose Compensation Simulation'}
+                                    {lang === 'zh' ? '关节空间轨迹规划与末端位姿补偿仿真' : 'Joint Trajectory & End-Effector Pose Simulation'}
                                 </p>
                             </div>
                             {/* Right: Monte Carlo Workspace Cloud Map */}
@@ -91,7 +91,7 @@ function DetailContent() {
                                     />
                                 </div>
                                 <p className="text-sm text-zinc-500 text-center w-full mt-3">
-                                    {lang === 'zh' ? '末端 TCP 空间可达包络点云 (蒙特卡洛法求解)' : 'End-Effector TCP Spatial Reachable Envelope Point Cloud (Solved via Monte Carlo Method)'}
+                                    {lang === 'zh' ? '末端 TCP 蒙特卡洛法工作空间点云' : 'End-Effector TCP Monte Carlo Workspace Point Cloud'}
                                 </p>
                             </div>
                         </div>
@@ -107,8 +107,8 @@ function DetailContent() {
                             </h2>
                             <p className="text-zinc-600 leading-relaxed w-full">
                                 {lang === "zh"
-                                    ? "利用总线舵机与绕线盘构建极其紧凑的欠驱动绳驱传动链。创新性地利用铝制薄片在绳索拉力下的弹性形变，实现对异形易碎物品（如鸡蛋）的自适应包裹抓取。"
-                                    : "Designed a highly compact underactuated tendon-driven transmission chain using bus servos. Innovatively utilized the elastic deformation of aluminum flakes under cable tension to achieve adaptive enveloping of fragile or irregular objects."}
+                                    ? "采用总线舵机与绕线盘构建欠驱动绳驱传动链，并利用铝制柔性薄片的弹性形变，实现对异形及易碎物品的自适应抓取。"
+                                    : "Designed an underactuated tendon-driven transmission using bus servos and winding drums. Compliant aluminum flexures enabled adaptive grasping of irregular and fragile objects."}
                             </p>
                         </div>
                         {/* 2-column media grid: CAD render + Exploded video */}
@@ -117,12 +117,12 @@ function DetailContent() {
                                 <div className={`${CONTAINER_CLASSES} aspect-[4/3]`}>
                                     <img
                                         src={`${ASSET_BASE}/project/wrist/wrist-cad-render.webp`}
-                                        alt={lang === "zh" ? "3DoF腕关节三维构型" : "3D CAD Assembly"}
+                                        alt={lang === "zh" ? "3DoF 腕关节三维构型" : "3D CAD Assembly"}
                                         className={MEDIA_CLASSES}
                                     />
                                 </div>
                                 <p className="text-sm text-zinc-500 text-center mt-3">
-                                    {lang === "zh" ? "3DoF腕关节三维构型" : "3D CAD Assembly"}
+                                    {lang === "zh" ? "3DoF 腕关节三维构型" : "3D CAD Assembly"}
                                 </p>
                             </div>
                             <div>
@@ -139,7 +139,7 @@ function DetailContent() {
                                     </LazyMedia>
                                 </div>
                                 <p className="text-sm text-zinc-500 text-center mt-3">
-                                    {lang === "zh" ? "欠驱动绳驱传动链拆解" : "Exploded Transmission View"}
+                                    {lang === "zh" ? "装配爆炸图" : "Exploded Assembly View"}
                                 </p>
                             </div>
                         </div>
@@ -157,8 +157,8 @@ function DetailContent() {
                         {/* Row 2: Description */}
                         <p className="text-zinc-600 leading-relaxed w-full mt-4">
                             {lang === "zh"
-                                ? "融合 FDM 3D 打印与金属 CNC 机加工工艺，完成从静力学校核到实物原型的可靠组装，并通过物理负载测试验证了整套系统的传动效能。"
-                                : "Combined FDM 3D printing with metal CNC machining for reliable physical prototyping. Conducted rigorous payload testing to validate the transmission efficiency and structural integrity."}
+                                ? "结合 FDM 3D 打印与 CNC 加工完成样机制造及整机装配，并通过静力学分析与物理负载测试验证结构可靠性及 1 kg 有效负载能力。"
+                                : "Fabricated and assembled the prototype using hybrid FDM printing and CNC machining. Structural reliability and a 1 kg payload capacity were validated through static analysis and physical load testing."}
                         </p>
 
                         {/* Row 3: Metrics cards — 3-column grid */}
@@ -170,7 +170,7 @@ function DetailContent() {
                             </div>
                             <div className="bg-zinc-50 border border-zinc-200 rounded-xl p-4 text-center">
                                 <p className="text-base font-bold text-zinc-800">
-                                    {lang === "zh" ? "空间活动度: 200mm 包络" : "Workspace: 200mm Envelope"}
+                                    {lang === "zh" ? "工作空间：≈200 mm" : "Workspace: ≈200 mm"}
                                 </p>
                             </div>
                             <div className="bg-zinc-50 border border-zinc-200 rounded-xl p-4 text-center">
@@ -198,12 +198,12 @@ function DetailContent() {
                                 <div className={`${CONTAINER_CLASSES} aspect-[4/3]`}>
                                     <img
                                         src={`${ASSET_BASE}/project/wrist/real-joint.webp`}
-                                        alt={lang === "zh" ? "空间腕关节实物装配" : "Wrist Joint Assembly"}
+                                        alt={lang === "zh" ? "3-DoF 空间腕关节样机" : "3-DOF Wrist Prototype"}
                                         className={MEDIA_CLASSES}
                                     />
                                 </div>
                                 <p className="text-sm text-zinc-500 text-center mt-3">
-                                    {lang === "zh" ? "空间腕关节实物装配" : "Wrist Joint Assembly"}
+                                    {lang === "zh" ? "3-DoF 空间腕关节样机" : "3-DOF Wrist Prototype"}
                                 </p>
                             </div>
                             <div>

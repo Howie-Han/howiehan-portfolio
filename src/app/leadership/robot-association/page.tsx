@@ -55,8 +55,8 @@ function RobotAssociationContent() {
                 {/* Full-width overview paragraph — NO max-w constraint */}
                 <p className="w-full text-zinc-600 text-center">
                     {t(
-                        "统筹管理北航规模最大的硬科技社团。任期内成功策划并组织超 400 人规模的大型校级机器人竞技赛事；主导建立极客技术孵化机制（如下一代桌面级四足机器狗原型研发）；开展 12 场以上的软硬件技术工作坊，系统性提升社区整体工程素养与校际技术影响力。",
-                        "Managed the university's largest hard-tech community. Successfully organized large-scale robotics competitions with 400+ participants; spearheaded geek tech incubation initiatives (e.g., next-generation desktop quadruped robot prototype); and conducted over 12 hardware and software workshops, systematically enhancing the community's engineering proficiency and inter-university influence."
+                        "统筹北航机器人协会日常运营，组织400余人规模校级机器人竞赛，推动桌面级四足机器人孵化项目，并策划12场以上机器人软硬件技术讲座与工作坊。",
+                        "Led the Beihang Robotics Association, organizing a university-wide robotics competition with over 400 participants, launching a desktop quadruped robot incubation project, and coordinating more than 12 robotics lectures and technical workshops."
                     )}
                 </p>
 
@@ -71,8 +71,8 @@ function RobotAssociationContent() {
                         </h2>
                         <p className="w-full text-zinc-600">
                             {t(
-                                "从 0 到 1 架构校级机器人竞技赛事。独立完成竞技场地蓝图与关卡交互设计，统筹 400+ 参赛选手的赛程流转与技术合规审查，实现零事故闭环交付。",
-                                "Architected university-level robotics competitions from scratch. Independently designed the arena blueprint and interactive tasks, coordinated the scheduling and technical compliance review for 400+ participants, achieving a zero-accident closed-loop delivery."
+                                "从0到1完成校级机器人竞赛策划，负责竞技场地设计、比赛规则制定及赛事组织，保障400余名参赛选手和观众顺利完成比赛。",
+                                "Planned and organized a university-wide robotics competition from the ground up, including arena design, game rule development, and event coordination for more than 400 participants."
                             )}
                         </p>
                         {/* 3-column grid */}
@@ -84,7 +84,7 @@ function RobotAssociationContent() {
                                     className={IMG_CLASSES}
                                 />
                                 <p className={CAPTION_CLASSES}>
-                                    {t("独立设计的竞技场地实机抓取测试验证", "On-site Grasping Task Validation")}
+                                    {t("竞技场地抓取测试", "Arena Grasping Test  ")}
                                 </p>
                             </div>
                             <div>
@@ -94,7 +94,7 @@ function RobotAssociationContent() {
                                     className={IMG_CLASSES}
                                 />
                                 <p className={CAPTION_CLASSES}>
-                                    {t("面向参赛团队的场地与交互规则实地宣讲", "Arena & Task Rules Briefing for Teams")}
+                                    {t("比赛规则现场讲解", "Competition Rule Briefing")}
                                 </p>
                             </div>
                             <div>
@@ -104,7 +104,7 @@ function RobotAssociationContent() {
                                     className="w-full aspect-[4/3] object-contain bg-zinc-100 rounded-xl"
                                 />
                                 <p className={CAPTION_CLASSES}>
-                                    {t("400+人规模校级赛事核心组织方大合影", "Core Organizing Team of 400+ Participant Event")}
+                                    {t("400+人规模机器人竞赛大合影", "Group Photo of 400+ Participant Event")}
                                 </p>
                             </div>
                         </div>
@@ -117,8 +117,8 @@ function RobotAssociationContent() {
                         </h2>
                         <p className="w-full text-zinc-600">
                             {t(
-                                "打破传统社团理论授课壁垒，主导发起\"极客孵化计划\"。带领核心梯队完成桌面级四足机器狗的整机 CAD 重构、BOM 选型与电控部署，建立社团硬件研发 SOP。",
-                                "Broke the barriers of traditional theoretical teaching by launching the \"Geek Incubation Program\". Led the core echelon to complete the CAD restructuring, BOM selection, and electronic deployment of a desktop quadruped robot, establishing the community's R&D SOP."
+                                "发起\"极客孵化计划\"，组织桌面级四足机器人项目开发，完成整机 CAD 重构、BOM 选型及机电系统集成，并建立项目开发文档与基础流程。",
+                                "Initiated the Geek Incubation Program, leading the development of a desktop quadruped robot including CAD redesign, BOM selection, mechatronic integration, and project documentation."
                             )}
                         </p>
                         {/* 3-column grid: 2 images + 1 video */}
@@ -130,7 +130,7 @@ function RobotAssociationContent() {
                                     className={IMG_CONTAIN_CLASSES}
                                 />
                                 <p className={CAPTION_CLASSES}>
-                                    {t("桌面级机器狗孵化项目早期蓝图海报", "Early Blueprint Poster for Quadruped Incubation")}
+                                    {t("桌面级机器狗孵化项目海报", "Desktop Quadruped Project Poster")}
                                 </p>
                             </div>
                             <div>
@@ -140,7 +140,7 @@ function RobotAssociationContent() {
                                     className={IMG_CLASSES}
                                 />
                                 <p className={CAPTION_CLASSES}>
-                                    {t("机器狗本体高密度机械结构 CAD 渲染", "High-density Mechanical Structure CAD Render")}
+                                    {t("机器狗本体 CAD 模型", "Desktop Quadruped CAD Model")}
                                 </p>
                             </div>
                             <div>
@@ -159,7 +159,7 @@ function RobotAssociationContent() {
                                     </video>
                                 </LazyMedia>
                                 <p className={CAPTION_CLASSES}>
-                                    {t("面向新生的机电孵化成果实机演示", "Electromechanical Incubation Live Demo")}
+                                    {t("新生项目成果展示 ", "Project Demonstration for New Members")}
                                 </p>
                             </div>
                         </div>
@@ -168,12 +168,12 @@ function RobotAssociationContent() {
                     {/* ------ Module 3: 社群扩展 / Community Expansion ------ */}
                     <section>
                         <h2 className="text-2xl font-bold mb-4 text-center">
-                            {t("社群影响力扩展", "Community Influence Expansion")}
+                            {t("技术培训与社区建设", "Tech Training & Community Building")}
                         </h2>
                         <p className="w-full text-zinc-600">
                             {t(
-                                "搭建社团跨学历技术交流桥梁。年内组织超过 12 场涵盖软硬件底层逻辑的前沿硬科技讲座，并在校园科技节策划千人级外场互动展区，实现技术开源与社群破圈。",
-                                "Built a cross-academic tech communication bridge. Organized over 12 frontier hard-tech workshops covering software and hardware architectures within the year, and planned a 1000+ attendee outdoor interactive exhibition, achieving tech open-sourcing and community growth."
+                                "组织12场以上机器人软硬件技术讲座与工作坊，并策划校园科技节机器人互动展区，推动机器人技术交流与实践活动。",
+                                "Organized more than 12 robotics lectures and technical workshops, while coordinating interactive robotics exhibitions during the university science festival."
                             )}
                         </p>
                         {/* 3-column physical-alignment grid (6 items: 3x2 perfect fill) */}
@@ -185,7 +185,7 @@ function RobotAssociationContent() {
                                     className="w-full h-full aspect-[4/3] object-cover bg-zinc-100 rounded-xl"
                                 />
                                 <p className={CAPTION_CLASSES}>
-                                    {t("机器人协会核心管理与技术指导架构", "Core Management & Tech Guidance Board")}
+                                    {t("机器人协会核心管理团队", "Core Management & Tech Guidance Board")}
                                 </p>
                             </div>
                             <div className="w-full flex flex-col min-w-0">
@@ -195,7 +195,7 @@ function RobotAssociationContent() {
                                     className="w-full h-full aspect-[4/3] object-cover bg-zinc-100 rounded-xl"
                                 />
                                 <p className={CAPTION_CLASSES}>
-                                    {t("软硬件底层架构前沿硬科技讲座 (一)", "Frontier Hard-Tech Architecture Workshop (I)")}
+                                    {t("机器人技术讲座（一）", "Robotics Technical Lecture (I)")}
                                 </p>
                             </div>
                             <div className="w-full flex flex-col min-w-0">
@@ -205,7 +205,7 @@ function RobotAssociationContent() {
                                     className="w-full h-full aspect-[4/3] object-cover bg-zinc-100 rounded-xl"
                                 />
                                 <p className={CAPTION_CLASSES}>
-                                    {t("软硬件底层架构前沿硬科技讲座 (二)", "Frontier Hard-Tech Architecture Workshop (II)")}
+                                    {t("机器人技术讲座（二）", "Robotics Technical Lecture (II)")}
                                 </p>
                             </div>
                             <div className="w-full flex flex-col min-w-0">
@@ -215,7 +215,7 @@ function RobotAssociationContent() {
                                     className="w-full h-full aspect-[4/3] object-cover bg-zinc-100 rounded-xl"
                                 />
                                 <p className={CAPTION_CLASSES}>
-                                    {t("千人级校园科技节外场交互展区 (一)", "1000+ Attendee Campus Tech Festival Exhibition (I)")}
+                                    {t("校园科技节机器人展区（一）", "Robotics Exhibition at Science Festival (I)")}
                                 </p>
                             </div>
                             <div className="w-full flex flex-col min-w-0">
@@ -225,7 +225,7 @@ function RobotAssociationContent() {
                                     className="w-full h-full aspect-[4/3] object-cover bg-zinc-100 rounded-xl"
                                 />
                                 <p className={CAPTION_CLASSES}>
-                                    {t("千人级校园科技节外场交互展区 (二)", "1000+ Attendee Campus Tech Festival Exhibition (II)")}
+                                    {t("校园科技节机器人展区（二）", "Robotics Exhibition at Science Festival (II)")}
                                 </p>
                             </div>
                             <div className="w-full flex flex-col min-w-0">
@@ -235,7 +235,7 @@ function RobotAssociationContent() {
                                     className="w-full h-full aspect-[4/3] object-cover bg-zinc-100 rounded-xl"
                                 />
                                 <p className={CAPTION_CLASSES}>
-                                    {t("千人级校园科技节外场交互展区 (三)", "1000+ Attendee Campus Tech Festival Exhibition (III)")}
+                                    {t("校园科技节机器人展区（三）", "Robotics Exhibition at Science Festival (III)")}
                                 </p>
                             </div>
                         </div>

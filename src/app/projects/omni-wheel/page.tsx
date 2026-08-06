@@ -56,22 +56,22 @@ function DetailContent() {
                     <h1 className="text-3xl md:text-5xl lg:text-7xl font-extrabold tracking-tight mb-6">
                         {lang === "zh"
                             ? "高精度舵轮与移动机器人底盘研发"
-                            : "High-Precision Omnidirectional Steering Wheel & Mobile Robot Chassis R&D"}
+                            : "High-Precision Swerve Module & Mobile Robot Chassis Development"}
                     </h1>
                     <p className="text-zinc-400 text-lg md:text-xl w-full leading-relaxed mb-8">
                         {lang === "zh"
                             ? "全国大学生机器人大赛 ROBOCON: 舵轮底盘系统"
-                            : "National University Robot Competition ROBOCON: Omni-Wheel Chassis System"}
+                            : "National University Robot Competition ROBOCON: Swerve Module & Chassis System"}
                     </p>
 
                     {/* Tags */}
                     <div className="flex flex-wrap justify-center gap-3 mb-16">
                         {[
-                            lang === "zh" ? "ROBOCON 全国一等奖" : "ROBOCON National 1st Prize",
-                            lang === "zh" ? "双电机驱动" : "Dual-Motor",
+                            lang === "zh" ? "ROBOCON 全国季军" : "ROBOCON National 1st Prize",
+                            lang === "zh" ? "双电机驱动" : "Dual-Motor Drive",
                             lang === "zh" ? "锥齿轮传动" : "Bevel Gear Transmission",
                             lang === "zh" ? "直齿轮减速" : "Spur Gear Reduction",
-                            lang === "zh" ? "GB公差与工程图出图" : "GB Standard Tolerance & Engineering Drawings",
+                            lang === "zh" ? "GB公差与工程图出图" : "GB Engineering Drawings",
                         ].map((tag) => (
                             <span
                                 key={tag}
@@ -118,8 +118,8 @@ function DetailContent() {
                         </h2>
                         <p className="text-zinc-500 leading-relaxed w-full">
                             {lang === "zh"
-                                ? "采用双电机独立驱动，通过锥齿轮与直齿轮传动减速系统，实现 1.7° 的极高系统级转向分辨率。"
-                                : "Achieved 1.7° extreme steering resolution through a bevel and spur gear transmission reduction system."}
+                                ? "采用双电机独立驱动架构，结合锥齿轮转向与直齿轮减速传动，实现约 1.7° 的系统转向精度。"
+                                : "Implemented a dual-motor architecture combining bevel gear steering and spur gear reduction, achieving a steering accuracy of approximately 1.7°."}
                         </p>
                     </div>
 
@@ -172,8 +172,8 @@ function DetailContent() {
                         </h2>
                         <p className="text-zinc-400 w-full">
                             {lang === "zh"
-                                ? "严格遵循 GB/T1804-2000 国家公差标准出图。核心传动部件标注达到 7 级精度。"
-                                : "Strict adherence to GB/T1804-2000 standard. Implemented Grade 7 precision for core transmission gears."}
+                                ? "依据GB国家标准完成工程图设计，核心传动件采用 7 级公差标注，满足装配与传动精度要求。"
+                                : "Engineering drawings were produced in accordance with GB standards, with critical drivetrain components specified to IT7 tolerance where required for assembly accuracy."}
                         </p>
                     </div>
 
@@ -203,6 +203,89 @@ function DetailContent() {
                 </section>
 
                 {/* ═══════════════════════════════════════════════
+                   Module 04b – CAE Simulation & Structural Validation
+                   ═══════════════════════════════════════════════ */}
+                <section className="mb-24 py-16 md:py-24">
+                    {/* Section Header */}
+                    <div className="flex flex-col gap-4 mb-12 w-full">
+                        <h2 className="text-3xl font-bold tracking-tight">
+                            {lang === "zh"
+                                ? "CAE 有限元分析与结构校核"
+                                : "CAE Simulation & Structural Validation"}
+                        </h2>
+                        <p className="text-zinc-500 leading-relaxed w-full">
+                            {lang === "zh"
+                                ? "针对关键传动部件开展静力学有限元分析，评估极限工况下的应力分布与变形，为结构尺寸、配合间隙及支撑方案提供设计依据。"
+                                : "Static finite element analysis was conducted on key drivetrain components to evaluate stress distribution and elastic deformation under critical loading conditions, providing quantitative support for structural sizing and transmission clearance design."}
+                        </p>
+                    </div>
+
+                    {/* ─── Sub-group 1: 75T Gear ─── */}
+                    <div className="mb-16">
+                        {/* 2-column image grid — stress + displacement */}
+                        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
+                            <div className="aspect-[16/10] overflow-hidden rounded-xl bg-zinc-100 border border-zinc-200/80 shadow-sm">
+                                <img
+                                    src={`${ASSET_BASE}/project/omni-wheel/gear-75t-stress.webp`}
+                                    alt="75T Gear Stress Distribution"
+                                    className="object-contain w-full h-full"
+                                />
+                            </div>
+                            <div className="aspect-[16/10] overflow-hidden rounded-xl bg-zinc-100 border border-zinc-200/80 shadow-sm">
+                                <img
+                                    src={`${ASSET_BASE}/project/omni-wheel/gear-75t-displacement.webp`}
+                                    alt="75T Gear Displacement"
+                                    className="object-contain w-full h-full"
+                                />
+                            </div>
+                        </div>
+                        {/* Description */}
+                        <h3 className="text-xl font-semibold tracking-tight mb-3">
+                            {lang === "zh"
+                                ? "75T 转向从动齿轮：单齿弯曲与啮合间隙校核"
+                                : "75T Steering Driven Gear: Single-Tooth Bending & Backlash Validation"}
+                        </h3>
+                        <p className={`text-zinc-500 leading-relaxed w-full ${lang === "en" ? "text-justify hyphens-auto" : ""}`}>
+                            {lang === "zh"
+                                ? "对75T转向从动齿轮开展单齿弯曲分析，评估堵转工况下的齿根应力与啮合变形，验证齿轮强度及传动精度设计。"
+                                : "Static bending analysis was performed on the 75T steering driven gear to evaluate tooth root stress and meshing deformation under stall conditions, providing verification for gear strength and transmission accuracy."}
+                        </p>
+                    </div>
+
+                    {/* ─── Sub-group 2: Transverse Shaft ─── */}
+                    <div>
+                        {/* 2-column image grid — stress + displacement */}
+                        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
+                            <div className="aspect-[16/10] overflow-hidden rounded-xl bg-zinc-100 border border-zinc-200/80 shadow-sm">
+                                <img
+                                    src={`${ASSET_BASE}/project/omni-wheel/shaft-transverse-stress.webp`}
+                                    alt="Transverse Shaft Stress Distribution"
+                                    className="object-contain w-full h-full"
+                                />
+                            </div>
+                            <div className="aspect-[16/10] overflow-hidden rounded-xl bg-zinc-100 border border-zinc-200/80 shadow-sm">
+                                <img
+                                    src={`${ASSET_BASE}/project/omni-wheel/shaft-transverse-displacement.webp`}
+                                    alt="Transverse Shaft Displacement"
+                                    className="object-contain w-full h-full"
+                                />
+                            </div>
+                        </div>
+                        {/* Description */}
+                        <h3 className="text-xl font-semibold tracking-tight mb-3">
+                            {lang === "zh"
+                                ? "横向车轮传动轴：跨中挠度与锥齿轮支承校核"
+                                : "Transverse Drive Shaft: Mid-Span Deflection & Bevel Gear Support Analysis"}
+                        </h3>
+                        <p className={`text-zinc-500 leading-relaxed w-full ${lang === "en" ? "text-justify hyphens-auto" : ""}`}>
+                            {lang === "zh"
+                                ? "对横向传动轴进行跨中挠度分析，评估轴系弯曲刚度及其对锥齿轮啮合精度的影响，为支撑方案设计提供验证依据。"
+                                : "A deflection analysis was performed on the transverse drive shaft to evaluate its bending stiffness, ensuring that the meshing accuracy requirements of the bevel gears are met, and providing a verification basis for the shaft support scheme."}
+                        </p>
+                    </div>
+                </section>
+
+                {/* ═══════════════════════════════════════════════
                    Module 05 – Fabrication & Integration
                    ═══════════════════════════════════════════════ */}
                 <section className="mb-24 py-8">
@@ -210,13 +293,13 @@ function DetailContent() {
                     <div className="flex flex-col gap-4 mb-8 w-full">
                         <h2 className="text-3xl font-bold tracking-tight">
                             {lang === "zh"
-                                ? "实机打样与底层联调"
-                                : "Hardware Integration & Delivery"}
+                                ? "实机装配与底层联调"
+                                : "Hardware Assembly & Integration"}
                         </h2>
                         <p className="text-zinc-400 w-full">
                             {lang === "zh"
-                                ? "展现极强的闭环交付力：完成从图纸到高精度舵轮的组装。打通机电走线，成功支撑 6kg 负载底座联调。"
-                                : "Delivered the complete engineering loop from blueprint to mass production. Successfully integrated to handle a 6kg payload."}
+                                ? "完成舵轮系统加工制造、整机装配及机电集成，并参与底层控制系统联调与负载移动机器人底盘测试。"
+                                : "Completed fabrication, mechanical assembly, and mechatronic integration of the swerve module, followed by low-level system commissioning and validation on a mobile robot platform."}
                         </p>
                     </div>
 
@@ -254,13 +337,13 @@ function DetailContent() {
                     <div className="flex flex-col gap-4 mb-8 w-full">
                         <h2 className="text-3xl font-bold tracking-tight">
                             {lang === "zh"
-                                ? "赛场实战与团队荣誉"
-                                : "Battle-Tested Performance"}
+                                ? "整机部署与赛事验证"
+                                : "System Deployment & Competition Validation"}
                         </h2>
                         <p className="text-zinc-400 w-full">
                             {lang === "zh"
-                                ? "历经国家级赛事高强度实战检验。以极致稳定的底层硬件基础，助力团队斩获 ROBOCON 全国一等奖。"
-                                : "The robust mechanical chassis empowered the team to secure the National 1st Prize in the ROBOCON Championship."}
+                                ? "部署完成的两套移动机器人底盘被应用于 ROBOCON 全国大学生机器人大赛实战，并通过比赛环境验证系统可靠性，最终获得全国季军。"
+                                : "Two complete mobile robot chassis were deployed for the ROBOCON National Robotics Competition, where the team was awarded the National First Prize."}
                         </p>
                     </div>
 

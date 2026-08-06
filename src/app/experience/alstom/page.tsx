@@ -38,31 +38,31 @@ function AlstomContent() {
             type: "image",
             src: `${ASSET_BASE}/experience/alstom/gallery-3-outdoor-img.webp`,
             title: isZh ? "实车底部巡检运行测试" : "Under-Train Inspection Testing",
-            desc: isZh ? "机器人在列车底部真实环境下的运行实景，验证底盘的通过性与工作空间。" : "Real-world deployment of the robot operating under the train chassis to verify maneuverability and workspace clearance.",
+            desc: isZh ? "机器人在列车底部真实环境下的运行实景，验证底盘的通过性与工作空间。" : "Field validation of chassis mobility and operating clearance beneath railway vehicles.",
         },
         {
             type: "image",
             src: `${ASSET_BASE}/experience/alstom/gallery-2-indoor-img.webp`,
             title: isZh ? "机电一体化组装实物" : "Fully Assembled Mechatronic Prototype",
-            desc: isZh ? "完成所有机械结构件打印加工、电子设备集成与内部走线布局后的机器人完整形态。" : "The complete robot prototype after the assembly of 3D-printed mechanical parts, electronic components integration, and internal wire routing.",
+            desc: isZh ? "完成全部结构件制造、电子设备集成及内部布线后的机器人整机。" : "Final assembled robot integrating printed mechanical components, electronics, and internal wiring.",
         },
         {
             type: "image",
             src: `${ASSET_BASE}/experience/alstom/gallery-1-tpu.webp`,
             title: isZh ? "FDM 柔性履带打印过程" : "FDM Printing of Flexible Track",
-            desc: isZh ? "使用 Bambu Lab X1C 3D 打印机与 TPU 95A HF 柔性材料一体化打印机器人履带的延时摄影。" : "Time-lapse of printing the robot's continuous track using TPU 95A HF material on a Bambu Lab X1C 3D printer.",
+            desc: isZh ? "基于 Bambu Lab X1C 与 TPU 95A HF 材料完成柔性履带一体化打印。" : "Integrated FDM printing of flexible tracks using TPU 95A HF on a Bambu Lab X1C.",
         },
         {
             type: "video",
             src: `${ASSET_BASE}/experience/alstom/gallery-4-rail-test.mp4`,
             title: isZh ? "户外铁轨越障测试" : "Outdoor Rail-Crossing Test",
-            desc: isZh ? "机器人在户外真实轨道环境中进行翻越铁轨等地形的越障能力测试。" : "Testing the robot's obstacle-clearing capabilities when crossing railway tracks in an outdoor environment.",
+            desc: isZh ? "在真实轨道环境中验证机器人越障能力与底盘通过性。" : "Outdoor field test validating obstacle-crossing capability on railway tracks.",
         },
         {
             type: "video",
             src: `${ASSET_BASE}/experience/alstom/gallery-5-outdoor-test.mp4`,
             title: isZh ? "陡坎攀爬能力测试" : "Steep Slope Climbing Test",
-            desc: isZh ? "验证机器人在户外大倾角陡坡地形下的抓地力与攀爬稳定性。" : "Verifying the robot's traction and climbing stability on steep slope terrains outdoors.",
+            desc: isZh ? "验证机器人在大坡度地形下的抓地能力与行驶稳定性。" : "Evaluation of traction and climbing stability on steep terrain.",
         },
     ];
 
@@ -117,7 +117,7 @@ function AlstomContent() {
 
             <section className="max-w-7xl mx-auto px-8 pt-12 pb-24 flex flex-col items-center text-center">
                 <h1 className="text-3xl md:text-5xl lg:text-7xl font-bold tracking-tighter mb-6 text-zinc-900">
-                    {isZh ? "工业级增材制造重塑供应链" : "Industrial Additive Manufacturing Redefining Supply Chains"}
+                    {isZh ? "工业级增材制造与机器人研发实践" : "Industrial Additive Manufacturing & Robotics R&D"}
                 </h1>
                 <p className="text-xl text-zinc-500 font-light">
                     {isZh ? "机器人与增材制造研发实习生 @ 阿尔斯通（亚太）创新中心" : "Robotics & AM R&D Intern @ Alstom Innovation Station"}
@@ -128,7 +128,7 @@ function AlstomContent() {
                         isZh ? "逆向工程" : "Reverse Engineering",
                         isZh ? "EHS合规" : "EHS Compliance",
                         isZh ? "巡检机器人" : "Inspection Robot",
-                        "PA6, TPU, PETG",
+                        "PLA, PETG, TPU, PA6, PPS-CF",
                     ].map((tag) => (
                         <span
                             key={tag}
@@ -153,8 +153,8 @@ function AlstomContent() {
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
                     <div className="md:col-span-2 text-zinc-500 font-light leading-relaxed">
                         {isZh
-                            ? "基于 DfAM（面向增材制造设计）理念彻底重构。采用 PA6 工程塑料与 FDM 打印工艺，将传统高度集成的商用底盘转化为极具韧性、零供应商依赖的全新机电架构。"
-                            : "Redesigned from the ground up using Design for Additive Manufacturing (DfAM) principles. By utilizing PA6 engineering plastic and FDM printing, the traditional highly integrated commercial chassis was transformed into a resilient, supplier-independent architecture."}
+                            ? "基于 DfAM（面向增材制造设计）理念重新设计机器人底盘，采用 PA6 工程塑料与 FDM 打印工艺，实现关键结构件的自主制造，并完成机电系统集成验证。"
+                            : "Redesigned the robot chassis following Design for Additive Manufacturing (DfAM) principles. PA6 engineering plastic and FDM printing were adopted to manufacture key structural components and validate the integrated mechatronic system."}
                     </div>
                     <div className="flex flex-col justify-between border-l-2 border-zinc-200 pl-6">
                         <div>
@@ -183,7 +183,7 @@ function AlstomContent() {
                             <div>
                                 <h3 className="text-xl font-bold text-zinc-800 mb-2">{isZh ? "一体化集成设计" : "Integrated Architecture"}</h3>
                                 <p className="text-sm text-zinc-500 leading-relaxed mb-6">
-                                    {isZh ? "通过 DfAM 优化，将理线卡扣、控制板减震与快拆结构高度整合，整机精简至 10 余个核心部件。左图展示最终总装效果，右侧模型支持交互细节拆解。" : "Highly integrated cable routing, shock absorption, and quick-release mechanisms, reducing the assembly to ~10 core parts. Left image displays full CAD assembly, right viewport enables detail inspection."}
+                                    {isZh ? "通过 DfAM 将理线、控制板减震及快拆结构集成于打印件中，整机机械结构精简至10余个核心部件。图片展示最终总装效果，模型支持交互细节查看。" : "DfAM enabled cable routing, controller damping, and quick-release features to be integrated into printed components, reducing the mechanical assembly to just over ten core parts."}
                                 </p>
                             </div>
                             <div className="relative w-full h-48 xl:h-52 bg-zinc-50 rounded-2xl overflow-hidden border border-zinc-200 mt-2">
@@ -205,7 +205,7 @@ function AlstomContent() {
                             <div>
                                 <h3 className="text-xl font-bold text-zinc-800 mb-2">{isZh ? "刚性复用与受力优化" : "Rigidity & Stress Optimization"}</h3>
                                 <p className="text-sm text-zinc-500 leading-relaxed mb-6">
-                                    {isZh ? "利用电机金属外壳的物理刚性分散薄弱环节应力，提升了3D打印主体结构的整体刚度。" : "Innovatively utilizes the motor's metal casing to disperse stress at weak points, significantly enhancing overall structural rigidity."}
+                                    {isZh ? "利用电机外壳作为局部承力结构分散关键受力区域应力，提高3D打印主体的整体刚度。" : "The motor housing was incorporated as a load-bearing element to redistribute local stresses and improve the overall stiffness of the printed structure."}
                                 </p>
                             </div>
                             <div className="relative w-full h-48 xl:h-52 bg-zinc-50 rounded-2xl overflow-hidden border border-zinc-200 mt-2">
@@ -291,7 +291,7 @@ function AlstomContent() {
                 <div className="flex items-center gap-4 mb-12">
                     <span className="text-sm font-bold text-zinc-400 tracking-widest">02 /</span>
                     <h2 className="text-3xl font-semibold tracking-tight">
-                        {isZh ? "轨道交通备件增材供应链优化" : "Railway Transit Spare Parts Supply Chain Optimization"}
+                        {isZh ? "轨道交通备件逆向工程与增材制造" : "Reverse Engineering & Additive Manufacturing for Railway Spare Parts"}
                     </h2>
                 </div>
 

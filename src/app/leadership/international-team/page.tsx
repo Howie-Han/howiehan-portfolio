@@ -44,12 +44,12 @@ function InternationalTeamContent() {
                     {/* ============================================================ */}
                     <section>
                         <h2 className="text-2xl font-bold mb-4 text-center">
-                            {t("0-1 破局与敏捷交付 (2024.03 - 2024.07)", "0-1 Incubation & Agile Delivery (Mar. 2024 - Jul. 2024)")}
+                            {t("团队创建与赛事首秀 (2024.03 - 2024.07)", "Team Formation & First Competition (Mar. 2024 - Jul. 2024)")}
                         </h2>
                         <p className="w-full text-zinc-600">
                             {t(
-                                "从 5 人初创团队起步，亲自担任核心技术骨干。在 4 个月内搭建敏捷开发流程，完成竞技机器人的从 0 到 1 研发，最终斩获首届首都来华留学生机器人竞赛一等奖第一名及 ROBOTAC 2024 留学生赛道全国总冠军。",
-                                "Founded a 5-member incubation team, serving as the core technical lead. Established an agile development pipeline to complete the 0-1 robotics R&D within 4 months, ultimately winning 1st Place at the 1st Capital International Students Robotics Competition and the National Championship of ROBOTAC 2024."
+                                "从 6 人团队起步，担任核心技术骨干，组织完成机器人设计、制造与调试工作，并在 4 个月内完成首台竞赛机器人研发，最终获得首届首都来华留学生机器人竞赛一等奖第一名及 ROBOTAC 2024 留学生赛道全国总冠军。",
+                                "Started with a six-member founding team as the lead mechanical contributor, coordinating robot design, fabrication, and testing. Within four months, the team completed its first competition robot and won First Prize in the inaugural Beijing International Student Robotics Competition and the ROBOTAC 2024 National Championship."
                             )}
                         </p>
 
@@ -58,11 +58,11 @@ function InternationalTeamContent() {
                             {/* Hero Image */}
                             <img
                                 src={`${ASSET_BASE}/leadership/robotics-team/p1-prelim-team.webp`}
-                                alt={t("斩获首届首都来华留学生机器人竞赛一等奖第一名", "1st Place at the 1st Capital International Students Robotics Competition")}
+                                alt={t("首届首都来华留学生机器人竞赛一等奖", "1st Place at the 1st Capital International Students Robotics Competition")}
                                 className="w-full h-[50vh] md:h-[70vh] max-h-[700px] object-contain bg-zinc-100 rounded-xl"
                             />
                             <p className="text-sm text-zinc-500 text-center mt-3">
-                                {t("斩获首届首都来华留学生机器人竞赛一等奖第一名", "1st Place at the 1st Capital International Students Robotics Competition")}
+                                {t("首届首都来华留学生机器人竞赛一等奖", "1st Place at the 1st Capital International Students Robotics Competition")}
                             </p>
 
                             {/* Filmstrip */}
@@ -70,74 +70,74 @@ function InternationalTeamContent() {
                                 <div className="snap-center shrink-0 w-72 md:w-80 flex flex-col gap-3">
                                     <img
                                         src={`${ASSET_BASE}/leadership/robotics-team/p1-founder-team.webp`}
-                                        alt={t("机器人队 6 人初创团队合影", "6-Member Founding Team")}
+                                        alt={t("机器人队初创团队合影 ", "Founding Team Photo")}
                                         className="w-full aspect-[4/3] object-contain bg-zinc-100 rounded-xl"
                                     />
-                                    <p className="text-xs text-zinc-500 text-center">{t("机器人队 6 人初创团队合影", "6-Member Founding Team")}</p>
+                                    <p className="text-xs text-zinc-500 text-center">{t("机器人队初创团队合影", "Founding Team Photo")}</p>
                                 </div>
                                 <div className="snap-center shrink-0 w-72 md:w-80 flex flex-col gap-3">
                                     <img
                                         src={`${ASSET_BASE}/leadership/robotics-team/p1-prep-1.webp`}
-                                        alt={t("早期实验室敏捷备赛与结构搭建", "Early-stage Agile Preparation & Assembly")}
+                                        alt={t("实验室备赛与机器人装配  ", "Robot Assembly & Competition Preparation ")}
                                         className="w-full aspect-[4/3] object-contain bg-zinc-100 rounded-xl"
                                     />
-                                    <p className="text-xs text-zinc-500 text-center">{t("早期实验室敏捷备赛与结构搭建", "Early-stage Agile Preparation & Assembly")}</p>
+                                    <p className="text-xs text-zinc-500 text-center">{t("实验室备赛与机器人装配", "Robot Assembly & Competition Preparation")}</p>
                                 </div>
                                 <div className="snap-center shrink-0 w-72 md:w-80 flex flex-col gap-3">
                                     <img
                                         src={`${ASSET_BASE}/leadership/robotics-team/p1-prep-2.webp`}
-                                        alt={t("跨文化技术沟通与底盘调试", "Cross-cultural Technical Communication & Chassis Tuning")}
+                                        alt={t("跨文化团队协作", "Cross-cultural Team Collaboration")}
                                         className="w-full aspect-[4/3] object-contain bg-zinc-100 rounded-xl"
                                     />
-                                    <p className="text-xs text-zinc-500 text-center">{t("跨文化技术沟通与底盘调试", "Cross-cultural Technical Communication & Chassis Tuning")}</p>
+                                    <p className="text-xs text-zinc-500 text-center">{t("跨文化团队协作", "Cross-cultural Team Collaboration")}</p>
                                 </div>
                                 <div className="snap-center shrink-0 w-72 md:w-80 flex flex-col gap-3">
                                     <img
                                         src={`${ASSET_BASE}/leadership/robotics-team/p1-personal-comp.webp`}
-                                        alt={t("比赛现场作为技术骨干亲自操刀调试", "On-site Technical Lead Debugging")}
+                                        alt={t(" 比赛现场机器人调试", "On-site Robot System Debugging")}
                                         className="w-full aspect-[4/3] object-contain bg-zinc-100 rounded-xl"
                                     />
-                                    <p className="text-xs text-zinc-500 text-center">{t("比赛现场作为技术骨干亲自操刀调试", "On-site Technical Lead Debugging")}</p>
+                                    <p className="text-xs text-zinc-500 text-center">{t("比赛现场机器人调试", "On-site Robot System Debugging")}</p>
                                 </div>
                                 <div className="snap-center shrink-0 w-72 md:w-80 flex flex-col gap-3">
                                     <img
                                         src={`${ASSET_BASE}/leadership/robotics-team/p1-interview.webp`}
-                                        alt={t("夺冠后接受官方媒体技术专访", "Post-championship Official Media Interview")}
+                                        alt={t("赛后官方媒体采访", "Post-championship Official Media Interview")}
                                         className="w-full aspect-[4/3] object-contain bg-zinc-100 rounded-xl"
                                     />
-                                    <p className="text-xs text-zinc-500 text-center">{t("夺冠后接受官方媒体技术专访", "Post-championship Official Media Interview")}</p>
+                                    <p className="text-xs text-zinc-500 text-center">{t("赛后官方媒体采访", "Post-championship Official Media Interview")}</p>
                                 </div>
                                 <div className="snap-center shrink-0 w-72 md:w-80 flex flex-col gap-3">
                                     <img
                                         src={`${ASSET_BASE}/leadership/robotics-team/p1-official-group.webp`}
-                                        alt={t("首都预选赛全体参赛队伍官方大合影", "Official Group Photo of the Capital Preliminary")}
+                                        alt={t("首都预选赛全体参赛队伍合影", "Official Group Photo of the Capital Preliminary")}
                                         className="w-full aspect-[4/3] object-contain bg-zinc-100 rounded-xl"
                                     />
-                                    <p className="text-xs text-zinc-500 text-center">{t("首都预选赛全体参赛队伍官方大合影", "Official Group Photo of the Capital Preliminary")}</p>
+                                    <p className="text-xs text-zinc-500 text-center">{t("首都预选赛全体参赛队伍合影", "Official Group Photo of the Capital Preliminary")}</p>
                                 </div>
                                 <div className="snap-center shrink-0 w-72 md:w-80 flex flex-col gap-3">
                                     <img
                                         src={`${ASSET_BASE}/leadership/robotics-team/p1-robot-auto.webp`}
-                                        alt={t("自主研发的自动机器人构型展示", "Automated Robot Architecture Display")}
+                                        alt={t("自动机器人构型展示", "Automated Robot Architecture Display")}
                                         className="w-full aspect-[4/3] object-contain bg-zinc-100 rounded-xl"
                                     />
-                                    <p className="text-xs text-zinc-500 text-center">{t("自主研发的自动机器人构型展示", "Automated Robot Architecture Display")}</p>
+                                    <p className="text-xs text-zinc-500 text-center">{t("自动机器人构型展示", "Automated Robot Architecture Display")}</p>
                                 </div>
                                 <div className="snap-center shrink-0 w-72 md:w-80 flex flex-col gap-3">
                                     <img
                                         src={`${ASSET_BASE}/leadership/robotics-team/p1-robot-manual.webp`}
-                                        alt={t("自主研发的手动机器人构型展示", "Manual Robot High-mobility Chassis Display")}
+                                        alt={t("手动机器人构型展示", "Manual Robot High-mobility Chassis Display")}
                                         className="w-full aspect-[4/3] object-contain bg-zinc-100 rounded-xl"
                                     />
-                                    <p className="text-xs text-zinc-500 text-center">{t("自主研发的手动机器人构型展示", "Manual Robot High-mobility Chassis Display")}</p>
+                                    <p className="text-xs text-zinc-500 text-center">{t("手动机器人构型展示", "Manual Robot High-mobility Chassis Display")}</p>
                                 </div>
                                 <div className="snap-center shrink-0 w-72 md:w-80 flex flex-col gap-3">
                                     <img
                                         src={`${ASSET_BASE}/leadership/robotics-team/p1-lecture.webp`}
-                                        alt={t("面向国际学院本硕博开展首次科技讲座", "First Tech Sharing Session for International Students")}
+                                        alt={t("面向本硕博留学生科技讲座", "Tech Sharing Session for International Students")}
                                         className="w-full aspect-[4/3] object-contain bg-zinc-100 rounded-xl"
                                     />
-                                    <p className="text-xs text-zinc-500 text-center">{t("面向国际学院本硕博开展首次科技讲座", "First Tech Sharing Session for International Students")}</p>
+                                    <p className="text-xs text-zinc-500 text-center">{t("面向本硕博留学生科技讲座", "Tech Sharing Session for International Students")}</p>
                                 </div>
                             </div>
                         </div>
@@ -148,12 +148,12 @@ function InternationalTeamContent() {
                     {/* ============================================================ */}
                     <section>
                         <h2 className="text-2xl font-bold mb-4 text-center">
-                            {t("架构标准化与高规格路演 (2024.08 - 2024.12)", "Systematization & High-Level Exhibition (Aug. 2024 - Dec. 2024)")}
+                            {t("团队建设与技术展示 (2024.08 - 2024.12)", "Team Development & Technical Outreach (Aug. 2024 - Dec. 2024)")}
                         </h2>
                         <p className="w-full text-zinc-600">
                             {t(
-                                "受聘为全校国际学生科技辅导员，建立\"机械硬件+电控算法\"双轨制与\"老带新\"培训标准（SOP）。统筹开发 6 台全新展示机器人矩阵，并在联合国附属机构十周年晚会及\"北京之夜\"完成高规格技术路演。",
-                                "Appointed as the University International Students' Tech Counselor. Established a dual-track (Mechanical + Electrical) framework and a senior-mentoring-junior SOP. Coordinated the development of 6 new exhibition robots for high-level roadshows at the UN Affiliated Centre's 10th Anniversary Gala and \"Beijing Night\"."
+                                "担任国际学生科技辅导员，建立机械硬件与电控算法双轨培训体系及\"老带新\"培养机制，组织开发 6 台展示机器人，并参与多场国际科技展示活动。",
+                                "Served as an International Students' Tech Counselor, establishing standardized training for mechanical and control teams while coordinating the development of six demonstration robots for multiple international showcase events."
                             )}
                         </p>
 
@@ -198,18 +198,18 @@ function InternationalTeamContent() {
                                 <div className="snap-center shrink-0 w-72 md:w-80 flex flex-col gap-3">
                                     <img
                                         src={`${ASSET_BASE}/leadership/robotics-team/p2-un-gala-robot.webp`}
-                                        alt={t("联合国晚会展示机器人实机", "Exhibition Robot Matrix at UN Gala")}
+                                        alt={t("联合国晚会机器人现场演示", "Exhibition Robot Matrix at UN Gala")}
                                         className="w-full aspect-[4/3] object-contain bg-zinc-100 rounded-xl"
                                     />
-                                    <p className="text-xs text-zinc-500 text-center">{t("联合国晚会展示机器人实机", "Exhibition Robot Matrix at UN Gala")}</p>
+                                    <p className="text-xs text-zinc-500 text-center">{t("联合国晚会机器人现场演示", "Exhibition Robot Matrix at UN Gala")}</p>
                                 </div>
                                 <div className="snap-center shrink-0 w-72 md:w-80 flex flex-col gap-3">
                                     <img
                                         src={`${ASSET_BASE}/leadership/robotics-team/p2-bj-night-team.webp`}
-                                        alt={t("\"留学北京\"文化之夜登台团队合影", "Team Photo at \"Study in Beijing\" Night")}
+                                        alt={t("\"留学北京\"文化之夜团队合影", "Team Photo at \"Study in Beijing\" Night")}
                                         className="w-full aspect-[4/3] object-contain bg-zinc-100 rounded-xl"
                                     />
-                                    <p className="text-xs text-zinc-500 text-center">{t("\"留学北京\"文化之夜登台团队合影", "Team Photo at \"Study in Beijing\" Night")}</p>
+                                    <p className="text-xs text-zinc-500 text-center">{t("\"留学北京\"文化之夜团队合影", "Team Photo at \"Study in Beijing\" Night")}</p>
                                 </div>
                                 <div className="snap-center shrink-0 w-72 md:w-80 flex flex-col gap-3">
                                     <img
@@ -222,10 +222,10 @@ function InternationalTeamContent() {
                                 <div className="snap-center shrink-0 w-72 md:w-80 flex flex-col gap-3">
                                     <img
                                         src={`${ASSET_BASE}/leadership/robotics-team/p2-workshop.webp`}
-                                        alt={t("主持接待泰国中学生跨国机器人workshop", "Hosting Cross-national Robotics Workshop for Thai Students")}
+                                        alt={t("泰国中学生机器人工作坊", "Robotics Workshop for Thai High School Students")}
                                         className="w-full aspect-[4/3] object-contain bg-zinc-100 rounded-xl"
                                     />
-                                    <p className="text-xs text-zinc-500 text-center">{t("主持接待泰国中学生跨国机器人workshop", "Hosting Cross-national Robotics Workshop for Thai Students")}</p>
+                                    <p className="text-xs text-zinc-500 text-center">{t("泰国中学生机器人工作坊", "Robotics Workshop for Thai High School Students")}</p>
                                 </div>
                             </div>
                         </div>
@@ -236,12 +236,12 @@ function InternationalTeamContent() {
                     {/* ============================================================ */}
                     <section>
                         <h2 className="text-2xl font-bold mb-4 text-center">
-                            {t("管理降维与闭环验证 (2025.03 - 2025.06)", "Management Decoupling & Loop Validation (Mar. 2025 - Jun. 2025)")}
+                            {t("团队管理与技术传承 (2025.03 - 2025.06)", "Team Leadership & Knowledge Transfer (Mar. 2025 - Jun. 2025)")}
                         </h2>
                         <p className="w-full text-zinc-600">
                             {t(
-                                "工作重心由一线研发全面向项目进度与团队管理转移。通过成熟的梯队建设与 SOP 赋能，在不依赖创始人一线干预的情况下，新一代团队包揽预选赛 3 项大奖，并成功卫冕第二十四届 ROBOTAC 全国总冠军，完成交接。",
-                                "Shifted focus from frontline R&D to project management and team leadership. Validated the robustness of team SOPs: without the founder's direct R&D intervention, the new generation team swept 3 awards in the preliminaries and successfully defended the ROBOTAC National Championship, achieving a perfect handover."
+                                "工作重心逐步转向团队管理与项目协调，通过完善培训体系及技术文档，新一代成员能够独立完成机器人研发，并获得预选赛三项奖项及第二十四届 ROBOTAC 全国总冠军。",
+                                "Transitioned from hands-on development to team leadership and project coordination. Through standardized training and technical documentation, the next generation independently completed robot development, winning three regional awards and defending the ROBOTAC National Championship."
                             )}
                         </p>
 
@@ -250,11 +250,11 @@ function InternationalTeamContent() {
                             {/* Hero Image */}
                             <img
                                 src={`${ASSET_BASE}/leadership/robotics-team/p3-award-ceremony.webp`}
-                                alt={t("新一代团队包揽预选赛亚军及季军奖项", "Next-Gen Team Sweeping Runner-up Awards at Preliminaries")}
+                                alt={t("新一代团队包揽预选赛亚军、季军", "Next-Gen Team Sweeping Runner-up Awards at Preliminaries")}
                                 className="w-full h-[50vh] md:h-[70vh] max-h-[700px] object-contain bg-zinc-100 rounded-xl"
                             />
                             <p className="text-sm text-zinc-500 text-center mt-3">
-                                {t("新一代团队包揽预选赛亚军及季军奖项", "Next-Gen Team Sweeping Runner-up Awards at Preliminaries")}
+                                {t("新一代团队包揽预选赛亚军、季军", "Next-Gen Team Sweeping Runner-up Awards at Preliminaries")}
                             </p>
 
                             {/* Filmstrip */}
@@ -262,10 +262,10 @@ function InternationalTeamContent() {
                                 <div className="snap-center shrink-0 w-72 md:w-80 flex flex-col gap-3">
                                     <img
                                         src={`${ASSET_BASE}/leadership/robotics-team/p3-robotac-team.webp`}
-                                        alt={t("新团队卫冕第二十四届 ROBOTAC 全国总冠军", "Defending the 24th ROBOTAC National Championship")}
+                                        alt={t("卫冕第二十四届 ROBOTAC 全国总冠军", "Defending the 24th ROBOTAC National Championship")}
                                         className="w-full aspect-[4/3] object-contain bg-zinc-100 rounded-xl"
                                     />
-                                    <p className="text-xs text-zinc-500 text-center">{t("新团队卫冕第二十四届 ROBOTAC 全国总冠军", "Defending the 24th ROBOTAC National Championship")}</p>
+                                    <p className="text-xs text-zinc-500 text-center">{t("卫冕第二十四届 ROBOTAC 全国总冠军", "Defending the 24th ROBOTAC National Championship")}</p>
                                 </div>
                                 <div className="snap-center shrink-0 w-72 md:w-80 flex flex-col gap-3">
                                     <img
@@ -278,18 +278,18 @@ function InternationalTeamContent() {
                                 <div className="snap-center shrink-0 w-72 md:w-80 flex flex-col gap-3">
                                     <img
                                         src={`${ASSET_BASE}/leadership/robotics-team/p3-dev.webp`}
-                                        alt={t("新成员独立主导机器人开发与测试", "New Members Leading Development without Direct Intervention")}
+                                        alt={t("新成员独立开展机器人开发与测试", "New Members Leading Development without Direct Intervention")}
                                         className="w-full aspect-[4/3] object-contain bg-zinc-100 rounded-xl"
                                     />
-                                    <p className="text-xs text-zinc-500 text-center">{t("新成员独立主导机器人开发与测试", "New Members Leading Development without Direct Intervention")}</p>
+                                    <p className="text-xs text-zinc-500 text-center">{t("新成员独立开展机器人开发与测试", "New Members Leading Development without Direct Intervention")}</p>
                                 </div>
                                 <div className="snap-center shrink-0 w-72 md:w-80 flex flex-col gap-3">
                                     <img
                                         src={`${ASSET_BASE}/leadership/robotics-team/p3-robotac-scene.webp`}
-                                        alt={t("第二十四届 ROBOTAC 全国总决赛现场", "High-pressure Match at the 24th ROBOTAC National Finals")}
+                                        alt={t("第二十四届 ROBOTAC 全国总决赛", "High-pressure Match at the 24th ROBOTAC National Finals")}
                                         className="w-full aspect-[4/3] object-contain bg-zinc-100 rounded-xl"
                                     />
-                                    <p className="text-xs text-zinc-500 text-center">{t("第二十四届 ROBOTAC 全国总决赛现场", "High-pressure Match at the 24th ROBOTAC National Finals")}</p>
+                                    <p className="text-xs text-zinc-500 text-center">{t("第二十四届 ROBOTAC 全国总决赛", "High-pressure Match at the 24th ROBOTAC National Finals")}</p>
                                 </div>
                             </div>
                         </div>
