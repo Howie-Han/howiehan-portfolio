@@ -118,24 +118,24 @@ function DetailContent() {
                                 <div className={`${CONTAINER_CLASSES} aspect-[4/3]`}>
                                     <img
                                         src={`${ASSET_BASE}/project/lvad/sim-magnetic.webp`}
-                                        alt={lang === "zh" ? "磁通密度与结构应力分布" : "Magnetic Flux & Structural Stress"}
+                                        alt={lang === "zh" ? "磁通密度分布" : "Magnetic Flux & Structural Stress"}
                                         className={IMG_CLASSES}
                                     />
                                 </div>
                                 <p className="text-zinc-500 text-sm mt-3 text-center">
-                                    {lang === "zh" ? "磁通密度与结构应力分布" : "Magnetic Flux & Structural Stress"}
+                                    {lang === "zh" ? "磁通密度分布" : "Magnetic Flux Distribution"}
                                 </p>
                             </div>
                             <div>
                                 <div className={`${CONTAINER_CLASSES} aspect-[4/3]`}>
                                     <img
                                         src={`${ASSET_BASE}/project/lvad/sim-stress.webp`}
-                                        alt={lang === "zh" ? "固体形变响应" : "Solid Stress-Strain"}
+                                        alt={lang === "zh" ? "固体应力与形变响应" : "Solid Stress-Strain"}
                                         className={IMG_CLASSES}
                                     />
                                 </div>
                                 <p className="text-zinc-500 text-sm mt-3 text-center">
-                                    {lang === "zh" ? "固体形变响应" : "Solid Stress-Strain"}
+                                    {lang === "zh" ? "固体应力与形变响应" : "Solid Stress-Strain"}
                                 </p>
                             </div>
                             <div>

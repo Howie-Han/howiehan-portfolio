@@ -160,7 +160,90 @@ function DetailContent() {
                    ═══════════════════════════════════════════════ */}
 
                 {/* ═══════════════════════════════════════════════
-                   Module 04 – Industrial Rigor
+                   Module 04 – CAE Simulation & Structural Validation
+                   ═══════════════════════════════════════════════ */}
+                <section className="mb-24 py-16 md:py-24">
+                    {/* Section Header */}
+                    <div className="flex flex-col gap-4 mb-12 w-full">
+                        <h2 className="text-3xl font-bold tracking-tight">
+                            {lang === "zh"
+                                ? "CAE 有限元分析与结构校核"
+                                : "CAE Simulation & Structural Validation"}
+                        </h2>
+                        <p className="text-zinc-500 leading-relaxed w-full">
+                            {lang === "zh"
+                                ? "针对关键传动部件开展静力学有限元分析，评估极限工况下的应力分布与变形，为结构尺寸、配合间隙及支撑方案提供设计依据。"
+                                : "Static finite element analysis was conducted on key drivetrain components to evaluate stress distribution and elastic deformation under critical loading conditions, providing quantitative support for structural sizing and transmission clearance design."}
+                        </p>
+                    </div>
+
+                    {/* ─── Sub-group 1: 75T Gear ─── */}
+                    <div className="mb-16">
+                        {/* 2-column image grid — stress + displacement */}
+                        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
+                            <div className="w-2/3 mx-auto aspect-[16/10] overflow-hidden rounded-xl bg-zinc-100 border border-zinc-200/80 shadow-sm">
+                                <img
+                                    src={`${ASSET_BASE}/project/omni-wheel/gear-75t-stress.webp`}
+                                    alt="75T Gear Stress Distribution"
+                                    className="object-contain w-full h-full"
+                                />
+                            </div>
+                            <div className="w-2/3 mx-auto aspect-[16/10] overflow-hidden rounded-xl bg-zinc-100 border border-zinc-200/80 shadow-sm">
+                                <img
+                                    src={`${ASSET_BASE}/project/omni-wheel/gear-75t-displacement.webp`}
+                                    alt="75T Gear Displacement"
+                                    className="object-contain w-full h-full"
+                                />
+                            </div>
+                        </div>
+                        {/* Description */}
+                        <h3 className="text-xl font-semibold tracking-tight mb-3">
+                            {lang === "zh"
+                                ? "75T 转向从动齿轮：单齿弯曲与啮合间隙校核"
+                                : "75T Steering Driven Gear: Single-Tooth Bending & Backlash Validation"}
+                        </h3>
+                        <p className={`text-zinc-500 leading-relaxed w-full ${lang === "en" ? "text-justify hyphens-auto" : ""}`}>
+                            {lang === "zh"
+                                ? "对75T转向从动齿轮开展单齿弯曲分析，评估堵转工况下的齿根应力与啮合变形，验证齿轮强度及传动精度设计。"
+                                : "Static bending analysis was performed on the 75T steering driven gear to evaluate tooth root stress and meshing deformation under stall conditions, providing verification for gear strength and transmission accuracy."}
+                        </p>
+                    </div>
+
+                    {/* ─── Sub-group 2: Transverse Shaft ─── */}
+                    <div>
+                        {/* 2-column image grid — stress + displacement */}
+                        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
+                            <div className="w-2/3 mx-auto aspect-[16/10] overflow-hidden rounded-xl bg-zinc-100 border border-zinc-200/80 shadow-sm">
+                                <img
+                                    src={`${ASSET_BASE}/project/omni-wheel/shaft-transverse-stress.webp`}
+                                    alt="Transverse Shaft Stress Distribution"
+                                    className="object-contain w-full h-full"
+                                />
+                            </div>
+                            <div className="w-2/3 mx-auto aspect-[16/10] overflow-hidden rounded-xl bg-zinc-100 border border-zinc-200/80 shadow-sm">
+                                <img
+                                    src={`${ASSET_BASE}/project/omni-wheel/shaft-transverse-displacement.webp`}
+                                    alt="Transverse Shaft Displacement"
+                                    className="object-contain w-full h-full"
+                                />
+                            </div>
+                        </div>
+                        {/* Description */}
+                        <h3 className="text-xl font-semibold tracking-tight mb-3">
+                            {lang === "zh"
+                                ? "横向车轮传动轴：跨中挠度与锥齿轮支承校核"
+                                : "Transverse Drive Shaft: Mid-Span Deflection & Bevel Gear Support Analysis"}
+                        </h3>
+                        <p className={`text-zinc-500 leading-relaxed w-full ${lang === "en" ? "text-justify hyphens-auto" : ""}`}>
+                            {lang === "zh"
+                                ? "对横向传动轴进行跨中挠度分析，评估轴系弯曲刚度及其对锥齿轮啮合精度的影响，为支撑方案设计提供验证依据。"
+                                : "A deflection analysis was performed on the transverse drive shaft to evaluate its bending stiffness, ensuring that the meshing accuracy requirements of the bevel gears are met, and providing a verification basis for the shaft support scheme."}
+                        </p>
+                    </div>
+                </section>
+
+                {/* ═══════════════════════════════════════════════
+                   Module 05 – Industrial Rigor
                    ═══════════════════════════════════════════════ */}
                 <section className="mb-24 py-8">
                     {/* Title & Description — isolated above grid */}
@@ -203,90 +286,7 @@ function DetailContent() {
                 </section>
 
                 {/* ═══════════════════════════════════════════════
-                   Module 04b – CAE Simulation & Structural Validation
-                   ═══════════════════════════════════════════════ */}
-                <section className="mb-24 py-16 md:py-24">
-                    {/* Section Header */}
-                    <div className="flex flex-col gap-4 mb-12 w-full">
-                        <h2 className="text-3xl font-bold tracking-tight">
-                            {lang === "zh"
-                                ? "CAE 有限元分析与结构校核"
-                                : "CAE Simulation & Structural Validation"}
-                        </h2>
-                        <p className="text-zinc-500 leading-relaxed w-full">
-                            {lang === "zh"
-                                ? "针对关键传动部件开展静力学有限元分析，评估极限工况下的应力分布与变形，为结构尺寸、配合间隙及支撑方案提供设计依据。"
-                                : "Static finite element analysis was conducted on key drivetrain components to evaluate stress distribution and elastic deformation under critical loading conditions, providing quantitative support for structural sizing and transmission clearance design."}
-                        </p>
-                    </div>
-
-                    {/* ─── Sub-group 1: 75T Gear ─── */}
-                    <div className="mb-16">
-                        {/* 2-column image grid — stress + displacement */}
-                        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
-                            <div className="aspect-[16/10] overflow-hidden rounded-xl bg-zinc-100 border border-zinc-200/80 shadow-sm">
-                                <img
-                                    src={`${ASSET_BASE}/project/omni-wheel/gear-75t-stress.webp`}
-                                    alt="75T Gear Stress Distribution"
-                                    className="object-contain w-full h-full"
-                                />
-                            </div>
-                            <div className="aspect-[16/10] overflow-hidden rounded-xl bg-zinc-100 border border-zinc-200/80 shadow-sm">
-                                <img
-                                    src={`${ASSET_BASE}/project/omni-wheel/gear-75t-displacement.webp`}
-                                    alt="75T Gear Displacement"
-                                    className="object-contain w-full h-full"
-                                />
-                            </div>
-                        </div>
-                        {/* Description */}
-                        <h3 className="text-xl font-semibold tracking-tight mb-3">
-                            {lang === "zh"
-                                ? "75T 转向从动齿轮：单齿弯曲与啮合间隙校核"
-                                : "75T Steering Driven Gear: Single-Tooth Bending & Backlash Validation"}
-                        </h3>
-                        <p className={`text-zinc-500 leading-relaxed w-full ${lang === "en" ? "text-justify hyphens-auto" : ""}`}>
-                            {lang === "zh"
-                                ? "对75T转向从动齿轮开展单齿弯曲分析，评估堵转工况下的齿根应力与啮合变形，验证齿轮强度及传动精度设计。"
-                                : "Static bending analysis was performed on the 75T steering driven gear to evaluate tooth root stress and meshing deformation under stall conditions, providing verification for gear strength and transmission accuracy."}
-                        </p>
-                    </div>
-
-                    {/* ─── Sub-group 2: Transverse Shaft ─── */}
-                    <div>
-                        {/* 2-column image grid — stress + displacement */}
-                        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
-                            <div className="aspect-[16/10] overflow-hidden rounded-xl bg-zinc-100 border border-zinc-200/80 shadow-sm">
-                                <img
-                                    src={`${ASSET_BASE}/project/omni-wheel/shaft-transverse-stress.webp`}
-                                    alt="Transverse Shaft Stress Distribution"
-                                    className="object-contain w-full h-full"
-                                />
-                            </div>
-                            <div className="aspect-[16/10] overflow-hidden rounded-xl bg-zinc-100 border border-zinc-200/80 shadow-sm">
-                                <img
-                                    src={`${ASSET_BASE}/project/omni-wheel/shaft-transverse-displacement.webp`}
-                                    alt="Transverse Shaft Displacement"
-                                    className="object-contain w-full h-full"
-                                />
-                            </div>
-                        </div>
-                        {/* Description */}
-                        <h3 className="text-xl font-semibold tracking-tight mb-3">
-                            {lang === "zh"
-                                ? "横向车轮传动轴：跨中挠度与锥齿轮支承校核"
-                                : "Transverse Drive Shaft: Mid-Span Deflection & Bevel Gear Support Analysis"}
-                        </h3>
-                        <p className={`text-zinc-500 leading-relaxed w-full ${lang === "en" ? "text-justify hyphens-auto" : ""}`}>
-                            {lang === "zh"
-                                ? "对横向传动轴进行跨中挠度分析，评估轴系弯曲刚度及其对锥齿轮啮合精度的影响，为支撑方案设计提供验证依据。"
-                                : "A deflection analysis was performed on the transverse drive shaft to evaluate its bending stiffness, ensuring that the meshing accuracy requirements of the bevel gears are met, and providing a verification basis for the shaft support scheme."}
-                        </p>
-                    </div>
-                </section>
-
-                {/* ═══════════════════════════════════════════════
-                   Module 05 – Fabrication & Integration
+                   Module 06 – Fabrication & Integration
                    ═══════════════════════════════════════════════ */}
                 <section className="mb-24 py-8">
                     {/* Title & Description — isolated above grid */}
@@ -330,7 +330,7 @@ function DetailContent() {
                 </section>
 
                 {/* ═══════════════════════════════════════════════
-                   Module 06 – The Arena
+                   Module 07 – The Arena
                    ═══════════════════════════════════════════════ */}
                 <section className="mb-24 py-8">
                     {/* Title & Description — isolated above grid */}

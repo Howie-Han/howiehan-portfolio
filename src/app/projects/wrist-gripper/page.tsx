@@ -146,7 +146,56 @@ function DetailContent() {
                     </div>
                 </section>
 
-                {/* ========== Module 04: System Integration & Payload Validation ========== */}
+                {/* ========== Module 04: CAE 有限元分析 ========== */}
+                <section className="w-full py-16 md:py-24 px-6">
+                    <div className="w-full max-w-6xl mx-auto">
+                        <div className="flex flex-col gap-4 mb-8 w-full">
+                            <h2 className="text-3xl font-bold tracking-tight">
+                                {lang === "zh" ? "CAE 有限元分析" : "FEA Validation"}
+                            </h2>
+                            <p className={`text-zinc-600 leading-relaxed w-full${lang === 'en' ? ' text-justify hyphens-auto' : ''}`}>
+                                {lang === "zh"
+                                    ? "针对 Pitch 轴结构关键薄弱点开展静力学有限元分析，验证增材制造关键受力部位的承载能力与结构变形，为结构设计优化提供依据。"
+                                    : "Static finite element analysis was conducted on the key weak points of the pitch shaft structure to verify the load-bearing capacity and structural deformation of the key stress-bearing parts in additive manufacturing, providing a basis for structural design optimization."}
+                            </p>
+                        </div>
+                        {/* 2-column FEA image grid */}
+                        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 w-full mt-8">
+                            <div>
+                                <div className="w-2/3 mx-auto aspect-[4/3] overflow-hidden rounded-xl bg-zinc-100 border border-zinc-200/80 shadow-sm">
+                                    <img
+                                        src={`${ASSET_BASE}/project/wrist/wrist-pitch-bearing-stress.webp`}
+                                        alt={lang === "zh" ? "Pitch 轴轴承应力云图" : "Pitch Bearing Stress Distribution"}
+                                        className="object-contain w-full h-full"
+                                    />
+                                </div>
+                                <p className="text-sm text-zinc-500 text-center w-full mt-3">
+                                    {lang === "zh" ? "应力云图" : "Stress Distribution"}
+                                </p>
+                            </div>
+                            <div>
+                                <div className="w-2/3 mx-auto aspect-[4/3] overflow-hidden rounded-xl bg-zinc-100 border border-zinc-200/80 shadow-sm">
+                                    <img
+                                        src={`${ASSET_BASE}/project/wrist/wrist-pitch-bearing-displacement.webp`}
+                                        alt={lang === "zh" ? "Pitch 轴轴承位移云图" : "Pitch Bearing Deformation"}
+                                        className="object-contain w-full h-full"
+                                    />
+                                </div>
+                                <p className="text-sm text-zinc-500 text-center w-full mt-3">
+                                    {lang === "zh" ? "位移云图" : "Deformation Distribution"}
+                                </p>
+                            </div>
+                        </div>
+                        {/* Description row below images */}
+                        <p className="w-full text-zinc-600 leading-relaxed text-center mt-6">
+                            {lang === "zh"
+                                ? "集成打印凸轴：应力集中与变形分析"
+                                : "Integrated Printed Bearing Shaft: Stress & Deformation Analysis"}
+                        </p>
+                    </div>
+                </section>
+
+                {/* ========== Module 05: System Integration & Payload Validation ========== */}
                 <section className="w-full py-24 px-6 bg-white">
                     <div className="w-full max-w-6xl mx-auto">
                         {/* Row 1: Title */}
