@@ -162,7 +162,7 @@ function DetailContent() {
                         {/* 2-column FEA image grid */}
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 w-full mt-8">
                             <div>
-                                <div className="w-2/3 mx-auto aspect-[4/3] overflow-hidden rounded-xl bg-zinc-100 border border-zinc-200/80 shadow-sm">
+                                <div className="w-full md:w-2/3 md:mx-auto aspect-[4/3] overflow-hidden rounded-xl bg-zinc-100 border border-zinc-200/80 shadow-sm">
                                     <img
                                         src={`${ASSET_BASE}/project/wrist/wrist-pitch-bearing-stress.webp`}
                                         alt={lang === "zh" ? "Pitch 轴轴承应力云图" : "Pitch Bearing Stress Distribution"}
@@ -174,7 +174,7 @@ function DetailContent() {
                                 </p>
                             </div>
                             <div>
-                                <div className="w-2/3 mx-auto aspect-[4/3] overflow-hidden rounded-xl bg-zinc-100 border border-zinc-200/80 shadow-sm">
+                                <div className="w-full md:w-2/3 md:mx-auto aspect-[4/3] overflow-hidden rounded-xl bg-zinc-100 border border-zinc-200/80 shadow-sm">
                                     <img
                                         src={`${ASSET_BASE}/project/wrist/wrist-pitch-bearing-displacement.webp`}
                                         alt={lang === "zh" ? "Pitch 轴轴承位移云图" : "Pitch Bearing Deformation"}

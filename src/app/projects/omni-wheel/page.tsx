@@ -181,14 +181,14 @@ function DetailContent() {
                     <div className="mb-16">
                         {/* 2-column image grid — stress + displacement */}
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
-                            <div className="w-2/3 mx-auto aspect-[16/10] overflow-hidden rounded-xl bg-zinc-100 border border-zinc-200/80 shadow-sm">
+                            <div className="w-full md:w-2/3 md:mx-auto aspect-[16/10] overflow-hidden rounded-xl bg-zinc-100 border border-zinc-200/80 shadow-sm">
                                 <img
                                     src={`${ASSET_BASE}/project/omni-wheel/gear-75t-stress.webp`}
                                     alt="75T Gear Stress Distribution"
                                     className="object-contain w-full h-full"
                                 />
                             </div>
-                            <div className="w-2/3 mx-auto aspect-[16/10] overflow-hidden rounded-xl bg-zinc-100 border border-zinc-200/80 shadow-sm">
+                            <div className="w-full md:w-2/3 md:mx-auto aspect-[16/10] overflow-hidden rounded-xl bg-zinc-100 border border-zinc-200/80 shadow-sm">
                                 <img
                                     src={`${ASSET_BASE}/project/omni-wheel/gear-75t-displacement.webp`}
                                     alt="75T Gear Displacement"
@@ -213,14 +213,14 @@ function DetailContent() {
                     <div>
                         {/* 2-column image grid — stress + displacement */}
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
-                            <div className="w-2/3 mx-auto aspect-[16/10] overflow-hidden rounded-xl bg-zinc-100 border border-zinc-200/80 shadow-sm">
+                            <div className="w-full md:w-2/3 md:mx-auto aspect-[16/10] overflow-hidden rounded-xl bg-zinc-100 border border-zinc-200/80 shadow-sm">
                                 <img
                                     src={`${ASSET_BASE}/project/omni-wheel/shaft-transverse-stress.webp`}
                                     alt="Transverse Shaft Stress Distribution"
                                     className="object-contain w-full h-full"
                                 />
                             </div>
-                            <div className="w-2/3 mx-auto aspect-[16/10] overflow-hidden rounded-xl bg-zinc-100 border border-zinc-200/80 shadow-sm">
+                            <div className="w-full md:w-2/3 md:mx-auto aspect-[16/10] overflow-hidden rounded-xl bg-zinc-100 border border-zinc-200/80 shadow-sm">
                                 <img
                                     src={`${ASSET_BASE}/project/omni-wheel/shaft-transverse-displacement.webp`}
                                     alt="Transverse Shaft Displacement"
